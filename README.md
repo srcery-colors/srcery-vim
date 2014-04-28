@@ -1,7 +1,7 @@
 flatened
 ========
 
-Solarized, without the bullshit.
+Solarized, without the bullshit. And no consistency, like the original.
 
 TODO:
 * light colorscheme
