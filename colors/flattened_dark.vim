@@ -1,8 +1,6 @@
-" 'flatened_dark.vim' -- Vim color scheme.
+" 'flattened_dark.vim' -- Vim color scheme.
 " Maintainer:   Romain Lafourcade (romainlafourcade@gmail.com)
 " A no-bullshit dark Solarized.
-
-set background=dark
 
 hi clear
 
@@ -11,10 +9,13 @@ if exists('syntax_on')
 
 endif
 
-let colors_name = 'flatened_dark'
+let colors_name = 'flattened_dark'
 
 if &t_Co >= 256 || has('gui_running')
   hi  Normal                                  cterm=NONE  ctermfg=244  ctermbg=234  guifg=#839496  guibg=#002b36
+
+  set background=dark
+
   hi  ColorColumn                             cterm=NONE  ctermbg=235  guibg=#073642
   hi  Comment                                 cterm=NONE  ctermfg=239  guifg=#586e75  gui=italic
   hi  ConId                                   cterm=NONE  ctermfg=136  guifg=#b58900
@@ -226,6 +227,9 @@ else
   " 16 color terminals
   " ugly without a solarized terminal palette
   hi  Normal                                  ctermfg=12  ctermbg=8
+
+  set background=dark
+
   hi  ColorColumn                             ctermbg=0
   hi  Comment                                 ctermfg=10
   hi  ConId                                   ctermfg=3
