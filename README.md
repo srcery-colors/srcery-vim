@@ -1,7 +1,7 @@
 Solarized, without the bullshit.
 ================================
 
-Unlike the original, these Vim colorschemes are guaranteed to give consistent results in the environments listed at the bottom of this document without littering your beautiful `vimrc` with useless crap or paging through hundreds of StackOverflow questions to make sense of the convoluted instructions.
+Unlike the original, these Vim colorschemes are guaranteed to give consistent results in the environments listed at the bottom of this document without littering your beautiful `vimrc` with useless crap or paging through hundreds of StackOverflow questions to make sense of a needlessly convoluted setup.
 
 ## Requirements
 
@@ -11,9 +11,9 @@ You don't need to do anything for these colorschemes to work in GVim or MacVim.
 
 ### TUI
 
-Flattened's only requirement is the same as Solarized: that you change your terminal emulator's so-called "ASCII" colors to the one used by Solarized.
+Flattened's only requirement is the same as Solarized: that you change your terminal emulator's so-called "ASCII" colors to the ones used by Solarized. The exact method depends on your terminal emulator and can probably be found somewhere in Solarized's bullshit-ridden documentation.
 
-The exact method depends on your terminal emulator and can probably be found somewhere in Solarized's bullshit-ridden documentation. I'd suggest simply copying the values from this table and call it a day:
+I'd suggest simply copying the values from this table and call it a day:
 
     HEX     TERMCOL   RGB
     ------- -------   -----------
@@ -40,19 +40,19 @@ Put `flattened_dark` and/or `flattened_light` in `~/.vim/colors/` (on unix-like 
 
 ## Configuration
 
-What do you want to configure? It's a freaking colorscheme, dammit!
+What do you want to configure? It's a freaking colorscheme!
 
 ## Usage
 
-To enable `flattened_dark`:
+if you want the "dark" version:
 
     :color flattened_dark
 
-To enable `flattened_light`:
+if you want the "light" version:
 
     :color flattened_light
 
-If you like what you see and want to set flattened as your default colorscheme, add the relevant line to your `vimrc`:
+If you like what you see and decide to make flattened your default colorscheme, add the relevant line to your `vimrc`:
 
     colorscheme flattened_light
 
