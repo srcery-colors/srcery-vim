@@ -1,7 +1,5 @@
-Flattened
-=========
-
 Solarized, without the bullshit.
+================================
 
 Unlike the original, these Vim colorschemes are guaranteed to give consistent results in the environments listed at the bottom of this document without littering your beautiful `vimrc` with useless crap or paging through hundreds of StackOverflow questions to make sense of the convoluted instructions.
 
