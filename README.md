@@ -1,7 +1,7 @@
 Solarized, without the bullshit.
 ================================
 
-Unlike the original, these Vim colorschemes are guaranteed to give consistent results in the environments listed at the bottom of this document without littering your beautiful `vimrc` with useless crap or paging through hundreds of StackOverflow questions to make sense of a needlessly convoluted setup.
+Unlike the original, these Vim colorschemes are guaranteed to give consistent results in most environments without littering your beautiful `vimrc` with useless crap or paging through hundreds of StackOverflow questions to make sense of a needlessly convoluted setup.
 
 ## Requirements
 
@@ -44,11 +44,11 @@ What do you want to configure? It's a freaking colorscheme!
 
 ## Usage
 
-if you want the "dark" version:
+If you want the "dark" version:
 
     :color flattened_dark
 
-if you want the "light" version:
+If you want the "light" version:
 
     :color flattened_light
 
@@ -59,3 +59,13 @@ If you like what you see and decide to make flattened your default colorscheme, 
 or:
 
     colorscheme flattened_dark
+
+## Screenshot or it didn't happen
+
+![flattened_dark in Macvim](screenshots/flattened_dark-macvim.png)
+
+![flattened_dark in iTerm](screenshots/flattened_dark-iterm.png)
+
+![flattened_light in Macvim](screenshots/flattened_light-macvim.png)
+
+![flattened_light in iTerm](screenshots/flattened_light-iterm.png)
