@@ -7,13 +7,13 @@ Unlike the original, these Vim colorschemes are guaranteed to give consistent re
 
 ### GUI
 
-You don't need to do anything for these colorschemes to work in GVim or MacVim.
+You don’t need to do anything for these colorschemes to work in GVim or MacVim.
 
 ### TUI
 
-Flattened's only requirement is the same as Solarized: that you change your terminal emulator's so-called "ASCII" colors to the ones used by Solarized. The exact method depends on your terminal emulator and can probably be found somewhere in Solarized's bullshit-ridden documentation.
+Flattened’s only requirement is the same as Solarized: that you change your terminal emulator’s so-called "ASCII" colors to the ones used by Solarized. The exact method depends on your terminal emulator and can probably be found somewhere in Solarized’s bullshit-ridden documentation.
 
-I'd suggest simply copying the values from this table and call it a day:
+I’d suggest simply copying the values from this table and call it a day:
 
     HEX     TERMCOL   RGB
     ------- -------   -----------
@@ -40,7 +40,7 @@ Put `flattened_dark` and/or `flattened_light` in `~/.vim/colors/` (on unix-like 
 
 ## Configuration
 
-What do you want to configure? It's a freaking colorscheme!
+What do you want to configure? It’s a freaking colorscheme!
 
 ## Usage
 
@@ -60,12 +60,16 @@ or:
 
     colorscheme flattened_dark
 
-## Screenshot or it didn't happen
+## Screenshots or it didn’t happen
+
+### MacVim
 
 ![flattened_dark in Macvim](screenshots/flattened_dark-macvim.png)
 
-![flattened_dark in iTerm](screenshots/flattened_dark-iterm.png)
-
 ![flattened_light in Macvim](screenshots/flattened_light-macvim.png)
+
+### iTerm
+
+![flattened_dark in iTerm](screenshots/flattened_dark-iterm.png)
 
 ![flattened_light in iTerm](screenshots/flattened_light-iterm.png)
