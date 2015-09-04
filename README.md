@@ -11,7 +11,7 @@ You don’t need to do anything for these colorschemes to work in GVim or MacVim
 
 ### TUI
 
-Flattened’s only requirement is the same as Solarized: that you change your terminal emulator’s so-called "ASCII" colors to the ones used by Solarized. The exact method depends on your terminal emulator and can probably be found somewhere in Solarized’s bullshit-ridden documentation.
+Flattened’s only requirement is the same as Solarized: that you change your terminal emulator’s so-called “ASCII” colors to the ones used by Solarized. The exact method depends on your terminal emulator and can probably be found somewhere in Solarized’s bullshit-ridden documentation.
 
 I’d suggest simply copying the values from this table and call it a day:
 
@@ -44,11 +44,11 @@ What do you want to configure? It’s a freaking colorscheme!
 
 ## Usage
 
-If you want the "dark" version:
+If you want the “dark” version:
 
     :color flattened_dark
 
-If you want the "light" version:
+If you want the “light” version:
 
     :color flattened_light
 
