@@ -1,34 +1,63 @@
-flattened
+Flattened
 =========
 
-Solarized, without the bullshit, unlike the original.
+Solarized, without the bullshit.
 
-And not much consistency, just like the original.
+Unlike the original, these Vim colorschemes are guaranteed to give consistent results in the environments listed at the bottom of this document without littering your beautiful `vimrc` with useless crap or paging through hundreds of StackOverflow questions to make sense of the convoluted instructions.
 
-Until I get around to unify all the colors used by all the Solarized versions, the different versions of flattened will be just as messed as Solarized itself.
+## Requirements
 
-On the left, solarized; on the right, flattened_dark.
+### GUI
 
-## 16 COLORS
+You don't need to do anything for these colorschemes to work in GVim or MacVim.
 
-This looks pretty much like the official screenshots because the terminal emulator is set to use the Solarized palette instead of the default 16 colors palette.
+### TUI
 
-Beyond that terminal emulator setup, there's nothing special to do in Vim.
+Flattened's only requirement is the same as Solarized: that you change your terminal emulator's so-called "ASCII" colors to the one used by Solarized.
 
-Screenshot taken in iTerm2 with [the Solarized palette](https://github.com/altercation/solarized/tree/master/iterm2-colors-solarized).
+The exact method depends on your terminal emulator and can probably be found somewhere in Solarized's bullshit-ridden documentation. I'd suggest simply copying the values from this table and call it a day:
 
-![16 colors](https://raw.githubusercontent.com/romainl/flattened/master/screenshots/16colors_left_solarized_right_flatened_dark.png)
+    HEX     TERMCOL   RGB
+    ------- -------   -----------
+    #002b36 brblack     0  43  54
+    #cb4b16 brred     203  75  22
+    #586e75 brgreen    88 110 117
+    #657b83 bryellow  101 123 131
+    #839496 brblue    131 148 150
+    #6c71c4 brmagenta 108 113 196
+    #93a1a1 brcyan    147 161 161
+    #fdf6e3 brwhite   253 246 227
+    #073642 black       7  54  66
+    #dc322f red       220  50  47
+    #859900 green     133 153   0
+    #b58900 yellow    181 137   0
+    #268bd2 blue       38 139 210
+    #d33682 magenta   211  54 130
+    #2aa198 cyan       42 161 152
+    #eee8d5 white     238 232 213
 
-## 256 COLORS
+## Installation
 
-256 colors is a bit trickier. Since none of the colors used in Solarized can be found in the standard xterm palette the author decided to "degrade" his color palette to something that's *very* far from the official screenshots or, really, from every Solarized user's expectations. So, yeah, the "256color" version of flattened_dark doesn't look like the "16color" version or the GUI version.
+Put `flattened_dark` and/or `flattened_light` in `~/.vim/colors/` (on unix-like systems) or `%userprofile%\vimfiles\colors\` (on Windows).
 
-Screenshot taken in iTerm2 with [the Solarized palette](https://github.com/altercation/solarized/tree/master/iterm2-colors-solarized).
+## Configuration
 
-![256 colors](https://raw.githubusercontent.com/romainl/flattened/master/screenshots/256colors_left_solarized_right_flatened_dark.png)
+What do you want to configure? It's a freaking colorscheme, dammit!
 
-## GUI
+## Usage
 
-Yes, in its GUI incarnation, Solarized uses a palette that's slightly different from the "standard" one so you get yet another slightly different look and feel. How cool and smart and scientific!
+To enable `flattened_dark`:
 
-![GUI](https://raw.githubusercontent.com/romainl/flattened/master/screenshots/GUI_left_solarized_righ_flatened_dark.png)
+    :color flattened_dark
+
+To enable `flattened_light`:
+
+    :color flattened_light
+
+If you like what you see and want to set flattened as your default colorscheme, add the relevant line to your `vimrc`:
+
+    colorscheme flattened_light
+
+or:
+
+    colorscheme flattened_dark
