@@ -36,7 +36,7 @@ I’d suggest simply copying the values from this table and call it a day:
 
 ## Installation
 
-Put `flattened_dark` and/or `flattened_light` in `~/.vim/colors/` (on unix-like systems) or `%userprofile%\vimfiles\colors\` (on Windows).
+Put `flattened_dark.vim` and/or `flattened_light.vim` in `~/.vim/colors/` (on unix-like systems) or `%userprofile%\vimfiles\colors\` (on Windows).
 
 ## Configuration
 
