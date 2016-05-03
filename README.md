@@ -1,7 +1,7 @@
 Solarized, without the bullshit.
 ================================
 
-Unlike the original, these Vim colorschemes are guaranteed to give consistent results in most environments without littering your beautiful `vimrc` with useless crap or paging through hundreds of StackOverflow questions to make sense of a needlessly convoluted setup.
+Unlike Solarized itself, these Vim colorschemes are guaranteed to give consistent results in most environments without littering your beautiful `vimrc` with useless crap or paging through hundreds of StackOverflow questions to make sense of a needlessly convoluted setup.
 
 ## Requirements
 
@@ -11,9 +11,11 @@ You don’t need to do anything for these colorschemes to work in GVim or MacVim
 
 ### TUI
 
-Flattened’s only requirement is the same as Solarized: that you change your terminal emulator’s so-called “ASCII” colors to the ones used by Solarized. The exact method depends on your terminal emulator and can probably be found somewhere in Solarized’s bullshit-ridden documentation.
+Flattened’s only requirement is the same as Solarized: that you change your terminal emulator’s so-called “ASCII” colors to the ones used by Solarized.
 
-I’d suggest simply copying the values from this table and call it a day:
+The reason is simple. Most terminal nowadays are capable of displaying 256 colors but *none* of the colors used in the Solarized palette can be found in the semi-standard Xterm palette. Therefore, we are forced to assign the Solarized non-standard values to colors 0 through 15 of our terminal emulator if we want to see the actual Solarized colors instead of poor approximations.
+
+The exact method depends on your terminal emulator. I’d suggest simply using the values from this table and call it a day:
 
     TERMCOL   HEX     RGB
     -------   ------- -----------
