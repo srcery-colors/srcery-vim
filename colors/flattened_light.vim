@@ -15,7 +15,7 @@ hi Normal                                  cterm=NONE  ctermfg=11  ctermbg=15  g
 set background=light
 
 hi ColorColumn                             cterm=NONE  ctermbg=7  guibg=#eee8d5  gui=NONE
-hi Comment                                 cterm=NONE  ctermfg=14  gui=italic  guifg=#93a1a1  gui=NONE
+hi Comment                                 cterm=NONE  ctermfg=14 guifg=#93a1a1  gui=italic
 hi ConId                                   cterm=NONE  ctermfg=3  guifg=#b58900  gui=NONE
 hi Conceal                                 cterm=NONE  ctermfg=4  guifg=#268bd2  gui=NONE
 hi Constant                                cterm=NONE  ctermfg=6  guifg=#2aa198  gui=NONE
