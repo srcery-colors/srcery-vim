@@ -19,15 +19,15 @@ let s:yellow         = ["#FBB829", 3]
 let s:blue           = ["#5573A3", 4]
 let s:magenta        = ["#E02C6D", 5]
 let s:cyan           = ["#1693A5", 6]
-let s:white          = ["#FCE8C3", 7]
-let s:gray           = ["#665C54", 8]
+let s:bright_gray    = ["#665C54", 7]
+let s:gray           = ["#2D2C29", 8]
 let s:bright_red     = ["#DA4939", 9]
 let s:bright_green   = ["#98BC37", 10]
 let s:bright_yellow  = ["#FFC66D", 11]
 let s:bright_blue    = ["#6D9CBE", 12]
 let s:bright_magenta = ["#E35682", 13]
 let s:bright_cyan    = ["#34BEDA", 14]
-let s:bright_white   = ["#E6E1DC", 15]
+let s:white          = ["#E6E1DC", 15]
 
 "}}}
 " Setup Variables: {{{
@@ -126,15 +126,14 @@ endfunction
 
 call s:HL('Normal', s:white, s:black)
 call s:HL('ColorColumn', s:white, s:gray)
-call s:HL('Comment', s:gray, s:black, s:italic)
+call s:HL('Comment', s:bright_gray, s:black, s:italic)
 call s:HL('ConId', s:yellow)
 call s:HL('Conceal', s:blue)
-call s:HL('Constant', s:cyan)
+call s:HL('Constant', s:bright_green)
 call s:HL('Cursor', s:black, s:white)
 call s:HL('CursorColumn', s:none, s:black)
-call s:HL('CursorLine', s:none, s:black, s:underline)
+call s:HL('CursorLine', s:none, s:gray)
 call s:HL('CursorLineNr', s:bright_yellow)
-
 
 " hi Normal ctermfg=12 ctermbg=8 guifg=#839496 guibg=#002b36 gui=NONE
 " hi ColorColumn  ctermbg=0  guibg=#073642  gui=NONE
@@ -145,7 +144,7 @@ call s:HL('CursorLineNr', s:bright_yellow)
 " hi Cursor       ctermfg=8  ctermbg=12  guifg=#002b36  guibg=#839496  gui=NONE
 " hi CursorColumn ctermbg=0  guibg=#073642  gui=NONE
 " hi CursorLine   cterm=NONE  ctermbg=0  guibg=#073642  guisp=#93a1a1  gui=NONE
-hi CursorLineNr ctermfg=11  guifg=yellow  gui=NONE
+" hi CursorLineNr ctermfg=11  guifg=yellow  gui=NONE
 hi DiffAdd      ctermfg=2  ctermbg=0  guifg=#719e07  guibg=#073642  guisp=#719e07  gui=NONE
 hi DiffChange   ctermfg=3  ctermbg=0  guifg=#b58900  guibg=#073642  guisp=#b58900  gui=NONE
 hi DiffDelete   ctermfg=1  ctermbg=0  guifg=#dc322f  guibg=#073642  gui=NONE
