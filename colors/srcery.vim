@@ -8,7 +8,7 @@ if exists('syntax_on')
   syntax reset
 endif
 
-let g:colors_name    = 'srcery'
+let g:colors_name = 'srcery'
 
 " Palette {{{
 
@@ -19,15 +19,15 @@ let s:yellow         = ["#FBB829", 3]
 let s:blue           = ["#5573A3", 4]
 let s:magenta        = ["#E02C6D", 5]
 let s:cyan           = ["#1693A5", 6]
-let s:bright_gray    = ["#665C54", 7]
-let s:gray           = ["#2D2C29", 8]
+let s:white          = ["#FCE8C3", 7]
+let s:bright_black   = ["#2D2C29", 8]
 let s:bright_red     = ["#DA4939", 9]
 let s:bright_green   = ["#98BC37", 10]
 let s:bright_yellow  = ["#FFC66D", 11]
 let s:bright_blue    = ["#6D9CBE", 12]
 let s:bright_magenta = ["#E35682", 13]
 let s:bright_cyan    = ["#34BEDA", 14]
-let s:white          = ["#E6E1DC", 15]
+let s:gray           = ["#918175", 15]
 
 "}}}
 " Setup Variables: {{{
@@ -133,8 +133,8 @@ endfunction
 "}}}
 
 call s:HL('Normal', s:white, s:black)
-call s:HL('ColorColumn', s:white, s:gray)
-call s:HL('Comment', s:bright_gray, s:black, s:italic)
+call s:HL('ColorColumn', s:white, s:bright_black)
+call s:HL('Comment', s:gray, s:black, s:italic)
 call s:HL('ConId', s:yellow)
 call s:HL('Conceal', s:blue)
 call s:HL('Constant', s:bright_green)
@@ -142,9 +142,9 @@ call s:HL('Directory', s:blue)
 
 call s:HL('Cursor', s:black, s:white)
 call s:HL('CursorColumn', s:none, s:black)
-call s:HL('CursorLine', s:none, s:gray)
+call s:HL('CursorLine', s:none, s:bright_black)
 call s:HL('CursorLineNr', s:bright_yellow)
-call s:HL('LineNr', s:bright_gray, s:black)
+call s:HL('LineNr', s:gray, s:black)
 
 call s:HL('DiffAdd', s:black, s:green)
 call s:HL('DiffChange', s:black, s:yellow)
@@ -154,8 +154,8 @@ call s:HL('DiffText', s:black, s:blue)
 call s:HL('Error', s:red, s:white)
 call s:HL('ErrorMsg', s:red, s:white, s:inverse)
 
-call s:HL('FoldColumn', s:gray, s:black)
-call s:HL('Folded', s:bright_gray, s:black, s:italic)
+call s:HL('FoldColumn', s:bright_black, s:black)
+call s:HL('Folded', s:gray, s:black, s:italic)
 
 call s:HL('HelpExample', s:bright_cyan)
 call s:HL('IncSearch', s:none, s:yellow, s:standout)
@@ -166,13 +166,20 @@ call s:HL('MatchParen', s:black, s:yellow)
 call s:HL('ModeMsg', s:blue)
 call s:HL('MoreMsg', s:blue)
 call s:HL('NonText', s:bright_yellow)
-call s:HL('Pmenu', s:white, s:gray) 
-call s:HL('PmenuSbar', s:white, s:bright_gray)
+call s:HL('Pmenu', s:white, s:bright_black) 
+call s:HL('PmenuSbar', s:white, s:gray)
 call s:HL('PmenuSel', s:black, s:white)
 call s:HL('PmenuThumb', s:none, s:white)
 
-call s:HL('gitcommitSelectedFile', s:bright_green)
-call s:HL('gitcommitDiscardedFile', s:bright_red)
+" call s:HL('gitcommitSelectedFile', s:bright_green)
+" call s:HL('gitcommitDiscardedFile', s:bright_red)
+" call s:HL('gitcommitUntrackedFile', s:bright_red)
+" call s:HL('gitcommitDiscardedType', s:bright_red)
+call s:HL('gitcommitBranch', s:blue)
+call s:HL('gitcommitHeader', s:green)
+
+
+
 
 " hi gitcommitBranch                         cterm=NONE  ctermfg=5  guifg=#d33682  gui=NONE
 " hi gitcommitComment                        ctermfg=10  guifg=#586e75  gui=italic
