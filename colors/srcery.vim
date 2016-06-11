@@ -179,7 +179,7 @@ call s:HL('Special', s:bright_red)
 call s:HL('SpecialKey', s:bright_yellow)
 
 call s:HL('Statement', s:red)
-call s:HL('StatusLine', s:black, s:white)
+call s:HL('StatusLine', s:bright_yellow, s:bright_black)
 call s:HL('StatusLineNC', s:gray, s:bright_black)
 
 " Spell: {{{
@@ -189,12 +189,13 @@ call s:HL('SpellLocal', s:yellow, s:none, s:undercurl, s:yellow)
 call s:HL('SpellRare', s:bright_cyan, s:none, s:undercurl, s:bright_cyan)
 "}}}
 " Git: {{{
-" call s:HL('gitcommitSelectedFile', s:bright_green)
+call s:HL('gitcommitSelectedFile', s:bright_green)
 " call s:HL('gitcommitDiscardedFile', s:bright_red)
 " call s:HL('gitcommitUntrackedFile', s:bright_red)
 " call s:HL('gitcommitDiscardedType', s:bright_red)
-call s:HL('gitcommitBranch', s:blue)
+call s:HL('gitcommitBranch', s:bright_cyan)
 call s:HL('gitcommitHeader', s:white)
+call s:HL('gitcommitFile', s:red)
 " hi gitcommitBranch                         cterm=NONE  ctermfg=5  guifg=#d33682  gui=NONE
 " hi gitcommitComment                        ctermfg=10  guifg=#586e75  gui=italic
 " hi gitcommitDiscardedFile                  cterm=NONE  ctermfg=1  guifg=#dc322f  gui=NONE
