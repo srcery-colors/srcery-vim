@@ -171,16 +171,30 @@ call s:HL('PmenuSbar', s:white, s:gray)
 call s:HL('PmenuSel', s:black, s:white)
 call s:HL('PmenuThumb', s:none, s:white)
 
+call s:HL('PreProc', s:bright_cyan, s:none)
+call s:HL('Question', s:yellow)
+call s:HL('Search', s:black, s:yellow)
+call s:HL('SignColumn', s:none, s:black)
+call s:HL('Special', s:bright_red)
+call s:HL('SpecialKey', s:bright_yellow)
+
+call s:HL('Statement', s:red)
+call s:HL('StatusLine', s:black, s:white)
+call s:HL('StatusLineNC', s:gray, s:bright_black)
+
+" Spell: {{{
+call s:HL('SpellBad', s:red, s:none, s:undercurl, s:red)
+call s:HL('SpellCap', s:bright_blue, s:none, s:undercurl, s:bright_blue)
+call s:HL('SpellLocal', s:yellow, s:none, s:undercurl, s:yellow)
+call s:HL('SpellRare', s:bright_cyan, s:none, s:undercurl, s:bright_cyan)
+"}}}
+" Git: {{{
 " call s:HL('gitcommitSelectedFile', s:bright_green)
 " call s:HL('gitcommitDiscardedFile', s:bright_red)
 " call s:HL('gitcommitUntrackedFile', s:bright_red)
 " call s:HL('gitcommitDiscardedType', s:bright_red)
 call s:HL('gitcommitBranch', s:blue)
-call s:HL('gitcommitHeader', s:green)
-
-
-
-
+call s:HL('gitcommitHeader', s:white)
 " hi gitcommitBranch                         cterm=NONE  ctermfg=5  guifg=#d33682  gui=NONE
 " hi gitcommitComment                        ctermfg=10  guifg=#586e75  gui=italic
 " hi gitcommitDiscardedFile                  cterm=NONE  ctermfg=1  guifg=#dc322f  gui=NONE
@@ -193,6 +207,7 @@ call s:HL('gitcommitHeader', s:green)
 " hi gitcommitUnmerged                       cterm=NONE  ctermfg=2  guifg=#719e07  gui=NONE
 " hi gitcommitUnmergedFile                   cterm=NONE  ctermfg=3  guifg=#b58900  gui=NONE
 " hi gitcommitUntrackedFile                  cterm=NONE  ctermfg=6  guifg=#2aa198  gui=NONE
+"}}}
 
 " hi Normal ctermfg=12 ctermbg=8 guifg=#839496 guibg=#002b36 gui=NONE
 " hi ColorColumn  ctermbg=0  guibg=#073642  gui=NONE
@@ -225,19 +240,19 @@ call s:HL('gitcommitHeader', s:green)
 " hi PmenuSbar    cterm=reverse  ctermfg=7  ctermbg=12  guifg=#eee8d5  guibg=#839496  gui=reverse
 " hi PmenuSel     cterm=reverse  ctermfg=10  ctermbg=7  guifg=#586e75  guibg=#eee8d5  gui=reverse
 " hi PmenuThumb   cterm=reverse  ctermfg=12  ctermbg=8  guifg=#839496  guibg=#002b36  gui=reverse
-hi PreProc      cterm=NONE  ctermfg=1  guifg=#cb4b16  gui=NONE
-hi Question     cterm=NONE  ctermfg=6  guifg=#2aa198  gui=NONE
-hi Search       cterm=reverse  ctermfg=3 ctermbg=NONE  guifg=#b58900  guibg=NONE  gui=reverse
-hi SignColumn   ctermfg=12  ctermbg=242  guifg=#839496  guibg=Grey  gui=NONE
-hi Special      ctermfg=1  guifg=#dc322f  gui=NONE
-hi SpecialKey   cterm=NONE  ctermfg=11  ctermbg=0  guifg=#657b83  guibg=#073642  gui=NONE
-hi SpellBad     cterm=undercurl  guisp=#dc322f  gui=undercurl
-hi SpellCap     cterm=undercurl  guisp=#6c71c4  gui=undercurl
-hi SpellLocal   cterm=undercurl  guisp=#b58900  gui=undercurl
-hi SpellRare    cterm=undercurl  guisp=#2aa198  gui=undercurl
-hi Statement    ctermfg=2  guifg=#719e07  gui=NONE
-hi StatusLine   cterm=reverse  ctermfg=14  ctermbg=0  guifg=#93a1a1  guibg=#073642  gui=reverse
-hi StatusLineNC cterm=reverse  ctermfg=11  ctermbg=0  guifg=#657b83  guibg=#073642  gui=reverse
+" hi PreProc      cterm=NONE  ctermfg=1  guifg=#cb4b16  gui=NONE
+" hi Question     cterm=NONE  ctermfg=6  guifg=#2aa198  gui=NONE
+" hi Search       cterm=reverse  ctermfg=3 ctermbg=NONE  guifg=#b58900  guibg=NONE  gui=reverse
+" hi SignColumn   ctermfg=12  ctermbg=242  guifg=#839496  guibg=Grey  gui=NONE
+" hi Special      ctermfg=1  guifg=#dc322f  gui=NONE
+" hi SpecialKey   cterm=NONE  ctermfg=11  ctermbg=0  guifg=#657b83  guibg=#073642  gui=NONE
+" hi SpellBad     cterm=undercurl  guisp=#dc322f  gui=undercurl
+" hi SpellCap     cterm=undercurl  guisp=#6c71c4  gui=undercurl
+" hi SpellLocal   cterm=undercurl  guisp=#b58900  gui=undercurl
+" hi SpellRare    cterm=undercurl  guisp=#2aa198  gui=undercurl
+" hi Statement    ctermfg=2  guifg=#719e07  gui=NONE
+" hi StatusLine   cterm=reverse  ctermfg=14  ctermbg=0  guifg=#93a1a1  guibg=#073642  gui=reverse
+" hi StatusLineNC cterm=reverse  ctermfg=11  ctermbg=0  guifg=#657b83  guibg=#073642  gui=reverse
 hi TabLine      cterm=underline  ctermfg=12  ctermbg=0  guifg=#839496  guibg=#073642  guisp=#839496  gui=underline
 hi TabLineFill  cterm=underline  ctermfg=12  ctermbg=0  guifg=#839496  guibg=#073642  guisp=#839496  gui=underline
 hi TabLineSel   cterm=underline,reverse  ctermfg=10  ctermbg=7  guifg=#586e75  guibg=#eee8d5  guisp=#839496  gui=underline,reverse
