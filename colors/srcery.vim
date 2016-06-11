@@ -134,6 +134,9 @@ call s:HL('Cursor', s:black, s:white)
 call s:HL('CursorColumn', s:none, s:black)
 call s:HL('CursorLine', s:none, s:gray)
 call s:HL('CursorLineNr', s:bright_yellow)
+call s:HL('DiffAdd', s:black, s:green)
+call s:HL('DiffChange', s:black, s:yellow)
+call s:HL('DiffDelete', s:black, s:red)
 
 " hi Normal ctermfg=12 ctermbg=8 guifg=#839496 guibg=#002b36 gui=NONE
 " hi ColorColumn  ctermbg=0  guibg=#073642  gui=NONE
@@ -145,9 +148,9 @@ call s:HL('CursorLineNr', s:bright_yellow)
 " hi CursorColumn ctermbg=0  guibg=#073642  gui=NONE
 " hi CursorLine   cterm=NONE  ctermbg=0  guibg=#073642  guisp=#93a1a1  gui=NONE
 " hi CursorLineNr ctermfg=11  guifg=yellow  gui=NONE
-hi DiffAdd      ctermfg=2  ctermbg=0  guifg=#719e07  guibg=#073642  guisp=#719e07  gui=NONE
-hi DiffChange   ctermfg=3  ctermbg=0  guifg=#b58900  guibg=#073642  guisp=#b58900  gui=NONE
-hi DiffDelete   ctermfg=1  ctermbg=0  guifg=#dc322f  guibg=#073642  gui=NONE
+" hi DiffAdd      ctermfg=2  ctermbg=0  guifg=#719e07  guibg=#073642  guisp=#719e07  gui=NONE
+" hi DiffChange   ctermfg=3  ctermbg=0  guifg=#b58900  guibg=#073642  guisp=#b58900  gui=NONE
+" hi DiffDelete   ctermfg=1  ctermbg=0  guifg=#dc322f  guibg=#073642  gui=NONE
 hi DiffText     ctermfg=4  ctermbg=0  guifg=#268bd2  guibg=#073642  guisp=#268bd2  gui=NONE
 hi Directory    ctermfg=4  guifg=#268bd2  gui=NONE
 hi Error        cterm=NONE  ctermfg=1  ctermbg=NONE  guifg=#dc322f  guibg=#002b36  gui=NONE
