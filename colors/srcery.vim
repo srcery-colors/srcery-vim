@@ -58,6 +58,10 @@ if !exists('g:srcery_inverse')
   let g:srcery_inverse=1
 endif
 
+if !exists('g:srcery_standout')
+  let g:srcery_standout=1
+endif
+
 " }}}
 " Setup Emphasis: {{{
 
@@ -86,6 +90,10 @@ if g:srcery_inverse == 0
   let s:inverse = ''
 endif
 
+let s:standout = 'standout,'
+if g:srcery_standout == 0
+  let s:standout = ''
+endif
 " }}}
 " Highlighting Function: {{{
 
@@ -130,13 +138,54 @@ call s:HL('Comment', s:bright_gray, s:black, s:italic)
 call s:HL('ConId', s:yellow)
 call s:HL('Conceal', s:blue)
 call s:HL('Constant', s:bright_green)
+call s:HL('Directory', s:blue)
+
 call s:HL('Cursor', s:black, s:white)
 call s:HL('CursorColumn', s:none, s:black)
 call s:HL('CursorLine', s:none, s:gray)
 call s:HL('CursorLineNr', s:bright_yellow)
+call s:HL('LineNr', s:bright_gray, s:black)
+
 call s:HL('DiffAdd', s:black, s:green)
 call s:HL('DiffChange', s:black, s:yellow)
 call s:HL('DiffDelete', s:black, s:red)
+call s:HL('DiffText', s:black, s:blue)
+
+call s:HL('Error', s:red, s:white)
+call s:HL('ErrorMsg', s:red, s:white, s:inverse)
+
+call s:HL('FoldColumn', s:gray, s:black)
+call s:HL('Folded', s:bright_gray, s:black, s:italic)
+
+call s:HL('HelpExample', s:bright_cyan)
+call s:HL('IncSearch', s:none, s:yellow, s:standout)
+
+call s:HL('Identifier', s:bright_blue)
+
+call s:HL('MatchParen', s:black, s:yellow)
+call s:HL('ModeMsg', s:blue)
+call s:HL('MoreMsg', s:blue)
+call s:HL('NonText', s:bright_yellow)
+call s:HL('Pmenu', s:white, s:gray) 
+call s:HL('PmenuSbar', s:white, s:bright_gray)
+call s:HL('PmenuSel', s:black, s:white)
+call s:HL('PmenuThumb', s:none, s:white)
+
+call s:HL('gitcommitSelectedFile', s:bright_green)
+call s:HL('gitcommitDiscardedFile', s:bright_red)
+
+" hi gitcommitBranch                         cterm=NONE  ctermfg=5  guifg=#d33682  gui=NONE
+" hi gitcommitComment                        ctermfg=10  guifg=#586e75  gui=italic
+" hi gitcommitDiscardedFile                  cterm=NONE  ctermfg=1  guifg=#dc322f  gui=NONE
+" hi gitcommitDiscardedType                  ctermfg=1  guifg=#dc322f  gui=NONE
+" hi gitcommitFile                           cterm=NONE  ctermfg=12  guifg=#839496  gui=NONE
+" hi gitcommitHeader                         ctermfg=10  guifg=#586e75  gui=NONE
+" hi gitcommitOnBranch                       cterm=NONE  ctermfg=10  guifg=#586e75  gui=NONE
+" hi gitcommitSelectedFile                   cterm=NONE  ctermfg=2  guifg=#719e07  gui=NONE
+" hi gitcommitSelectedType                   ctermfg=2  guifg=#719e07  gui=NONE
+" hi gitcommitUnmerged                       cterm=NONE  ctermfg=2  guifg=#719e07  gui=NONE
+" hi gitcommitUnmergedFile                   cterm=NONE  ctermfg=3  guifg=#b58900  gui=NONE
+" hi gitcommitUntrackedFile                  cterm=NONE  ctermfg=6  guifg=#2aa198  gui=NONE
 
 " hi Normal ctermfg=12 ctermbg=8 guifg=#839496 guibg=#002b36 gui=NONE
 " hi ColorColumn  ctermbg=0  guibg=#073642  gui=NONE
@@ -151,24 +200,24 @@ call s:HL('DiffDelete', s:black, s:red)
 " hi DiffAdd      ctermfg=2  ctermbg=0  guifg=#719e07  guibg=#073642  guisp=#719e07  gui=NONE
 " hi DiffChange   ctermfg=3  ctermbg=0  guifg=#b58900  guibg=#073642  guisp=#b58900  gui=NONE
 " hi DiffDelete   ctermfg=1  ctermbg=0  guifg=#dc322f  guibg=#073642  gui=NONE
-hi DiffText     ctermfg=4  ctermbg=0  guifg=#268bd2  guibg=#073642  guisp=#268bd2  gui=NONE
-hi Directory    ctermfg=4  guifg=#268bd2  gui=NONE
-hi Error        cterm=NONE  ctermfg=1  ctermbg=NONE  guifg=#dc322f  guibg=#002b36  gui=NONE
-hi ErrorMsg     cterm=reverse  ctermfg=1  ctermbg=NONE  guifg=#dc322f  guibg=NONE gui=reverse
-hi FoldColumn   ctermfg=12  ctermbg=0  guifg=#839496  guibg=#073642  gui=NONE
-hi Folded       cterm=NONE,underline  ctermfg=12  ctermbg=0  guifg=#839496  guibg=#073642  guisp=#002b36  gui=NONE
-hi HelpExample  ctermfg=14  guifg=#93a1a1  gui=NONE
-hi Identifier   ctermfg=4  guifg=#268bd2  gui=NONE
-hi IncSearch    cterm=standout  ctermfg=9  guifg=#cb4b16  gui=standout
-hi LineNr       ctermfg=10  ctermbg=0  guifg=#586e75  guibg=#073642  gui=NONE
-hi MatchParen   cterm=NONE  ctermfg=1  ctermbg=10  guifg=#dc322f  guibg=#586e75  gui=NONE
-hi ModeMsg      ctermfg=4  guifg=#268bd2  gui=NONE
-hi MoreMsg      ctermfg=4  guifg=#268bd2  gui=NONE
-hi NonText      cterm=NONE  ctermfg=11  guifg=#657b83  gui=NONE
-hi Pmenu        cterm=reverse  ctermfg=12  ctermbg=0  guifg=#839496  guibg=#073642  gui=reverse
-hi PmenuSbar    cterm=reverse  ctermfg=7  ctermbg=12  guifg=#eee8d5  guibg=#839496  gui=reverse
-hi PmenuSel     cterm=reverse  ctermfg=10  ctermbg=7  guifg=#586e75  guibg=#eee8d5  gui=reverse
-hi PmenuThumb   cterm=reverse  ctermfg=12  ctermbg=8  guifg=#839496  guibg=#002b36  gui=reverse
+" hi DiffText     ctermfg=4  ctermbg=0  guifg=#268bd2  guibg=#073642  guisp=#268bd2  gui=NONE
+" hi Directory    ctermfg=4  guifg=#268bd2  gui=NONE
+" hi Error        cterm=NONE  ctermfg=1  ctermbg=NONE  guifg=#dc322f  guibg=#002b36  gui=NONE
+" hi ErrorMsg     cterm=reverse  ctermfg=1  ctermbg=NONE  guifg=#dc322f  guibg=NONE gui=reverse
+" hi FoldColumn   ctermfg=12  ctermbg=0  guifg=#839496  guibg=#073642  gui=NONE
+" hi Folded       cterm=NONE,underline  ctermfg=12  ctermbg=0  guifg=#839496  guibg=#073642  guisp=#002b36  gui=NONE
+" hi HelpExample  ctermfg=14  guifg=#93a1a1  gui=NONE
+" hi Identifier   ctermfg=4  guifg=#268bd2  gui=NONE
+" hi IncSearch    cterm=standout  ctermfg=9  guifg=#cb4b16  gui=standout
+" hi LineNr       ctermfg=10  ctermbg=0  guifg=#586e75  guibg=#073642  gui=NONE
+" hi MatchParen   cterm=NONE  ctermfg=1  ctermbg=10  guifg=#dc322f  guibg=#586e75  gui=NONE
+" hi ModeMsg      ctermfg=4  guifg=#268bd2  gui=NONE
+" hi MoreMsg      ctermfg=4  guifg=#268bd2  gui=NONE
+" hi NonText      cterm=NONE  ctermfg=11  guifg=#657b83  gui=NONE
+" hi Pmenu        cterm=reverse  ctermfg=12  ctermbg=0  guifg=#839496  guibg=#073642  gui=reverse
+" hi PmenuSbar    cterm=reverse  ctermfg=7  ctermbg=12  guifg=#eee8d5  guibg=#839496  gui=reverse
+" hi PmenuSel     cterm=reverse  ctermfg=10  ctermbg=7  guifg=#586e75  guibg=#eee8d5  gui=reverse
+" hi PmenuThumb   cterm=reverse  ctermfg=12  ctermbg=8  guifg=#839496  guibg=#002b36  gui=reverse
 hi PreProc      cterm=NONE  ctermfg=1  guifg=#cb4b16  gui=NONE
 hi Question     cterm=NONE  ctermfg=6  guifg=#2aa198  gui=NONE
 hi Search       cterm=reverse  ctermfg=3 ctermbg=NONE  guifg=#b58900  guibg=NONE  gui=reverse
@@ -198,18 +247,18 @@ hi WildMenu     cterm=reverse  ctermfg=7  ctermbg=0  guifg=#eee8d5  guibg=#07364
 
 hi cPreCondit                              ctermfg=9  guifg=#cb4b16  gui=NONE
 
-hi gitcommitBranch                         cterm=NONE  ctermfg=5  guifg=#d33682  gui=NONE
-hi gitcommitComment                        ctermfg=10  guifg=#586e75  gui=italic
-hi gitcommitDiscardedFile                  cterm=NONE  ctermfg=1  guifg=#dc322f  gui=NONE
-hi gitcommitDiscardedType                  ctermfg=1  guifg=#dc322f  gui=NONE
-hi gitcommitFile                           cterm=NONE  ctermfg=12  guifg=#839496  gui=NONE
-hi gitcommitHeader                         ctermfg=10  guifg=#586e75  gui=NONE
-hi gitcommitOnBranch                       cterm=NONE  ctermfg=10  guifg=#586e75  gui=NONE
-hi gitcommitSelectedFile                   cterm=NONE  ctermfg=2  guifg=#719e07  gui=NONE
-hi gitcommitSelectedType                   ctermfg=2  guifg=#719e07  gui=NONE
-hi gitcommitUnmerged                       cterm=NONE  ctermfg=2  guifg=#719e07  gui=NONE
-hi gitcommitUnmergedFile                   cterm=NONE  ctermfg=3  guifg=#b58900  gui=NONE
-hi gitcommitUntrackedFile                  cterm=NONE  ctermfg=6  guifg=#2aa198  gui=NONE
+" hi gitcommitBranch                         cterm=NONE  ctermfg=5  guifg=#d33682  gui=NONE
+" hi gitcommitComment                        ctermfg=10  guifg=#586e75  gui=italic
+" hi gitcommitDiscardedFile                  cterm=NONE  ctermfg=1  guifg=#dc322f  gui=NONE
+" hi gitcommitDiscardedType                  ctermfg=1  guifg=#dc322f  gui=NONE
+" hi gitcommitFile                           cterm=NONE  ctermfg=12  guifg=#839496  gui=NONE
+" hi gitcommitHeader                         ctermfg=10  guifg=#586e75  gui=NONE
+" hi gitcommitOnBranch                       cterm=NONE  ctermfg=10  guifg=#586e75  gui=NONE
+" hi gitcommitSelectedFile                   cterm=NONE  ctermfg=2  guifg=#719e07  gui=NONE
+" hi gitcommitSelectedType                   ctermfg=2  guifg=#719e07  gui=NONE
+" hi gitcommitUnmerged                       cterm=NONE  ctermfg=2  guifg=#719e07  gui=NONE
+" hi gitcommitUnmergedFile                   cterm=NONE  ctermfg=3  guifg=#b58900  gui=NONE
+" hi gitcommitUntrackedFile                  cterm=NONE  ctermfg=6  guifg=#2aa198  gui=NONE
 
 hi helpHyperTextEntry                      ctermfg=2  guifg=#719e07  gui=NONE
 hi helpHyperTextJump                       cterm=underline  ctermfg=4  guifg=#268bd2  gui=underline
