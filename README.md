@@ -1,7 +1,7 @@
-Solarized, without the bullshit.
+./srcery 
 ================================
 
-Unlike Solarized itself, these Vim colorschemes are guaranteed to give consistent results in most environments without littering your beautiful `vimrc` with useless crap or paging through hundreds of StackOverflow questions to make sense of a needlessly convoluted setup.
+Colorscheme inspired by [Gruvbox](https://github.com/morhetz/gruvbox) and [Railscast](https://chriskempson.github.io/base16/#railscasts). Srcery's goal is to look good using a 16 color palette. This is a fork of [Flattened](https://github.com/romainl/flattened), and tries to follow its example of simplicity.
 
 ## Requirements
 
