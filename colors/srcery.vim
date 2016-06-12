@@ -179,7 +179,7 @@ call s:HL('Special', s:bright_red)
 call s:HL('SpecialKey', s:bright_yellow)
 
 call s:HL('Statement', s:red)
-call s:HL('StatusLine', s:bright_yellow, s:bright_black)
+call s:HL('StatusLine', s:white, s:bright_black)
 call s:HL('StatusLineNC', s:gray, s:bright_black)
 
 " Spell: {{{
