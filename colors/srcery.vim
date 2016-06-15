@@ -285,7 +285,7 @@ hi! link Directory SrceryGreenBold
 hi! link Title SrceryGreenBold
 
 " Error messages on the command line
-call s:HL('ErrorMsg',   s:black, s:red, s:bold)
+call s:HL('ErrorMsg',   s:white, s:red)
 " More prompt: -- More --
 hi! link MoreMsg SrceryYellowBold
 " Current mode message: -- INSERT --
