@@ -95,6 +95,73 @@ if g:srcery_standout == 0
   let s:standout = ''
 endif
 " }}}
+" Overload Setting: {{{
+
+let s:hls_cursor = s:yellow
+if exists('g:srcery_hls_cursor')
+  let s:hls_cursor = get(s:gb, g:srcery_hls_cursor)
+endif
+
+let s:number_column = s:black
+let s:sign_column = s:black
+
+if exists('g:gitgutter_override_sign_column_highlight') &&
+      \ g:gitgutter_override_sign_column_highlight == 1
+  let s:sign_column = s:number_column
+else
+  let g:gitgutter_override_sign_column_highlight = 0
+
+  if exists('g:srcery_sign_column')
+    let s:sign_column = get(s:gb, g:srcery_sign_column)
+  endif
+endif
+
+let s:color_column = s:black
+if exists('g:srcery_color_column')
+  let s:color_column = get(s:gb, g:srcery_color_column)
+endif
+
+let s:vert_split = s:black
+if exists('g:srcery_vert_split')
+  let s:vert_split = get(s:gb, g:srcery_vert_split)
+endif
+
+let s:invert_signs = ''
+if exists('g:srcery_invert_signs')
+  if g:srcery_invert_signs == 1
+    let s:invert_signs = s:inverse
+  endif
+endif
+
+let s:invert_selection = s:inverse
+if exists('g:srcery_invert_selection')
+  if g:srcery_invert_selection == 0
+    let s:invert_selection = ''
+  endif
+endif
+
+let s:invert_tabline = ''
+if exists('g:srcery_invert_tabline')
+  if g:srcery_invert_tabline == 1
+    let s:invert_tabline = s:inverse
+  endif
+endif
+
+let s:italicize_comments = s:italic
+if exists('g:srcery_italicize_comments')
+  if g:srcery_italicize_comments == 0
+    let s:italicize_comments = ''
+  endif
+endif
+
+let s:italicize_strings = ''
+if exists('g:srcery_italicize_strings')
+  if g:srcery_italicize_strings == 1
+    let s:italicize_strings = s:italic
+  endif
+endif
+
+" }}}
 " Highlighting Function: {{{
 
 function! s:HL(group, fg, ...)
@@ -131,63 +198,677 @@ function! s:HL(group, fg, ...)
   execute join(histring, ' ')
 endfunction
 "}}}
+" Srcery Hi Groups: {{{
 
+" memoize common hi groups
+call s:HL('SrceryWhite', s:white)
+call s:HL('SrceryRed', s:red)
+call s:HL('SrceryRedBold', s:red, s:none, s:bold)
+call s:HL('SrceryGreen', s:green)
+call s:HL('SrceryGreenBold', s:green, s:none, s:bold)
+call s:HL('SrceryYellow', s:yellow)
+call s:HL('SrceryYellowBold', s:yellow, s:none, s:bold)
+call s:HL('SrceryBlue', s:blue)
+call s:HL('SrceryBlueBold', s:blue, s:none, s:bold)
+call s:HL('SrceryMagenta', s:magenta)
+call s:HL('SrceryMagentaBold', s:magenta, s:none, s:bold)
+call s:HL('SrceryCyan', s:cyan)
+call s:HL('SrceryCyanBold', s:cyan, s:none, s:bold)
+
+call s:HL('SrceryRedSign', s:red, s:sign_column, s:invert_signs)
+call s:HL('SrceryGreenSign', s:green, s:sign_column, s:invert_signs)
+call s:HL('SrceryYellowSign', s:yellow, s:sign_column, s:invert_signs)
+call s:HL('SrceryBlueSign', s:blue, s:sign_column, s:invert_signs)
+call s:HL('SrceryMagentaSign', s:magenta, s:sign_column, s:invert_signs)
+call s:HL('SrceryCyanSign', s:cyan, s:sign_column, s:invert_signs)
+
+" }}}
+
+" Vanilla colorscheme ---------------------------------------------------------
+" General UI: {{{
+
+" Normal text
 call s:HL('Normal', s:white, s:black)
-call s:HL('ColorColumn', s:white, s:bright_black)
-call s:HL('Comment', s:gray, s:black, s:italic)
-call s:HL('ConId', s:yellow)
-call s:HL('Conceal', s:blue)
-call s:HL('Constant', s:bright_green)
-call s:HL('Directory', s:blue)
 
-call s:HL('Cursor', s:black, s:white)
-call s:HL('CursorColumn', s:none, s:black)
-call s:HL('CursorLine', s:none, s:bright_black)
-call s:HL('CursorLineNr', s:bright_yellow)
-call s:HL('LineNr', s:gray, s:black)
+if version >= 700
+  " Screen line that the cursor is
+  call s:HL('CursorLine',   s:none, s:black)
+  " Screen column that the cursor is
+  hi! link CursorColumn CursorLine
 
-call s:HL('DiffAdd', s:black, s:green)
-call s:HL('DiffChange', s:black, s:yellow)
-call s:HL('DiffDelete', s:black, s:red)
-call s:HL('DiffText', s:black, s:blue)
+  " Tab pages line filler
+  call s:HL('TabLineFill', s:black, s:black, s:invert_tabline)
+  " Active tab page label
+  call s:HL('TabLineSel', s:black, s:black, s:bold . s:invert_tabline)
+  " Not active tab page label
+  hi! link TabLine TabLineFill
 
-call s:HL('Error', s:red, s:white)
-call s:HL('ErrorMsg', s:red, s:white, s:inverse)
+  " Match paired bracket under the cursor
+  call s:HL('MatchParen', s:none, s:black, s:bold)
+endif
 
-call s:HL('FoldColumn', s:bright_black, s:black)
+if version >= 703
+  " Highlighted screen columns
+  call s:HL('ColorColumn',  s:none, s:color_column)
+
+  " Concealed element: \lambda → λ
+  call s:HL('Conceal', s:blue, s:none)
+
+  " Line number of CursorLine
+  call s:HL('CursorLineNr', s:yellow, s:black)
+endif
+
+hi! link NonText SrceryBg2
+hi! link SpecialKey SrceryBg2
+
+call s:HL('Visual',    s:none,  s:black, s:invert_selection)
+hi! link VisualNOS Visual
+
+call s:HL('Search',    s:black, s:yellow)
+call s:HL('IncSearch', s:black, s:hls_cursor)
+
+call s:HL('Underlined', s:blue, s:none, s:underline)
+
+call s:HL('StatusLine',   s:black, s:black, s:bold . s:inverse)
+call s:HL('StatusLineNC', s:black, s:white, s:bold . s:inverse)
+
+" The column separating vertically split windows
+call s:HL('VertSplit', s:white, s:vert_split)
+
+" Current match in wildmenu completion
+call s:HL('WildMenu', s:blue, s:black, s:bold)
+
+" Directory names, special names in listing
+hi! link Directory SrceryGreenBold
+
+" Titles for output from :set all, :autocmd, etc.
+hi! link Title SrceryGreenBold
+
+" Error messages on the command line
+call s:HL('ErrorMsg',   s:black, s:red, s:bold)
+" More prompt: -- More --
+hi! link MoreMsg SrceryYellowBold
+" Current mode message: -- INSERT --
+hi! link ModeMsg SrceryYellowBold
+" 'Press enter' prompt and yes/no questions
+hi! link Question SrceryYellowBold
+" Warning messages
+hi! link WarningMsg SrceryRedBold
+
+" }}}
+" Gutter: {{{
+
+" Line number for :number and :# commands
+call s:HL('LineNr', s:number_column)
+
+" Column where signs are displayed
+call s:HL('SignColumn', s:none, s:sign_column)
+
+" Line used for closed folds
 call s:HL('Folded', s:gray, s:black, s:italic)
+" Column where folds are displayed
+call s:HL('FoldColumn', s:gray, s:black)
 
-call s:HL('HelpExample', s:bright_cyan)
-call s:HL('IncSearch', s:none, s:yellow, s:standout)
+" }}}
+" Cursor: {{{
 
-call s:HL('Identifier', s:bright_blue)
+" Character under cursor
+call s:HL('Cursor', s:none, s:none, s:inverse)
+" Visual mode cursor, selection
+hi! link vCursor Cursor
+" Input moder cursor
+hi! link iCursor Cursor
+" Language mapping cursor
+hi! link lCursor Cursor
 
-call s:HL('MatchParen', s:black, s:yellow)
-call s:HL('ModeMsg', s:blue)
-call s:HL('MoreMsg', s:blue)
-call s:HL('NonText', s:bright_yellow)
-call s:HL('Pmenu', s:white, s:bright_black) 
-call s:HL('PmenuSbar', s:white, s:gray)
-call s:HL('PmenuSel', s:black, s:white)
-call s:HL('PmenuThumb', s:none, s:white)
+" }}}
+" Syntax Highlighting: {{{
 
-call s:HL('PreProc', s:bright_cyan, s:none)
-call s:HL('Question', s:yellow)
-call s:HL('Search', s:black, s:yellow)
-call s:HL('SignColumn', s:none, s:black)
-call s:HL('Special', s:bright_red)
-call s:HL('SpecialKey', s:bright_yellow)
+call s:HL('Comment', s:gray, s:none, s:italicize_comments)
+call s:HL('Todo', s:white, s:black, s:bold . s:italic)
+call s:HL('Error', s:red, s:black, s:bold . s:inverse)
 
-call s:HL('Statement', s:red)
-call s:HL('StatusLine', s:white, s:bright_black)
-call s:HL('StatusLineNC', s:gray, s:bright_black)
+" Generic statement
+hi! link Statement SrceryRed
+" if, then, else, endif, swicth, etc.
+hi! link Conditional SrceryRed
+" for, do, while, etc.
+hi! link Repeat SrceryRed
+" case, default, etc.
+hi! link Label SrceryRed
+" try, catch, throw
+hi! link Exception SrceryRed
+" sizeof, "+", "*", etc.
+hi! link Operator Normal
+" Any other keyword
+hi! link Keyword SrceryRed
 
-" Spell: {{{
-call s:HL('SpellBad', s:red, s:none, s:undercurl, s:red)
-call s:HL('SpellCap', s:bright_blue, s:none, s:undercurl, s:bright_blue)
-call s:HL('SpellLocal', s:yellow, s:none, s:undercurl, s:yellow)
-call s:HL('SpellRare', s:bright_cyan, s:none, s:undercurl, s:bright_cyan)
+" Variable name
+hi! link Identifier SrceryBlue
+" Function name
+hi! link Function SrceryGreenBold
+
+" Generic preprocessor
+hi! link PreProc SrceryCyan
+" Preprocessor #include
+hi! link Include SrceryCyan
+" Preprocessor #define
+hi! link Define SrceryCyan
+" Same as Define
+hi! link Macro SrceryCyan
+" Preprocessor #if, #else, #endif, etc.
+hi! link PreCondit SrceryCyan
+
+" Generic constant
+hi! link Constant SrceryMagenta
+" Character constant: 'c', '/n'
+hi! link Character SrceryMagenta
+" Boolean constant: TRUE, false
+hi! link Boolean SrceryMagenta
+" Number constant: 234, 0xff
+hi! link Number SrceryMagenta
+" Floating point constant: 2.3e10
+hi! link Float SrceryMagenta
+
+" Generic type
+hi! link Type SrceryYellow
+" static, register, volatile, etc
+hi! link StorageClass SrceryYellow
+" struct, union, enum, etc.
+hi! link Structure SrceryCyan
+" typedef
+hi! link Typedef SrceryYellow
+
+" }}}
+" Completion Menu: {{{
+
+if version >= 700
+  " Popup menu: normal item
+  call s:HL('Pmenu', s:white, s:black)
+  " Popup menu: selected item
+  call s:HL('PmenuSel', s:black, s:blue, s:bold)
+  " Popup menu: scrollbar
+  call s:HL('PmenuSbar', s:none, s:black)
+  " Popup menu: scrollbar thumb
+  call s:HL('PmenuThumb', s:none, s:black)
+endif
+
+" }}}
+" Diffs: {{{
+
+call s:HL('DiffDelete', s:red, s:black, s:inverse)
+call s:HL('DiffAdd',    s:green, s:black, s:inverse)
+"call s:HL('DiffChange', s:black, s:blue)
+"call s:HL('DiffText',   s:black, s:yellow)
+
+" Alternative setting
+call s:HL('DiffChange', s:cyan, s:black, s:inverse)
+call s:HL('DiffText',   s:yellow, s:black, s:inverse)
+
+" }}}
+" Spelling: {{{
+
+if has("spell")
+  " Not capitalised word, or compile warnings
+  call s:HL('SpellCap',   s:green, s:none, s:bold . s:italic)
+  " Not recognized word
+  call s:HL('SpellBad',   s:none, s:none, s:undercurl, s:blue)
+  " Wrong spelling for selected region
+  call s:HL('SpellLocal', s:none, s:none, s:undercurl, s:cyan)
+  " Rare word
+  call s:HL('SpellRare',  s:none, s:none, s:undercurl, s:magenta)
+endif
+
+" }}}
+
+" Plugin specific -------------------------------------------------------------
+" Sneak: {{{
+
+hi! link SneakPluginTarget Search
+hi! link SneakStreakTarget Search
+call s:HL('SneakStreakMask', s:yellow, s:yellow)
+hi! link SneakStreakStatusLine Search
+
+" }}}
+" Rainbow Parentheses: {{{
+
+if !exists('g:rbpt_colorpairs')
+  let g:rbpt_colorpairs =
+    \ [
+      \ ['blue', '#458588'], ['magenta', '#b16286'],
+      \ ['red',  '#cc241d'], ['166',     '#d65d0e']
+    \ ]
+endif
+
+let g:rainbow_guifgs = [ '#d65d0e', '#cc241d', '#b16286', '#458588' ]
+let g:rainbow_ctermfgs = [ '166', 'red', 'magenta', 'blue' ]
+
+if !exists('g:rainbow_conf')
+   let g:rainbow_conf = {}
+endif
+if !has_key(g:rainbow_conf, 'guifgs')
+   let g:rainbow_conf['guifgs'] = g:rainbow_guifgs
+endif
+if !has_key(g:rainbow_conf, 'ctermfgs')
+   let g:rainbow_conf['ctermfgs'] = g:rainbow_ctermfgs
+endif
+
+let g:niji_dark_colours = g:rbpt_colorpairs
+let g:niji_light_colours = g:rbpt_colorpairs
+
 "}}}
+" GitGutter: {{{
+
+hi! link GitGutterAdd SrceryGreenSign
+hi! link GitGutterChange SrceryCyanSign
+hi! link GitGutterDelete SrceryRedSign
+hi! link GitGutterChangeDelete SrceryCyanSign
+
+" }}}
+" GitCommit: "{{{
+
+hi! link gitcommitSelectedFile SrceryGreen
+hi! link gitcommitDiscardedFile SrceryRed
+
+" }}}
+
+" Filetype specific -----------------------------------------------------------
+" Diff: {{{
+
+hi! link diffAdded SrceryGreen
+hi! link diffRemoved SrceryRed
+hi! link diffChanged SrceryCyan
+
+hi! link diffFile SrceryYellow
+hi! link diffNewFile SrceryYellow
+
+hi! link diffLine SrceryBlue
+
+" }}}
+" Html: {{{
+
+hi! link htmlTag SrceryBlue
+hi! link htmlEndTag SrceryBlue
+
+hi! link htmlTagName SrceryCyanBold
+hi! link htmlArg SrceryCyan
+
+hi! link htmlScriptTag SrceryMagenta
+hi! link htmlTagN SrceryFg1
+hi! link htmlSpecialTagName SrceryCyanBold
+
+call s:HL('htmlLink', s:white, s:none, s:underline)
+
+hi! link htmlSpecialChar SrceryYellow
+
+call s:HL('htmlBold', s:white, s:black, s:bold)
+call s:HL('htmlBoldUnderline', s:white, s:black, s:bold . s:underline)
+call s:HL('htmlBoldItalic', s:white, s:black, s:bold . s:italic)
+call s:HL('htmlBoldUnderlineItalic', s:white, s:black, s:bold . s:underline . s:italic)
+
+call s:HL('htmlUnderline', s:white, s:black, s:underline)
+call s:HL('htmlUnderlineItalic', s:white, s:black, s:underline . s:italic)
+call s:HL('htmlItalic', s:white, s:black, s:italic)
+
+" }}}
+" Xml: {{{
+
+hi! link xmlTag SrceryBlue
+hi! link xmlEndTag SrceryBlue
+hi! link xmlTagName SrceryBlue
+hi! link xmlEqual SrceryBlue
+hi! link docbkKeyword SrceryCyanBold
+
+hi! link xmlDocTypeDecl SrceryGray
+hi! link xmlDocTypeKeyword SrceryMagenta
+hi! link xmlCdataStart SrceryGray
+hi! link xmlCdataCdata SrceryMagenta
+hi! link dtdFunction SrceryGray
+hi! link dtdTagName SrceryMagenta
+
+hi! link xmlAttrib SrceryCyan
+hi! link xmlProcessingDelim SrceryGray
+hi! link dtdParamEntityPunct SrceryGray
+hi! link dtdParamEntityDPunct SrceryGray
+hi! link xmlAttribPunct SrceryGray
+
+hi! link xmlEntity SrceryYellow
+hi! link xmlEntityPunct SrceryYellow
+" }}}
+" Vim: {{{
+
+call s:HL('vimCommentTitle', s:white, s:none, s:bold . s:italicize_comments)
+
+hi! link vimNotation SrceryYellow
+hi! link vimBracket SrceryYellow
+hi! link vimMapModKey SrceryYellow
+hi! link vimFuncSID SrceryFg3
+hi! link vimSetSep SrceryFg3
+hi! link vimSep SrceryFg3
+hi! link vimContinue SrceryFg3
+
+" }}}
+" Clojure: {{{
+
+hi! link clojureKeyword SrceryBlue
+hi! link clojureCond SrceryYellow
+hi! link clojureSpecial SrceryYellow
+hi! link clojureDefine SrceryYellow
+
+hi! link clojureFunc SrceryYellow
+hi! link clojureRepeat SrceryYellow
+hi! link clojureCharacter SrceryCyan
+hi! link clojureStringEscape SrceryCyan
+hi! link clojureException SrceryRed
+
+hi! link clojureRegexp SrceryCyan
+hi! link clojureRegexpEscape SrceryCyan
+call s:HL('clojureRegexpCharClass', s:white, s:none, s:bold)
+hi! link clojureRegexpMod clojureRegexpCharClass
+hi! link clojureRegexpQuantifier clojureRegexpCharClass
+
+hi! link clojureParen SrceryFg3
+hi! link clojureAnonArg SrceryYellow
+hi! link clojureVariable SrceryBlue
+hi! link clojureMacro SrceryYellow
+
+hi! link clojureMeta SrceryYellow
+hi! link clojureDeref SrceryYellow
+hi! link clojureQuote SrceryYellow
+hi! link clojureUnquote SrceryYellow
+
+" }}}
+" C: {{{
+
+hi! link cOperator SrceryMagenta
+hi! link cStructure SrceryYellow
+
+" }}}
+" Python: {{{
+
+hi! link pythonBuiltin SrceryYellow
+hi! link pythonBuiltinObj SrceryYellow
+hi! link pythonBuiltinFunc SrceryYellow
+hi! link pythonFunction SrceryCyan
+hi! link pythonDecorator SrceryRed
+hi! link pythonInclude SrceryBlue
+hi! link pythonImport SrceryBlue
+hi! link pythonRun SrceryBlue
+hi! link pythonCoding SrceryBlue
+hi! link pythonOperator SrceryRed
+hi! link pythonExceptions SrceryMagenta
+hi! link pythonBoolean SrceryMagenta
+hi! link pythonDot SrceryFg3
+
+" }}}
+" CSS: {{{
+
+hi! link cssBraces SrceryBlue
+hi! link cssFunctionName SrceryYellow
+hi! link cssIdentifier SrceryYellow
+hi! link cssClassName SrceryGreen
+hi! link cssColor SrceryBlue
+hi! link cssSelectorOp SrceryBlue
+hi! link cssSelectorOp2 SrceryBlue
+hi! link cssImportant SrceryGreen
+hi! link cssVendor SrceryFg1
+
+hi! link cssTextProp SrceryCyan
+hi! link cssAnimationProp SrceryCyan
+hi! link cssUIProp SrceryYellow
+hi! link cssTransformProp SrceryCyan
+hi! link cssTransitionProp SrceryCyan
+hi! link cssPrintProp SrceryCyan
+hi! link cssPositioningProp SrceryYellow
+hi! link cssBoxProp SrceryCyan
+hi! link cssFontDescriptorProp SrceryCyan
+hi! link cssFlexibleBoxProp SrceryCyan
+hi! link cssBorderOutlineProp SrceryCyan
+hi! link cssBackgroundProp SrceryCyan
+hi! link cssMarginProp SrceryCyan
+hi! link cssListProp SrceryCyan
+hi! link cssTableProp SrceryCyan
+hi! link cssFontProp SrceryCyan
+hi! link cssPaddingProp SrceryCyan
+hi! link cssDimensionProp SrceryCyan
+hi! link cssRenderProp SrceryCyan
+hi! link cssColorProp SrceryCyan
+hi! link cssGeneratedContentProp SrceryCyan
+
+" }}}
+" JavaScript: {{{
+
+hi! link javaScriptBraces SrceryFg1
+hi! link javaScriptFunction SrceryCyan
+hi! link javaScriptIdentifier SrceryRed
+hi! link javaScriptMember SrceryBlue
+hi! link javaScriptNumber SrceryMagenta
+hi! link javaScriptNull SrceryMagenta
+hi! link javaScriptParens SrceryFg3
+
+" }}}
+" YAJS: {{{
+
+hi! link javascriptImport SrceryCyan
+hi! link javascriptExport SrceryCyan
+hi! link javascriptClassKeyword SrceryCyan
+hi! link javascriptClassExtends SrceryCyan
+hi! link javascriptDefault SrceryCyan
+
+hi! link javascriptClassName SrceryYellow
+hi! link javascriptClassSuperName SrceryYellow
+hi! link javascriptGlobal SrceryYellow
+
+hi! link javascriptEndColons SrceryFg1
+hi! link javascriptFuncArg SrceryFg1
+hi! link javascriptGlobalMethod SrceryFg1
+hi! link javascriptNodeGlobal SrceryFg1
+
+" hi! link javascriptVariable SrceryYellow
+hi! link javascriptVariable SrceryRed
+" hi! link javascriptIdentifier SrceryYellow
+" hi! link javascriptClassSuper SrceryYellow
+hi! link javascriptIdentifier SrceryYellow
+hi! link javascriptClassSuper SrceryYellow
+
+" hi! link javascriptFuncKeyword SrceryYellow
+" hi! link javascriptAsyncFunc SrceryYellow
+hi! link javascriptFuncKeyword SrceryCyan
+hi! link javascriptAsyncFunc SrceryCyan
+hi! link javascriptClassStatic SrceryYellow
+
+hi! link javascriptOperator SrceryRed
+hi! link javascriptForOperator SrceryRed
+hi! link javascriptYield SrceryRed
+hi! link javascriptExceptions SrceryRed
+hi! link javascriptMessage SrceryRed
+
+hi! link javascriptTemplateSB SrceryCyan
+hi! link javascriptTemplateSubstitution SrceryFg1
+
+" hi! link javascriptLabel SrceryBlue
+" hi! link javascriptObjectLabel SrceryBlue
+" hi! link javascriptPropertyName SrceryBlue
+hi! link javascriptLabel SrceryFg1
+hi! link javascriptObjectLabel SrceryFg1
+hi! link javascriptPropertyName SrceryFg1
+
+hi! link javascriptLogicSymbols SrceryFg1
+hi! link javascriptArrowFunc SrceryFg1
+
+hi! link javascriptDocParamName SrceryFg4
+hi! link javascriptDocTags SrceryFg4
+hi! link javascriptDocNotation SrceryFg4
+hi! link javascriptDocParamType SrceryFg4
+hi! link javascriptDocNamedParamType SrceryFg4
+
+" }}}
+" CoffeeScript: {{{
+
+hi! link coffeeExtendedOp SrceryFg3
+hi! link coffeeSpecialOp SrceryFg3
+hi! link coffeeCurly SrceryYellow
+hi! link coffeeParen SrceryFg3
+hi! link coffeeBracket SrceryYellow
+
+" }}}
+" Ruby: {{{
+
+hi! link rubyStringDelimiter SrceryGreen
+hi! link rubyInterpolationDelimiter SrceryCyan
+
+" }}}
+" ObjectiveC: {{{
+
+hi! link objcTypeModifier SrceryRed
+hi! link objcDirective SrceryBlue
+
+" }}}
+" Go: {{{
+
+hi! link goDirective SrceryCyan
+hi! link goConstants SrceryMagenta
+hi! link goDeclaration SrceryRed
+hi! link goDeclType SrceryBlue
+hi! link goBuiltins SrceryYellow
+
+" }}}
+" Lua: {{{
+
+hi! link luaIn SrceryRed
+hi! link luaFunction SrceryCyan
+hi! link luaTable SrceryYellow
+
+" }}}
+" MoonScript: {{{
+
+hi! link moonSpecialOp SrceryFg3
+hi! link moonExtendedOp SrceryFg3
+hi! link moonFunction SrceryFg3
+hi! link moonObject SrceryYellow
+
+" }}}
+" Java: {{{
+
+hi! link javaAnnotation SrceryBlue
+hi! link javaDocTags SrceryCyan
+hi! link javaCommentTitle vimCommentTitle
+hi! link javaParen SrceryFg3
+hi! link javaParen1 SrceryFg3
+hi! link javaParen2 SrceryFg3
+hi! link javaParen3 SrceryFg3
+hi! link javaParen4 SrceryFg3
+hi! link javaParen5 SrceryFg3
+hi! link javaOperator SrceryYellow
+
+hi! link javaVarArg SrceryGreen
+
+" }}}
+" Elixir: {{{
+
+hi! link elixirDocString Comment
+
+hi! link elixirStringDelimiter SrceryGreen
+hi! link elixirInterpolationDelimiter SrceryCyan
+
+" }}}
+" Scala: {{{
+
+" NB: scala vim syntax file is kinda horrible
+hi! link scalaNameDefinition SrceryFg1
+hi! link scalaCaseFollowing SrceryFg1
+hi! link scalaCapitalWord SrceryFg1
+hi! link scalaTypeExtension SrceryFg1
+
+hi! link scalaKeyword SrceryRed
+hi! link scalaKeywordModifier SrceryRed
+
+hi! link scalaSpecial SrceryCyan
+hi! link scalaOperator SrceryFg1
+
+hi! link scalaTypeDeclaration SrceryYellow
+hi! link scalaTypeTypePostDeclaration SrceryYellow
+
+hi! link scalaInstanceDeclaration SrceryFg1
+hi! link scalaInterpolation SrceryCyan
+
+" }}}
+" Markdown: {{{
+
+call s:HL('markdownItalic', s:white, s:none, s:italic)
+
+hi! link markdownH1 SrceryGreenBold
+hi! link markdownH2 SrceryGreenBold
+hi! link markdownH3 SrceryYellowBold
+hi! link markdownH4 SrceryYellowBold
+hi! link markdownH5 SrceryYellow
+hi! link markdownH6 SrceryYellow
+
+hi! link markdownCode SrceryCyan
+hi! link markdownCodeBlock SrceryCyan
+hi! link markdownCodeDelimiter SrceryCyan
+
+hi! link markdownBlockquote SrceryGray
+hi! link markdownListMarker SrceryGray
+hi! link markdownOrderedListMarker SrceryGray
+hi! link markdownRule SrceryGray
+hi! link markdownHeadingRule SrceryGray
+
+hi! link markdownUrlDelimiter SrceryFg3
+hi! link markdownLinkDelimiter SrceryFg3
+hi! link markdownLinkTextDelimiter SrceryFg3
+
+hi! link markdownHeadingDelimiter SrceryYellow
+hi! link markdownUrl SrceryMagenta
+hi! link markdownUrlTitleDelimiter SrceryGreen
+
+call s:HL('markdownLinkText', s:gray, s:none, s:underline)
+hi! link markdownIdDeclaration markdownLinkText
+
+" }}}
+" Haskell: {{{
+
+" hi! link haskellType SrceryYellow
+" hi! link haskellOperators SrceryYellow
+" hi! link haskellConditional SrceryCyan
+" hi! link haskellLet SrceryYellow
+"
+hi! link haskellType SrceryFg1
+hi! link haskellIdentifier SrceryFg1
+hi! link haskellSeparator SrceryFg1
+hi! link haskellDelimiter SrceryFg4
+hi! link haskellOperators SrceryBlue
+"
+hi! link haskellBacktick SrceryYellow
+hi! link haskellStatement SrceryYellow
+hi! link haskellConditional SrceryYellow
+
+hi! link haskellLet SrceryCyan
+hi! link haskellDefault SrceryCyan
+hi! link haskellWhere SrceryCyan
+hi! link haskellBottom SrceryCyan
+hi! link haskellBlockKeywords SrceryCyan
+hi! link haskellImportKeywords SrceryCyan
+hi! link haskellDeclKeyword SrceryCyan
+hi! link haskellDeriving SrceryCyan
+hi! link haskellAssocType SrceryCyan
+
+hi! link haskellNumber SrceryMagenta
+hi! link haskellPragma SrceryMagenta
+
+hi! link haskellString SrceryGreen
+hi! link haskellChar SrceryGreen
+
+" }}}
+" Json: {{{
+
+hi! link jsonKeyword SrceryGreen
+hi! link jsonQuote SrceryGreen
+hi! link jsonBraces SrceryFg1
+hi! link jsonString SrceryFg1
+
+" }}}
+
 " Git: {{{
 call s:HL('gitcommitSelectedFile', s:bright_green)
 " call s:HL('gitcommitDiscardedFile', s:bright_red)
@@ -209,297 +890,5 @@ call s:HL('gitcommitFile', s:red)
 " hi gitcommitUnmergedFile                   cterm=NONE  ctermfg=3  guifg=#b58900  gui=NONE
 " hi gitcommitUntrackedFile                  cterm=NONE  ctermfg=6  guifg=#2aa198  gui=NONE
 "}}}
-
-" hi Normal ctermfg=12 ctermbg=8 guifg=#839496 guibg=#002b36 gui=NONE
-" hi ColorColumn  ctermbg=0  guibg=#073642  gui=NONE
-" hi Comment      ctermfg=10  guifg=#586e75  gui=italic
-" hi ConId        ctermfg=3  guifg=#b58900  gui=NONE
-" hi Conceal      ctermfg=4  guifg=#268bd2  gui=NONE
-" hi Constant     ctermfg=6  guifg=#2aa198  gui=NONE
-" hi Cursor       ctermfg=8  ctermbg=12  guifg=#002b36  guibg=#839496  gui=NONE
-" hi CursorColumn ctermbg=0  guibg=#073642  gui=NONE
-" hi CursorLine   cterm=NONE  ctermbg=0  guibg=#073642  guisp=#93a1a1  gui=NONE
-" hi CursorLineNr ctermfg=11  guifg=yellow  gui=NONE
-" hi DiffAdd      ctermfg=2  ctermbg=0  guifg=#719e07  guibg=#073642  guisp=#719e07  gui=NONE
-" hi DiffChange   ctermfg=3  ctermbg=0  guifg=#b58900  guibg=#073642  guisp=#b58900  gui=NONE
-" hi DiffDelete   ctermfg=1  ctermbg=0  guifg=#dc322f  guibg=#073642  gui=NONE
-" hi DiffText     ctermfg=4  ctermbg=0  guifg=#268bd2  guibg=#073642  guisp=#268bd2  gui=NONE
-" hi Directory    ctermfg=4  guifg=#268bd2  gui=NONE
-" hi Error        cterm=NONE  ctermfg=1  ctermbg=NONE  guifg=#dc322f  guibg=#002b36  gui=NONE
-" hi ErrorMsg     cterm=reverse  ctermfg=1  ctermbg=NONE  guifg=#dc322f  guibg=NONE gui=reverse
-" hi FoldColumn   ctermfg=12  ctermbg=0  guifg=#839496  guibg=#073642  gui=NONE
-" hi Folded       cterm=NONE,underline  ctermfg=12  ctermbg=0  guifg=#839496  guibg=#073642  guisp=#002b36  gui=NONE
-" hi HelpExample  ctermfg=14  guifg=#93a1a1  gui=NONE
-" hi Identifier   ctermfg=4  guifg=#268bd2  gui=NONE
-" hi IncSearch    cterm=standout  ctermfg=9  guifg=#cb4b16  gui=standout
-" hi LineNr       ctermfg=10  ctermbg=0  guifg=#586e75  guibg=#073642  gui=NONE
-" hi MatchParen   cterm=NONE  ctermfg=1  ctermbg=10  guifg=#dc322f  guibg=#586e75  gui=NONE
-" hi ModeMsg      ctermfg=4  guifg=#268bd2  gui=NONE
-" hi MoreMsg      ctermfg=4  guifg=#268bd2  gui=NONE
-" hi NonText      cterm=NONE  ctermfg=11  guifg=#657b83  gui=NONE
-" hi Pmenu        cterm=reverse  ctermfg=12  ctermbg=0  guifg=#839496  guibg=#073642  gui=reverse
-" hi PmenuSbar    cterm=reverse  ctermfg=7  ctermbg=12  guifg=#eee8d5  guibg=#839496  gui=reverse
-" hi PmenuSel     cterm=reverse  ctermfg=10  ctermbg=7  guifg=#586e75  guibg=#eee8d5  gui=reverse
-" hi PmenuThumb   cterm=reverse  ctermfg=12  ctermbg=8  guifg=#839496  guibg=#002b36  gui=reverse
-" hi PreProc      cterm=NONE  ctermfg=1  guifg=#cb4b16  gui=NONE
-" hi Question     cterm=NONE  ctermfg=6  guifg=#2aa198  gui=NONE
-" hi Search       cterm=reverse  ctermfg=3 ctermbg=NONE  guifg=#b58900  guibg=NONE  gui=reverse
-" hi SignColumn   ctermfg=12  ctermbg=242  guifg=#839496  guibg=Grey  gui=NONE
-" hi Special      ctermfg=1  guifg=#dc322f  gui=NONE
-" hi SpecialKey   cterm=NONE  ctermfg=11  ctermbg=0  guifg=#657b83  guibg=#073642  gui=NONE
-" hi SpellBad     cterm=undercurl  guisp=#dc322f  gui=undercurl
-" hi SpellCap     cterm=undercurl  guisp=#6c71c4  gui=undercurl
-" hi SpellLocal   cterm=undercurl  guisp=#b58900  gui=undercurl
-" hi SpellRare    cterm=undercurl  guisp=#2aa198  gui=undercurl
-" hi Statement    ctermfg=2  guifg=#719e07  gui=NONE
-" hi StatusLine   cterm=reverse  ctermfg=14  ctermbg=0  guifg=#93a1a1  guibg=#073642  gui=reverse
-" hi StatusLineNC cterm=reverse  ctermfg=11  ctermbg=0  guifg=#657b83  guibg=#073642  gui=reverse
-hi TabLine      cterm=underline  ctermfg=12  ctermbg=0  guifg=#839496  guibg=#073642  guisp=#839496  gui=underline
-hi TabLineFill  cterm=underline  ctermfg=12  ctermbg=0  guifg=#839496  guibg=#073642  guisp=#839496  gui=underline
-hi TabLineSel   cterm=underline,reverse  ctermfg=10  ctermbg=7  guifg=#586e75  guibg=#eee8d5  guisp=#839496  gui=underline,reverse
-hi Title        cterm=NONE  ctermfg=9  guifg=#cb4b16  gui=NONE
-hi Todo         cterm=NONE  ctermfg=5  guifg=#d33682  guibg=NONE  gui=bold
-hi Type         ctermfg=3  guifg=#b58900  gui=NONE
-hi Underlined   ctermfg=13  guifg=#6c71c4  gui=NONE
-hi VarId        ctermfg=4  guifg=#268bd2  gui=NONE
-hi VertSplit    ctermfg=11  ctermbg=11  guifg=#657b83  guibg=#657b83  gui=NONE
-hi Visual       cterm=reverse  ctermfg=10  ctermbg=8  guifg=#586e75  guibg=#002b36  gui=reverse
-hi VisualNOS    cterm=reverse  ctermbg=0  ctermbg=NONE  guibg=#073642  guifg=NONE  gui=reverse
-hi WarningMsg   cterm=NONE  ctermfg=1  guifg=#dc322f  gui=NONE
-hi WildMenu     cterm=reverse  ctermfg=7  ctermbg=0  guifg=#eee8d5  guibg=#073642 gui=reverse
-
-hi cPreCondit                              ctermfg=9  guifg=#cb4b16  gui=NONE
-
-" hi gitcommitBranch                         cterm=NONE  ctermfg=5  guifg=#d33682  gui=NONE
-" hi gitcommitComment                        ctermfg=10  guifg=#586e75  gui=italic
-" hi gitcommitDiscardedFile                  cterm=NONE  ctermfg=1  guifg=#dc322f  gui=NONE
-" hi gitcommitDiscardedType                  ctermfg=1  guifg=#dc322f  gui=NONE
-" hi gitcommitFile                           cterm=NONE  ctermfg=12  guifg=#839496  gui=NONE
-" hi gitcommitHeader                         ctermfg=10  guifg=#586e75  gui=NONE
-" hi gitcommitOnBranch                       cterm=NONE  ctermfg=10  guifg=#586e75  gui=NONE
-" hi gitcommitSelectedFile                   cterm=NONE  ctermfg=2  guifg=#719e07  gui=NONE
-" hi gitcommitSelectedType                   ctermfg=2  guifg=#719e07  gui=NONE
-" hi gitcommitUnmerged                       cterm=NONE  ctermfg=2  guifg=#719e07  gui=NONE
-" hi gitcommitUnmergedFile                   cterm=NONE  ctermfg=3  guifg=#b58900  gui=NONE
-" hi gitcommitUntrackedFile                  cterm=NONE  ctermfg=6  guifg=#2aa198  gui=NONE
-
-hi helpHyperTextEntry                      ctermfg=2  guifg=#719e07  gui=NONE
-hi helpHyperTextJump                       cterm=underline  ctermfg=4  guifg=#268bd2  gui=underline
-hi helpNote                                ctermfg=5  guifg=#d33682  gui=NONE
-hi helpOption                              ctermfg=6  guifg=#2aa198  gui=NONE
-hi helpVim                                 ctermfg=5  guifg=#d33682  gui=NONE
-
-hi hsImport                                ctermfg=5  guifg=#d33682  gui=NONE
-hi hsImportLabel                           ctermfg=6  guifg=#2aa198  gui=NONE
-hi hsModuleName                            cterm=underline  ctermfg=2  guifg=#719e07  gui=underline
-hi hsNiceOperator                          ctermfg=6  guifg=#2aa198  gui=NONE
-hi hsStatement                             ctermfg=6  guifg=#2aa198  gui=NONE
-hi hsString                                ctermfg=11  guifg=#657b83  gui=NONE
-hi hsStructure                             ctermfg=6  guifg=#2aa198  gui=NONE
-hi hsType                                  ctermfg=3  guifg=#b58900  gui=NONE
-hi hsTypedef                               ctermfg=6  guifg=#2aa198  gui=NONE
-hi hsVarSym                                ctermfg=6  guifg=#2aa198  gui=NONE
-hi hs_DeclareFunction                      ctermfg=9  guifg=#cb4b16  gui=NONE
-hi hs_OpFunctionName                       ctermfg=3  guifg=#b58900  gui=NONE
-hi hs_hlFunctionName                       ctermfg=4  guifg=#268bd2  gui=NONE
-
-hi htmlArg                                 ctermfg=11  guifg=#657b83  gui=NONE
-hi htmlEndTag                              ctermfg=10  guifg=#586e75  gui=NONE
-hi htmlSpecialTagName                      ctermfg=4  guifg=#268bd2  gui=italic
-hi htmlTag                                 ctermfg=10  guifg=#586e75  gui=NONE
-hi htmlTagN                                cterm=NONE  ctermfg=14  guifg=#93a1a1  gui=NONE
-hi htmlTagName                             cterm=NONE  ctermfg=4  guifg=#268bd2  gui=NONE
-
-hi javaScript                              ctermfg=3  guifg=#b58900  gui=NONE
-
-hi pandocBlockQuote                        ctermfg=4  guifg=#268bd2  gui=NONE
-hi pandocBlockQuoteLeader1                 ctermfg=4  guifg=#268bd2  gui=NONE
-hi pandocBlockQuoteLeader2                 ctermfg=6  guifg=#2aa198  gui=NONE
-hi pandocBlockQuoteLeader3                 ctermfg=3  guifg=#b58900  gui=NONE
-hi pandocBlockQuoteLeader4                 ctermfg=1  guifg=#dc322f  gui=NONE
-hi pandocBlockQuoteLeader5                 ctermfg=12  guifg=#839496  gui=NONE
-hi pandocBlockQuoteLeader6                 ctermfg=10  guifg=#586e75  gui=NONE
-hi pandocCitation                          ctermfg=5  guifg=#d33682  gui=NONE
-hi pandocCitationDelim                     ctermfg=5  guifg=#d33682  gui=NONE
-hi pandocCitationID                        cterm=underline  ctermfg=5  guifg=#d33682  gui=underline
-hi pandocCitationRef                       ctermfg=5  guifg=#d33682  gui=NONE
-hi pandocComment                           ctermfg=10  guifg=#586e75  gui=italic
-hi pandocDefinitionBlock                   ctermfg=13  guifg=#6c71c4  gui=NONE
-hi pandocDefinitionIndctr                  cterm=NONE  ctermfg=13  guifg=#6c71c4  gui=NONE
-hi pandocDefinitionTerm                    cterm=standout  ctermfg=13  guifg=#6c71c4  gui=standout
-hi pandocEmphasis                          ctermfg=12  guifg=#839496  gui=italic
-hi pandocEmphasisDefinition                ctermfg=13  guifg=#6c71c4  gui=italic
-hi pandocEmphasisHeading                   cterm=NONE  ctermfg=9  guifg=#cb4b16  gui=NONE
-hi pandocEmphasisNested                    cterm=NONE  ctermfg=12  guifg=#839496  gui=NONE
-hi pandocEmphasisNestedDefinition          cterm=NONE  ctermfg=13  guifg=#6c71c4  gui=NONE
-hi pandocEmphasisNestedHeading             cterm=NONE  ctermfg=9  guifg=#cb4b16  gui=NONE
-hi pandocEmphasisNestedTable               cterm=NONE  ctermfg=4  guifg=#268bd2  gui=NONE
-hi pandocEmphasisTable                     ctermfg=4  guifg=#268bd2  gui=italic
-hi pandocEscapePair                        cterm=NONE  ctermfg=1  guifg=#dc322f  gui=NONE
-hi pandocFootnote                          ctermfg=2  guifg=#719e07  gui=NONE
-hi pandocFootnoteDefLink                   cterm=NONE  ctermfg=2  guifg=#719e07  gui=NONE
-hi pandocFootnoteInline                    cterm=NONE,underline  ctermfg=2  guifg=#719e07  gui=NONE,underline
-hi pandocFootnoteLink                      cterm=underline  ctermfg=2  guifg=#719e07  gui=underline
-hi pandocHeading                           cterm=NONE  ctermfg=9  guifg=#cb4b16  gui=NONE
-hi pandocHeadingMarker                     cterm=NONE  ctermfg=3  guifg=#b58900  gui=NONE
-hi pandocImageCaption                      cterm=NONE,underline  ctermfg=13  guifg=#6c71c4  gui=NONE,underline
-hi pandocLinkDefinition                    cterm=underline  ctermfg=6  guifg=#2aa198  guisp=#657b83  gui=underline
-hi pandocLinkDefinitionID                  cterm=NONE  ctermfg=4  guifg=#268bd2  gui=NONE
-hi pandocLinkDelim                         ctermfg=10  guifg=#586e75  gui=NONE
-hi pandocLinkLabel                         cterm=underline  ctermfg=4  guifg=#268bd2  gui=underline
-hi pandocLinkText                          cterm=NONE,underline  ctermfg=4  guifg=#268bd2  gui=NONE,underline
-hi pandocLinkTitle                         cterm=underline  ctermfg=11  guifg=#657b83  gui=underline
-hi pandocLinkTitleDelim                    cterm=underline  ctermfg=10  guifg=#586e75  guisp=#657b83  gui=underline
-hi pandocLinkURL                           cterm=underline  ctermfg=11  guifg=#657b83  gui=underline
-hi pandocListMarker                        ctermfg=5  guifg=#d33682  gui=NONE
-hi pandocListReference                     cterm=underline  ctermfg=5  guifg=#d33682  gui=underline
-hi pandocMetadata                          cterm=NONE  ctermfg=4  guifg=#268bd2  gui=NONE
-hi pandocMetadataDelim                     ctermfg=10  guifg=#586e75  gui=NONE
-hi pandocMetadataKey                       ctermfg=4  guifg=#268bd2  gui=NONE
-hi pandocNonBreakingSpace                  cterm=reverse  ctermfg=1  ctermbg=NONE  guifg=#dc322f  guibg=NONE  gui=reverse
-hi pandocRule                              cterm=NONE  ctermfg=4  guifg=#268bd2  gui=NONE
-hi pandocRuleLine                          cterm=NONE  ctermfg=4  guifg=#268bd2  gui=NONE
-hi pandocStrikeout                         cterm=reverse  ctermfg=10  ctermbg=NONE  guibg=NONE  guifg=#586e75  gui=reverse
-hi pandocStrikeoutDefinition               cterm=reverse  ctermfg=13  ctermbg=NONE  guibg=NONE  guifg=#6c71c4  gui=reverse
-hi pandocStrikeoutHeading                  cterm=reverse  ctermfg=9  ctermbg=NONE  guibg=NONE  guifg=#cb4b16  gui=reverse
-hi pandocStrikeoutTable                    cterm=reverse  ctermfg=4  ctermbg=NONE  guibg=NONE  guifg=#268bd2  gui=reverse
-hi pandocStrongEmphasis                    cterm=NONE  ctermfg=12  guifg=#839496  gui=NONE
-hi pandocStrongEmphasisDefinition          cterm=NONE  ctermfg=13  guifg=#6c71c4  gui=NONE
-hi pandocStrongEmphasisEmphasis            cterm=NONE  ctermfg=12  guifg=#839496  gui=NONE
-hi pandocStrongEmphasisEmphasisDefinition  cterm=NONE  ctermfg=13  guifg=#6c71c4  gui=NONE
-hi pandocStrongEmphasisEmphasisHeading     cterm=NONE  ctermfg=9  guifg=#cb4b16  gui=NONE
-hi pandocStrongEmphasisEmphasisTable       cterm=NONE  ctermfg=4  guifg=#268bd2  gui=NONE
-hi pandocStrongEmphasisHeading             cterm=NONE  ctermfg=9  guifg=#cb4b16  gui=NONE
-hi pandocStrongEmphasisNested              cterm=NONE  ctermfg=12  guifg=#839496  gui=NONE
-hi pandocStrongEmphasisNestedDefinition    cterm=NONE  ctermfg=13  guifg=#6c71c4  gui=NONE
-hi pandocStrongEmphasisNestedHeading       cterm=NONE  ctermfg=9  guifg=#cb4b16  gui=NONE
-hi pandocStrongEmphasisNestedTable         cterm=NONE  ctermfg=4  guifg=#268bd2  gui=NONE
-hi pandocStrongEmphasisTable               cterm=NONE  ctermfg=4  guifg=#268bd2  gui=NONE
-hi pandocStyleDelim                        ctermfg=10  guifg=#586e75  gui=NONE
-hi pandocSubscript                         ctermfg=13  guifg=#6c71c4  gui=NONE
-hi pandocSubscriptDefinition               ctermfg=13  guifg=#6c71c4  gui=NONE
-hi pandocSubscriptHeading                  cterm=NONE  ctermfg=9  guifg=#cb4b16  gui=NONE
-hi pandocSubscriptTable                    ctermfg=4  guifg=#268bd2  gui=NONE
-hi pandocSuperscript                       ctermfg=13  guifg=#6c71c4  gui=NONE
-hi pandocSuperscriptDefinition             ctermfg=13  guifg=#6c71c4  gui=NONE
-hi pandocSuperscriptHeading                cterm=NONE  ctermfg=9  guifg=#cb4b16  gui=NONE
-hi pandocSuperscriptTable                  ctermfg=4  guifg=#268bd2  gui=NONE
-hi pandocTable                             ctermfg=4  guifg=#268bd2  gui=NONE
-hi pandocTableStructure                    ctermfg=4  guifg=#268bd2  gui=NONE
-hi pandocTableZebraDark                    ctermfg=4  ctermbg=0  guifg=#268bd2  guibg=#073642  gui=NONE
-hi pandocTableZebraLight                   ctermfg=4  ctermbg=8  guifg=#268bd2  guibg=#002b36  gui=NONE
-hi pandocTitleBlock                        ctermfg=4  guifg=#268bd2  gui=NONE
-hi pandocTitleBlockTitle                   cterm=NONE  ctermfg=4  guifg=#268bd2  gui=NONE
-hi pandocTitleComment                      cterm=NONE  ctermfg=4  guifg=#268bd2  gui=NONE
-hi pandocVerbatimBlock                     ctermfg=3  guifg=#b58900  gui=NONE
-hi pandocVerbatimInline                    ctermfg=3  guifg=#b58900  gui=NONE
-hi pandocVerbatimInlineDefinition          ctermfg=13  guifg=#6c71c4  gui=NONE
-hi pandocVerbatimInlineHeading             cterm=NONE  ctermfg=9  guifg=#cb4b16  gui=NONE
-hi pandocVerbatimInlineTable               ctermfg=4  guifg=#268bd2  gui=NONE
-
-hi perlHereDoc                             ctermfg=14  ctermbg=8  guifg=#93a1a1  guibg=#002b36  gui=NONE
-hi perlStatementFileDesc                   ctermfg=6  ctermbg=8  guifg=#2aa198  guibg=#002b36  gui=NONE
-hi perlVarPlain                            ctermfg=3  ctermbg=8  guifg=#b58900  guibg=#002b36  gui=NONE
-
-hi rubyDefine                              cterm=NONE  ctermfg=14  ctermbg=8  guifg=#93a1a1  guibg=#002b36  gui=NONE
-
-hi texMathMatcher                          ctermfg=3  ctermbg=8  guifg=#b58900  guibg=#002b36  gui=NONE
-hi texMathZoneX                            ctermfg=3  ctermbg=8  guifg=#b58900  guibg=#002b36  gui=NONE
-hi texRefLabel                             ctermfg=3  ctermbg=8  guifg=#b58900  guibg=#002b36  gui=NONE
-hi texStatement                            ctermfg=6  ctermbg=8  guifg=#2aa198  guibg=#002b36  gui=NONE
-
-hi vimCmdSep                               cterm=NONE  ctermfg=4  guifg=#268bd2  gui=NONE
-hi vimCommand                              ctermfg=3  guifg=#b58900  gui=NONE
-hi vimCommentString                        ctermfg=13  guifg=#6c71c4  gui=NONE
-hi vimGroup                                cterm=NONE,underline  ctermfg=4  guifg=#268bd2  gui=NONE,underline
-hi vimHiGroup                              ctermfg=4  guifg=#268bd2  gui=NONE
-hi vimHiLink                               ctermfg=4  guifg=#268bd2  gui=NONE
-hi vimIsCommand                            ctermfg=11  guifg=#657b83  gui=NONE
-hi vimSynMtchOpt                           ctermfg=3  guifg=#b58900  gui=NONE
-hi vimSynType                              ctermfg=6  guifg=#2aa198  gui=NONE
-
-hi link Boolean                             Constant
-hi link Character                           Constant
-hi link Conditional                         Statement
-hi link Debug                               Special
-hi link Define                              PreProc
-hi link Delimiter                           Special
-hi link Exception                           Statement
-hi link Float                               Number
-hi link Function                            Identifier
-hi link HelpCommand                         Statement
-hi link Include                             PreProc
-hi link Keyword                             Statement
-hi link Label                               Statement
-hi link Macro                               PreProc
-hi link Number                              Constant
-hi link Operator                            Statement
-hi link PreCondit                           PreProc
-hi link Repeat                              Statement
-hi link SpecialChar                         Special
-hi link SpecialComment                      Special
-hi link StorageClass                        Type
-hi link String                              Constant
-hi link Structure                           Type
-hi link SyntasticError                      SpellBad
-hi link SyntasticErrorSign                  Error
-hi link SyntasticStyleErrorLine             SyntasticErrorLine
-hi link SyntasticStyleErrorSign             SyntasticErrorSign
-hi link SyntasticStyleWarningLine           SyntasticWarningLine
-hi link SyntasticStyleWarningSign           SyntasticWarningSign
-hi link SyntasticWarning                    SpellCap
-hi link SyntasticWarningSign                Todo
-hi link Tag                                 Special
-hi link Typedef                             Type
-
-hi link diffAdded                           Statement
-hi link diffBDiffer                         WarningMsg
-hi link diffCommon                          WarningMsg
-hi link diffDiffer                          WarningMsg
-hi link diffIdentical                       WarningMsg
-hi link diffIsA                             WarningMsg
-hi link diffLine                            Identifier
-hi link diffNoEOL                           WarningMsg
-hi link diffOnly                            WarningMsg
-hi link diffRemoved                         WarningMsg
-
-hi link gitcommitDiscarded                  gitcommitComment
-hi link gitcommitDiscardedArrow             gitcommitDiscardedFile
-hi link gitcommitNoBranch                   gitcommitBranch
-hi link gitcommitSelected                   gitcommitComment
-hi link gitcommitSelectedArrow              gitcommitSelectedFile
-hi link gitcommitUnmergedArrow              gitcommitUnmergedFile
-hi link gitcommitUntracked                  gitcommitComment
-
-hi link helpSpecial                         Special
-
-hi link hsDelimTypeExport                   Delimiter
-hi link hsImportParams                      Delimiter
-hi link hsModuleStartLabel                  hsStructure
-hi link hsModuleWhereLabel                  hsModuleStartLabel
-hi link htmlLink                            Function
-
-hi link lCursor                             Cursor
-
-hi link pandocCodeBlock                     pandocVerbatimBlock
-hi link pandocCodeBlockDelim                pandocVerbatimBlock
-hi link pandocEscapedCharacter              pandocEscapePair
-hi link pandocLineBreak                     pandocEscapePair
-hi link pandocMetadataTitle                 pandocMetadata
-hi link pandocTableStructureEnd             pandocTableStructre
-hi link pandocTableStructureTop             pandocTableStructre
-hi link pandocVerbatimBlockDeep             pandocVerbatimBlock
-
-hi link vimFunc                             Function
-hi link vimSet                              Normal
-hi link vimSetEqual                         Normal
-hi link vimUserFunc                         Function
-hi link vipmVar                             Identifier
-
-hi clear SyntasticErrorLine
-hi clear SyntasticWarningLine
-hi clear helpLeadBlank
-hi clear helpNormal
-hi clear pandocTableStructre
 
 " vim: set sw=2 ts=2 sts=2 et tw=80 ft=vim fdm=marker:
