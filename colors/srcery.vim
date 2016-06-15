@@ -328,6 +328,9 @@ call s:HL('Comment', s:gray, s:none, s:italicize_comments)
 call s:HL('Todo', s:white, s:black, s:bold . s:italic)
 call s:HL('Error', s:red, s:black, s:bold . s:inverse)
 
+" String constant: "this is a string"
+call s:HL('String',  s:bright_green)
+
 " Generic statement
 hi! link Statement SrceryRed
 " if, then, else, endif, swicth, etc.
@@ -868,27 +871,5 @@ hi! link jsonBraces SrceryFg1
 hi! link jsonString SrceryFg1
 
 " }}}
-
-" Git: {{{
-call s:HL('gitcommitSelectedFile', s:bright_green)
-" call s:HL('gitcommitDiscardedFile', s:bright_red)
-" call s:HL('gitcommitUntrackedFile', s:bright_red)
-" call s:HL('gitcommitDiscardedType', s:bright_red)
-call s:HL('gitcommitBranch', s:bright_cyan)
-call s:HL('gitcommitHeader', s:white)
-call s:HL('gitcommitFile', s:red)
-" hi gitcommitBranch                         cterm=NONE  ctermfg=5  guifg=#d33682  gui=NONE
-" hi gitcommitComment                        ctermfg=10  guifg=#586e75  gui=italic
-" hi gitcommitDiscardedFile                  cterm=NONE  ctermfg=1  guifg=#dc322f  gui=NONE
-" hi gitcommitDiscardedType                  ctermfg=1  guifg=#dc322f  gui=NONE
-" hi gitcommitFile                           cterm=NONE  ctermfg=12  guifg=#839496  gui=NONE
-" hi gitcommitHeader                         ctermfg=10  guifg=#586e75  gui=NONE
-" hi gitcommitOnBranch                       cterm=NONE  ctermfg=10  guifg=#586e75  gui=NONE
-" hi gitcommitSelectedFile                   cterm=NONE  ctermfg=2  guifg=#719e07  gui=NONE
-" hi gitcommitSelectedType                   ctermfg=2  guifg=#719e07  gui=NONE
-" hi gitcommitUnmerged                       cterm=NONE  ctermfg=2  guifg=#719e07  gui=NONE
-" hi gitcommitUnmergedFile                   cterm=NONE  ctermfg=3  guifg=#b58900  gui=NONE
-" hi gitcommitUntrackedFile                  cterm=NONE  ctermfg=6  guifg=#2aa198  gui=NONE
-"}}}
 
 " vim: set sw=2 ts=2 sts=2 et tw=80 ft=vim fdm=marker:
