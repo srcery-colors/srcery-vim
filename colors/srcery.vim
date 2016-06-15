@@ -102,7 +102,7 @@ if exists('g:srcery_hls_cursor')
   let s:hls_cursor = get(s:gb, g:srcery_hls_cursor)
 endif
 
-let s:number_column = s:black
+let s:number_column = s:gray
 let s:sign_column = s:black
 
 if exists('g:gitgutter_override_sign_column_highlight') &&
