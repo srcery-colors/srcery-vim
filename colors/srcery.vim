@@ -232,7 +232,7 @@ call s:HL('Normal', s:white, s:black)
 
 if version >= 700
   " Screen line that the cursor is
-  call s:HL('CursorLine',   s:none, s:black)
+  call s:HL('CursorLine',   s:none, s:bright_black)
   " Screen column that the cursor is
   hi! link CursorColumn CursorLine
 
