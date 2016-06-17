@@ -565,8 +565,8 @@ hi! link clojureCond SrceryYellow
 hi! link clojureSpecial SrceryYellow
 hi! link clojureDefine SrceryYellow
 
-hi! link clojureFunc SrceryYellow
-hi! link clojureRepeat SrceryYellow
+hi! link clojureFunc SrceryBrYellow
+hi! link clojureRepeat SrceryBrYellow
 hi! link clojureCharacter SrceryCyan
 hi! link clojureStringEscape SrceryCyan
 hi! link clojureException SrceryRed
@@ -578,9 +578,9 @@ hi! link clojureRegexpMod clojureRegexpCharClass
 hi! link clojureRegexpQuantifier clojureRegexpCharClass
 
 hi! link clojureParen SrceryWhite
-hi! link clojureAnonArg SrceryYellow
+hi! link clojureAnonArg SrceryBrMagenta
 hi! link clojureVariable SrceryBlue
-hi! link clojureMacro SrceryYellow
+hi! link clojureMacro SrceryBrRed
 
 hi! link clojureMeta SrceryYellow
 hi! link clojureDeref SrceryYellow
