@@ -218,9 +218,9 @@ call s:HL('SrceryCyanbold', s:cyan, s:none, s:bold)
 call s:HL('SrceryBrRed', s:bright_red)
 call s:HL('SrceryBrGreen', s:bright_green)
 call s:HL('SrceryBrYellow', s:bright_yellow)
-call s:HL('SrceryBrBlue', s:blue)
-call s:HL('SrceryBrMagenta', s:magenta)
-call s:HL('SrceryBrCyan', s:cyan)
+call s:HL('SrceryBrBlue', s:bright_blue)
+call s:HL('SrceryBrMagenta', s:bright_magenta)
+call s:HL('SrceryBrCyan', s:bright_cyan)
 
 call s:HL('SrceryRedSign', s:red, s:sign_column, s:invert_signs)
 call s:HL('SrceryGreenSign', s:green, s:sign_column, s:invert_signs)
@@ -370,15 +370,15 @@ hi! link Macro SrceryCyan
 hi! link PreCondit SrceryCyan
 
 " Generic constant
-hi! link Constant SrceryMagenta
+hi! link Constant SrceryBrMagenta
 " Character constant: 'c', '/n'
-hi! link Character SrceryMagenta
+hi! link Character SrceryBrMagenta
 " Boolean constant: TRUE, false
-hi! link Boolean SrceryMagenta
+hi! link Boolean SrceryBrMagenta
 " Number constant: 234, 0xff
-hi! link Number SrceryMagenta
+hi! link Number SrceryBrMagenta
 " Floating point constant: 2.3e10
-hi! link Float SrceryMagenta
+hi! link Float SrceryBrMagenta
 
 " Generic type
 hi! link Type SrceryYellow
