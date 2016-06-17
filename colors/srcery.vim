@@ -203,17 +203,24 @@ endfunction
 " memoize common hi groups
 call s:HL('SrceryWhite', s:white)
 call s:HL('SrceryRed', s:red)
-call s:HL('SrceryRedBold', s:red, s:none, s:bold)
+call s:HL('SrceryRedbold', s:red, s:none, s:bold)
 call s:HL('SrceryGreen', s:green)
-call s:HL('SrceryGreenBold', s:green, s:none, s:bold)
+call s:HL('SrceryGreenbold', s:green, s:none, s:bold)
 call s:HL('SrceryYellow', s:yellow)
-call s:HL('SrceryYellowBold', s:yellow, s:none, s:bold)
+call s:HL('SrceryYellowbold', s:yellow, s:none, s:bold)
 call s:HL('SrceryBlue', s:blue)
-call s:HL('SrceryBlueBold', s:blue, s:none, s:bold)
+call s:HL('SrceryBluebold', s:blue, s:none, s:bold)
 call s:HL('SrceryMagenta', s:magenta)
-call s:HL('SrceryMagentaBold', s:magenta, s:none, s:bold)
+call s:HL('SrceryMagentabold', s:magenta, s:none, s:bold)
 call s:HL('SrceryCyan', s:cyan)
-call s:HL('SrceryCyanBold', s:cyan, s:none, s:bold)
+call s:HL('SrceryCyanbold', s:cyan, s:none, s:bold)
+
+call s:HL('SrceryBrRed', s:bright_red)
+call s:HL('SrceryBrGreen', s:bright_green)
+call s:HL('SrceryBrYellow', s:bright_yellow)
+call s:HL('SrceryBrBlue', s:blue)
+call s:HL('SrceryBrMagenta', s:magenta)
+call s:HL('SrceryBrCyan', s:cyan)
 
 call s:HL('SrceryRedSign', s:red, s:sign_column, s:invert_signs)
 call s:HL('SrceryGreenSign', s:green, s:sign_column, s:invert_signs)
@@ -545,10 +552,10 @@ call s:HL('vimCommentTitle', s:white, s:none, s:bold . s:italicize_comments)
 hi! link vimNotation SrceryYellow
 hi! link vimBracket SrceryYellow
 hi! link vimMapModKey SrceryYellow
-hi! link vimFuncSID SrceryFg3
-hi! link vimSetSep SrceryFg3
-hi! link vimSep SrceryFg3
-hi! link vimContinue SrceryFg3
+hi! link vimFuncSID SrceryWhite
+hi! link vimSetSep SrceryWhite
+hi! link vimSep SrceryWhite
+hi! link vimContinue SrceryWhite
 
 " }}}
 " Clojure: {{{
@@ -570,7 +577,7 @@ call s:HL('clojureRegexpCharClass', s:white, s:none, s:bold)
 hi! link clojureRegexpMod clojureRegexpCharClass
 hi! link clojureRegexpQuantifier clojureRegexpCharClass
 
-hi! link clojureParen SrceryFg3
+hi! link clojureParen SrceryWhite
 hi! link clojureAnonArg SrceryYellow
 hi! link clojureVariable SrceryBlue
 hi! link clojureMacro SrceryYellow
@@ -601,7 +608,7 @@ hi! link pythonCoding SrceryBlue
 hi! link pythonOperator SrceryRed
 hi! link pythonExceptions SrceryMagenta
 hi! link pythonBoolean SrceryMagenta
-hi! link pythonDot SrceryFg3
+hi! link pythonDot SrceryWhite
 
 " }}}
 " CSS: {{{
@@ -647,7 +654,7 @@ hi! link javaScriptIdentifier SrceryRed
 hi! link javaScriptMember SrceryBlue
 hi! link javaScriptNumber SrceryMagenta
 hi! link javaScriptNull SrceryMagenta
-hi! link javaScriptParens SrceryFg3
+hi! link javaScriptParens SrceryWhite
 
 " }}}
 " YAJS: {{{
@@ -708,10 +715,10 @@ hi! link javascriptDocNamedParamType SrceryFg4
 " }}}
 " CoffeeScript: {{{
 
-hi! link coffeeExtendedOp SrceryFg3
-hi! link coffeeSpecialOp SrceryFg3
+hi! link coffeeExtendedOp SrceryWhite
+hi! link coffeeSpecialOp SrceryWhite
 hi! link coffeeCurly SrceryYellow
-hi! link coffeeParen SrceryFg3
+hi! link coffeeParen SrceryWhite
 hi! link coffeeBracket SrceryYellow
 
 " }}}
@@ -745,9 +752,9 @@ hi! link luaTable SrceryYellow
 " }}}
 " MoonScript: {{{
 
-hi! link moonSpecialOp SrceryFg3
-hi! link moonExtendedOp SrceryFg3
-hi! link moonFunction SrceryFg3
+hi! link moonSpecialOp SrceryWhite
+hi! link moonExtendedOp SrceryWhite
+hi! link moonFunction SrceryWhite
 hi! link moonObject SrceryYellow
 
 " }}}
@@ -756,12 +763,12 @@ hi! link moonObject SrceryYellow
 hi! link javaAnnotation SrceryBlue
 hi! link javaDocTags SrceryCyan
 hi! link javaCommentTitle vimCommentTitle
-hi! link javaParen SrceryFg3
-hi! link javaParen1 SrceryFg3
-hi! link javaParen2 SrceryFg3
-hi! link javaParen3 SrceryFg3
-hi! link javaParen4 SrceryFg3
-hi! link javaParen5 SrceryFg3
+hi! link javaParen SrceryWhite
+hi! link javaParen1 SrceryWhite
+hi! link javaParen2 SrceryWhite
+hi! link javaParen3 SrceryWhite
+hi! link javaParen4 SrceryWhite
+hi! link javaParen5 SrceryWhite
 hi! link javaOperator SrceryYellow
 
 hi! link javaVarArg SrceryGreen
@@ -817,9 +824,9 @@ hi! link markdownOrderedListMarker SrceryGray
 hi! link markdownRule SrceryGray
 hi! link markdownHeadingRule SrceryGray
 
-hi! link markdownUrlDelimiter SrceryFg3
-hi! link markdownLinkDelimiter SrceryFg3
-hi! link markdownLinkTextDelimiter SrceryFg3
+hi! link markdownUrlDelimiter SrceryWhite
+hi! link markdownLinkDelimiter SrceryWhite
+hi! link markdownLinkTextDelimiter SrceryWhite
 
 hi! link markdownHeadingDelimiter SrceryYellow
 hi! link markdownUrl SrceryMagenta
