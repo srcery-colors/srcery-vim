@@ -156,7 +156,7 @@ endif
 
 let s:italicize_strings = ''
 if exists('g:srcery_italicize_strings')
-  if g:srcery_italicize_strings == 1
+  if g:srcery_italicize_strings == 0
     let s:italicize_strings = s:italic
   endif
 endif
