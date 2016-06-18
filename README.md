@@ -17,25 +17,25 @@ The reason is simple. Most terminal nowadays are capable of displaying 256 color
 
 The exact method depends on your terminal emulator. I’d suggest simply using the values from this table and call it a day:
 
-    TERMCOL   HEX     RGB
-    -------   ------- -----------
-    black     #073642   7  54  66
-    red       #dc322f 220  50  47
-    green     #859900 133 153   0
-    yellow    #b58900 181 137   0
-    blue      #268bd2  38 139 210
-    magenta   #d33682 211  54 130
-    cyan      #2aa198  42 161 152
-    white     #eee8d5 238 232 213
+    TERMCOL   HEX       RGB
+    -------   -------   -------------
+    black     #1C1B19   28,  27,  25
+    red       #FF3128   255, 49,  40
+    green     #519F50   81,  159, 80
+    yellow    #FBB829   251, 184, 41
+    blue      #5573A3   85,  115, 163
+    magenta   #E02C6D   224, 44,  109
+    cyan      #1693A5   22,  147, 165
+    white     #FCE8C3   252, 232, 195
 
-    brblack   #002b36   0  43  54
-    brred     #cb4b16 203  75  22
-    brgreen   #586e75  88 110 117
-    bryellow  #657b83 101 123 131
-    brblue    #839496 131 148 150
-    brmagenta #6c71c4 108 113 196
-    brcyan    #93a1a1 147 161 161
-    brwhite   #fdf6e3 253 246 227
+    brblack   #2D2B28   45,  43,  40
+    brred     #DA4939   218, 73,  57
+    brgreen   #98BC37   152, 188, 55
+    bryellow  #FFC66D   255, 198, 109
+    brblue    #6D9CBE   109, 156, 190
+    brmagenta #E35682   227, 86,  130
+    brcyan    #34BEDA   52,  190, 218
+    gray      #918175   145, 129, 117
 
 ## Installation
 
