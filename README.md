@@ -71,7 +71,7 @@ default: 1
 
 #### g:srcery_hls_cursor
 
-Changes cursor background while search is highlighted. Possible values are any of gruvbox palette.
+Changes cursor background while search is highlighted. Possible values are any of srcery palette.
 default: orange
 
 #### g:srcery_italicize_comments
