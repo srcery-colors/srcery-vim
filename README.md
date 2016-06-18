@@ -89,12 +89,14 @@ default: 0
 :color srcery
 ```
 
-If you like what you see and decide to make srcery your default colorscheme, add the relevant line to your `vimrc`:
-
-    colorscheme srcery
-
+If you like what you see and decide to make srcery your default colorscheme, add the relevant line to your vimrc:
+```
+colorscheme srcery
+```
 ## Screenshots.
 
-![srcery vim](screenshots/scery_vim.png)
+![srcery vim](screenshots/srcery_vim.png)
 
-![srcery shell](screenshots/scery_shell.png)
+![srcery bash](screenshots/srcery_bash.png)
+
+![srcery table](screenshots/srcery_table.png)
