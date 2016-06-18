@@ -40,7 +40,7 @@ gray      #918175   145, 129, 117
 
 Put `srcery.vim` in `~/.vim/colors/` (on unix-like systems) or `%userprofile%\vimfiles\colors\` (on Windows).
 
-Using a [plugin manager](https://github.com/junegunn/vim-plug) for vim.
+Using a [plugin](https://github.com/junegunn/vim-plug) [manager](https://github.com/tpope/vim-pathogen) for vim.
 ```vimrc
 Plug 'roosta/srcery'
 ```
