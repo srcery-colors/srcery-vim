@@ -69,10 +69,6 @@ if !exists('g:srcery_inverse')
   let g:srcery_inverse=1
 endif
 
-if !exists('g:srcery_standout')
-  let g:srcery_standout=1
-endif
-
 " }}}
 " Setup Emphasis: {{{
 
@@ -101,10 +97,6 @@ if g:srcery_inverse == 0
   let s:inverse = ''
 endif
 
-let s:standout = 'standout,'
-if g:srcery_standout == 0
-  let s:standout = ''
-endif
 " }}}
 " Highlighting Function: {{{
 
