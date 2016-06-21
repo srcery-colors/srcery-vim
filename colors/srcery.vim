@@ -106,73 +106,6 @@ if g:srcery_standout == 0
   let s:standout = ''
 endif
 " }}}
-" Overload Setting: {{{
-
-let s:hls_cursor = s:yellow
-if exists('g:srcery_hls_cursor')
-  let s:hls_cursor = get(s:gb, g:srcery_hls_cursor)
-endif
-
-let s:number_column = s:gray
-let s:sign_column = s:black
-
-if exists('g:gitgutter_override_sign_column_highlight') &&
-      \ g:gitgutter_override_sign_column_highlight == 1
-  let s:sign_column = s:number_column
-else
-  let g:gitgutter_override_sign_column_highlight = 0
-
-  if exists('g:srcery_sign_column')
-    let s:sign_column = get(s:gb, g:srcery_sign_column)
-  endif
-endif
-
-let s:color_column = s:black
-if exists('g:srcery_color_column')
-  let s:color_column = get(s:gb, g:srcery_color_column)
-endif
-
-let s:vert_split = s:black
-if exists('g:srcery_vert_split')
-  let s:vert_split = get(s:gb, g:srcery_vert_split)
-endif
-
-let s:invert_signs = ''
-if exists('g:srcery_invert_signs')
-  if g:srcery_invert_signs == 1
-    let s:invert_signs = s:inverse
-  endif
-endif
-
-let s:invert_selection = s:inverse
-if exists('g:srcery_invert_selection')
-  if g:srcery_invert_selection == 0
-    let s:invert_selection = ''
-  endif
-endif
-
-let s:invert_tabline = ''
-if exists('g:srcery_invert_tabline')
-  if g:srcery_invert_tabline == 1
-    let s:invert_tabline = s:inverse
-  endif
-endif
-
-let s:italicize_comments = s:italic
-if exists('g:srcery_italicize_comments')
-  if g:srcery_italicize_comments == 0
-    let s:italicize_comments = ''
-  endif
-endif
-
-let s:italicize_strings = ''
-if exists('g:srcery_italicize_strings')
-  if g:srcery_italicize_strings == 0
-    let s:italicize_strings = s:italic
-  endif
-endif
-
-" }}}
 " Highlighting Function: {{{
 
 function! s:HL(group, fg, ...)
@@ -227,12 +160,12 @@ call s:HL('SrceryBluebold', s:blue, s:none, s:bold)
 call s:HL('SrceryMagentabold', s:magenta, s:none, s:bold)
 call s:HL('SrceryCyanbold', s:cyan, s:none, s:bold)
 
-call s:HL('SrceryRedSign', s:red, s:sign_column, s:invert_signs)
-call s:HL('SrceryGreenSign', s:green, s:sign_column, s:invert_signs)
-call s:HL('SrceryYellowSign', s:yellow, s:sign_column, s:invert_signs)
-call s:HL('SrceryBlueSign', s:blue, s:sign_column, s:invert_signs)
-call s:HL('SrceryMagentaSign', s:magenta, s:sign_column, s:invert_signs)
-call s:HL('SrceryCyanSign', s:cyan, s:sign_column, s:invert_signs)
+call s:HL('SrceryBrightRed', s:bright_red, s:none)
+call s:HL('SrceryBrightGreen', s:bright_green, s:none)
+call s:HL('SrceryBrightYellow', s:bright_yellow, s:none)
+call s:HL('SrceryBrightBlue', s:bright_blue, s:none)
+call s:HL('SrceryBrightMagenta', s:bright_magenta, s:none)
+call s:HL('SrceryBrightCyan', s:bright_cyan, s:none)
 
 " special
 call s:HL('SrceryOrange', s:orange)
@@ -255,9 +188,9 @@ if version >= 700
   hi! link CursorColumn CursorLine
 
   " Tab pages line filler
-  call s:HL('TabLineFill', s:black, s:black, s:invert_tabline)
+  call s:HL('TabLineFill', s:black, s:black)
   " Active tab page label
-  call s:HL('TabLineSel', s:black, s:black, s:bold . s:invert_tabline)
+  call s:HL('TabLineSel', s:black, s:black, s:bold)
   " Not active tab page label
   hi! link TabLine TabLineFill
 
@@ -267,7 +200,7 @@ endif
 
 if version >= 703
   " Highlighted screen columns
-  call s:HL('ColorColumn',  s:none, s:color_column)
+  call s:HL('ColorColumn',  s:none, s:black)
 
   " Concealed element: \lambda → λ
   call s:HL('Conceal', s:blue, s:none)
@@ -279,7 +212,7 @@ endif
 hi! link NonText SrceryGrayAlt
 hi! link SpecialKey SrceryGrayAlt
 
-call s:HL('Visual',    s:none,  s:black, s:invert_selection)
+call s:HL('Visual',    s:none,  s:black, s:inverse)
 hi! link VisualNOS Visual
 
 call s:HL('Search',    s:black, s:yellow)
@@ -291,7 +224,7 @@ call s:HL('StatusLine',   s:white, s:bright_black)
 call s:HL('StatusLineNC', s:gray, s:black)
 
 " The column separating vertically split windows
-call s:HL('VertSplit', s:white, s:vert_split)
+call s:HL('VertSplit', s:white, s:black)
 
 " Current match in wildmenu completion
 call s:HL('WildMenu', s:blue, s:black, s:bold)
@@ -317,10 +250,10 @@ hi! link WarningMsg SrceryRedBold
 " Gutter: {{{
 
 " Line number for :number and :# commands
-call s:HL('LineNr', s:number_column)
+call s:HL('LineNr', s:gray)
 
 " Column where signs are displayed
-call s:HL('SignColumn', s:none, s:sign_column)
+call s:HL('SignColumn', s:none, s:black)
 
 " Line used for closed folds
 call s:HL('Folded', s:gray, s:black, s:italic)
@@ -344,7 +277,7 @@ hi! link lCursor Cursor
 
 hi! link Special SrceryYellow
 
-call s:HL('Comment', s:gray, s:none, s:italicize_comments)
+call s:HL('Comment', s:gray, s:none, s:italic)
 call s:HL('Todo', s:white, s:black, s:bold . s:italic)
 call s:HL('Error', s:red, s:black, s:bold . s:inverse)
 
@@ -482,10 +415,10 @@ let g:niji_light_colours = g:rbpt_colorpairs
 "}}}
 " GitGutter: {{{
 
-hi! link GitGutterAdd SrceryGreenSign
-hi! link GitGutterChange SrceryCyanSign
-hi! link GitGutterDelete SrceryRedSign
-hi! link GitGutterChangeDelete SrceryCyanSign
+hi! link GitGutterAdd SrceryGreen
+hi! link GitGutterChange SrceryCyan
+hi! link GitGutterDelete SrceryRed
+hi! link GitGutterChangeDelete SrceryCyan
 
 " }}}
 " GitCommit: "{{{
@@ -560,7 +493,7 @@ hi! link xmlEntityPunct SrceryYellow
 " }}}
 " Vim: {{{
 
-call s:HL('vimCommentTitle', s:white, s:none, s:bold . s:italicize_comments)
+call s:HL('vimCommentTitle', s:white, s:none, s:bold . s:italic)
 
 hi! link vimNotation SrceryYellow
 hi! link vimBracket SrceryYellow
