@@ -309,7 +309,7 @@ hi! link MoreMsg SrceryYellowBold
 " Current mode message: -- INSERT --
 hi! link ModeMsg SrceryYellowBold
 " 'Press enter' prompt and yes/no questions
-hi! link Question SrceryYellowBold
+hi! link Question SrceryOrangeBold
 " Warning messages
 hi! link WarningMsg SrceryRedBold
 
@@ -341,6 +341,8 @@ hi! link lCursor Cursor
 
 " }}}
 " Syntax Highlighting: {{{
+
+hi! link Special SrceryYellow
 
 call s:HL('Comment', s:gray, s:none, s:italicize_comments)
 call s:HL('Todo', s:white, s:black, s:bold . s:italic)
@@ -394,7 +396,7 @@ hi! link Float SrceryBrMagenta
 " Generic type
 hi! link Type SrceryYellow
 " static, register, volatile, etc
-hi! link StorageClass SrceryYellow
+hi! link StorageClass SrceryOrange
 " struct, union, enum, etc.
 hi! link Structure SrceryCyan
 " typedef
@@ -500,7 +502,7 @@ hi! link diffAdded SrceryGreen
 hi! link diffRemoved SrceryRed
 hi! link diffChanged SrceryCyan
 
-hi! link diffFile SrceryYellow
+hi! link diffFile SrceryOrange
 hi! link diffNewFile SrceryYellow
 
 hi! link diffLine SrceryBlue
