@@ -2,13 +2,18 @@
 " Maintainer:   Roosta (mail@roosta.sh)
 " Description:  Dark colorscheme using 16 color palette
 
-hi clear
-
-if exists('syntax_on')
-  syntax reset
+if version > 580
+  hi clear
+  if exists("syntax_on")
+    syntax reset
+  endif
 endif
 
-let g:colors_name = 'srcery'
+let g:colors_name='srcery'
+
+if !has('gui_running') && &t_Co != 256
+  finish
+endif
 
 " Palette {{{
 
@@ -28,6 +33,12 @@ let s:bright_blue    = ["#6D9CBE", 12]
 let s:bright_magenta = ["#E35682", 13]
 let s:bright_cyan    = ["#34BEDA", 14]
 let s:gray           = ["#918175", 15]
+
+" default xterm colors.
+let s:orange        = ['#D75F00', 166]  
+let s:bright_orange = ['#FF8700', 208]
+let s:hard_black    = ['#080808', 232]
+let s:alt_gray      = ['#4E4E4E', 239]
 
 "}}}
 " Setup Variables: {{{
@@ -203,24 +214,18 @@ endfunction
 " memoize common hi groups
 call s:HL('SrceryWhite', s:white)
 call s:HL('SrceryRed', s:red)
-call s:HL('SrceryRedbold', s:red, s:none, s:bold)
 call s:HL('SrceryGreen', s:green)
-call s:HL('SrceryGreenbold', s:green, s:none, s:bold)
 call s:HL('SrceryYellow', s:yellow)
-call s:HL('SrceryYellowbold', s:yellow, s:none, s:bold)
 call s:HL('SrceryBlue', s:blue)
-call s:HL('SrceryBluebold', s:blue, s:none, s:bold)
 call s:HL('SrceryMagenta', s:magenta)
-call s:HL('SrceryMagentabold', s:magenta, s:none, s:bold)
 call s:HL('SrceryCyan', s:cyan)
-call s:HL('SrceryCyanbold', s:cyan, s:none, s:bold)
 
-call s:HL('SrceryBrRed', s:bright_red)
-call s:HL('SrceryBrGreen', s:bright_green)
-call s:HL('SrceryBrYellow', s:bright_yellow)
-call s:HL('SrceryBrBlue', s:bright_blue)
-call s:HL('SrceryBrMagenta', s:bright_magenta)
-call s:HL('SrceryBrCyan', s:bright_cyan)
+call s:HL('SrceryRedbold', s:red, s:none, s:bold)
+call s:HL('SrceryGreenbold', s:green, s:none, s:bold)
+call s:HL('SrceryYellowbold', s:yellow, s:none, s:bold)
+call s:HL('SrceryBluebold', s:blue, s:none, s:bold)
+call s:HL('SrceryMagentabold', s:magenta, s:none, s:bold)
+call s:HL('SrceryCyanbold', s:cyan, s:none, s:bold)
 
 call s:HL('SrceryRedSign', s:red, s:sign_column, s:invert_signs)
 call s:HL('SrceryGreenSign', s:green, s:sign_column, s:invert_signs)
@@ -228,6 +233,12 @@ call s:HL('SrceryYellowSign', s:yellow, s:sign_column, s:invert_signs)
 call s:HL('SrceryBlueSign', s:blue, s:sign_column, s:invert_signs)
 call s:HL('SrceryMagentaSign', s:magenta, s:sign_column, s:invert_signs)
 call s:HL('SrceryCyanSign', s:cyan, s:sign_column, s:invert_signs)
+
+" special
+call s:HL('SrceryOrange', s:orange)
+call s:HL('SrceryOrangeBold', s:orange, s:none, s:bold)
+call s:HL('SrceryAltGray', s:alt_gray)
+call s:HL('SrceryHardBlack', s:hard_black)
 
 " }}}
 
@@ -561,12 +572,12 @@ hi! link vimContinue SrceryWhite
 " Clojure: {{{
 
 hi! link clojureKeyword SrceryBlue
-hi! link clojureCond SrceryYellow
-hi! link clojureSpecial SrceryYellow
-hi! link clojureDefine SrceryYellow
+hi! link clojureCond SrceryOrange
+hi! link clojureSpecial SrceryOrange
+hi! link clojureDefine SrceryOrange
 
-hi! link clojureFunc SrceryBrYellow
-hi! link clojureRepeat SrceryBrYellow
+hi! link clojureFunc SrceryYellow
+hi! link clojureRepeat SrceryYellow
 hi! link clojureCharacter SrceryCyan
 hi! link clojureStringEscape SrceryCyan
 hi! link clojureException SrceryRed
@@ -577,16 +588,15 @@ call s:HL('clojureRegexpCharClass', s:white, s:none, s:bold)
 hi! link clojureRegexpMod clojureRegexpCharClass
 hi! link clojureRegexpQuantifier clojureRegexpCharClass
 
-hi! link clojureParen SrceryWhite
-hi! link clojureAnonArg SrceryBrMagenta
+hi! link clojureParen SrceryFg3
+hi! link clojureAnonArg SrceryYellow
 hi! link clojureVariable SrceryBlue
-hi! link clojureMacro SrceryBrRed
+hi! link clojureMacro SrceryOrange
 
 hi! link clojureMeta SrceryYellow
 hi! link clojureDeref SrceryYellow
 hi! link clojureQuote SrceryYellow
 hi! link clojureUnquote SrceryYellow
-
 " }}}
 " C: {{{
 
