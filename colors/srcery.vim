@@ -38,7 +38,7 @@ let s:gray           = ["#918175", 15]
 let s:orange        = ['#D75F00', 166]  
 let s:bright_orange = ['#FF8700', 208]
 let s:hard_black    = ['#080808', 232]
-let s:alt_gray      = ['#4E4E4E', 239]
+let s:gray_alt      = ['#4E4E4E', 239]
 
 "}}}
 " Setup Variables: {{{
@@ -237,7 +237,7 @@ call s:HL('SrceryCyanSign', s:cyan, s:sign_column, s:invert_signs)
 " special
 call s:HL('SrceryOrange', s:orange)
 call s:HL('SrceryOrangeBold', s:orange, s:none, s:bold)
-call s:HL('SrceryAltGray', s:alt_gray)
+call s:HL('SrceryGrayAlt', s:gray_alt)
 call s:HL('SrceryHardBlack', s:hard_black)
 
 " }}}
@@ -262,7 +262,7 @@ if version >= 700
   hi! link TabLine TabLineFill
 
   " Match paired bracket under the cursor
-  call s:HL('MatchParen', s:none, s:black, s:bold)
+  call s:HL('MatchParen', s:yellow, s:bright_black, s:bold)
 endif
 
 if version >= 703
@@ -276,14 +276,14 @@ if version >= 703
   call s:HL('CursorLineNr', s:yellow, s:black)
 endif
 
-hi! link NonText SrceryBg2
-hi! link SpecialKey SrceryBg2
+hi! link NonText SrceryGrayAlt
+hi! link SpecialKey SrceryGrayAlt
 
 call s:HL('Visual',    s:none,  s:black, s:invert_selection)
 hi! link VisualNOS Visual
 
 call s:HL('Search',    s:black, s:yellow)
-call s:HL('IncSearch', s:black, s:hls_cursor)
+call s:HL('IncSearch', s:black, s:yellow)
 
 call s:HL('Underlined', s:blue, s:none, s:underline)
 
