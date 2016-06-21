@@ -47,7 +47,7 @@ Plug 'roosta/srcery'
 
 ## Configuration
 
-Configuration is currently a work in progress, but I've included a few due to discrepancies in the various setups possible.
+I've included a few toggles due to discrepancies in the various setups possible.
 
 #### g:srcery_bold
 
