@@ -12,7 +12,7 @@ You don’t need to do anything for these colorschemes to work in GVim or MacVim
 ### TUI
 
 Srcery's only requirement is that you change your terminal emulator’s so-called “ASCII” colors to the ones in the table below.
-I've included an Xresource file but the approach might be different for the terminal emulator you use.
+I've included colorscheme files for various terminals in the term_color folder, but since I haven't tested all of them some issues may arrise. If your terminal is different or the file won't work please let me know so I can add/update/fix the file in question.
 
 ```
 TERMCOL   HEX       RGB
