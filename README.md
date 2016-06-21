@@ -69,20 +69,10 @@ default: 1
 Enables undercurled text.
 default: 1
 
-#### g:srcery_hls_cursor
+#### g:srcery_inverse
 
-Changes cursor background while search is highlighted. Possible values are any of srcery palette.
-default: orange
-
-#### g:srcery_italicize_comments
-
-Enables italic for comments.
+Enables inverse colors.
 default: 1
-
-#### g:srcery_italicize_strings
-
-Enables italic for strings.
-default: 0
 
 ## Usage
 ```
