@@ -1,7 +1,7 @@
 ./srcery
 ================================
 
-Colorscheme with ease of use and clearly defined colors that tries to stay true default xterm colors but with a twist. Heavily inspired by Gruvbox, base16, flattened and solarized ++ Please check out their respective repositories for some wonderful colorschemes.
+Colorscheme with ease of use and clearly defined colors that tries to somewhat stay true default xterm colors but with a twist. Heavily inspired by Gruvbox, base16, flattened and solarized ++ Please check out their respective repositories for some wonderful colorschemes.
 
 * https://github.com/morhetz/gruvbox
 * https://chriskempson.github.io/base16/#railscasts
@@ -12,7 +12,7 @@ Colorscheme with ease of use and clearly defined colors that tries to stay true 
 
 ### GUI
 
-You don’t need to do anything for these colorschemes to work in GVim or MacVim.
+You don’t need to do anything for this colorscheme to work in GVim or MacVim.
 
 ### TUI
 
@@ -95,3 +95,5 @@ colorscheme srcery
 ![srcery bash](screenshots/srcery_bash.png)
 
 ![srcery table](screenshots/srcery_table.png)
+
+Font used: [UW ttyp0](http://people.mpi-inf.mpg.de/~uwe/misc/uw-ttyp0/)
