@@ -1,7 +1,12 @@
 ./srcery
 ================================
 
-Colorscheme inspired by [Gruvbox](https://github.com/morhetz/gruvbox) and [Railscast](https://chriskempson.github.io/base16/#railscasts). Srcery's goal is to look good using a 16 color palette. This is a fork of [Flattened](https://github.com/romainl/flattened), and tries to follow its example of simplicity. That being said, most of the code used in the colorscheme is lifted straight from [Gruvbox](https://github.com/morhetz/gruvbox), so most credit goes to morhetz and the contributers of that project. 
+Colorscheme with ease of use and clearly defined colors that tries to stay true default xterm colors but with a twist. Heavily inspired by Gruvbox, base16, flattened and solarized ++ Please check out their respective repositories for some wonderful colorschemes.
+
+* https://github.com/morhetz/gruvbox
+* https://chriskempson.github.io/base16/#railscasts
+* https://github.com/romainl/flattened
+* http://ethanschoonover.com/solarized
 
 ## Requirements
 
