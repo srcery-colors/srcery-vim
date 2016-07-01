@@ -8,6 +8,9 @@ Colorscheme with ease of use and clearly defined colors that tries to somewhat s
 * https://github.com/romainl/flattened
 * http://ethanschoonover.com/solarized
 
+### TODO:
+ * improve vimdiff comparison.
+
 ## Requirements
 
 ### GUI
