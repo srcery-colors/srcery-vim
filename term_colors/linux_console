@@ -8,7 +8,7 @@ if [ "$TERM" = "linux" ]; then
   \e]P45573a3
   \e]P5e02c6d
   \e]P61693a5
-  \e]P7fce8c3
+  \e]P7918175
   \e]P82d2b28
   \e]P9da4939
   \e]PA98bc37
@@ -16,7 +16,7 @@ if [ "$TERM" = "linux" ]; then
   \e]PC6d9cbe
   \e]PDe35682
   \e]PE34beda
-  \e]PF918175
+  \e]PFfce8c3
   "
   # get rid of artifacts
   clear

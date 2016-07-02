@@ -1,0 +1,25 @@
+{
+  "name": "Srcery",
+  "author": "Roosta [mail@roosta.sh]",
+  "color": [
+    "#1c1b19",
+    "#ff3128",
+    "#519f50",
+    "#fbb829",
+    "#5573a3",
+    "#e02c6d",
+    "#1693a5",
+    "#918175",
+    "#2d2b28",
+    "#da4939",
+    "#98bc37",
+    "#ffc66d",
+    "#6d9cbe",
+    "#e35682",
+    "#34beda",
+    "#fce8c3"
+  ],
+  "foreground": "#fce8c3",
+  "background": "#1c1b19"
+}
+
