@@ -267,7 +267,7 @@ hi! link lCursor Cursor
 " }}}
 " Syntax Highlighting: {{{
 
-hi! link Special SrceryYellow
+hi! link Special SrceryOrange
 
 call s:HL('Comment', s:gray, s:none, s:italic)
 call s:HL('Todo', s:white, s:black, s:bold . s:italic)
