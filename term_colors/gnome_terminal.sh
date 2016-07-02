@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 # Base16 - Gnome Terminal color scheme install script
 
-[[ -z "$PROFILE_NAME" ]] && PROFILE_NAME="srcery"
-[[ -z "$PROFILE_SLUG" ]] && PROFILE_SLUG="srcery"
+[[ -z "$PROFILE_NAME" ]] && PROFILE_NAME="terminal.sexy"
+[[ -z "$PROFILE_SLUG" ]] && PROFILE_SLUG="terminal-dot-sexy"
 [[ -z "$DCONF" ]] && DCONF=dconf
 [[ -z "$UUIDGEN" ]] && UUIDGEN=uuidgen
 
@@ -58,7 +58,7 @@ if which "$DCONF" > /dev/null 2>&1; then
 
         # update profile values with theme options
         dset visible-name "'$PROFILE_NAME'"
-        dset palette "['#1c1b19', '#ff3128', '#519f50', '#fbb829', '#5573a3', '#e02c6d', '#1693a5', '#fce8c3', '#2d2b28', '#da4939', '#98bc37', '#ffc66d', '#6d9cbe', '#e35682', '#34beda', '#918175']"
+        dset palette "['#1c1b19', '#ff3128', '#519f50', '#fbb829', '#5573a3', '#e02c6d', '#1693a5', '#918175', '#2d2b28', '#da4939', '#98bc37', '#ffc66d', '#6d9cbe', '#e35682', '#34beda', '#fce8c3']"
         dset background-color "'#1c1b19'"
         dset foreground-color "'#fce8c3'"
         dset bold-color "'#fce8c3'"
@@ -108,7 +108,7 @@ glist_append() {
 glist_append string /apps/gnome-terminal/global/profile_list "$PROFILE_SLUG"
 
 gset string visible_name "$PROFILE_NAME"
-gset string palette "#1c1b19:#ff3128:#519f50:#fbb829:#5573a3:#e02c6d:#1693a5:#fce8c3:#2d2b28:#da4939:#98bc37:#ffc66d:#6d9cbe:#e35682:#34beda:#918175"
+gset string palette "#1c1b19:#ff3128:#519f50:#fbb829:#5573a3:#e02c6d:#1693a5:#918175:#2d2b28:#da4939:#98bc37:#ffc66d:#6d9cbe:#e35682:#34beda:#fce8c3"
 gset string background_color "#1c1b19"
 gset string foreground_color "#fce8c3"
 gset string bold_color "#fce8c3"
