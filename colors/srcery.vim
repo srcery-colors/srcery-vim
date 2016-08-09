@@ -308,15 +308,15 @@ hi! link Macro SrceryCyan
 hi! link PreCondit SrceryCyan
 
 " Generic constant
-hi! link Constant SrceryBrMagenta
+hi! link Constant SrceryBrightMagenta
 " Character constant: 'c', '/n'
-hi! link Character SrceryBrMagenta
+hi! link Character SrceryBrightMagenta
 " Boolean constant: TRUE, false
-hi! link Boolean SrceryBrMagenta
+hi! link Boolean SrceryBrightMagenta
 " Number constant: 234, 0xff
-hi! link Number SrceryBrMagenta
+hi! link Number SrceryBrightMagenta
 " Floating point constant: 2.3e10
-hi! link Float SrceryBrMagenta
+hi! link Float SrceryBrightMagenta
 
 " Generic type
 hi! link Type SrceryYellow
