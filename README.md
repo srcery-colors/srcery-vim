@@ -1,4 +1,4 @@
-./srcery
+srcery.vim
 ================================
 
 Colorscheme with ease of use and clearly defined colors that tries to somewhat stay true default xterm colors but with a twist. Heavily inspired by Gruvbox, base16, flattened and solarized ++ Please check out their respective repositories for some wonderful colorschemes.
