@@ -12,7 +12,7 @@ color8  = #2d2b28
 
 # red
 color1  = #ff3128
-color9  = #da4939
+color9  = #f75341
 
 # green
 color2  = #519f50
@@ -20,19 +20,19 @@ color10 = #98bc37
 
 # yellow
 color3  = #fbb829
-color11 = #ffc66d
+color11 = #fed06e
 
 # blue
 color4  = #5573a3
-color12 = #6d9cbe
+color12 = #8eb2f7
 
 # magenta
 color5  = #e02c6d
 color13 = #e35682
 
 # cyan
-color6  = #1693a5
-color14 = #34beda
+color6  = #0aaeb3
+color14 = #53fde9
 
 # white
 color7  = #918175

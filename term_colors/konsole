@@ -25,7 +25,7 @@ Color=45,43,40
 Color=255,49,40
 
 [Color1Intense]
-Color=218,73,57
+Color=247,83,65
 
 [Color2]
 Color=81,159,80
@@ -37,13 +37,13 @@ Color=152,188,55
 Color=251,184,41
 
 [Color3Intense]
-Color=255,198,109
+Color=254,208,110
 
 [Color4]
 Color=85,115,163
 
 [Color4Intense]
-Color=109,156,190
+Color=142,178,247
 
 [Color5]
 Color=224,44,109
@@ -52,10 +52,10 @@ Color=224,44,109
 Color=227,86,130
 
 [Color6]
-Color=22,147,165
+Color=10,174,179
 
 [Color6Intense]
-Color=52,190,218
+Color=83,253,233
 
 [Color7]
 Color=145,129,117
@@ -66,6 +66,6 @@ Color=252,232,195
 # --- general options ---
 
 [General]
-Description=terminal.sexy
+Description=srcery
 Opacity=1
 Wallpaper=
