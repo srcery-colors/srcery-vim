@@ -1,3 +1,6 @@
+! Srcery
+! https://github.com/roosta/vim-srcery
+
 ! special
 *.foreground:   #fce8c3
 *.background:   #1c1b19
