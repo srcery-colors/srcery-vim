@@ -87,8 +87,8 @@ colorscheme srcery
 ```
 ## Screenshots.
 
-![vim](https://roosta.sh/img/srcery/vim.png)
+![vim](https://roosta.sh/blog/img/srcery/vim.png)
 
-![sh](https://roosta.sh/img/srcery/sh.png)
+![sh](https://roosta.sh/blog/img/srcery/sh.png)
 
-![clj](https://roosta.sh/img/srcery/clj.png)
+![clj](https://roosta.sh/blog/img/srcery/clj.png)
