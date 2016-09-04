@@ -36,7 +36,7 @@ brmagenta #E35682   227, 86,  130
 brcyan    #53FDE9   83, 253, 233
 white     #FCE8C3   252, 232, 195
 ```
-![preview](https://roosta.sh/img/srcery/preview.png)
+![preview](https://roosta.sh/blog/img/srcery/preview.png)
 
 ## Installation
 
