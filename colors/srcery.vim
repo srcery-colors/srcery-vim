@@ -1,6 +1,6 @@
 " 'srcery.vim' -- Vim color scheme.
 " Maintainer:   Roosta (mail@roosta.sh)
-" Description:  Dark colorscheme using 16 color palette
+" Description:  Colorscheme that focus ease of use and clearly defined contrasting colors with a slightly earthy tone.
 
 if version > 580
   hi clear
