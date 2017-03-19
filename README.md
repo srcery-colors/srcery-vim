@@ -1,10 +1,8 @@
-srcery.vim
-================================
+![logo](https://roosta.sh/img/srcery/logo.png)
 
-Colorscheme that focus ease of use and clearly defined contrasting colors with a slightly earthy tone. Heavily inspired by [Gruvbox](https://github.com/morhetz/gruvbox), [base16](https://chriskempson.github.io/base16), [flattened](https://github.com/morhetz/gruvbox) and [solarized](http://ethanschoonover.com/solarized).
+Colorscheme that focus ease of use and clearly defined contrasting colors with a slightly earthy tone. Heavily inspired by [Gruvbox](https://github.com/morhetz/gruvbox), [base16](https://chriskempson.github.io/base16), [flattened](https://github.com/romainl/flattened) and [solarized](http://ethanschoonover.com/solarized).
 
-### TODO:
- * improve vimdiff comparison.
+This is mainly a palette swap of [Gruvbox](https://github.com/morhetz/gruvbox) and all credit goes to the maintainers of that fantasic colorscheme. I wanted something a bit sharper, but I loved the syntax color choices of gruvbox so I made this. I also tried to make the theme as simple to use as possible, which was inspired by [Flattened](https://github.com/romainl/flattened).
 
 ## Requirements
 
@@ -13,7 +11,7 @@ You don’t need to do anything for this colorscheme to work in GVim or MacVim.
 
 ### TUI
 Srcery's only requirement is that you change your terminal emulator’s so-called “ASCII” colors to the ones in the table below.
-I've included colorscheme files for various terminals in the term_color folder, but since I haven't tested all of them some issues may arrise. If your terminal is different or the file won't work please let me know so I can add/update/fix the file in question.
+I've included colorscheme files for various terminals in the term_color folder, but since I haven't tested all of them some issues may arise. If your terminal is different or the file won't work please let me know so I can add/update/fix the file in question.
 
 ```
 TERMCOL   HEX       RGB
@@ -36,8 +34,6 @@ brmagenta #E35682   227, 86,  130
 brcyan    #53FDE9   83, 253, 233
 white     #FCE8C3   252, 232, 195
 ```
-![preview](https://roosta.sh/blog/img/srcery/preview.png)
-
 ## Installation
 
 Put `srcery.vim` in `~/.vim/colors/` (on unix-like systems) or `%userprofile%\vimfiles\colors\` (on Windows).
@@ -87,8 +83,15 @@ colorscheme srcery
 ```
 ## Screenshots.
 
-![vim](https://roosta.sh/blog/img/srcery/vim.png)
+left: Bash script, right: Viml
+![sh-viml](https://roosta.sh/img/srcery/sh-viml.png)
 
-![sh](https://roosta.sh/blog/img/srcery/sh.png)
+Clojurescript
+![cljs](https://roosta.sh/img/srcery/cljs.png)
 
-![clj](https://roosta.sh/blog/img/srcery/clj.png)
+left: C, right: Python
+![cljs](https://roosta.sh/img/srcery/c-py.png)
+
+Typeface used in screenshots is [PragmataPro](https://www.fsd.it/shop/fonts/pragmatapro/).
+## TODO:
+ * improve vimdiff comparison.
