@@ -2,7 +2,7 @@
 
 Colorscheme that focus ease of use and clearly defined contrasting colors with a slightly earthy tone. Heavily inspired by [Gruvbox](https://github.com/morhetz/gruvbox), [base16](https://chriskempson.github.io/base16), [flattened](https://github.com/romainl/flattened) and [solarized](http://ethanschoonover.com/solarized).
 
-This is mainly a palette swap of [Gruvbox](https://github.com/morhetz/gruvbox) and all credit goes to the maintainers of that fantasic colorscheme. I wanted something a bit sharper, but I loved the syntax color choices of gruvbox so I made this. I also tried to make the theme as simple to use as possible, which was inspired by [Flattened](https://github.com/romainl/flattened).
+This is essentially a palette swap of [Gruvbox](https://github.com/morhetz/gruvbox) and all credit goes to the maintainers of that fantasic colorscheme. I wanted something a bit sharper, but I loved the syntax color choices of gruvbox so I made this. I also tried to make the theme as simple to use as possible, which was inspired by [Flattened](https://github.com/romainl/flattened).
 
 ## Requirements
 
