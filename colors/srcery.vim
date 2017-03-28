@@ -1,6 +1,7 @@
 " 'srcery.vim' -- Vim color scheme.
 " Maintainer:   Roosta (mail@roosta.sh)
 " Description:  Colorscheme that focus ease of use and clearly defined contrasting colors with a slightly earthy tone.
+" Original Source: https://github.com/morhetz/gruvbox
 
 if version > 580
   hi clear
@@ -144,6 +145,9 @@ call s:HL('SrceryYellow', s:yellow)
 call s:HL('SrceryBlue', s:blue)
 call s:HL('SrceryMagenta', s:magenta)
 call s:HL('SrceryCyan', s:cyan)
+call s:HL('SrceryBlack', s:black)
+call s:HL('SrceryGray', s:gray)
+call s:HL('SrceryAltGray', s:gray_alt)
 
 call s:HL('SrceryRedbold', s:red, s:none, s:bold)
 call s:HL('SrceryGreenbold', s:green, s:none, s:bold)
@@ -158,6 +162,7 @@ call s:HL('SrceryBrightYellow', s:bright_yellow, s:none)
 call s:HL('SrceryBrightBlue', s:bright_blue, s:none)
 call s:HL('SrceryBrightMagenta', s:bright_magenta, s:none)
 call s:HL('SrceryBrightCyan', s:bright_cyan, s:none)
+call s:HL('SrceryBrightBlack', s:bright_black, s:none)
 
 " special
 call s:HL('SrceryOrange', s:orange)
@@ -346,10 +351,6 @@ endif
 
 call s:HL('DiffDelete', s:red, s:black, s:inverse)
 call s:HL('DiffAdd',    s:green, s:black, s:inverse)
-"call s:HL('DiffChange', s:black, s:blue)
-"call s:HL('DiffText',   s:black, s:yellow)
-
-" Alternative setting
 call s:HL('DiffChange', s:cyan, s:black, s:inverse)
 call s:HL('DiffText',   s:yellow, s:black, s:inverse)
 
