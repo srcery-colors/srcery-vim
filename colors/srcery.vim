@@ -39,7 +39,11 @@ let s:white          = ["#FCE8C3", 15]
 let s:orange        = ['#D75F00', 166]  
 let s:bright_orange = ['#FF8700', 208]
 let s:hard_black    = ['#080808', 232]
-let s:gray_alt      = ['#4E4E4E', 239]
+let s:xgrey1        = ['#262626', 235]
+let s:xgrey2        = ['#303030', 236]
+let s:xgrey3        = ['#3A3A3A', 237]
+let s:xgrey4        = ['#444444', 238]
+let s:xgrey5        = ['#4E4E4E', 239]
 
 "}}}
 " Setup Variables: {{{
@@ -146,9 +150,7 @@ call s:HL('SrceryBlue', s:blue)
 call s:HL('SrceryMagenta', s:magenta)
 call s:HL('SrceryCyan', s:cyan)
 call s:HL('SrceryBlack', s:black)
-call s:HL('SrceryGray', s:gray)
-call s:HL('SrceryAltGray', s:gray_alt)
-
+call s:HL('SrceryGrey', s:gray)
 call s:HL('SrceryRedbold', s:red, s:none, s:bold)
 call s:HL('SrceryGreenbold', s:green, s:none, s:bold)
 call s:HL('SrceryYellowbold', s:yellow, s:none, s:bold)
@@ -167,8 +169,12 @@ call s:HL('SrceryBrightBlack', s:bright_black, s:none)
 " special
 call s:HL('SrceryOrange', s:orange)
 call s:HL('SrceryOrangeBold', s:orange, s:none, s:bold)
-call s:HL('SrceryGrayAlt', s:gray_alt)
 call s:HL('SrceryHardBlack', s:hard_black)
+call s:HL('SrceryXgrey1', s:xgrey1)
+call s:HL('SrceryXgrey2', s:xgrey2)
+call s:HL('SrceryXgrey3', s:xgrey3)
+call s:HL('SrceryXgrey4', s:xgrey4)
+call s:HL('SrceryXgrey5', s:xgrey5)
 
 " }}}
 
@@ -206,8 +212,8 @@ if version >= 703
   call s:HL('CursorLineNr', s:yellow, s:black)
 endif
 
-hi! link NonText SrceryGrayAlt
-hi! link SpecialKey SrceryGrayAlt
+hi! link NonText SrceryGreyAlt
+hi! link SpecialKey SrceryGreyAlt
 
 call s:HL('Visual',    s:none,  s:black, s:inverse)
 hi! link VisualNOS Visual
@@ -468,18 +474,18 @@ hi! link xmlTagName SrceryBlue
 hi! link xmlEqual SrceryBlue
 hi! link docbkKeyword SrceryCyanBold
 
-hi! link xmlDocTypeDecl SrceryGray
+hi! link xmlDocTypeDecl SrceryGrey
 hi! link xmlDocTypeKeyword SrceryMagenta
-hi! link xmlCdataStart SrceryGray
+hi! link xmlCdataStart SrceryGrey
 hi! link xmlCdataCdata SrceryMagenta
-hi! link dtdFunction SrceryGray
+hi! link dtdFunction SrceryGrey
 hi! link dtdTagName SrceryMagenta
 
 hi! link xmlAttrib SrceryCyan
-hi! link xmlProcessingDelim SrceryGray
-hi! link dtdParamEntityPunct SrceryGray
-hi! link dtdParamEntityDPunct SrceryGray
-hi! link xmlAttribPunct SrceryGray
+hi! link xmlProcessingDelim SrceryGrey
+hi! link dtdParamEntityPunct SrceryGrey
+hi! link dtdParamEntityDPunct SrceryGrey
+hi! link xmlAttribPunct SrceryGrey
 
 hi! link xmlEntity SrceryYellow
 hi! link xmlEntityPunct SrceryYellow
@@ -756,11 +762,11 @@ hi! link markdownCode SrceryCyan
 hi! link markdownCodeBlock SrceryCyan
 hi! link markdownCodeDelimiter SrceryCyan
 
-hi! link markdownBlockquote SrceryGray
-hi! link markdownListMarker SrceryGray
-hi! link markdownOrderedListMarker SrceryGray
-hi! link markdownRule SrceryGray
-hi! link markdownHeadingRule SrceryGray
+hi! link markdownBlockquote SrceryGrey
+hi! link markdownListMarker SrceryGrey
+hi! link markdownOrderedListMarker SrceryGrey
+hi! link markdownRule SrceryGrey
+hi! link markdownHeadingRule SrceryGrey
 
 hi! link markdownUrlDelimiter SrceryWhite
 hi! link markdownLinkDelimiter SrceryWhite
