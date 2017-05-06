@@ -1,4 +1,4 @@
-![logo](https://roosta.sh/img/srcery/logo.png)
+![logo](https://cloud.githubusercontent.com/assets/4509009/25771686/967c11ea-3258-11e7-8ff1-0da370c12b9c.png)
 
 Colorscheme that focus ease of use and clearly defined contrasting colors with a slightly earthy tone. Heavily inspired by [Gruvbox](https://github.com/morhetz/gruvbox), [base16](https://chriskempson.github.io/base16), [flattened](https://github.com/romainl/flattened) and [solarized](http://ethanschoonover.com/solarized).
 
@@ -84,13 +84,13 @@ colorscheme srcery
 ## Screenshots.
 
 left: Bash script, right: Viml
-![sh-viml](https://roosta.sh/img/srcery/sh-viml.png)
+![sh-viml](https://cloud.githubusercontent.com/assets/4509009/25771687/967cffec-3258-11e7-90a3-954e3041a4c9.png)
 
 Clojurescript
-![cljs](https://roosta.sh/img/srcery/cljs.png)
+![cljs](https://cloud.githubusercontent.com/assets/4509009/25771684/967ab6ce-3258-11e7-90b9-25151141012f.png)
 
 left: C, right: Python
-![cljs](https://roosta.sh/img/srcery/c-py.png)
+![cljs](https://cloud.githubusercontent.com/assets/4509009/25771685/967afc10-3258-11e7-95a2-aa51b857896b.png)
 
 Typeface used in screenshots is [PragmataPro](https://www.fsd.it/shop/fonts/pragmatapro/).
 ## TODO:
