@@ -25,7 +25,7 @@ let s:yellow         = ["#FBB829", 3]
 let s:blue           = ["#5573A3", 4]
 let s:magenta        = ["#E02C6D", 5]
 let s:cyan           = ["#0AAEB3", 6]
-let s:gray           = ["#918175", 7]
+let s:white          = ["#918175", 7]
 let s:bright_black   = ["#2D2C29", 8]
 let s:bright_red     = ["#F75341", 9]
 let s:bright_green   = ["#98BC37", 10]
@@ -33,17 +33,17 @@ let s:bright_yellow  = ["#FED06E", 11]
 let s:bright_blue    = ["#8EB2F7", 12]
 let s:bright_magenta = ["#E35682", 13]
 let s:bright_cyan    = ["#53FDE9", 14]
-let s:white          = ["#FCE8C3", 15]
+let s:bright_white   = ["#FCE8C3", 15]
 
 " default xterm colors.
 let s:orange        = ['#D75F00', 166]  
 let s:bright_orange = ['#FF8700', 208]
 let s:hard_black    = ['#080808', 232]
-let s:xgrey1        = ['#262626', 235]
-let s:xgrey2        = ['#303030', 236]
-let s:xgrey3        = ['#3A3A3A', 237]
-let s:xgrey4        = ['#444444', 238]
-let s:xgrey5        = ['#4E4E4E', 239]
+let s:xgray1        = ['#262626', 235]
+let s:xgray2        = ['#303030', 236]
+let s:xgray3        = ['#3A3A3A', 237]
+let s:xgray4        = ['#444444', 238]
+let s:xgray5        = ['#4E4E4E', 239]
 
 "}}}
 " Setup Variables: {{{
@@ -150,7 +150,6 @@ call s:HL('SrceryBlue', s:blue)
 call s:HL('SrceryMagenta', s:magenta)
 call s:HL('SrceryCyan', s:cyan)
 call s:HL('SrceryBlack', s:black)
-call s:HL('SrceryGrey', s:gray)
 call s:HL('SrceryRedbold', s:red, s:none, s:bold)
 call s:HL('SrceryGreenbold', s:green, s:none, s:bold)
 call s:HL('SrceryYellowbold', s:yellow, s:none, s:bold)
@@ -165,16 +164,17 @@ call s:HL('SrceryBrightBlue', s:bright_blue, s:none)
 call s:HL('SrceryBrightMagenta', s:bright_magenta, s:none)
 call s:HL('SrceryBrightCyan', s:bright_cyan, s:none)
 call s:HL('SrceryBrightBlack', s:bright_black, s:none)
+call s:HL('SrceryBrightWhite', s:bright_white)
 
 " special
 call s:HL('SrceryOrange', s:orange)
 call s:HL('SrceryOrangeBold', s:orange, s:none, s:bold)
 call s:HL('SrceryHardBlack', s:hard_black)
-call s:HL('SrceryXgrey1', s:xgrey1)
-call s:HL('SrceryXgrey2', s:xgrey2)
-call s:HL('SrceryXgrey3', s:xgrey3)
-call s:HL('SrceryXgrey4', s:xgrey4)
-call s:HL('SrceryXgrey5', s:xgrey5)
+call s:HL('SrceryXgray1', s:xgray1)
+call s:HL('SrceryXgray2', s:xgray2)
+call s:HL('SrceryXgray3', s:xgray3)
+call s:HL('SrceryXgray4', s:xgray4)
+call s:HL('SrceryXgray5', s:xgray5)
 
 " }}}
 
@@ -182,7 +182,7 @@ call s:HL('SrceryXgrey5', s:xgrey5)
 " General UI: {{{
 
 " Normal text
-call s:HL('Normal', s:white, s:black)
+call s:HL('Normal', s:bright_white, s:black)
 
 if version >= 700
   " Screen line that the cursor is
@@ -212,8 +212,8 @@ if version >= 703
   call s:HL('CursorLineNr', s:yellow, s:black)
 endif
 
-hi! link NonText SrceryGreyAlt
-hi! link SpecialKey SrceryGreyAlt
+hi! link NonText SrceryWhiteAlt
+hi! link SpecialKey SrceryWhiteAlt
 
 call s:HL('Visual',    s:none,  s:black, s:inverse)
 hi! link VisualNOS Visual
@@ -223,11 +223,11 @@ call s:HL('IncSearch', s:black, s:yellow)
 
 call s:HL('Underlined', s:blue, s:none, s:underline)
 
-call s:HL('StatusLine',   s:white, s:bright_black)
-call s:HL('StatusLineNC', s:gray, s:black, s:underline)
+call s:HL('StatusLine',   s:bright_white, s:bright_black)
+call s:HL('StatusLineNC', s:white, s:black, s:underline)
 
 " The column separating vertically split windows
-call s:HL('VertSplit', s:white, s:black)
+call s:HL('VertSplit', s:bright_white, s:black)
 
 " Current match in wildmenu completion
 call s:HL('WildMenu', s:blue, s:black, s:bold)
@@ -239,7 +239,7 @@ hi! link Directory SrceryGreenBold
 hi! link Title SrceryGreenBold
 
 " Error messages on the command line
-call s:HL('ErrorMsg',   s:white, s:red)
+call s:HL('ErrorMsg',   s:bright_white, s:red)
 " More prompt: -- More --
 hi! link MoreMsg SrceryYellowBold
 " Current mode message: -- INSERT --
@@ -253,15 +253,15 @@ hi! link WarningMsg SrceryRedBold
 " Gutter: {{{
 
 " Line number for :number and :# commands
-call s:HL('LineNr', s:gray)
+call s:HL('LineNr', s:white)
 
 " Column where signs are displayed
 call s:HL('SignColumn', s:none, s:black)
 
 " Line used for closed folds
-call s:HL('Folded', s:gray, s:black, s:italic)
+call s:HL('Folded', s:white, s:black, s:italic)
 " Column where folds are displayed
-call s:HL('FoldColumn', s:gray, s:black)
+call s:HL('FoldColumn', s:white, s:black)
 
 " }}}
 " Cursor: {{{
@@ -280,8 +280,8 @@ hi! link lCursor Cursor
 
 hi! link Special SrceryOrange
 
-call s:HL('Comment', s:gray, s:none, s:italic)
-call s:HL('Todo', s:white, s:black, s:bold . s:italic)
+call s:HL('Comment', s:white, s:none, s:italic)
+call s:HL('Todo', s:bright_white, s:black, s:bold . s:italic)
 call s:HL('Error', s:red, s:black, s:bold . s:inverse)
 
 " String constant: "this is a string"
@@ -343,7 +343,7 @@ hi! link Typedef SrceryYellow
 
 if version >= 700
   " Popup menu: normal item
-  call s:HL('Pmenu', s:white, s:black)
+  call s:HL('Pmenu', s:bright_white, s:black)
   " Popup menu: selected item
   call s:HL('PmenuSel', s:black, s:blue, s:bold)
   " Popup menu: scrollbar
@@ -452,18 +452,18 @@ hi! link htmlScriptTag SrceryMagenta
 hi! link htmlTagN SrceryFg1
 hi! link htmlSpecialTagName SrceryCyanBold
 
-call s:HL('htmlLink', s:white, s:none, s:underline)
+call s:HL('htmlLink', s:bright_white, s:none, s:underline)
 
 hi! link htmlSpecialChar SrceryYellow
 
-call s:HL('htmlBold', s:white, s:black, s:bold)
-call s:HL('htmlBoldUnderline', s:white, s:black, s:bold . s:underline)
-call s:HL('htmlBoldItalic', s:white, s:black, s:bold . s:italic)
-call s:HL('htmlBoldUnderlineItalic', s:white, s:black, s:bold . s:underline . s:italic)
+call s:HL('htmlBold', s:bright_white, s:black, s:bold)
+call s:HL('htmlBoldUnderline', s:bright_white, s:black, s:bold . s:underline)
+call s:HL('htmlBoldItalic', s:bright_white, s:black, s:bold . s:italic)
+call s:HL('htmlBoldUnderlineItalic', s:bright_white, s:black, s:bold . s:underline . s:italic)
 
-call s:HL('htmlUnderline', s:white, s:black, s:underline)
-call s:HL('htmlUnderlineItalic', s:white, s:black, s:underline . s:italic)
-call s:HL('htmlItalic', s:white, s:black, s:italic)
+call s:HL('htmlUnderline', s:bright_white, s:black, s:underline)
+call s:HL('htmlUnderlineItalic', s:bright_white, s:black, s:underline . s:italic)
+call s:HL('htmlItalic', s:bright_white, s:black, s:italic)
 
 " }}}
 " Xml: {{{
@@ -474,33 +474,33 @@ hi! link xmlTagName SrceryBlue
 hi! link xmlEqual SrceryBlue
 hi! link docbkKeyword SrceryCyanBold
 
-hi! link xmlDocTypeDecl SrceryGrey
+hi! link xmlDocTypeDecl SrceryWhite
 hi! link xmlDocTypeKeyword SrceryMagenta
-hi! link xmlCdataStart SrceryGrey
+hi! link xmlCdataStart SrceryWhite
 hi! link xmlCdataCdata SrceryMagenta
-hi! link dtdFunction SrceryGrey
+hi! link dtdFunction SrceryWhite
 hi! link dtdTagName SrceryMagenta
 
 hi! link xmlAttrib SrceryCyan
-hi! link xmlProcessingDelim SrceryGrey
-hi! link dtdParamEntityPunct SrceryGrey
-hi! link dtdParamEntityDPunct SrceryGrey
-hi! link xmlAttribPunct SrceryGrey
+hi! link xmlProcessingDelim SrceryWhite
+hi! link dtdParamEntityPunct SrceryWhite
+hi! link dtdParamEntityDPunct SrceryWhite
+hi! link xmlAttribPunct SrceryWhite
 
 hi! link xmlEntity SrceryYellow
 hi! link xmlEntityPunct SrceryYellow
 " }}}
 " Vim: {{{
 
-call s:HL('vimCommentTitle', s:white, s:none, s:bold . s:italic)
+call s:HL('vimCommentTitle', s:bright_white, s:none, s:bold . s:italic)
 
 hi! link vimNotation SrceryYellow
 hi! link vimBracket SrceryYellow
 hi! link vimMapModKey SrceryYellow
-hi! link vimFuncSID SrceryWhite
-hi! link vimSetSep SrceryWhite
-hi! link vimSep SrceryWhite
-hi! link vimContinue SrceryWhite
+hi! link vimFuncSID SrceryBrightWhite
+hi! link vimSetSep SrceryBrightWhite
+hi! link vimSep SrceryBrightWhite
+hi! link vimContinue SrceryBrightWhite
 
 " }}}
 " Clojure: {{{
@@ -518,7 +518,7 @@ hi! link clojureException SrceryRed
 
 hi! link clojureRegexp SrceryCyan
 hi! link clojureRegexpEscape SrceryCyan
-call s:HL('clojureRegexpCharClass', s:white, s:none, s:bold)
+call s:HL('clojureRegexpCharClass', s:bright_white, s:none, s:bold)
 hi! link clojureRegexpMod clojureRegexpCharClass
 hi! link clojureRegexpQuantifier clojureRegexpCharClass
 
@@ -552,7 +552,7 @@ hi! link pythonCoding SrceryBlue
 hi! link pythonOperator SrceryRed
 hi! link pythonExceptions SrceryMagenta
 hi! link pythonBoolean SrceryMagenta
-hi! link pythonDot SrceryWhite
+hi! link pythonDot SrceryBrightWhite
 
 " }}}
 " CSS: {{{
@@ -598,7 +598,7 @@ hi! link javaScriptIdentifier SrceryRed
 hi! link javaScriptMember SrceryBlue
 hi! link javaScriptNumber SrceryMagenta
 hi! link javaScriptNull SrceryMagenta
-hi! link javaScriptParens SrceryWhite
+hi! link javaScriptParens SrceryBrightWhite
 
 " }}}
 " YAJS: {{{
@@ -659,10 +659,10 @@ hi! link javascriptDocNamedParamType SrceryFg4
 " }}}
 " CoffeeScript: {{{
 
-hi! link coffeeExtendedOp SrceryWhite
-hi! link coffeeSpecialOp SrceryWhite
+hi! link coffeeExtendedOp SrceryBrightWhite
+hi! link coffeeSpecialOp SrceryBrightWhite
 hi! link coffeeCurly SrceryYellow
-hi! link coffeeParen SrceryWhite
+hi! link coffeeParen SrceryBrightWhite
 hi! link coffeeBracket SrceryYellow
 
 " }}}
@@ -696,9 +696,9 @@ hi! link luaTable SrceryYellow
 " }}}
 " MoonScript: {{{
 
-hi! link moonSpecialOp SrceryWhite
-hi! link moonExtendedOp SrceryWhite
-hi! link moonFunction SrceryWhite
+hi! link moonSpecialOp SrceryBrightWhite
+hi! link moonExtendedOp SrceryBrightWhite
+hi! link moonFunction SrceryBrightWhite
 hi! link moonObject SrceryYellow
 
 " }}}
@@ -707,12 +707,12 @@ hi! link moonObject SrceryYellow
 hi! link javaAnnotation SrceryBlue
 hi! link javaDocTags SrceryCyan
 hi! link javaCommentTitle vimCommentTitle
-hi! link javaParen SrceryWhite
-hi! link javaParen1 SrceryWhite
-hi! link javaParen2 SrceryWhite
-hi! link javaParen3 SrceryWhite
-hi! link javaParen4 SrceryWhite
-hi! link javaParen5 SrceryWhite
+hi! link javaParen SrceryBrightWhite
+hi! link javaParen1 SrceryBrightWhite
+hi! link javaParen2 SrceryBrightWhite
+hi! link javaParen3 SrceryBrightWhite
+hi! link javaParen4 SrceryBrightWhite
+hi! link javaParen5 SrceryBrightWhite
 hi! link javaOperator SrceryYellow
 
 hi! link javaVarArg SrceryGreen
@@ -749,7 +749,7 @@ hi! link scalaInterpolation SrceryCyan
 " }}}
 " Markdown: {{{
 
-call s:HL('markdownItalic', s:white, s:none, s:italic)
+call s:HL('markdownItalic', s:bright_white, s:none, s:italic)
 
 hi! link markdownH1 SrceryGreenBold
 hi! link markdownH2 SrceryGreenBold
@@ -762,21 +762,21 @@ hi! link markdownCode SrceryCyan
 hi! link markdownCodeBlock SrceryCyan
 hi! link markdownCodeDelimiter SrceryCyan
 
-hi! link markdownBlockquote SrceryGrey
-hi! link markdownListMarker SrceryGrey
-hi! link markdownOrderedListMarker SrceryGrey
-hi! link markdownRule SrceryGrey
-hi! link markdownHeadingRule SrceryGrey
+hi! link markdownBlockquote SrceryWhite
+hi! link markdownListMarker SrceryWhite
+hi! link markdownOrderedListMarker SrceryWhite
+hi! link markdownRule SrceryWhite
+hi! link markdownHeadingRule SrceryWhite
 
-hi! link markdownUrlDelimiter SrceryWhite
-hi! link markdownLinkDelimiter SrceryWhite
-hi! link markdownLinkTextDelimiter SrceryWhite
+hi! link markdownUrlDelimiter SrceryBrightWhite
+hi! link markdownLinkDelimiter SrceryBrightWhite
+hi! link markdownLinkTextDelimiter SrceryBrightWhite
 
 hi! link markdownHeadingDelimiter SrceryYellow
 hi! link markdownUrl SrceryMagenta
 hi! link markdownUrlTitleDelimiter SrceryGreen
 
-call s:HL('markdownLinkText', s:gray, s:none, s:underline)
+call s:HL('markdownLinkText', s:white, s:none, s:underline)
 hi! link markdownIdDeclaration markdownLinkText
 
 " }}}
