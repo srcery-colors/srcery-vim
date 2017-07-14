@@ -23,7 +23,7 @@ yellow    #FBB829   251, 184, 41
 blue      #5573A3   85,  115, 163
 magenta   #E02C6D   224, 44,  109
 cyan      #0AAEB3   10, 174, 179
-gray      #918175   145, 129, 117
+white     #918175   145, 129, 117
 
 brblack   #2D2B28   45,  43,  40
 brred     #F75341   247, 83, 65
@@ -32,7 +32,7 @@ bryellow  #FED06E   254, 208, 110
 brblue    #8EB2F7   142, 178, 247
 brmagenta #E35682   227, 86,  130
 brcyan    #53FDE9   83, 253, 233
-white     #FCE8C3   252, 232, 195
+brWhite   #FCE8C3   252, 232, 195
 ```
 ## Installation
 
