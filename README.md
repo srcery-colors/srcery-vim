@@ -91,7 +91,16 @@ Clojurescript
 
 left: C, right: Python
 ![cljs](https://cloud.githubusercontent.com/assets/4509009/25771685/967afc10-3258-11e7-95a2-aa51b857896b.png)
-
 Typeface used in screenshots is [PragmataPro](https://www.fsd.it/shop/fonts/pragmatapro/).
-## TODO:
- * improve vimdiff comparison.
+
+## Lightline
+![lightline](https://user-images.githubusercontent.com/4509009/29240594-9c36235c-7f68-11e7-81de-7d691c89a224.png)
+
+I've recently added a [Lightline](https://github.com/itchyny/lightline.vim) colorscheme.
+To use it, include 'srcery' value in lightline configuration, like so:
+
+```vimrc
+let g:lightline = {
+      \ 'colorscheme': 'srcery',
+      \ }
+```
