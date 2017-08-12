@@ -39,7 +39,7 @@ brWhite   #FCE8C3   252, 232, 195
 Put `srcery.vim` in `~/.vim/colors/` (on unix-like systems) or `%userprofile%\vimfiles\colors\` (on Windows).
 
 Using a [plugin](https://github.com/junegunn/vim-plug) [manager](https://github.com/tpope/vim-pathogen) for vim.
-```vimrc
+```vim
 Plug 'roosta/srcery'
 ```
 
@@ -78,7 +78,7 @@ default: 1
 ```
 
 If you like what you see and decide to make srcery your default colorscheme, add the relevant line to your vimrc:
-```
+```vim
 colorscheme srcery
 ```
 ## Screenshots.
@@ -99,7 +99,7 @@ Typeface used in screenshots is [PragmataPro](https://www.fsd.it/shop/fonts/prag
 I've recently added a [Lightline](https://github.com/itchyny/lightline.vim) colorscheme.
 To use it, include 'srcery' value in lightline configuration, like so:
 
-```vimrc
+```vim
 let g:lightline = {
       \ 'colorscheme': 'srcery',
       \ }
