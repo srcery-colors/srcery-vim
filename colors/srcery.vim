@@ -355,10 +355,10 @@ endif
 " }}}
 " Diffs: {{{
 
-call s:HL('DiffDelete', s:red, s:black, s:inverse)
-call s:HL('DiffAdd',    s:green, s:black, s:inverse)
-call s:HL('DiffChange', s:cyan, s:black, s:inverse)
-call s:HL('DiffText',   s:yellow, s:black, s:inverse)
+call s:HL('DiffDelete', s:red, s:black)
+call s:HL('DiffAdd',    s:green, s:black)
+call s:HL('DiffChange', s:cyan, s:black)
+call s:HL('DiffText',   s:yellow, s:black)
 
 " }}}
 " Spelling: {{{
