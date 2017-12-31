@@ -19,10 +19,10 @@ endif
 " Palette {{{
 
 let s:black          = ["#1C1B19", 0]
-let s:red            = ["#FF3128", 1]
+let s:red            = ["#EF2F27", 1]
 let s:green          = ["#519F50", 2]
 let s:yellow         = ["#FBB829", 3]
-let s:blue           = ["#5573A3", 4]
+let s:blue           = ["#2C78BF", 4]
 let s:magenta        = ["#E02C6D", 5]
 let s:cyan           = ["#0AAEB3", 6]
 let s:white          = ["#918175", 7]
@@ -30,8 +30,8 @@ let s:bright_black   = ["#2D2C29", 8]
 let s:bright_red     = ["#F75341", 9]
 let s:bright_green   = ["#98BC37", 10]
 let s:bright_yellow  = ["#FED06E", 11]
-let s:bright_blue    = ["#8EB2F7", 12]
-let s:bright_magenta = ["#E35682", 13]
+let s:bright_blue    = ["#82B4E3", 12]
+let s:bright_magenta = ["#FF5C8F", 13]
 let s:bright_cyan    = ["#53FDE9", 14]
 let s:bright_white   = ["#FCE8C3", 15]
 
