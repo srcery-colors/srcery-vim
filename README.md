@@ -1,5 +1,4 @@
-![logo](https://cloud.githubusercontent.com/assets/4509009/25771686/967c11ea-3258-11e7-8ff1-0da370c12b9c.png)
-
+![logo](https://user-images.githubusercontent.com/4509009/34464311-af369b46-ee79-11e7-9000-a008c1af95d3.png)
 Colorscheme that focus ease of use and clearly defined contrasting colors with a slightly earthy tone. Heavily inspired by [Gruvbox](https://github.com/morhetz/gruvbox), [base16](https://chriskempson.github.io/base16), [flattened](https://github.com/romainl/flattened) and [solarized](http://ethanschoonover.com/solarized).
 
 This is essentially a palette swap of [Gruvbox](https://github.com/morhetz/gruvbox) and all credit goes to the maintainers of that fantasic colorscheme. I wanted something a bit sharper, but I loved the syntax color choices of gruvbox so I made this. I also tried to make the theme as simple to use as possible, which was inspired by [Flattened](https://github.com/romainl/flattened).
