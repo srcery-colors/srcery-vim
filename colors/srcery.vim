@@ -823,5 +823,8 @@ hi! link jsonBraces SrceryFg1
 hi! link jsonString SrceryFg1
 
 " }}}
-
+" Rust: {{{
+"https://github.com/rust-lang/rust.vim/blob/master/syntax/rust.vim
+hi! link rustCommentLineDoc SrceryGreen
+" }}}
 " vim: set sw=2 ts=2 sts=2 et tw=80 ft=vim fdm=marker:
