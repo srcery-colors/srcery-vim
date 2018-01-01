@@ -132,7 +132,7 @@ xgrey5     239   #4E4E4E   78, 78, 78
 Now reason I mention this is that this relies on the 256 colors defined by your
 terminal, I don't change any of these colors, I just rely on the xterm palette.
 This might look different on different environments. They are used sparingly
-tho, and shouldn't effect 98% of the visuals.
+tho, and shouldn't effect 95% of the visuals.
 
 ## Attribution
 
@@ -142,3 +142,12 @@ This project started as essentially a palette swap of [Gruvbox](https://github.c
  * [Badwolf](https://github.com/sjl/badwolf)
  * [Jellybeans](https://github.com/nanotech/jellybeans.vim)
  * [Molokai](https://github.com/tomasr/molokai)
+
+## Etc
+I've adapted this colorscheme to various other formats, and I thought I'd share some of them here:
+* [Gimp/Inkscape palette](https://github.com/roosta/colors/blob/master/palettes/srcery.gpl)
+* [EDN](https://github.com/roosta/colors/blob/master/edn/srcery.edn)
+* [Rofi srcery theme](https://github.com/roosta/etc/blob/master/conf/rofi/.config/rofi/srcery.rasi)
+* [Firefox userChrome](https://github.com/roosta/etc/tree/master/conf/firefox)
+* [Emacs theme (WIP)](https://github.com/roosta/emacs-srcery)
+* [My dotfiles](https://github.com/roosta/etc)
