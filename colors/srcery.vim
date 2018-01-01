@@ -35,7 +35,7 @@ let s:bright_magenta = ["#FF5C8F", 13]
 let s:bright_cyan    = ["#53FDE9", 14]
 let s:bright_white   = ["#FCE8C3", 15]
 
-" default xterm colors.
+" xterm colors.
 let s:orange        = ['#D75F00', 166]  
 let s:bright_orange = ['#FF8700', 208]
 let s:hard_black    = ['#080808', 232]
@@ -72,6 +72,10 @@ endif
 
 if !exists('g:srcery_inverse')
   let g:srcery_inverse=1
+endif
+
+if !exists('g:srcery_strong_match_paren')
+  let g:srcery_strong_match_paren=1
 endif
 
 " }}}
@@ -199,7 +203,12 @@ if version >= 700
   hi! link TabLine TabLineFill
 
   " Match paired bracket under the cursor
-  call s:HL('MatchParen', s:yellow, s:bright_black, s:bold)
+  "
+  if g:srcery_strong_match_paren == 1 
+    call s:HL('MatchParen', s:none, s:black, s:inverse)
+  else
+    call s:HL('MatchParen', s:bright_yellow, s:none, s:bold)
+  endif
 endif
 
 if version >= 703
