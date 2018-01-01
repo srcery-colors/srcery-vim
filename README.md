@@ -36,6 +36,12 @@ brmagenta 13  #FF5C8F   255, 92, 143
 brcyan    14  #53FDE9   83, 253, 233
 brWhite   15  #FCE8C3   252, 232, 195
 ```
+
+If the colors still don't look right, ensure that 256 colors are enabled in vim by setting this option **before** setting the colorscheme.
+```viml
+set t_Co=256
+```
+
 ## Installation
 
 Put `srcery.vim` in `~/.vim/colors/` (on unix-like systems) or `%userprofile%\vimfiles\colors\` (on Windows).
