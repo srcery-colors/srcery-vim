@@ -306,7 +306,7 @@ hi! link Keyword SrceryRed
 " Variable name
 hi! link Identifier SrceryBlue
 " Function name
-hi! link Function SrceryGreenBold
+hi! link Function SrceryYellow
 
 " Generic preprocessor
 hi! link PreProc SrceryCyan
@@ -331,13 +331,13 @@ hi! link Number SrceryBrightMagenta
 hi! link Float SrceryBrightMagenta
 
 " Generic type
-hi! link Type SrceryYellow
+hi! link Type SrceryBrightBlue
 " static, register, volatile, etc
 hi! link StorageClass SrceryOrange
 " struct, union, enum, etc.
 hi! link Structure SrceryCyan
 " typedef
-hi! link Typedef SrceryYellow
+hi! link Typedef SrceryMagenta
 
 " }}}
 " Completion Menu: {{{
