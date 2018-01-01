@@ -19,22 +19,22 @@ question.
 TERMCOL   NR  HEX       RGB
 -------   --  -------   -------------
 black     0   #1C1B19   28,  27,  25
-red       1   #FF3128   255, 49,  40
+red       1   #EF2F27   239, 47, 39
 green     2   #519F50   81,  159, 80
 yellow    3   #FBB829   251, 184, 41
-blue      4   #5573A3   85,  115, 163
+blue      4   #2C78BF   44, 120, 191
 magenta   5   #E02C6D   224, 44,  109
 cyan      6   #0AAEB3   10, 174, 179
 white     7   #918175   145, 129, 117
 
 brblack   8   #2D2B28   45,  43,  40
 brred     9   #F75341   247, 83, 65
-brgreen   10   #98BC37   152, 188, 55
+brgreen   10  #98BC37   152, 188, 55
 bryellow  11  #FED06E   254, 208, 110
-brblue    12   #8EB2F7   142, 178, 247
-brmagenta 13   #E35682   227, 86,  130
-brcyan    14   #53FDE9   83, 253, 233
-brWhite   15   #FCE8C3   252, 232, 195
+brblue    12  #82B4E3   130, 180, 227
+brmagenta 13  #FF5C8F   255, 92, 143
+brcyan    14  #53FDE9   83, 253, 233
+brWhite   15  #FCE8C3   252, 232, 195
 ```
 ## Installation
 
