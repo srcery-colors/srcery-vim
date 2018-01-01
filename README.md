@@ -1,7 +1,6 @@
 ![logo](https://user-images.githubusercontent.com/4509009/34464311-af369b46-ee79-11e7-9000-a008c1af95d3.png)
-Colorscheme that focus ease of use and clearly defined contrasting colors with a slightly earthy tone. Heavily inspired by [Gruvbox](https://github.com/morhetz/gruvbox), [base16](https://chriskempson.github.io/base16), [flattened](https://github.com/romainl/flattened) and [solarized](http://ethanschoonover.com/solarized).
 
-This is essentially a palette swap of [Gruvbox](https://github.com/morhetz/gruvbox) and all credit goes to the maintainers of that fantasic colorscheme. I wanted something a bit sharper, but I loved the syntax color choices of gruvbox so I made this. I also tried to make the theme as simple to use as possible, which was inspired by [Flattened](https://github.com/romainl/flattened).
+Colorscheme that focus ease of use and clearly defined contrasting colors with a slightly earthy tone
 
 ## Requirements
 
@@ -9,8 +8,12 @@ This is essentially a palette swap of [Gruvbox](https://github.com/morhetz/gruvb
 You don’t need to do anything for this colorscheme to work in GVim or MacVim.
 
 ### TUI
-Srcery's only requirement is that you change your terminal emulator’s so-called “ASCII” colors to the ones in the table below.
-I've included colorscheme files for various terminals in the term_color folder, but since I haven't tested all of them some issues may arise. If your terminal is different or the file won't work please let me know so I can add/update/fix the file in question.
+To use Srcery's in the terminal you need to change your terminal emulator’s
+so-called “ASCII” colors to the ones in the table below. I've included
+colorscheme files for various terminals in the term_color folder, but since I
+haven't tested all of them some issues may arise. If your terminal is different
+or the file won't work please let me know so I can add/update/fix the file in
+question.
 
 ```
 TERMCOL   HEX       RGB
@@ -80,16 +83,16 @@ If you like what you see and decide to make srcery your default colorscheme, add
 ```vim
 colorscheme srcery
 ```
-## Screenshots.
+## Screenshots
 
-left: Bash script, right: Viml
+Bash script, Viml
 ![sh-viml](https://cloud.githubusercontent.com/assets/4509009/25771687/967cffec-3258-11e7-90a3-954e3041a4c9.png)
 
 Clojurescript
 ![cljs](https://cloud.githubusercontent.com/assets/4509009/25771684/967ab6ce-3258-11e7-90b9-25151141012f.png)
 
-left: C, right: Python
-![cljs](https://cloud.githubusercontent.com/assets/4509009/25771685/967afc10-3258-11e7-95a2-aa51b857896b.png)
+C, Python
+![c-python](https://cloud.githubusercontent.com/assets/4509009/25771685/967afc10-3258-11e7-95a2-aa51b857896b.png)
 Typeface used in screenshots is [PragmataPro](https://www.fsd.it/shop/fonts/pragmatapro/).
 
 ## Lightline
@@ -103,3 +106,33 @@ let g:lightline = {
       \ 'colorscheme': 'srcery',
       \ }
 ```
+
+## Xterm colors
+Srcery uses some [xterm colors](https://en.wikipedia.org/wiki/Xterm#/media/File:Xterm_256color_chart.svg) to pad out the color selection. Notable colors are:
+
+```
+TERMCOL    NUMBER  HEX       RGB
+-------    ------  -------   ----------
+orange     166     #D75F00   215, 95, 0
+brorange   208     #FF8700   255, 135, 0
+hard_black 233     #121212   18, 18, 18
+xgrey1     235     #262626   38, 38, 38
+xgrey2     236     #303030   48, 48, 48
+xgrey3     237     #3A3A3A   58, 58, 58
+xgrey4     238     #444444   68, 68, 68
+xgrey5     239     #4E4E4E   78, 78, 78
+```
+
+Now reason I mention this is that this relies on the 256 colors defined by your
+terminal, I don't change any of these colors, I just rely on the xterm palette.
+This might look different on different environments. They are used sparingly
+tho, and shouldn't effect 98% of the visuals.
+
+## Attribution
+
+This project started as essentially a palette swap of [Gruvbox](https://github.com/morhetz/gruvbox) and all credit goes to the maintainers of that fantasic colorscheme. I wanted something a bit sharper, but I loved the syntax color choices of gruvbox. I also tried to make the theme as simple to use as possible, which was inspired by [Flattened](https://github.com/romainl/flattened). Other themes that influenced Srcery:
+
+ * [Base16](http://chriskempson.com/projects/base16/)
+ * [Badwolf](https://github.com/sjl/badwolf)
+ * [Jellybeans](https://github.com/nanotech/jellybeans.vim)
+ * [Molokai](https://github.com/tomasr/molokai)
