@@ -54,6 +54,11 @@ Plug 'roosta/srcery'
 ## Configuration
 
 I've included a few toggles due to discrepancies in the various setups possible.
+To change any of these you'd put something like this in your `.vimrc`
+
+```viml
+let g:srcery_italic = 1
+```
 
 #### g:srcery_bold
 
@@ -78,6 +83,14 @@ default: 1
 #### g:srcery_inverse
 
 Enables inverse colors.
+default: 1
+
+#### g:srcery_strong_match_paren
+
+Change how highlighted matching parenthesis look. When enabled will invert
+matching parens making the match more visible. Disable this and the match will
+light up as bright yellow bold.
+
 default: 1
 
 ## Usage
@@ -131,8 +144,7 @@ xgrey5     239   #4E4E4E   78, 78, 78
 
 Now reason I mention this is that this relies on the 256 colors defined by your
 terminal, I don't change any of these colors, I just rely on the xterm palette.
-This might look different on different environments. They are used sparingly
-tho, and shouldn't effect 95% of the visuals.
+This might look different on different environments.
 
 ## Attribution
 
