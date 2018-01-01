@@ -16,25 +16,25 @@ or the file won't work please let me know so I can add/update/fix the file in
 question.
 
 ```
-TERMCOL   HEX       RGB
--------   -------   -------------
-black     #1C1B19   28,  27,  25
-red       #FF3128   255, 49,  40
-green     #519F50   81,  159, 80
-yellow    #FBB829   251, 184, 41
-blue      #5573A3   85,  115, 163
-magenta   #E02C6D   224, 44,  109
-cyan      #0AAEB3   10, 174, 179
-white     #918175   145, 129, 117
+TERMCOL   NR  HEX       RGB
+-------   --  -------   -------------
+black     0   #1C1B19   28,  27,  25
+red       1   #FF3128   255, 49,  40
+green     2   #519F50   81,  159, 80
+yellow    3   #FBB829   251, 184, 41
+blue      4   #5573A3   85,  115, 163
+magenta   5   #E02C6D   224, 44,  109
+cyan      6   #0AAEB3   10, 174, 179
+white     7   #918175   145, 129, 117
 
-brblack   #2D2B28   45,  43,  40
-brred     #F75341   247, 83, 65
-brgreen   #98BC37   152, 188, 55
-bryellow  #FED06E   254, 208, 110
-brblue    #8EB2F7   142, 178, 247
-brmagenta #E35682   227, 86,  130
-brcyan    #53FDE9   83, 253, 233
-brWhite   #FCE8C3   252, 232, 195
+brblack   8   #2D2B28   45,  43,  40
+brred     9   #F75341   247, 83, 65
+brgreen   10   #98BC37   152, 188, 55
+bryellow  11  #FED06E   254, 208, 110
+brblue    12   #8EB2F7   142, 178, 247
+brmagenta 13   #E35682   227, 86,  130
+brcyan    14   #53FDE9   83, 253, 233
+brWhite   15   #FCE8C3   252, 232, 195
 ```
 ## Installation
 
@@ -111,16 +111,16 @@ let g:lightline = {
 Srcery uses some [xterm colors](https://en.wikipedia.org/wiki/Xterm#/media/File:Xterm_256color_chart.svg) to pad out the color selection. Notable colors are:
 
 ```
-TERMCOL    NUMBER  HEX       RGB
--------    ------  -------   ----------
-orange     166     #D75F00   215, 95, 0
-brorange   208     #FF8700   255, 135, 0
-hard_black 233     #121212   18, 18, 18
-xgrey1     235     #262626   38, 38, 38
-xgrey2     236     #303030   48, 48, 48
-xgrey3     237     #3A3A3A   58, 58, 58
-xgrey4     238     #444444   68, 68, 68
-xgrey5     239     #4E4E4E   78, 78, 78
+TERMCOL    NR    HEX       RGB
+-------    ---   -------   ----------
+orange     166   #D75F00   215, 95, 0
+brorange   208   #FF8700   255, 135, 0
+hard_black 233   #121212   18, 18, 18
+xgrey1     235   #262626   38, 38, 38
+xgrey2     236   #303030   48, 48, 48
+xgrey3     237   #3A3A3A   58, 58, 58
+xgrey4     238   #444444   68, 68, 68
+xgrey5     239   #4E4E4E   78, 78, 78
 ```
 
 Now reason I mention this is that this relies on the 256 colors defined by your
