@@ -103,16 +103,19 @@ If you like what you see and decide to make srcery your default colorscheme, add
 colorscheme srcery
 ```
 ## Screenshots
+Shell script, viml
+![bash_viml](https://user-images.githubusercontent.com/4509009/34469648-1c9ab8d4-ef24-11e7-8068-8affa0136d2e.png)
 
-Bash script, Viml
-![sh-viml](https://cloud.githubusercontent.com/assets/4509009/25771687/967cffec-3258-11e7-90a3-954e3041a4c9.png)
+clojure/script
+![cljs_clj](https://user-images.githubusercontent.com/4509009/34469649-1cb5e118-ef24-11e7-97d0-423bf7dc1942.png)
 
-Clojurescript
-![cljs](https://cloud.githubusercontent.com/assets/4509009/25771684/967ab6ce-3258-11e7-90b9-25151141012f.png)
+c, rust
+![c_rust](https://user-images.githubusercontent.com/4509009/34469650-1cd1f254-ef24-11e7-8432-203e40edc6fc.png)
 
-C, Python
-![c-python](https://cloud.githubusercontent.com/assets/4509009/25771685/967afc10-3258-11e7-95a2-aa51b857896b.png)
-Typeface used in screenshots is [PragmataPro](https://www.fsd.it/shop/fonts/pragmatapro/).
+python, js
+![py_js](https://user-images.githubusercontent.com/4509009/34469651-1cede3ec-ef24-11e7-9dd0-b3edf406b319.png)
+
+Typeface used in screenshots is [Iosevka](https://github.com/be5invis/Iosevka)
 
 ## Lightline
 ![lightline](https://user-images.githubusercontent.com/4509009/29240594-9c36235c-7f68-11e7-81de-7d691c89a224.png)
