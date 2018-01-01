@@ -8,7 +8,7 @@ Colorscheme that focus ease of use and clearly defined contrasting colors with a
 You don’t need to do anything for this colorscheme to work in GVim or MacVim.
 
 ### TUI
-To use Srcery's in the terminal you need to change your terminal emulator’s
+To use Srcery in the terminal you need to change your terminal emulator’s
 so-called “ASCII” colors to the ones in the table below. I've included
 colorscheme files for various terminals in the term_color folder, but since I
 haven't tested all of them some issues may arise. If your terminal is different
