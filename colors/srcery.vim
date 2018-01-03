@@ -400,13 +400,13 @@ hi! link SneakStreakStatusLine Search
 if !exists('g:rbpt_colorpairs')
   let g:rbpt_colorpairs =
     \ [
-      \ ['blue', '#2C78BF'], ['magenta', '#E02C6D'],
-      \ ['red',  '#EF2F27'], ['cyan',    '#0AAEB3']
+      \ ['blue', '#2C78BF'], ['yellow', '#FBB829'],
+      \ ['red',  '#EF2F27'], ['green',    '#519F50']
     \ ]
 endif
                           
-let g:rainbow_guifgs = [ '#0AAEB3', '#EF2F27', '#E02C6D', '#2C78BF']
-let g:rainbow_ctermfgs = [ 'cyan', 'red', 'magenta', 'blue' ]
+let g:rainbow_guifgs = [ '#519F50', '#EF2F27', '#FBB829', '#2C78BF']
+let g:rainbow_ctermfgs = [ 'green', 'red', 'yellow', 'blue' ]
 
 if !exists('g:rainbow_conf')
    let g:rainbow_conf = {}
