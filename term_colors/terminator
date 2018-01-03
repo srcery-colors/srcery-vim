@@ -6,7 +6,7 @@
 
 [profiles]
   [[default]]
-    palette = "#1c1b19:#ef2f27:#519f50:#fbb829:#2c78bf:#e02c6d:#0aaeb3:#918175:#2d2b28:#f75341:#98bc37:#fed06e:#529CE0:#ff5c8f:#53fde9:#fce8c3"
+    palette = "#1c1b19:#ef2f27:#519f50:#fbb829:#2c78bf:#e02c6d:#0aaeb3:#918175:#2d2b28:#f75341:#98bc37:#fed06e:#68A8E4:#ff5c8f:#53fde9:#fce8c3"
     foreground_color = "#fce8c3"
     background_color = "#1c1b19"
     cursor_color = "#fce8c3"
