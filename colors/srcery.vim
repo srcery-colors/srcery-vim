@@ -75,7 +75,7 @@ if !exists('g:srcery_inverse')
 endif
 
 if !exists('g:srcery_strong_match_paren')
-  let g:srcery_strong_match_paren=1
+  let g:srcery_strong_match_paren=0
 endif
 
 " }}}
