@@ -88,10 +88,12 @@ default: 1
 #### g:srcery_strong_match_paren
 
 Change how highlighted matching parenthesis look. When enabled will invert
-matching parens making the match more visible. Disable this and the match will
-light up as bright yellow bold.
+matching parens making the match more visible. Disabled and the match will
+light up as bryellow bold.
 
-default: 1
+Works best with [Rainbow parenthesis](https://github.com/kien/rainbow_parentheses.vim)
+
+default: 0
 
 ## Usage
 ```
