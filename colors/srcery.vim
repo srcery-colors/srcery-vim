@@ -425,9 +425,9 @@ let g:niji_light_colours = g:rbpt_colorpairs
 " GitGutter: {{{
 
 hi! link GitGutterAdd SrceryGreen
-hi! link GitGutterChange SrceryCyan
+hi! link GitGutterChange SrceryYellow
 hi! link GitGutterDelete SrceryRed
-hi! link GitGutterChangeDelete SrceryCyan
+hi! link GitGutterChangeDelete SrceryYellow
 
 " }}}
 " GitCommit: "{{{
