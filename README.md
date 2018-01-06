@@ -119,10 +119,12 @@ python, js
 
 Typeface used in screenshots is [Iosevka](https://github.com/be5invis/Iosevka)
 
-## Lightline
+## Plugin support
+
+### Lightline
 ![lightline](https://user-images.githubusercontent.com/4509009/29240594-9c36235c-7f68-11e7-81de-7d691c89a224.png)
 
-I've recently added a [Lightline](https://github.com/itchyny/lightline.vim) colorscheme.
+[Lightline](https://github.com/itchyny/lightline.vim) colorscheme.
 To use it, include 'srcery' value in lightline configuration, like so:
 
 ```vim
@@ -130,6 +132,11 @@ let g:lightline = {
       \ 'colorscheme': 'srcery',
       \ }
 ```
+### Other
+These don't require any additional configuration.
+* [vim-gitgutter](https://github.com/airblade/vim-gitgutter)
+* [vim-sneak](https://github.com/justinmk/vim-sneak)
+* [ale](https://github.com/w0rp/ale)
 
 ## Xterm colors
 Srcery uses some [xterm colors](https://en.wikipedia.org/wiki/Xterm#/media/File:Xterm_256color_chart.svg) to pad out the color selection. Notable colors are:
