@@ -1,4 +1,4 @@
-![logo](https://user-images.githubusercontent.com/4509009/34464311-af369b46-ee79-11e7-9000-a008c1af95d3.png)
+![logo](https://user-images.githubusercontent.com/4509009/34634235-42f90330-f282-11e7-8c74-ebce866b229c.png)
 
 Colorscheme that focus ease of use and clearly defined contrasting colors with a slightly earthy tone
 
@@ -106,16 +106,16 @@ colorscheme srcery
 ```
 ## Screenshots
 Shell script, viml
-![bash_viml](https://user-images.githubusercontent.com/4509009/34469648-1c9ab8d4-ef24-11e7-8068-8affa0136d2e.png)
+![bash_viml](https://user-images.githubusercontent.com/4509009/34634230-42a38090-f282-11e7-91f9-4540705b8323.png)
 
 clojure/script
-![cljs_clj](https://user-images.githubusercontent.com/4509009/34469649-1cb5e118-ef24-11e7-97d0-423bf7dc1942.png)
+![cljs_clj](https://user-images.githubusercontent.com/4509009/34634232-42c097de-f282-11e7-9af9-c61bfef90aa8.png)
 
 c, rust
-![c_rust](https://user-images.githubusercontent.com/4509009/34469650-1cd1f254-ef24-11e7-8432-203e40edc6fc.png)
+![c_rust](https://user-images.githubusercontent.com/4509009/34634234-42dd249e-f282-11e7-911a-e5b5e2c77743.png)
 
 python, js
-![py_js](https://user-images.githubusercontent.com/4509009/34469651-1cede3ec-ef24-11e7-9dd0-b3edf406b319.png)
+![py_js](https://user-images.githubusercontent.com/4509009/34634236-43191120-f282-11e7-989c-1509ffcc4b17.png)
 
 Typeface used in screenshots is [Iosevka](https://github.com/be5invis/Iosevka)
 
@@ -154,9 +154,9 @@ xgrey4     238   #444444   68, 68, 68
 xgrey5     239   #4E4E4E   78, 78, 78
 ```
 
-Now reason I mention this is that this relies on the 256 colors defined by your
-terminal, I don't change any of these colors, I just rely on the xterm palette.
-This might look different on different environments.
+These colors relies on the 256 colors defined by your terminal, I don't change
+any of these colors, I just rely on the xterm palette. This might look different
+on different environments.
 
 ## Attribution
 
