@@ -436,6 +436,17 @@ hi! link gitcommitSelectedFile SrceryGreen
 hi! link gitcommitDiscardedFile SrceryRed
 
 " }}}
+" Asynchronous Lint Engine: {{{
+
+call s:HL('ALEError', s:none, s:none, s:undercurl, s:red)
+call s:HL('ALEWarning', s:none, s:none, s:undercurl, s:yellow)
+call s:HL('ALEInfo', s:none, s:none, s:undercurl, s:blue)
+
+hi! link ALEErrorSign SrceryRed
+hi! link ALEWarningSign SrceryYellow
+hi! link ALEInfoSign SrceryBlue
+
+" }}}
 
 " Filetype specific -----------------------------------------------------------
 " Diff: {{{
