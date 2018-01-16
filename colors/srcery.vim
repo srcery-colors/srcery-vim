@@ -470,7 +470,7 @@ hi! link htmlTagName SrceryCyanBold
 hi! link htmlArg SrceryCyan
 
 hi! link htmlScriptTag SrceryMagenta
-hi! link htmlTagN SrceryFg1
+hi! link htmlTagN SrceryBlue
 hi! link htmlSpecialTagName SrceryCyanBold
 
 call s:HL('htmlLink', s:bright_white, s:none, s:underline)
@@ -586,7 +586,7 @@ hi! link cssColor SrceryBlue
 hi! link cssSelectorOp SrceryBlue
 hi! link cssSelectorOp2 SrceryBlue
 hi! link cssImportant SrceryGreen
-hi! link cssVendor SrceryFg1
+hi! link cssVendor SrceryBlue
 
 hi! link cssTextProp SrceryCyan
 hi! link cssAnimationProp SrceryCyan
@@ -613,8 +613,8 @@ hi! link cssGeneratedContentProp SrceryCyan
 " }}}
 " JavaScript: {{{
 
-hi! link javaScriptBraces SrceryFg1
-hi! link javaScriptFunction SrceryCyan
+hi! link javaScriptBraces SrceryBrightBlue
+hi! link javaScriptFunction SrceryYellow
 hi! link javaScriptIdentifier SrceryRed
 hi! link javaScriptMember SrceryBlue
 hi! link javaScriptNumber SrceryMagenta
@@ -634,10 +634,10 @@ hi! link javascriptClassName SrceryYellow
 hi! link javascriptClassSuperName SrceryYellow
 hi! link javascriptGlobal SrceryYellow
 
-hi! link javascriptEndColons SrceryFg1
-hi! link javascriptFuncArg SrceryFg1
-hi! link javascriptGlobalMethod SrceryFg1
-hi! link javascriptNodeGlobal SrceryFg1
+hi! link javascriptEndColons SrceryBlue
+hi! link javascriptFuncArg SrceryBlue
+hi! link javascriptGlobalMethod SrceryBlue
+hi! link javascriptNodeGlobal SrceryBlue
 
 " hi! link javascriptVariable SrceryYellow
 hi! link javascriptVariable SrceryRed
@@ -648,8 +648,8 @@ hi! link javascriptClassSuper SrceryYellow
 
 " hi! link javascriptFuncKeyword SrceryYellow
 " hi! link javascriptAsyncFunc SrceryYellow
-hi! link javascriptFuncKeyword SrceryCyan
-hi! link javascriptAsyncFunc SrceryCyan
+hi! link javascriptFuncKeyword SrceryYellow
+hi! link javascriptAsyncFunc SrceryYellow
 hi! link javascriptClassStatic SrceryYellow
 
 hi! link javascriptOperator SrceryRed
@@ -659,23 +659,20 @@ hi! link javascriptExceptions SrceryRed
 hi! link javascriptMessage SrceryRed
 
 hi! link javascriptTemplateSB SrceryCyan
-hi! link javascriptTemplateSubstitution SrceryFg1
+hi! link javascriptTemplateSubstitution SrceryBlue
 
-" hi! link javascriptLabel SrceryBlue
-" hi! link javascriptObjectLabel SrceryBlue
-" hi! link javascriptPropertyName SrceryBlue
-hi! link javascriptLabel SrceryFg1
-hi! link javascriptObjectLabel SrceryFg1
-hi! link javascriptPropertyName SrceryFg1
+hi! link javascriptLabel SrceryBlue
+hi! link javascriptObjectLabel SrceryBlue
+hi! link javascriptPropertyName SrceryBlue
 
-hi! link javascriptLogicSymbols SrceryFg1
-hi! link javascriptArrowFunc SrceryFg1
+hi! link javascriptLogicSymbols SrceryBlue
+hi! link javascriptArrowFunc SrceryBlue
 
-hi! link javascriptDocParamName SrceryFg4
-hi! link javascriptDocTags SrceryFg4
-hi! link javascriptDocNotation SrceryFg4
-hi! link javascriptDocParamType SrceryFg4
-hi! link javascriptDocNamedParamType SrceryFg4
+hi! link javascriptDocParamName SrceryGreen
+hi! link javascriptDocTags SrceryGreen
+hi! link javascriptDocNotation SrceryGreen
+hi! link javascriptDocParamType SrceryGreen
+hi! link javascriptDocNamedParamType SrceryGreen
 
 " }}}
 " CoffeeScript: {{{
@@ -750,21 +747,21 @@ hi! link elixirInterpolationDelimiter SrceryCyan
 " Scala: {{{
 
 " NB: scala vim syntax file is kinda horrible
-hi! link scalaNameDefinition SrceryFg1
-hi! link scalaCaseFollowing SrceryFg1
-hi! link scalaCapitalWord SrceryFg1
-hi! link scalaTypeExtension SrceryFg1
+hi! link scalaNameDefinition SrceryBlue
+hi! link scalaCaseFollowing SrceryBlue
+hi! link scalaCapitalWord SrceryBlue
+hi! link scalaTypeExtension SrceryBlue
 
 hi! link scalaKeyword SrceryRed
 hi! link scalaKeywordModifier SrceryRed
 
 hi! link scalaSpecial SrceryCyan
-hi! link scalaOperator SrceryFg1
+hi! link scalaOperator SrceryBlue
 
 hi! link scalaTypeDeclaration SrceryYellow
 hi! link scalaTypeTypePostDeclaration SrceryYellow
 
-hi! link scalaInstanceDeclaration SrceryFg1
+hi! link scalaInstanceDeclaration SrceryBlue
 hi! link scalaInterpolation SrceryCyan
 
 " }}}
@@ -808,10 +805,10 @@ hi! link markdownIdDeclaration markdownLinkText
 " hi! link haskellConditional SrceryCyan
 " hi! link haskellLet SrceryYellow
 "
-hi! link haskellType SrceryFg1
-hi! link haskellIdentifier SrceryFg1
-hi! link haskellSeparator SrceryFg1
-hi! link haskellDelimiter SrceryFg4
+hi! link haskellType SrceryBlue
+hi! link haskellIdentifier SrceryBlue
+hi! link haskellSeparator SrceryBlue
+hi! link haskellDelimiter SrceryBrightWhite
 hi! link haskellOperators SrceryBlue
 "
 hi! link haskellBacktick SrceryYellow
@@ -839,8 +836,8 @@ hi! link haskellChar SrceryGreen
 
 hi! link jsonKeyword SrceryGreen
 hi! link jsonQuote SrceryGreen
-hi! link jsonBraces SrceryFg1
-hi! link jsonString SrceryFg1
+hi! link jsonBraces SrceryBlue
+hi! link jsonString SrceryBlue
 
 " }}}
 " Rust: {{{
