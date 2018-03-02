@@ -628,12 +628,17 @@ hi! link javascriptReflectMethod Function
 hi! link javascriptStringMethod Function
 hi! link javascriptObjectMethod Function
 hi! link javascriptObjectStaticMethod Function
+hi! link javascriptObjectLabel SrceryBlue
 
 hi! link javascriptProp SrceryBlue
 hi! link javascriptDOMStorageProp SrceryBlue
+hi! link javascriptDOMStorageMethod Function
+hi! link javascriptDOMEventProp SrceryBlue
 
+hi! link javascriptVariable SrceryBrightBlue
 hi! link javascriptOperator SrceryBrightCyan
 hi! link javascriptFuncKeyword SrceryBrightRed
+hi! link javascriptFunctionMethod SrceryYellow
 hi! link javascriptReturn SrceryBrightRed
 hi! link javascriptEndColons Normal
 
