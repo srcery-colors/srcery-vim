@@ -354,9 +354,9 @@ hi! link Typedef SrceryMagenta
 
 if version >= 700
   " Popup menu: normal item
-  call s:HL('Pmenu', s:bright_white, s:black)
+  call s:HL('Pmenu', s:bright_white, s:bright_black)
   " Popup menu: selected item
-  call s:HL('PmenuSel', s:black, s:blue, s:bold)
+  call s:HL('PmenuSel', s:bright_white, s:magenta, s:bold)
   " Popup menu: scrollbar
   call s:HL('PmenuSbar', s:none, s:black)
   " Popup menu: scrollbar thumb
