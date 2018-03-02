@@ -631,9 +631,6 @@ hi! link javascriptObjectStaticMethod Function
 hi! link javascriptObjectLabel SrceryBlue
 
 hi! link javascriptProp SrceryBlue
-hi! link javascriptDOMStorageProp SrceryBlue
-hi! link javascriptDOMStorageMethod Function
-hi! link javascriptDOMEventProp SrceryBlue
 
 hi! link javascriptVariable SrceryBrightBlue
 hi! link javascriptOperator SrceryBrightCyan
