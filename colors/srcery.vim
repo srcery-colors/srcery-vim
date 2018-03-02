@@ -173,6 +173,7 @@ call s:HL('SrceryBrightWhite', s:bright_white)
 
 " special
 call s:HL('SrceryOrange', s:orange)
+call s:HL('SrceryBrightOrange', s:bright_orange)
 call s:HL('SrceryOrangeBold', s:orange, s:none, s:bold)
 call s:HL('SrceryHardBlack', s:hard_black)
 call s:HL('SrceryXgray1', s:xgray1)
