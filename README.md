@@ -115,7 +115,7 @@ c, rust
 ![c_rust](https://user-images.githubusercontent.com/4509009/34634234-42dd249e-f282-11e7-911a-e5b5e2c77743.png)
 
 python, js
-![py_js](https://user-images.githubusercontent.com/4509009/34634236-43191120-f282-11e7-989c-1509ffcc4b17.png)
+![py-js](https://user-images.githubusercontent.com/4509009/36925610-f737173e-1e73-11e8-9808-446b676003d9.png)
 
 Typeface used in screenshots is [Iosevka](https://github.com/be5invis/Iosevka)
 
