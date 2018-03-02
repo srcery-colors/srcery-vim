@@ -614,66 +614,28 @@ hi! link cssGeneratedContentProp SrceryCyan
 " }}}
 " JavaScript: {{{
 
-hi! link javaScriptBraces SrceryBrightBlue
-hi! link javaScriptFunction SrceryYellow
-hi! link javaScriptIdentifier SrceryRed
 hi! link javaScriptMember SrceryBlue
-hi! link javaScriptNumber SrceryMagenta
 hi! link javaScriptNull SrceryMagenta
-hi! link javaScriptParens SrceryBrightWhite
 
 " }}}
 " YAJS: {{{
 
-hi! link javascriptImport SrceryCyan
-hi! link javascriptExport SrceryCyan
-hi! link javascriptClassKeyword SrceryCyan
-hi! link javascriptClassExtends SrceryCyan
-hi! link javascriptDefault SrceryCyan
+hi! link javascriptParens SrceryBrightCyan
+hi! link javascriptFuncArg Normal
+hi! link javascriptDocComment SrceryGreen
+hi! link javascriptArrayMethod Function
+hi! link javascriptReflectMethod Function
+hi! link javascriptStringMethod Function
+hi! link javascriptObjectMethod Function
+hi! link javascriptObjectStaticMethod Function
 
-hi! link javascriptClassName SrceryYellow
-hi! link javascriptClassSuperName SrceryYellow
-hi! link javascriptGlobal SrceryYellow
+hi! link javascriptProp SrceryBlue
+hi! link javascriptDOMStorageProp SrceryBlue
 
-hi! link javascriptEndColons SrceryBlue
-hi! link javascriptFuncArg SrceryBlue
-hi! link javascriptGlobalMethod SrceryBlue
-hi! link javascriptNodeGlobal SrceryBlue
-
-" hi! link javascriptVariable SrceryYellow
-hi! link javascriptVariable SrceryRed
-" hi! link javascriptIdentifier SrceryYellow
-" hi! link javascriptClassSuper SrceryYellow
-hi! link javascriptIdentifier SrceryYellow
-hi! link javascriptClassSuper SrceryYellow
-
-" hi! link javascriptFuncKeyword SrceryYellow
-" hi! link javascriptAsyncFunc SrceryYellow
-hi! link javascriptFuncKeyword SrceryYellow
-hi! link javascriptAsyncFunc SrceryYellow
-hi! link javascriptClassStatic SrceryYellow
-
-hi! link javascriptOperator SrceryRed
-hi! link javascriptForOperator SrceryRed
-hi! link javascriptYield SrceryRed
-hi! link javascriptExceptions SrceryRed
-hi! link javascriptMessage SrceryRed
-
-hi! link javascriptTemplateSB SrceryCyan
-hi! link javascriptTemplateSubstitution SrceryBlue
-
-hi! link javascriptLabel SrceryBlue
-hi! link javascriptObjectLabel SrceryBlue
-hi! link javascriptPropertyName SrceryBlue
-
-hi! link javascriptLogicSymbols SrceryBlue
-hi! link javascriptArrowFunc SrceryBlue
-
-hi! link javascriptDocParamName SrceryGreen
-hi! link javascriptDocTags SrceryGreen
-hi! link javascriptDocNotation SrceryGreen
-hi! link javascriptDocParamType SrceryGreen
-hi! link javascriptDocNamedParamType SrceryGreen
+hi! link javascriptOperator SrceryBrightCyan
+hi! link javascriptFuncKeyword SrceryBrightRed
+hi! link javascriptReturn SrceryBrightRed
+hi! link javascriptEndColons Normal
 
 " }}}
 " CoffeeScript: {{{
