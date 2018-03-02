@@ -324,7 +324,7 @@ hi! link Include SrceryCyan
 " Preprocessor #define
 hi! link Define SrceryCyan
 " Same as Define
-hi! link Macro SrceryCyan
+hi! link Macro SrceryOrange
 " Preprocessor #if, #else, #endif, etc.
 hi! link PreCondit SrceryCyan
 
