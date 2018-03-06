@@ -206,7 +206,7 @@ if version >= 700
   " Match paired bracket under the cursor
   "
   if g:srcery_strong_match_paren == 1 
-    call s:HL('MatchParen', s:none, s:black, s:inverse)
+    call s:HL('MatchParen', s:none, s:bright_white, s:inverse . s:bold)
   else
     call s:HL('MatchParen', s:bright_yellow, s:none, s:bold)
   endif
