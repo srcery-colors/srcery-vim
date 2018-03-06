@@ -1,0 +1,28 @@
+# Colors (Srcery)
+colors:
+  # Default colors
+  primary:
+    background: '0x1C1B19'
+    foreground: '0xFCE8C3'
+
+  # Normal colors
+  normal:
+    black:   '0x1C1B19'
+    red:     '0xEF2F27'
+    green:   '0x519F50'
+    yellow:  '0xFBB829'
+    blue:    '0x2C78BF'
+    magenta: '0xE02C6D'
+    cyan:    '0x0AAEB3'
+    white:   '0x918175'
+
+  # Bright colors
+  bright:
+    black:   '0x2D2B28'
+    red:     '0xF75341'
+    green:   '0x98BC37'
+    yellow:  '0xFED06E'
+    blue:    '0x529CE0'
+    magenta: '0xFF5C8F'
+    cyan:    '0x53FDE9'
+    white:   '0xFCE8C3'
