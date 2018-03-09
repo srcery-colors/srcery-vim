@@ -38,7 +38,7 @@ let s:bright_white   = ["#FCE8C3", 15]
 " xterm colors.
 let s:orange        = ['#D75F00', 166]  
 let s:bright_orange = ['#FF8700', 208]
-let s:hard_black    = ['#080808', 232]
+let s:hard_black    = ['#121212', 233]
 let s:xgray1        = ['#262626', 235]
 let s:xgray2        = ['#303030', 236]
 let s:xgray3        = ['#3A3A3A', 237]
