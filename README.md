@@ -27,11 +27,11 @@ magenta   5   #E02C6D   224, 44,  109
 cyan      6   #0AAEB3   10, 174, 179
 white     7   #918175   145, 129, 117
 
-brblack   8   #2D2B28   45,  43,  40
+brblack   8   #2D2C29   45, 44, 41
 brred     9   #F75341   247, 83, 65
 brgreen   10  #98BC37   152, 188, 55
 bryellow  11  #FED06E   254, 208, 110
-brblue    12  #82B4E3   130, 180, 227
+brblue    12  #68A8E4   104, 168, 228
 brmagenta 13  #FF5C8F   255, 92, 143
 brcyan    14  #53FDE9   83, 253, 233
 brWhite   15  #FCE8C3   252, 232, 195
@@ -115,7 +115,7 @@ c, rust
 ![c_rust](https://user-images.githubusercontent.com/4509009/34634234-42dd249e-f282-11e7-911a-e5b5e2c77743.png)
 
 python, js
-![py_js](https://user-images.githubusercontent.com/4509009/34634236-43191120-f282-11e7-989c-1509ffcc4b17.png)
+![py-js](https://user-images.githubusercontent.com/4509009/36925610-f737173e-1e73-11e8-9808-446b676003d9.png)
 
 Typeface used in screenshots is [Iosevka](https://github.com/be5invis/Iosevka)
 
