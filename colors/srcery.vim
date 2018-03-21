@@ -528,9 +528,9 @@ hi! link vimContinue SrceryBrightWhite
 " Clojure: {{{
 
 hi! link clojureKeyword SrceryBlue
-hi! link clojureCond SrceryBrightRed
-hi! link clojureSpecial SrceryBrightRed
-hi! link clojureDefine SrceryBrightRed
+hi! link clojureCond SrceryRed
+hi! link clojureSpecial SrceryRed
+hi! link clojureDefine SrceryRed
 
 hi! link clojureFunc SrceryYellow
 hi! link clojureRepeat SrceryYellow
@@ -547,7 +547,7 @@ hi! link clojureRegexpQuantifier clojureRegexpCharClass
 hi! link clojureParen SrceryBrightBlue
 hi! link clojureAnonArg SrceryYellow
 hi! link clojureVariable SrceryBlue
-hi! link clojureMacro SrceryBrightRed
+hi! link clojureMacro SrceryOrangeBold
 
 hi! link clojureMeta SrceryYellow
 hi! link clojureDeref SrceryYellow
