@@ -229,8 +229,8 @@ hi! link SpecialKey SrceryWhiteAlt
 call s:HL('Visual',    s:none,  s:black, s:inverse)
 hi! link VisualNOS Visual
 
-call s:HL('Search',    s:bright_white, s:magenta)
-call s:HL('IncSearch', s:bright_white, s:magenta)
+call s:HL('Search',    s:none, s:none, s:inverse)
+call s:HL('IncSearch', s:none, s:none, s:inverse)
 
 call s:HL('Underlined', s:blue, s:none, s:underline)
 
