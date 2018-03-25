@@ -230,11 +230,22 @@ endif
 hi! link NonText SrceryWhiteAlt
 hi! link SpecialKey SrceryWhiteAlt
 
-call s:HL('Visual', s:none, s:bright_black, s:inverse . s:bold)
+if g:srcery_inverse == 1
+  call s:HL('Visual', s:none, s:none, s:inverse)
+else
+  call s:HL('Visual', s:none, s:bright_black, s:bold)
+endif
+
 hi! link VisualNOS Visual
 
-call s:HL('Search',    s:bright_white, s:magenta, s:inverse)
-call s:HL('IncSearch', s:bright_white, s:magenta, s:inverse)
+
+if g:srcery_inverse == 1 
+  call s:HL('Search', s:none, s:none, s:inverse)
+  call s:HL('IncSearch', s:none, s:none, s:inverse)
+else
+  call s:HL('Search', s:bright_white, s:magenta)
+  call s:HL('IncSearch', s:bright_white, s:magenta)
+endif
 
 call s:HL('Underlined', s:blue, s:none, s:underline)
 
@@ -297,7 +308,7 @@ hi! link Special SrceryOrange
 
 call s:HL('Comment', s:white, s:none, s:italic)
 call s:HL('Todo', s:bright_white, s:black, s:bold . s:italic)
-call s:HL('Error', s:red, s:black, s:bold . s:inverse)
+call s:HL('Error', s:black, s:red, s:bold)
 
 " String constant: "this is a string"
 call s:HL('String',  s:bright_green)
