@@ -74,8 +74,8 @@ if !exists('g:srcery_inverse')
   let g:srcery_inverse=1
 endif
 
-if !exists('g:srcery_strong_match_paren')
-  let g:srcery_strong_match_paren=0
+if !exists('g:srcery_inverse_match_paren')
+  let g:srcery_inverse_match_paren=0
 endif
 
 if !exists('g:srcery_dim_lisp_paren')
@@ -209,7 +209,7 @@ if version >= 700
 
   " Match paired bracket under the cursor
   "
-  if g:srcery_strong_match_paren == 1 
+  if g:srcery_inverse_match_paren == 1 
     call s:HL('MatchParen', s:none, s:bright_white, s:inverse . s:bold)
   else
     call s:HL('MatchParen', s:magenta, s:none, s:bold)
