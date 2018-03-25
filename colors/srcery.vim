@@ -226,7 +226,7 @@ endif
 hi! link NonText SrceryWhiteAlt
 hi! link SpecialKey SrceryWhiteAlt
 
-call s:HL('Visual',    s:none,  s:black, s:inverse)
+call s:HL('Visual',    s:none,  s:none, s:inverse)
 hi! link VisualNOS Visual
 
 call s:HL('Search',    s:none, s:none, s:inverse)
