@@ -208,7 +208,7 @@ if version >= 700
   if g:srcery_strong_match_paren == 1 
     call s:HL('MatchParen', s:none, s:bright_white, s:inverse . s:bold)
   else
-    call s:HL('MatchParen', s:bright_yellow, s:none, s:bold)
+    call s:HL('MatchParen', s:magenta, s:none, s:bold)
   endif
 endif
 
