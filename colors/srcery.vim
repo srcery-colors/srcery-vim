@@ -78,6 +78,10 @@ if !exists('g:srcery_strong_match_paren')
   let g:srcery_strong_match_paren=0
 endif
 
+if !exists('g:srcery_dim_lisp_paren')
+  let g:srcery_dim_lisp_paren=0
+endif
+
 " }}}
 " Setup Emphasis: {{{
 
@@ -349,6 +353,12 @@ hi! link Structure SrceryCyan
 " typedef
 hi! link Typedef SrceryMagenta
 
+if g:srcery_dim_lisp_paren == 1 
+  hi! link Delimiter SrceryXgray5
+else
+  hi! link Delimiter SrceryWhite
+endif
+
 " }}}
 " Completion Menu: {{{
 
@@ -525,7 +535,14 @@ hi! link vimSep SrceryBrightWhite
 hi! link vimContinue SrceryBrightWhite
 
 " }}}
-" Clojure: {{{
+" Lisp dialects: {{{
+if g:srcery_dim_lisp_paren == 1 
+  hi! link schemeParentheses SrceryXgray5
+  hi! link clojureParen SrceryXgray3
+else
+  hi! link schemeParentheses SrceryWhite
+  hi! link clojureParen SrceryWhite
+endif
 
 hi! link clojureKeyword SrceryBlue
 hi! link clojureCond SrceryRed
@@ -544,7 +561,6 @@ call s:HL('clojureRegexpCharClass', s:bright_white, s:none, s:bold)
 hi! link clojureRegexpMod clojureRegexpCharClass
 hi! link clojureRegexpQuantifier clojureRegexpCharClass
 
-hi! link clojureParen SrceryBrightBlue
 hi! link clojureAnonArg SrceryYellow
 hi! link clojureVariable SrceryBlue
 hi! link clojureMacro SrceryOrangeBold
