@@ -85,13 +85,17 @@ default: 1
 Enables inverse colors.
 default: 1
 
-#### g:srcery_strong_match_paren
+#### g:srcery_inverse_match_paren
 
-Change how highlighted matching parenthesis look. When enabled will invert
-matching parens making the match more visible. Disabled and the match will
-light up as bryellow bold.
+When enabled will invert matching parens.
 
 Works best with [Rainbow parenthesis](https://github.com/kien/rainbow_parentheses.vim)
+
+default: 0
+
+#### g:srcery_dim_lisp_paren
+
+Dims lisp dialects delimiters to a fairly dark gray (xgray5 specifically) 
 
 default: 0
 
