@@ -210,9 +210,9 @@ if version >= 700
   " Match paired bracket under the cursor
   "
   if g:srcery_inverse_match_paren == 1 
-    call s:HL('MatchParen', s:none, s:bright_white, s:inverse . s:bold)
+    call s:HL('MatchParen', s:bright_magenta, s:none, s:inverse . s:bold)
   else
-    call s:HL('MatchParen', s:magenta, s:none, s:bold)
+    call s:HL('MatchParen', s:bright_magenta, s:none, s:bold)
   endif
 endif
 
@@ -230,11 +230,11 @@ endif
 hi! link NonText SrceryWhiteAlt
 hi! link SpecialKey SrceryWhiteAlt
 
-call s:HL('Visual',    s:none,  s:none, s:inverse)
+call s:HL('Visual', s:none, s:bright_black, s:inverse . s:bold)
 hi! link VisualNOS Visual
 
-call s:HL('Search',    s:none, s:none, s:inverse)
-call s:HL('IncSearch', s:none, s:none, s:inverse)
+call s:HL('Search',    s:bright_white, s:magenta, s:inverse)
+call s:HL('IncSearch', s:bright_white, s:magenta, s:inverse)
 
 call s:HL('Underlined', s:blue, s:none, s:underline)
 
@@ -282,7 +282,7 @@ call s:HL('FoldColumn', s:white, s:black)
 " Cursor: {{{
 
 " Character under cursor
-call s:HL('Cursor', s:none, s:none, s:inverse)
+call s:HL('Cursor', s:black, s:bright_white, s:inverse)
 " Visual mode cursor, selection
 hi! link vCursor Cursor
 " Input moder cursor
