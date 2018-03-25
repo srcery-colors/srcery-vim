@@ -1,4 +1,4 @@
-![logo](https://user-images.githubusercontent.com/4509009/34634235-42f90330-f282-11e7-8c74-ebce866b229c.png)
+![logo](assets/title.png)
 
 Colorscheme that focus ease of use and clearly defined contrasting colors with a slightly earthy tone
 
@@ -95,7 +95,7 @@ default: 0
 
 #### g:srcery_dim_lisp_paren
 
-Dims lisp dialects delimiters to a fairly dark gray (xgray5 specifically) 
+Dims lisp dialects delimiters to a fairly dark gray (xgray5 specifically)
 
 default: 0
 
@@ -110,16 +110,16 @@ colorscheme srcery
 ```
 ## Screenshots
 Shell script, viml
-![bash_viml](https://user-images.githubusercontent.com/4509009/34634230-42a38090-f282-11e7-91f9-4540705b8323.png)
+![bash_viml](assets/bash_viml.png)
 
 clojure/script
-![cljs_clj](https://user-images.githubusercontent.com/4509009/34634232-42c097de-f282-11e7-9af9-c61bfef90aa8.png)
+![cljs_clj](assets/cljs_clj.png)
 
 c, rust
-![c_rust](https://user-images.githubusercontent.com/4509009/34634234-42dd249e-f282-11e7-911a-e5b5e2c77743.png)
+![c_rust](assets/c_rust.png)
 
 python, js
-![py-js](https://user-images.githubusercontent.com/4509009/36925610-f737173e-1e73-11e8-9808-446b676003d9.png)
+![py_js](assets/py_js.png)
 
 Typeface used in screenshots is [Iosevka](https://github.com/be5invis/Iosevka)
 
