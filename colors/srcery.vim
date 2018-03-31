@@ -549,7 +549,7 @@ hi! link vimContinue SrceryBrightWhite
 " Lisp dialects: {{{
 if g:srcery_dim_lisp_paren == 1 
   hi! link schemeParentheses SrceryXgray5
-  hi! link clojureParen SrceryXgray3
+  hi! link clojureParen SrceryXgray5
 else
   hi! link schemeParentheses SrceryWhite
   hi! link clojureParen SrceryWhite
