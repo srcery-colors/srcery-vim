@@ -293,7 +293,7 @@ call s:HL('FoldColumn', s:white, s:black)
 " Cursor: {{{
 
 " Character under cursor
-call s:HL('Cursor', s:black, s:bright_white, s:inverse)
+call s:HL('Cursor', s:none, s:none, s:inverse)
 " Visual mode cursor, selection
 hi! link vCursor Cursor
 " Input moder cursor
