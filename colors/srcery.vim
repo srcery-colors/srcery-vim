@@ -74,6 +74,10 @@ if !exists('g:srcery_inverse')
   let g:srcery_inverse=1
 endif
 
+if !exists('g:srcery_inverse_matches')
+  let g:srcery_inverse_matches=0
+endif
+
 if !exists('g:srcery_inverse_match_paren')
   let g:srcery_inverse_match_paren=0
 endif
@@ -238,8 +242,7 @@ endif
 
 hi! link VisualNOS Visual
 
-
-if g:srcery_inverse == 1 
+if g:srcery_inverse == 1 && g:srcery_inverse_matches == 1 
   call s:HL('Search', s:none, s:none, s:inverse)
   call s:HL('IncSearch', s:none, s:none, s:inverse)
 else
