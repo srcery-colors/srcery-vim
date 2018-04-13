@@ -85,9 +85,14 @@ default: 1
 Enables inverse colors.
 default: 1
 
+#### g:srcery_inverse_matches
+
+Enables inverse search matches.
+default: 0
+
 #### g:srcery_inverse_match_paren
 
-When enabled will invert matching parens.
+When enabled will inverse matching delimiters.
 
 Works best with [Rainbow parenthesis](https://github.com/kien/rainbow_parentheses.vim)
 
