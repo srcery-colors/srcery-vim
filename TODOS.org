@@ -1,0 +1,2 @@
+* TODO Change link color
+* TODO fix rebase error warning when squashing first commit
