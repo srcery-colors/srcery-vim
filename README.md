@@ -1,6 +1,6 @@
 ![logo](assets/title.png)
 
-Colorscheme that focus ease of use and clearly defined contrasting colors with a slightly earthy tone
+Colorscheme with clearly defined contrasting colors with a slightly earthy tone.
 
 ## Requirements
 
@@ -177,4 +177,4 @@ This project started as essentially a palette swap of [Gruvbox](https://github.c
  * [Molokai](https://github.com/tomasr/molokai)
 
 ## Emacs
- Check out [emacs-srcery](https://github.com/roosta/emacs-srcery) 
+ Check out [emacs-srcery](https://github.com/roosta/emacs-srcery)
