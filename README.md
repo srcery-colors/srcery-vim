@@ -1,6 +1,6 @@
 ![logo](assets/title.png)
 
-Colorscheme with clearly defined contrasting colors with a slightly earthy tone.
+Colorscheme with clearly defined contrasting colors and a slightly earthy tone.
 
 ## Requirements
 
