@@ -142,7 +142,7 @@ let g:lightline = {
 ### Airline
 ![airline](assets/airline.png)
 
-Thanks to @MindTooth, Srcery now includes an [Airline](https://github.com/vim-airline/vim-airline) theme.
+Thanks to [MindTooth](https://github.com/MindTooth), Srcery now includes an [Airline](https://github.com/vim-airline/vim-airline) theme.
 
 ### Other
 These don't require any additional configuration.
