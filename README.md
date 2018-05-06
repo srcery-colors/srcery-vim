@@ -141,6 +141,12 @@ let g:lightline = {
       \ 'colorscheme': 'srcery',
       \ }
 ```
+
+### Airline
+![airline](assets/airline.png)
+
+Thanks to @MindTooth, Srcery now includes an [Airline](https://github.com/vim-airline/vim-airline) theme.
+
 ### Other
 These don't require any additional configuration.
 * [vim-gitgutter](https://github.com/airblade/vim-gitgutter)
