@@ -312,7 +312,7 @@ hi! link Special SrceryOrange
 
 call s:HL('Comment', s:white, s:none, s:italic)
 call s:HL('Todo', s:bright_white, s:bg_black, s:bold . s:italic)
-call s:HL('Error', s:black, s:red, s:bold)
+call s:HL('Error', s:bright_white, s:red, s:bold)
 
 " String constant: "this is a string"
 call s:HL('String',  s:bright_green)
