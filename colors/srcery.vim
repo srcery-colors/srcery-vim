@@ -411,6 +411,12 @@ if has("spell")
 endif
 
 " }}}
+" CtrlP: "{{{
+hi! link CtrlPMatch SrceryMagenta
+hi! link CtrlPLinePre SrceryBrightGreen
+" hi! link CtrlPBufferInd SrceryBlue
+" call s:HL('CtrlPPrtCursor', s:none, s:bright_black, s:bold)
+" }}}
 
 " Plugin specific -------------------------------------------------------------
 " Sneak: {{{
