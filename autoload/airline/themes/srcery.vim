@@ -43,9 +43,9 @@ let s:modified = { 'airline_c': [ s:orange[0] , '' , s:orange[1] , '' , '' ] }
 " mode config {{{
 
 " normal mode
-let s:n1  = [ s:bright_white[0] , s:xgray3[0]       , s:bright_white[1] , s:xgray4[1]       ]
+let s:n1  = [ s:bright_white[0] , s:xgray3[0]       , s:bright_white[1] , s:xgray3[1]       ]
 let s:n2  = [ s:bright_white[0] , s:xgray2[0]       , s:bright_white[1] , s:xgray2[1]       ]
-let s:n3  = [ s:bright_white[0] , s:xgray1[0]       , s:bright_white[1] , s:xgray1[1]       ]
+let s:n3  = [ s:bright_white[0] , s:bright_black[0] , s:bright_white[1] , s:bright_black[1] ]
 let g:airline#themes#srcery#palette.normal = airline#themes#generate_color_map(s:n1, s:n2, s:n3)
 let g:airline#themes#srcery#palette.normal_modified = s:modified
 
@@ -86,8 +86,8 @@ let g:airline#themes#srcery#palette.inactive_modified = s:modified
 if get(g:, 'loaded_ctrlp', 0)
   "let s:cp1 = [ s:white[0] , s:xgray3[0] , s:white[1] , s:xgray3[1]  ]
   let s:cp1 = [ s:bright_white[0] , s:xgray1[0] , s:bright_white[1] , s:xgray1[1] ]
-  let s:cp2 = [ s:bright_white[0] , s:xgray4[0] , s:bright_white[1] , s:xgray4[1]  ]
-  let s:cp3 = [ s:bright_white[0] , s:xgray2[0] , s:bright_white[1] , s:xgray2[1]  ]
+  let s:cp2 = [ s:bright_white[0] , s:xgray4[0] , s:bright_white[1] , s:xgray4[1] ]
+  let s:cp3 = [ s:bright_white[0] , s:xgray2[0] , s:bright_white[1] , s:xgray2[1] ]
 
   let g:airline#themes#srcery#palette.ctrlp = airline#extensions#ctrlp#generate_color_map(s:cp1, s:cp2, s:cp3)
 endif
