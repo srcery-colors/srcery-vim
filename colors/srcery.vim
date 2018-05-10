@@ -44,6 +44,7 @@ let s:xgray2        = ['#303030', 236]
 let s:xgray3        = ['#3A3A3A', 237]
 let s:xgray4        = ['#444444', 238]
 let s:xgray5        = ['#4E4E4E', 239]
+let s:bg_black      = ["#1C1B19", 'NONE']
 
 "}}}
 " Setup Variables: {{{
@@ -196,7 +197,7 @@ call s:HL('SrceryXgray5', s:xgray5)
 " General UI: {{{
 
 " Normal text
-call s:HL('Normal', s:bright_white, s:black)
+call s:HL('Normal', s:bright_white, s:bg_black)
 
 if version >= 700
   " Screen line that the cursor is
@@ -205,9 +206,9 @@ if version >= 700
   hi! link CursorColumn CursorLine
 
   " Tab pages line filler
-  call s:HL('TabLineFill', s:green, s:black)
+  call s:HL('TabLineFill', s:green, s:bg_black)
   " Active tab page label
-  call s:HL('TabLineSel', s:red, s:black, s:bold)
+  call s:HL('TabLineSel', s:red, s:bg_black, s:bold)
   " Not active tab page label
   hi! link TabLine TabLineFill
 
@@ -228,7 +229,7 @@ if version >= 703
   call s:HL('Conceal', s:blue, s:none)
 
   " Line number of CursorLine
-  call s:HL('CursorLineNr', s:yellow, s:black)
+  call s:HL('CursorLineNr', s:yellow, s:bg_black)
 endif
 
 hi! link NonText SrceryWhiteAlt
@@ -253,13 +254,13 @@ endif
 call s:HL('Underlined', s:blue, s:none, s:underline)
 
 call s:HL('StatusLine',   s:bright_white, s:bright_black)
-call s:HL('StatusLineNC', s:white, s:black, s:underline)
+call s:HL('StatusLineNC', s:white, s:bg_black, s:underline)
 
 " The column separating vertically split windows
-call s:HL('VertSplit', s:bright_white, s:black)
+call s:HL('VertSplit', s:bright_white, s:bg_black)
 
 " Current match in wildmenu completion
-call s:HL('WildMenu', s:blue, s:black, s:bold)
+call s:HL('WildMenu', s:blue, s:bg_black, s:bold)
 
 " Directory names, special names in listing
 hi! link Directory SrceryGreenBold
@@ -285,12 +286,12 @@ hi! link WarningMsg SrceryRedBold
 call s:HL('LineNr', s:white)
 
 " Column where signs are displayed
-call s:HL('SignColumn', s:none, s:black)
+call s:HL('SignColumn', s:none, s:bg_black)
 
 " Line used for closed folds
-call s:HL('Folded', s:white, s:black, s:italic)
+call s:HL('Folded', s:white, s:bg_black, s:italic)
 " Column where folds are displayed
-call s:HL('FoldColumn', s:white, s:black)
+call s:HL('FoldColumn', s:white, s:bg_black)
 
 " }}}
 " Cursor: {{{
@@ -310,7 +311,7 @@ hi! link lCursor Cursor
 hi! link Special SrceryOrange
 
 call s:HL('Comment', s:white, s:none, s:italic)
-call s:HL('Todo', s:bright_white, s:black, s:bold . s:italic)
+call s:HL('Todo', s:bright_white, s:bg_black, s:bold . s:italic)
 call s:HL('Error', s:black, s:red, s:bold)
 
 " String constant: "this is a string"
@@ -382,18 +383,18 @@ if version >= 700
   " Popup menu: selected item
   call s:HL('PmenuSel', s:bright_white, s:magenta, s:bold)
   " Popup menu: scrollbar
-  call s:HL('PmenuSbar', s:none, s:black)
+  call s:HL('PmenuSbar', s:none, s:bg_black)
   " Popup menu: scrollbar thumb
-  call s:HL('PmenuThumb', s:none, s:black)
+  call s:HL('PmenuThumb', s:none, s:bg_black)
 endif
 
 " }}}
 " Diffs: {{{
 
-call s:HL('DiffDelete', s:red, s:black)
-call s:HL('DiffAdd',    s:green, s:black)
-call s:HL('DiffChange', s:cyan, s:black)
-call s:HL('DiffText',   s:yellow, s:black)
+call s:HL('DiffDelete', s:red, s:bg_black)
+call s:HL('DiffAdd',    s:green, s:bg_black)
+call s:HL('DiffChange', s:cyan, s:bg_black)
+call s:HL('DiffText',   s:yellow, s:bg_black)
 
 " }}}
 " Spelling: {{{
@@ -502,14 +503,14 @@ call s:HL('htmlLink', s:bright_white, s:none, s:underline)
 
 hi! link htmlSpecialChar SrceryYellow
 
-call s:HL('htmlBold', s:bright_white, s:black, s:bold)
-call s:HL('htmlBoldUnderline', s:bright_white, s:black, s:bold . s:underline)
-call s:HL('htmlBoldItalic', s:bright_white, s:black, s:bold . s:italic)
-call s:HL('htmlBoldUnderlineItalic', s:bright_white, s:black, s:bold . s:underline . s:italic)
+call s:HL('htmlBold', s:bright_white, s:bg_black, s:bold)
+call s:HL('htmlBoldUnderline', s:bright_white, s:bg_black, s:bold . s:underline)
+call s:HL('htmlBoldItalic', s:bright_white, s:bg_black, s:bold . s:italic)
+call s:HL('htmlBoldUnderlineItalic', s:bright_white, s:bg_black, s:bold . s:underline . s:italic)
 
-call s:HL('htmlUnderline', s:bright_white, s:black, s:underline)
-call s:HL('htmlUnderlineItalic', s:bright_white, s:black, s:underline . s:italic)
-call s:HL('htmlItalic', s:bright_white, s:black, s:italic)
+call s:HL('htmlUnderline', s:bright_white, s:bg_black, s:underline)
+call s:HL('htmlUnderlineItalic', s:bright_white, s:bg_black, s:underline . s:italic)
+call s:HL('htmlItalic', s:bright_white, s:bg_black, s:italic)
 
 " }}}
 " Xml: {{{
