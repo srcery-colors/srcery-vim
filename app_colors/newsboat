@@ -1,0 +1,12 @@
+# srcery newsboat
+# https://github.com/roosta/vim-srcery
+
+# interface colors {{{
+
+color info              color15 color8  bold
+color listfocus         color2  color8  bold
+color listfocus_unread  color1  default bold
+color listnormal        color7  default
+color listnormal_unread color15 default
+
+# }}}
