@@ -1,10 +1,16 @@
-! Srcery
+! srcery.xresources
 ! https://github.com/roosta/vim-srcery
 
-! special
+! special colors {{{
+
 *.foreground:   #fce8c3
 *.background:   #1c1b19
 *.cursorColor:  #fce8c3
+
+! }}}
+
+
+! main colors {{{
 
 ! black
 *.color0:       #1c1b19
@@ -37,3 +43,5 @@
 ! white
 *.color7:       #918175
 *.color15:      #fce8c3
+
+! }}}
