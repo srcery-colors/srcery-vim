@@ -414,8 +414,9 @@ endif
 " CtrlP: "{{{
 hi! link CtrlPMatch SrceryMagenta
 hi! link CtrlPLinePre SrceryBrightGreen
-" hi! link CtrlPBufferInd SrceryBlue
-" call s:HL('CtrlPPrtCursor', s:none, s:bright_black, s:bold)
+call s:HL('CtrlPMode1', s:bright_white, s:xgray2)
+call s:HL('CtrlPMode2', s:bright_white, s:xgray4)
+call s:HL('CtrlPStats', s:yellow, s:bright_black)
 " }}}
 
 " Plugin specific -------------------------------------------------------------
