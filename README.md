@@ -9,11 +9,9 @@ You don’t need to do anything for this colorscheme to work in GVim or MacVim.
 
 ### TUI
 To use Srcery in the terminal you need to change your terminal emulator’s
-so-called “ASCII” colors to the ones in the table below. I've included
-colorscheme files for various terminals in the term_color folder, but since I
-haven't tested all of them some issues may arise. If your terminal is different
-or the file won't work please let me know so I can add/update/fix the file in
-question.
+so-called “ASCII” colors to the ones in the table below. There's a list of
+terminal configurations in the
+[contrib-srcery](https://github.com/roosta/contrib-srcery/tree/master/terminal) repository.
 
 TERMCOL       | NR | HEX     | RGB
 ------------- | -- | ------- | ------------
