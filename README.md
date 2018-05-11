@@ -170,6 +170,12 @@ These colors relies on the 256 colors defined by your terminal, I don't change
 any of these colors, I just rely on the xterm palette. This might look different
 on different environments.
 
+## Contributors
+
+ * [MindTooth](https://github.com/MindTooth)
+ * [schtibe](https://github.com/schtibe)
+ * [jswinarton](https://github.com/jswinarton)
+
 ## Attribution
 
 This project started as essentially a palette swap of [Gruvbox](https://github.com/morhetz/gruvbox) and all credit goes to the maintainers of that fantasic colorscheme. I wanted something a bit sharper, but I loved the syntax color choices of gruvbox. I also tried to make the theme as simple to use as possible, which was inspired by [Flattened](https://github.com/romainl/flattened). Other themes that influenced Srcery:
@@ -179,5 +185,12 @@ This project started as essentially a palette swap of [Gruvbox](https://github.c
  * [Jellybeans](https://github.com/nanotech/jellybeans.vim)
  * [Molokai](https://github.com/tomasr/molokai)
 
-## Emacs
- Check out [emacs-srcery](https://github.com/roosta/emacs-srcery)
+## Extra
+### Emacs
+
+ Check out [emacs-srcery](https://github.com/roosta/emacs-srcery) 
+
+### App config
+ There is a [contrib repository](https://github.com/roosta/contrib-srcery) where
+ everything that falls out of scope for the editor theme is maintained. App
+ configs, extras and whatever else we can think of putting in there.
