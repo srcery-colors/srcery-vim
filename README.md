@@ -193,7 +193,8 @@ This project started as essentially a palette swap of [Gruvbox](https://github.c
 
  Check out [emacs-srcery](https://github.com/roosta/emacs-srcery) 
 
-### App config
+### Contrib repository
  There is a [contrib repository](https://github.com/roosta/contrib-srcery) where
- everything that falls out of scope for the editor theme is maintained. App
- configs, extras and whatever else we can think of putting in there.
+ everything that falls out of scope for the editor theme is maintained. Terminal
+ and application configurations, extras and whatever else we can think of
+ putting in there related to srcery.
