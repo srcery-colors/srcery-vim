@@ -1,6 +1,6 @@
 ![logo](assets/title.png)
 
-Colorscheme with clearly defined contrasting colors and a slightly earthy tone.
+Color scheme with clearly defined contrasting colors and a slightly earthy tone.
 
 ## Requirements
 
@@ -181,8 +181,8 @@ xgrey5       | 239  | #4E4E4E | 78, 78, 78
 
 This project started as essentially a palette swap of
 [Gruvbox](https://github.com/morhetz/gruvbox) and all credit goes to the
-maintainers of that fantasic colorscheme. I wanted something a bit sharper, but
-I loved the syntax color choices of gruvbox. I also tried to make the theme as
+maintainers of that fantastic color scheme. I wanted something a bit sharper, but
+I loved the syntax color choices of Gruvbox. I also tried to make the theme as
 simple to use as possible, which was inspired by
 [Flattened](https://github.com/romainl/flattened). Other themes that influenced
 Srcery:
@@ -201,4 +201,4 @@ Srcery:
  There is a [contrib repository](https://github.com/roosta/contrib-srcery) where
  everything that falls out of scope for the editor theme is maintained. Terminal
  and application configurations, extras and whatever else we can think of
- putting in there related to srcery.
+ putting in there related to Srcery.
