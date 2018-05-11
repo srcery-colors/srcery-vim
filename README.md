@@ -164,11 +164,11 @@ to pad out the color selection:
 orange       | 166  | #D75F00 | 215, 95, 0
 brightorange | 208  | #FF8700 | 255, 135, 0
 hard_black   | 233  | #121212 | 18, 18, 18
-xgray1       | 235  | #262626 | 38, 38, 38
-xgray2       | 236  | #303030 | 48, 48, 48
-xgray3       | 237  | #3A3A3A | 58, 58, 58
-xgray4       | 238  | #444444 | 68, 68, 68
-xgray5       | 239  | #4E4E4E | 78, 78, 78
+xgrey1       | 235  | #262626 | 38, 38, 38
+xgrey2       | 236  | #303030 | 48, 48, 48
+xgrey3       | 237  | #3A3A3A | 58, 58, 58
+xgrey4       | 238  | #444444 | 68, 68, 68
+xgrey5       | 239  | #4E4E4E | 78, 78, 78
 
 
 ## Contributors
