@@ -1,5 +1,7 @@
 ![logo](assets/title.png)
 
+[![Build Status](https://travis-ci.org/roosta/vim-srcery.svg?branch=master)](https://travis-ci.org/roosta/vim-srcery)
+
 Color scheme with clearly defined contrasting colors and a slightly earthy tone.
 
 ## Requirements
