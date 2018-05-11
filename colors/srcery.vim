@@ -3,9 +3,11 @@
 " Description:  Colorscheme that focus ease of use and clearly defined contrasting colors with a slightly earthy tone.
 " Original Source: https://github.com/morhetz/gruvbox
 
-if version > 580
+scriptencoding utf-8
+
+if v:version > 580
   hi clear
-  if exists("syntax_on")
+  if exists('syntax_on')
     syntax reset
   endif
 endif
@@ -18,22 +20,22 @@ endif
 
 " Palette {{{
 
-let s:black          = ["#1C1B19", 0]
-let s:red            = ["#EF2F27", 1]
-let s:green          = ["#519F50", 2]
-let s:yellow         = ["#FBB829", 3]
-let s:blue           = ["#2C78BF", 4]
-let s:magenta        = ["#E02C6D", 5]
-let s:cyan           = ["#0AAEB3", 6]
-let s:white          = ["#918175", 7]
-let s:bright_black   = ["#2D2C29", 8]
-let s:bright_red     = ["#F75341", 9]
-let s:bright_green   = ["#98BC37", 10]
-let s:bright_yellow  = ["#FED06E", 11]
-let s:bright_blue    = ["#68A8E4", 12]
-let s:bright_magenta = ["#FF5C8F", 13]
-let s:bright_cyan    = ["#53FDE9", 14]
-let s:bright_white   = ["#FCE8C3", 15]
+let s:black          = ['#1C1B19', 0]
+let s:red            = ['#EF2F27', 1]
+let s:green          = ['#519F50', 2]
+let s:yellow         = ['#FBB829', 3]
+let s:blue           = ['#2C78BF', 4]
+let s:magenta        = ['#E02C6D', 5]
+let s:cyan           = ['#0AAEB3', 6]
+let s:white          = ['#918175', 7]
+let s:bright_black   = ['#2D2C29', 8]
+let s:bright_red     = ['#F75341', 9]
+let s:bright_green   = ['#98BC37', 10]
+let s:bright_yellow  = ['#FED06E', 11]
+let s:bright_blue    = ['#68A8E4', 12]
+let s:bright_magenta = ['#FF5C8F', 13]
+let s:bright_cyan    = ['#53FDE9', 14]
+let s:bright_white   = ['#FCE8C3', 15]
 
 " xterm colors.
 let s:orange        = ['#D75F00', 166]  
@@ -44,7 +46,7 @@ let s:xgray2        = ['#303030', 236]
 let s:xgray3        = ['#3A3A3A', 237]
 let s:xgray4        = ['#444444', 238]
 let s:xgray5        = ['#4E4E4E', 239]
-let s:bg_black      = ["#1C1B19", 'NONE']
+let s:bg_black      = ['#1C1B19', 'NONE']
 
 "}}}
 " Setup Variables: {{{
@@ -56,7 +58,7 @@ if !exists('g:srcery_bold')
 endif
 
 if !exists('g:srcery_italic')
-  if has('gui_running') || $TERM_ITALICS == 'true'
+  if has('gui_running') || $TERM_ITALICS ==? 'true'
     let g:srcery_italic=1
   else
     let g:srcery_italic=0
@@ -122,34 +124,34 @@ function! s:HL(group, fg, ...)
   " Arguments: group, guifg, guibg, gui, guisp
 
   " foreground
-  let fg = a:fg
+  let l:fg = a:fg
 
   " background
   if a:0 >= 1
-    let bg = a:1
+    let l:bg = a:1
   else
-    let bg = s:none
+    let l:bg = s:none
   endif
 
   " emphasis
   if a:0 >= 2 && strlen(a:2)
-    let emstr = a:2
+    let l:emstr = a:2
   else
-    let emstr = 'NONE,'
+    let l:emstr = 'NONE,'
   endif
 
-  let histring = [ 'hi', a:group,
-        \ 'guifg=' . fg[0], 'ctermfg=' . fg[1],
-        \ 'guibg=' . bg[0], 'ctermbg=' . bg[1],
-        \ 'gui=' . emstr[:-2], 'cterm=' . emstr[:-2]
+  let l:histring = [ 'hi', a:group,
+        \ 'guifg=' . l:fg[0], 'ctermfg=' . l:fg[1],
+        \ 'guibg=' . l:bg[0], 'ctermbg=' . l:bg[1],
+        \ 'gui=' . l:emstr[:-2], 'cterm=' . l:emstr[:-2]
         \ ]
 
   " special
   if a:0 >= 3
-    call add(histring, 'guisp=' . a:3[0])
+    call add(l:histring, 'guisp=' . a:3[0])
   endif
 
-  execute join(histring, ' ')
+  execute join(l:histring, ' ')
 endfunction
 "}}}
 " Srcery Hi Groups: {{{
@@ -199,7 +201,7 @@ call s:HL('SrceryXgray5', s:xgray5)
 " Normal text
 call s:HL('Normal', s:bright_white, s:bg_black)
 
-if version >= 700
+if v:version >= 700
   " Screen line that the cursor is
   call s:HL('CursorLine',   s:none, s:bright_black)
   " Screen column that the cursor is
@@ -221,7 +223,7 @@ if version >= 700
   endif
 endif
 
-if version >= 703
+if v:version >= 703
   " Highlighted screen columns
   call s:HL('ColorColumn',  s:none, s:bright_black)
 
@@ -377,7 +379,7 @@ endif
 " }}}
 " Completion Menu: {{{
 
-if version >= 700
+if v:version >= 700
   " Popup menu: normal item
   call s:HL('Pmenu', s:bright_white, s:bright_black)
   " Popup menu: selected item
@@ -399,7 +401,7 @@ call s:HL('DiffText',   s:yellow, s:bg_black)
 " }}}
 " Spelling: {{{
 
-if has("spell")
+if has('spell')
   " Not capitalised word, or compile warnings
   call s:HL('SpellCap',   s:green, s:none, s:bold . s:italic)
   " Not recognized word

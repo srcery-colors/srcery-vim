@@ -7,9 +7,9 @@
 " -----------------------------------------------------------------------------
 
 function! s:getSrcColor(group)
-  let guiColor = synIDattr(hlID(a:group), "fg", "gui") 
-  let termColor = synIDattr(hlID(a:group), "fg", "cterm") 
-  return [ guiColor, termColor ]
+  let l:guiColor = synIDattr(hlID(a:group), 'fg', 'gui') 
+  let l:termColor = synIDattr(hlID(a:group), 'fg', 'cterm') 
+  return [ l:guiColor, l:termColor ]
 endfunction
 
 if exists('g:lightline')
