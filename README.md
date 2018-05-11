@@ -179,7 +179,13 @@ xgray5       | 239  | #4E4E4E | 78, 78, 78
 
 ## Attribution
 
-This project started as essentially a palette swap of [Gruvbox](https://github.com/morhetz/gruvbox) and all credit goes to the maintainers of that fantasic colorscheme. I wanted something a bit sharper, but I loved the syntax color choices of gruvbox. I also tried to make the theme as simple to use as possible, which was inspired by [Flattened](https://github.com/romainl/flattened). Other themes that influenced Srcery:
+This project started as essentially a palette swap of
+[Gruvbox](https://github.com/morhetz/gruvbox) and all credit goes to the
+maintainers of that fantasic colorscheme. I wanted something a bit sharper, but
+I loved the syntax color choices of gruvbox. I also tried to make the theme as
+simple to use as possible, which was inspired by
+[Flattened](https://github.com/romainl/flattened). Other themes that influenced
+Srcery:
 
  * [Base16](http://chriskempson.com/projects/base16/)
  * [Badwolf](https://github.com/sjl/badwolf)
