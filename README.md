@@ -145,13 +145,21 @@ let g:lightline = {
 Thanks to [MindTooth](https://github.com/MindTooth), Srcery now includes an [Airline](https://github.com/vim-airline/vim-airline) theme.
 
 ### Other
+
 These don't require any additional configuration.
+
 * [vim-gitgutter](https://github.com/airblade/vim-gitgutter)
 * [vim-sneak](https://github.com/justinmk/vim-sneak)
 * [ale](https://github.com/w0rp/ale)
+* [CtrlP](https://github.com/ctrlpvim/ctrlp.vim)
+
+Plugin support is still a work in progress and more will come, if there is
+anything missing that you'd like to add please open an issue and let me know.
 
 ## Xterm colors
-Srcery uses some [xterm colors](https://en.wikipedia.org/wiki/Xterm#/media/File:Xterm_256color_chart.svg) to pad out the color selection. Notable colors are:
+Srcery uses some [xterm
+colors](https://en.wikipedia.org/wiki/Xterm#/media/File:Xterm_256color_chart.svg)
+to pad out the color selection. Notable colors are:
 
 ```
 TERMCOL    NR    HEX       RGB
