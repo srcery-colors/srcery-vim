@@ -159,22 +159,19 @@ Srcery uses some [xterm
 colors](https://en.wikipedia.org/wiki/Xterm#/media/File:Xterm_256color_chart.svg)
 to pad out the color selection. Notable colors are:
 
-```
-TERMCOL    NR    HEX       RGB
--------    ---   -------   ----------
-orange     166   #D75F00   215, 95, 0
-brorange   208   #FF8700   255, 135, 0
-hard_black 233   #121212   18, 18, 18
-xgrey1     235   #262626   38, 38, 38
-xgrey2     236   #303030   48, 48, 48
-xgrey3     237   #3A3A3A   58, 58, 58
-xgrey4     238   #444444   68, 68, 68
-xgrey5     239   #4E4E4E   78, 78, 78
-```
+TERMCOL  |  NR |   HEX|       RGB
+-------  |  --- |  -------|   ----------
+orange     | 166  | #D75F00 | 215, 95, 0
+brightorange   | 208  | #FF8700 | 255, 135, 0
+hard_black | 233  | #121212 | 18, 18, 18
+xgrey1     | 235  | #262626 | 38, 38, 38
+xgrey2     | 236  | #303030 | 48, 48, 48
+xgrey3     | 237  | #3A3A3A | 58, 58, 58
+xgrey4     | 238  | #444444 | 68, 68, 68
+xgrey5     | 239  | #4E4E4E | 78, 78, 78
 
-These colors relies on the 256 colors defined by your terminal, I don't change
-any of these colors, I just rely on the xterm palette. This might look different
-on different environments.
+These colors relies on the [xterm 256 colors](https://en.wikipedia.org/wiki/Xterm#/media/File:Xterm_256color_chart.svg)
+defined by your terminal.
 
 ## Contributors
 
