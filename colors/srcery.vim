@@ -38,7 +38,7 @@ let s:bright_cyan    = ['#53FDE9', 14]
 let s:bright_white   = ['#FCE8C3', 15]
 
 " xterm colors.
-let s:orange        = ['#D75F00', 166]  
+let s:orange        = ['#D75F00', 166]
 let s:bright_orange = ['#FF8700', 208]
 let s:hard_black    = ['#121212', 233]
 let s:xgray1        = ['#262626', 235]
@@ -216,7 +216,7 @@ if v:version >= 700
 
   " Match paired bracket under the cursor
   "
-  if g:srcery_inverse_match_paren == 1 
+  if g:srcery_inverse_match_paren == 1
     call s:HL('MatchParen', s:bright_magenta, s:none, s:inverse . s:bold)
   else
     call s:HL('MatchParen', s:bright_magenta, s:none, s:bold)
@@ -245,7 +245,7 @@ endif
 
 hi! link VisualNOS Visual
 
-if g:srcery_inverse == 1 && g:srcery_inverse_matches == 1 
+if g:srcery_inverse == 1 && g:srcery_inverse_matches == 1
   call s:HL('Search', s:none, s:none, s:inverse)
   call s:HL('IncSearch', s:none, s:none, s:inverse)
 else
@@ -370,7 +370,7 @@ hi! link Structure SrceryCyan
 " typedef
 hi! link Typedef SrceryMagenta
 
-if g:srcery_dim_lisp_paren == 1 
+if g:srcery_dim_lisp_paren == 1
   hi! link Delimiter SrceryXgray5
 else
   hi! link Delimiter SrceryWhite
@@ -439,18 +439,18 @@ if !exists('g:rbpt_colorpairs')
       \ ['red',  '#EF2F27'], ['magenta', '#E02C6D']
     \ ]
 endif
-                          
+
 let g:rainbow_guifgs = [ '#E02C6D', '#EF2F27', '#D75F00', '#2C78BF']
 let g:rainbow_ctermfgs = [ 'magenta', 'red', '166', 'blue' ]
 
 if !exists('g:rainbow_conf')
-   let g:rainbow_conf = {}
+  let g:rainbow_conf = {}
 endif
 if !has_key(g:rainbow_conf, 'guifgs')
-   let g:rainbow_conf['guifgs'] = g:rainbow_guifgs
+  let g:rainbow_conf['guifgs'] = g:rainbow_guifgs
 endif
 if !has_key(g:rainbow_conf, 'ctermfgs')
-   let g:rainbow_conf['ctermfgs'] = g:rainbow_ctermfgs
+  let g:rainbow_conf['ctermfgs'] = g:rainbow_ctermfgs
 endif
 
 let g:niji_dark_colours = g:rbpt_colorpairs
@@ -560,7 +560,7 @@ hi! link vimContinue SrceryBrightWhite
 
 " }}}
 " Lisp dialects: {{{
-if g:srcery_dim_lisp_paren == 1 
+if g:srcery_dim_lisp_paren == 1
   hi! link schemeParentheses SrceryXgray5
   hi! link clojureParen SrceryXgray5
 else
@@ -853,4 +853,4 @@ hi! link rustCommentLineDoc SrceryGreen
 call s:HL('shParenError', s:bright_white, s:bright_red)
 " }}}
 
-" vim: set sw=2 ts=2 sts=2 et tw=80 ft=vim fdm=marker:
+" vim: set sw=2 ts=2 sts=2 et tw=80 ft=vim fdm=marker :
