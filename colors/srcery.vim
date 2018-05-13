@@ -65,6 +65,10 @@ if !exists('g:srcery_italic')
   endif
 endif
 
+if !exists('g:srcery_transparent_background')
+  let g:srcery_transparent_background=0
+endif
+
 if !exists('g:srcery_undercurl')
   let g:srcery_undercurl=1
 endif
@@ -199,7 +203,11 @@ call s:HL('SrceryXgray5', s:xgray5)
 " General UI: {{{
 
 " Normal text
-call s:HL('Normal', s:bright_white, s:bg_black)
+if g:srcery_transparent_background == 1
+  call s:HL('Normal', s:none, s:none)
+else
+  call s:HL('Normal', s:bright_white, s:bg_black)
+endif
 
 if v:version >= 700
   " Screen line that the cursor is
