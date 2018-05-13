@@ -41,9 +41,21 @@ set t_Co=256
 
 ## Installation
 
+### Manually
 Put `srcery.vim` in `~/.vim/colors/` (on unix-like systems) or `%userprofile%\vimfiles\colors\` (on Windows).
 
-Using a [plugin](https://github.com/junegunn/vim-plug) [manager](https://github.com/tpope/vim-pathogen) for vim.
+### [dein.vim](https://github.com/Shougo/dein.vim)
+```vim
+call dein#add('roosta/vim-srcery')
+```
+
+### [vim-pathogen](https://github.com/tpope/vim-pathogen)
+```shell
+cd ~/.vim/bundle
+git clone https://github.com/w0rp/ale.git
+```
+
+### [vim-plug](https://github.com/junegunn/vim-plug)
 ```vim
 Plug 'roosta/srcery'
 ```
