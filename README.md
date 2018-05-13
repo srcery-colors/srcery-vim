@@ -67,6 +67,11 @@ default: 1
 Enables italic text.
 default: gui 1, term 0
 
+#### g:srcery_transparent_background
+
+Removes the background color.
+default: 0
+
 #### g:srcery_underline
 
 Enables underlined text.
