@@ -490,6 +490,12 @@ hi! link ALEWarningSign SrceryYellow
 hi! link ALEInfoSign SrceryBlue
 
 " }}}
+" vim-indent-guides: {{{
+
+call s:HL('IndentGuidesEven', s:none, s:xgray2)
+call s:HL('IndentGuidesOdd',  s:none, s:xgray3)
+
+" }}}
 
 " Filetype specific -----------------------------------------------------------
 " Diff: {{{
