@@ -41,9 +41,21 @@ set t_Co=256
 
 ## Installation
 
+### Manually
 Put `srcery.vim` in `~/.vim/colors/` (on unix-like systems) or `%userprofile%\vimfiles\colors\` (on Windows).
 
-Using a [plugin](https://github.com/junegunn/vim-plug) [manager](https://github.com/tpope/vim-pathogen) for vim.
+### [dein.vim](https://github.com/Shougo/dein.vim)
+```vim
+call dein#add('roosta/vim-srcery')
+```
+
+### [vim-pathogen](https://github.com/tpope/vim-pathogen)
+```shell
+cd ~/.vim/bundle
+git clone https://github.com/w0rp/ale.git
+```
+
+### [vim-plug](https://github.com/junegunn/vim-plug)
 ```vim
 Plug 'roosta/srcery'
 ```
@@ -66,6 +78,11 @@ default: 1
 
 Enables italic text.
 default: gui 1, term 0
+
+#### g:srcery_transparent_background
+
+Removes the background color.
+default: 0
 
 #### g:srcery_underline
 
@@ -148,10 +165,11 @@ Thanks to [MindTooth](https://github.com/MindTooth), Srcery now includes an [Air
 
 These don't require any additional configuration.
 
-* [vim-gitgutter](https://github.com/airblade/vim-gitgutter)
-* [vim-sneak](https://github.com/justinmk/vim-sneak)
 * [ale](https://github.com/w0rp/ale)
-* [CtrlP](https://github.com/ctrlpvim/ctrlp.vim)
+* [ctrlp.vim](https://github.com/ctrlpvim/ctrlp.vim)
+* [vim-gitgutter](https://github.com/airblade/vim-gitgutter)
+* [vim-indent-guides](https://github.com/nathanaelkane/vim-indent-guides)
+* [vim-sneak](https://github.com/justinmk/vim-sneak)
 
 Plugin support is still a work in progress and more will come, if there is
 anything missing that you'd like to add please open an issue and let me know.
