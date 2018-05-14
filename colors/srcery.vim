@@ -46,7 +46,6 @@ let s:xgray2        = ['#303030', 236]
 let s:xgray3        = ['#3A3A3A', 237]
 let s:xgray4        = ['#444444', 238]
 let s:xgray5        = ['#4E4E4E', 239]
-let s:bg_black      = ['#1C1B19', 'NONE']
 
 "}}}
 " Setup Variables: {{{
@@ -203,10 +202,11 @@ call s:HL('SrceryXgray5', s:xgray5)
 " General UI: {{{
 
 " Normal text
-if g:srcery_transparent_background == 1
-  call s:HL('Normal', s:none, s:none)
-else
-  call s:HL('Normal', s:bright_white, s:bg_black)
+"
+if g:srcery_transparent_background == 1 && !has('gui_running')
+  call s:HL('Normal', s:bright_white, s:none)
+ else
+  call s:HL('Normal', s:bright_white, s:black)
 endif
 
 if v:version >= 700
@@ -215,10 +215,17 @@ if v:version >= 700
   " Screen column that the cursor is
   hi! link CursorColumn CursorLine
 
-  " Tab pages line filler
-  call s:HL('TabLineFill', s:green, s:bg_black)
-  " Active tab page label
-  call s:HL('TabLineSel', s:red, s:bg_black, s:bold)
+
+  if g:srcery_transparent_background == 1 && !has('gui_running')
+    " Tab pages line filler
+    call s:HL('TabLineFill', s:green, s:none)
+    " Active tab page label
+    call s:HL('TabLineSel', s:red, s:none, s:bold)
+  else
+    call s:HL('TabLineFill', s:green, s:black)
+    call s:HL('TabLineSel', s:red, s:black, s:bold)
+  endif
+
   " Not active tab page label
   hi! link TabLine TabLineFill
 
@@ -239,7 +246,12 @@ if v:version >= 703
   call s:HL('Conceal', s:blue, s:none)
 
   " Line number of CursorLine
-  call s:HL('CursorLineNr', s:yellow, s:bg_black)
+  if g:srcery_transparent_background == 1 && !has('gui_running')
+    call s:HL('CursorLineNr', s:yellow, s:none)
+  else
+    call s:HL('CursorLineNr', s:yellow, s:black)
+  endif
+
 endif
 
 hi! link NonText SrceryWhiteAlt
@@ -264,13 +276,20 @@ endif
 call s:HL('Underlined', s:blue, s:none, s:underline)
 
 call s:HL('StatusLine',   s:bright_white, s:bright_black)
-call s:HL('StatusLineNC', s:white, s:bg_black, s:underline)
 
-" The column separating vertically split windows
-call s:HL('VertSplit', s:bright_white, s:bg_black)
+if g:srcery_transparent_background == 1 && !has('gui_running')
+  call s:HL('StatusLineNC', s:white, s:none, s:underline)
+  
+  " The column separating vertically split windows
+  call s:HL('VertSplit', s:bright_white, s:none)
 
-" Current match in wildmenu completion
-call s:HL('WildMenu', s:blue, s:bg_black, s:bold)
+  " Current match in wildmenu completion
+  call s:HL('WildMenu', s:blue, s:none, s:bold)
+else
+  call s:HL('StatusLineNC', s:white, s:black, s:underline)
+  call s:HL('VertSplit', s:bright_white, s:black)
+  call s:HL('WildMenu', s:blue, s:black, s:bold)
+endif
 
 " Directory names, special names in listing
 hi! link Directory SrceryGreenBold
@@ -279,7 +298,7 @@ hi! link Directory SrceryGreenBold
 hi! link Title SrceryGreenBold
 
 " Error messages on the command line
-call s:HL('ErrorMsg',   s:bright_white, s:red)
+call s:HL('ErrorMsg', s:bright_white, s:red)
 " More prompt: -- More --
 hi! link MoreMsg SrceryYellowBold
 " Current mode message: -- INSERT --
@@ -295,13 +314,19 @@ hi! link WarningMsg SrceryRedBold
 " Line number for :number and :# commands
 call s:HL('LineNr', s:white)
 
-" Column where signs are displayed
-call s:HL('SignColumn', s:none, s:bg_black)
-
-" Line used for closed folds
-call s:HL('Folded', s:white, s:bg_black, s:italic)
-" Column where folds are displayed
-call s:HL('FoldColumn', s:white, s:bg_black)
+if g:srcery_transparent_background == 1 && !has('gui_running')
+  " Column where signs are displayed
+  " TODO Possibly need to fix  SignColumn
+  call s:HL('SignColumn', s:none, s:none)
+  " Line used for closed folds
+  call s:HL('Folded', s:white, s:none, s:italic)
+  " Column where folds are displayed
+  call s:HL('FoldColumn', s:white, s:none)
+else
+  call s:HL('SignColumn', s:none, s:black)
+  call s:HL('Folded', s:white, s:black, s:italic)
+  call s:HL('FoldColumn', s:white, s:black)
+endif
 
 " }}}
 " Cursor: {{{
@@ -321,7 +346,13 @@ hi! link lCursor Cursor
 hi! link Special SrceryOrange
 
 call s:HL('Comment', s:white, s:none, s:italic)
-call s:HL('Todo', s:bright_white, s:bg_black, s:bold . s:italic)
+
+if g:srcery_transparent_background == 1 && !has('gui_running')
+  call s:HL('Todo', s:bright_white, s:none, s:bold . s:italic)
+else
+  call s:HL('Todo', s:bright_white, s:black, s:bold . s:italic)
+endif
+
 call s:HL('Error', s:bright_white, s:red, s:bold)
 
 " String constant: "this is a string"
@@ -392,19 +423,32 @@ if v:version >= 700
   call s:HL('Pmenu', s:bright_white, s:bright_black)
   " Popup menu: selected item
   call s:HL('PmenuSel', s:bright_white, s:magenta, s:bold)
-  " Popup menu: scrollbar
-  call s:HL('PmenuSbar', s:none, s:bg_black)
-  " Popup menu: scrollbar thumb
-  call s:HL('PmenuThumb', s:none, s:bg_black)
+
+  if g:srcery_transparent_background == 1 && !has('gui_running')
+    " Popup menu: scrollbar
+    call s:HL('PmenuSbar', s:none, s:none)
+    " Popup menu: scrollbar thumb
+    call s:HL('PmenuThumb', s:none, s:none)
+  else
+    call s:HL('PmenuSbar', s:none, s:black)
+    call s:HL('PmenuThumb', s:none, s:black)
+  endif
 endif
 
 " }}}
 " Diffs: {{{
 
-call s:HL('DiffDelete', s:red, s:bg_black)
-call s:HL('DiffAdd',    s:green, s:bg_black)
-call s:HL('DiffChange', s:cyan, s:bg_black)
-call s:HL('DiffText',   s:yellow, s:bg_black)
+if g:srcery_transparent_background == 1 && !has('gui_running')
+  call s:HL('DiffDelete', s:red, s:none)
+  call s:HL('DiffAdd',    s:green, s:none)
+  call s:HL('DiffChange', s:cyan, s:none)
+  call s:HL('DiffText',   s:yellow, s:none)
+else
+  call s:HL('DiffDelete', s:red, s:black)
+  call s:HL('DiffAdd',    s:green, s:black)
+  call s:HL('DiffChange', s:cyan, s:black)
+  call s:HL('DiffText',   s:yellow, s:black)
+endif
 
 " }}}
 " Spelling: {{{
@@ -526,14 +570,23 @@ call s:HL('htmlLink', s:bright_white, s:none, s:underline)
 
 hi! link htmlSpecialChar SrceryYellow
 
-call s:HL('htmlBold', s:bright_white, s:bg_black, s:bold)
-call s:HL('htmlBoldUnderline', s:bright_white, s:bg_black, s:bold . s:underline)
-call s:HL('htmlBoldItalic', s:bright_white, s:bg_black, s:bold . s:italic)
-call s:HL('htmlBoldUnderlineItalic', s:bright_white, s:bg_black, s:bold . s:underline . s:italic)
-
-call s:HL('htmlUnderline', s:bright_white, s:bg_black, s:underline)
-call s:HL('htmlUnderlineItalic', s:bright_white, s:bg_black, s:underline . s:italic)
-call s:HL('htmlItalic', s:bright_white, s:bg_black, s:italic)
+if g:srcery_transparent_background == 1 && !has('gui_running')
+  call s:HL('htmlBold', s:bright_white, s:none, s:bold)
+  call s:HL('htmlBoldUnderline', s:bright_white, s:none, s:bold . s:underline)
+  call s:HL('htmlBoldItalic', s:bright_white, s:none, s:bold . s:italic)
+  call s:HL('htmlBoldUnderlineItalic', s:bright_white, s:none, s:bold . s:underline . s:italic)
+  call s:HL('htmlUnderline', s:bright_white, s:none, s:underline)
+  call s:HL('htmlUnderlineItalic', s:bright_white, s:none, s:underline . s:italic)
+  call s:HL('htmlItalic', s:bright_white, s:none, s:italic)
+else
+  call s:HL('htmlBold', s:bright_white, s:black, s:bold)
+  call s:HL('htmlBoldUnderline', s:bright_white, s:black, s:bold . s:underline)
+  call s:HL('htmlBoldItalic', s:bright_white, s:black, s:bold . s:italic)
+  call s:HL('htmlBoldUnderlineItalic', s:bright_white, s:black, s:bold . s:underline . s:italic)
+  call s:HL('htmlUnderline', s:bright_white, s:black, s:underline)
+  call s:HL('htmlUnderlineItalic', s:bright_white, s:black, s:underline . s:italic)
+  call s:HL('htmlItalic', s:bright_white, s:black, s:italic)
+endif
 
 " }}}
 " Xml: {{{
