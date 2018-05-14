@@ -81,7 +81,8 @@ default: gui 1, term 0
 
 #### g:srcery_transparent_background
 
-Removes the background color.
+Removes the background color in terminal.
+This is a bit of an experimental option, and it cause issues in certain terminals.
 default: 0
 
 #### g:srcery_underline
@@ -215,7 +216,7 @@ Srcery:
 ## Extra
 ### Emacs
 
- Check out [emacs-srcery](https://github.com/roosta/emacs-srcery) 
+ Check out [emacs-srcery](https://github.com/roosta/emacs-srcery)
 
 ### Contrib repository
  There is a [contrib repository](https://github.com/roosta/contrib-srcery) where
