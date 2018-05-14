@@ -204,7 +204,7 @@ call s:HL('SrceryXgray5', s:xgray5)
 
 " Normal text
 if g:srcery_transparent_background == 1
-  call s:HL('Normal', s:none, s:none)
+  call s:HL('Normal', s:bright_white, s:none)
 else
   call s:HL('Normal', s:bright_white, s:bg_black)
 endif
