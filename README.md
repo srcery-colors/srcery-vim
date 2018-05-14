@@ -52,7 +52,7 @@ call dein#add('roosta/vim-srcery')
 ### [vim-pathogen](https://github.com/tpope/vim-pathogen)
 ```shell
 cd ~/.vim/bundle
-git clone https://github.com/w0rp/ale.git
+git clone https://github.com/roosta/vim-srcery
 ```
 
 ### [vim-plug](https://github.com/junegunn/vim-plug)
