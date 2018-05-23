@@ -465,6 +465,15 @@ if has('spell')
 endif
 
 " }}}
+" Terminal: {{{
+
+if has('terminal')
+  " Must set an explicit background as NONE won't work
+  " Therefore not useful with transparent background option
+  call s:HL('Terminal', s:bright_white, s:hard_black)
+endif
+
+" }}}
 " CtrlP: "{{{
 hi! link CtrlPMatch SrceryMagenta
 hi! link CtrlPLinePre SrceryBrightGreen
