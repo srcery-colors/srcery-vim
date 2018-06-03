@@ -568,12 +568,13 @@ hi! link diffLine SrceryBlue
 hi! link htmlTag SrceryBlue
 hi! link htmlEndTag SrceryBlue
 
-hi! link htmlTagName SrceryCyanBold
-hi! link htmlArg SrceryCyan
+hi! link htmlTagName SrceryBlue
+hi! link htmlTag SrceryWhite
+hi! link htmlArg SrceryYellow
 
-hi! link htmlScriptTag SrceryMagenta
+hi! link htmlScriptTag SrceryRed
 hi! link htmlTagN SrceryBlue
-hi! link htmlSpecialTagName SrceryCyanBold
+hi! link htmlSpecialTagName SrceryBlue
 
 call s:HL('htmlLink', s:bright_white, s:none, s:underline)
 
@@ -596,6 +597,7 @@ else
   call s:HL('htmlUnderlineItalic', s:bright_white, s:black, s:underline . s:italic)
   call s:HL('htmlItalic', s:bright_white, s:black, s:italic)
 endif
+
 
 " }}}
 " Xml: {{{
