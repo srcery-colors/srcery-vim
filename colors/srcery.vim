@@ -693,39 +693,48 @@ hi! link pythonBoolean SrceryMagenta
 hi! link pythonDot SrceryBrightWhite
 
 " }}}
-" CSS: {{{
+" CSS/SASS: {{{
 
-hi! link cssBraces SrceryBlue
+hi! link cssBraces SrceryBrightWhite
 hi! link cssFunctionName SrceryYellow
 hi! link cssIdentifier SrceryYellow
 hi! link cssClassName SrceryGreen
-hi! link cssColor SrceryBlue
+hi! link cssColor SrceryBrightMagenta
 hi! link cssSelectorOp SrceryBlue
 hi! link cssSelectorOp2 SrceryBlue
 hi! link cssImportant SrceryGreen
 hi! link cssVendor SrceryBlue
+hi! link cssMediaProp SrceryYellow
+hi! link cssBorderProp SrceryYellow
 
-hi! link cssTextProp SrceryCyan
-hi! link cssAnimationProp SrceryCyan
+hi! link cssTextProp SrceryYellow
+hi! link cssAnimationProp SrceryYellow
 hi! link cssUIProp SrceryYellow
-hi! link cssTransformProp SrceryCyan
-hi! link cssTransitionProp SrceryCyan
-hi! link cssPrintProp SrceryCyan
+hi! link cssTransformProp SrceryYellow
+hi! link cssTransitionProp SrceryYellow
+hi! link cssPrintProp SrceryYellow
 hi! link cssPositioningProp SrceryYellow
-hi! link cssBoxProp SrceryCyan
-hi! link cssFontDescriptorProp SrceryCyan
-hi! link cssFlexibleBoxProp SrceryCyan
-hi! link cssBorderOutlineProp SrceryCyan
-hi! link cssBackgroundProp SrceryCyan
-hi! link cssMarginProp SrceryCyan
-hi! link cssListProp SrceryCyan
-hi! link cssTableProp SrceryCyan
-hi! link cssFontProp SrceryCyan
-hi! link cssPaddingProp SrceryCyan
-hi! link cssDimensionProp SrceryCyan
-hi! link cssRenderProp SrceryCyan
-hi! link cssColorProp SrceryCyan
-hi! link cssGeneratedContentProp SrceryCyan
+hi! link cssBoxProp SrceryYellow
+hi! link cssFontDescriptorProp SrceryYellow
+hi! link cssFlexibleBoxProp SrceryYellow
+hi! link cssBorderOutlineProp SrceryYellow
+hi! link cssBackgroundProp SrceryYellow
+hi! link cssMarginProp SrceryYellow
+hi! link cssListProp SrceryYellow
+hi! link cssTableProp SrceryYellow
+hi! link cssFontProp SrceryYellow
+hi! link cssPaddingProp SrceryYellow
+hi! link cssDimensionProp SrceryYellow
+hi! link cssRenderProp SrceryYellow
+hi! link cssColorProp SrceryYellow
+hi! link cssGeneratedContentProp SrceryYellow
+hi! link cssTagName SrceryBrightBlue
+
+" SASS
+hi! link sassClass SrceryBlue
+hi! link sassClassChar SrceryBlue
+hi! link sassVariable SrceryBrightMagenta
+hi! link sassIdChar SrceryBrightBlue
 
 " }}}
 " JavaScript: {{{
