@@ -735,7 +735,7 @@ hi! link cssTagName SrceryBrightBlue
 " SASS
 hi! link sassClass SrceryBlue
 hi! link sassClassChar SrceryBlue
-hi! link sassVariable SrceryBrightMagenta
+hi! link sassVariable SrceryCyan
 hi! link sassIdChar SrceryBrightBlue
 
 " }}}
