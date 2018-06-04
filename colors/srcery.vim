@@ -374,7 +374,7 @@ hi! link Operator Normal
 hi! link Keyword SrceryRed
 
 " Variable name
-hi! link Identifier SrceryBlue
+hi! link Identifier SrceryCyan
 " Function name
 hi! link Function SrceryYellow
 
