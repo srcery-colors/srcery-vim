@@ -709,6 +709,7 @@ hi! link cssImportant SrceryGreen
 hi! link cssVendor SrceryBlue
 hi! link cssMediaProp SrceryYellow
 hi! link cssBorderProp SrceryYellow
+hi! link cssAttrComma SrceryBrightWhite
 
 hi! link cssTextProp SrceryYellow
 hi! link cssAnimationProp SrceryYellow
