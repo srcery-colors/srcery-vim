@@ -699,8 +699,9 @@ hi! link pythonDot SrceryBrightWhite
 
 hi! link cssBraces SrceryBrightWhite
 hi! link cssFunctionName SrceryYellow
-hi! link cssIdentifier SrceryYellow
-hi! link cssClassName SrceryGreen
+hi! link cssIdentifier SrceryBlue
+hi! link cssClassName SrceryBlue
+hi! link cssClassNameDot SrceryBlue
 hi! link cssColor SrceryBrightMagenta
 hi! link cssSelectorOp SrceryBlue
 hi! link cssSelectorOp2 SrceryBlue
