@@ -279,7 +279,7 @@ call s:HL('StatusLine',   s:bright_white, s:bright_black)
 
 if g:srcery_transparent_background == 1 && !has('gui_running')
   call s:HL('StatusLineNC', s:white, s:none, s:underline)
-  
+
   " The column separating vertically split windows
   call s:HL('VertSplit', s:bright_white, s:none)
 
@@ -937,6 +937,7 @@ hi! link jsonString SrceryBlue
 " Rust: {{{
 "https://github.com/rust-lang/rust.vim/blob/master/syntax/rust.vim
 hi! link rustCommentLineDoc SrceryGreen
+hi! link rustModPathSep SrceryWhite
 " }}}
 " Misc: {{{
 call s:HL('shParenError', s:bright_white, s:bright_red)
