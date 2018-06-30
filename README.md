@@ -1,6 +1,6 @@
 ![logo](assets/title.png)
 
-[![Build Status](https://travis-ci.org/roosta/vim-srcery.svg?branch=master)](https://travis-ci.org/roosta/vim-srcery)
+[![Build Status](https://travis-ci.org/srcery-colors/srcery-vim.svg?branch=master)](https://travis-ci.org/srcery-colors/srcery-vim)
 
 Color scheme with clearly defined contrasting colors and a slightly earthy tone.
 
@@ -13,7 +13,7 @@ You don’t need to do anything for this colorscheme to work in GVim or MacVim.
 To use Srcery in the terminal you need to change your terminal emulator’s
 so-called “ASCII” colors to the ones in the table below. There's a list of
 terminal configurations in the
-[contrib-srcery](https://github.com/roosta/contrib-srcery/tree/master/terminal) repository.
+[srcery-extras](https://github.com/srcery-colors/srcery-extras/tree/master/terminal) repository.
 
 TERMCOL       | NR | HEX     | RGB
 ------------- | -- | ------- | ------------
@@ -46,18 +46,18 @@ Put `srcery.vim` in `~/.vim/colors/` (on unix-like systems) or `%userprofile%\vi
 
 ### [dein.vim](https://github.com/Shougo/dein.vim)
 ```vim
-call dein#add('roosta/vim-srcery')
+call dein#add('srcery-colors/srcery-vim')
 ```
 
 ### [vim-pathogen](https://github.com/tpope/vim-pathogen)
 ```shell
 cd ~/.vim/bundle
-git clone https://github.com/roosta/vim-srcery
+git clone https://github.com/srcery-colors/srcery-vim
 ```
 
 ### [vim-plug](https://github.com/junegunn/vim-plug)
 ```vim
-Plug 'roosta/srcery'
+Plug 'srcery-colors/srcery-vim'
 ```
 
 ## Configuration
@@ -214,12 +214,7 @@ Srcery:
  * [Molokai](https://github.com/tomasr/molokai)
 
 ## Extra
+
 ### Emacs
 
- Check out [emacs-srcery](https://github.com/roosta/emacs-srcery)
-
-### Contrib repository
- There is a [contrib repository](https://github.com/roosta/contrib-srcery) where
- everything that falls out of scope for the editor theme is maintained. Terminal
- and application configurations, extras and whatever else we can think of
- putting in there related to Srcery.
+ Check out [srcery-emacs](https://github.com/srcery-colors/srcery-emacs)
