@@ -549,6 +549,19 @@ call s:HL('IndentGuidesEven', s:none, s:xgray2)
 call s:HL('IndentGuidesOdd',  s:none, s:xgray3)
 
 " }}}
+" vim-startify {{{
+
+hi! link StartifyNumber Statement
+hi! link StartifyFile Normal
+hi! link StartifyPath String
+hi! link StartifySlash Normal
+hi! link StartifyBracket Comment
+hi! link StartifyHeader Type
+hi! link StartifyFooter Normal
+hi! link StartifySpecial Comment
+hi! link StartifySection Identifier
+
+" }}}
 
 " Filetype specific -----------------------------------------------------------
 " Diff: {{{
