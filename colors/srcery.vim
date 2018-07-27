@@ -269,8 +269,8 @@ if g:srcery_inverse == 1 && g:srcery_inverse_matches == 1
   call s:HL('Search', s:none, s:none, s:inverse)
   call s:HL('IncSearch', s:none, s:none, s:inverse)
 else
-  call s:HL('Search', s:bright_white, s:magenta)
-  call s:HL('IncSearch', s:bright_white, s:magenta)
+  call s:HL('Search', s:none, s:xgray4, s:bold)
+  call s:HL('IncSearch', s:none, s:xgray4, s:underline . s:bold)
 endif
 
 call s:HL('Underlined', s:blue, s:none, s:underline)
