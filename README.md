@@ -194,6 +194,7 @@ xgrey5       | 239  | #4E4E4E | 78, 78, 78
 
 ## Contributors
 
+ * [roosta](https://github.com/roosta)
  * [MindTooth](https://github.com/MindTooth)
  * [schtibe](https://github.com/schtibe)
  * [jswinarton](https://github.com/jswinarton)
