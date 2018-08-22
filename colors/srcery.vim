@@ -258,7 +258,7 @@ hi! link NonText SrceryWhiteAlt
 hi! link SpecialKey SrceryWhiteAlt
 
 if g:srcery_inverse == 1
-  call s:HL('Visual', s:none, s:none, s:inverse)
+  call s:HL('Visual', s:none, s:xgray5, s:inverse)
 else
   call s:HL('Visual', s:none, s:bright_black, s:bold)
 endif
