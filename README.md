@@ -69,6 +69,8 @@ To change any of these you'd put something like this in your `.vimrc`
 let g:srcery_italic = 1
 ```
 
+Make sure that you set these variables before assigning `colorscheme`.
+
 #### g:srcery_bold
 
 Enables bold text.
