@@ -436,6 +436,11 @@ if v:version >= 700
 endif
 
 " }}}
+" Whitespace: {{{
+
+call s:HL('ExtraWhitespace', s:none, s:bright_red)
+
+" }}}
 " Diffs: {{{
 
 if g:srcery_transparent_background == 1 && !has('gui_running')
