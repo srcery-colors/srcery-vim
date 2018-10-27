@@ -795,6 +795,7 @@ hi! link coffeeBracket SrceryYellow
 
 hi! link rubyStringDelimiter SrceryGreen
 hi! link rubyInterpolationDelimiter SrceryCyan
+hi! link rubyDefine Keyword
 
 " }}}
 " ObjectiveC: {{{
