@@ -7,10 +7,10 @@ Author: Daniel Berg <mail at roosta.sh>
 	w/ contributers
 License: MIT license
 
-CONTENTS						*srcery-contents*
+CONTENTS						       *srcery-contents*
 
-Introduction						|srcery-introduction|
-Options							|srcery-options|
+Introduction						   |srcery-introduction|
+Options							        |srcery-options|
 
 ==============================================================================
 INTRODUCTION						*srcery-introduction*
