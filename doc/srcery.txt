@@ -1,4 +1,4 @@
-*srcery.txt* Color scheme with clearly defined contrasting colors         *srcery*
+*srcery.txt* Color scheme with clearly defined contrasting colors	*srcery*
 	   and a slightly earthy tone.
 
 
@@ -7,10 +7,10 @@ Author: Daniel Berg <mail at roosta.sh>
 	w/ contributers
 License: MIT license
 
-CONTENTS						       *srcery-contents*
+CONTENTS						*srcery-contents*
 
-Introduction						   |srcery-introduction|
-Options							        |srcery-options|
+Introduction						|srcery-introduction|
+Options							|srcery-options|
 
 ==============================================================================
 INTRODUCTION						*srcery-introduction*
@@ -21,10 +21,10 @@ designed to be easy on the eyes yet contrast well with the background for long
 sessions using an editor or terminal emulator.
 
 ==============================================================================
-INSTALL							*srcery-install*
+INSTALL								*srcery-install*
 
 ==============================================================================
-OPTIONS							*srcery-options*
+OPTIONS								*srcery-options*
 
 I've included a few toggles due to discrepancies in the various setups
 possible. To change any of these you'd put something like this in your .vimrc:
@@ -35,21 +35,21 @@ possible. To change any of these you'd put something like this in your .vimrc:
 
 	Make sure that you set these variables before assigning colorscheme.
 
-							*srcery-options-srcery_bold*
+						*srcery-options-srcery_bold*
 g:srcery_bold
 
 	Enables bold text.
 
 	Default: 1
 
-							*srcery-options-italic*
+						*srcery-options-italic*
 g:srcery_italic
 
 	Enables italic text.
 
 	Default: gui 1, term 0
 
-							*srcery-options-transparent_background*
+					*srcery-options-transparent_background*
 g:srcery_transparent_background
 
 	Removes the background color in terminal. This is a bit of an
@@ -57,35 +57,35 @@ g:srcery_transparent_background
 
 	default: 0
 
-							*srcery-options-underline*
+						*srcery-options-underline*
 g:srcery_underline
 
 	Enables underlined text.
 
 	Default: 1
 
-							*srcery-options-undercurl*
+						*srcery-options-undercurl*
 g:srcery_undercurl
 
 	Enables undercurled text.
 
 	Default: 1
 
-							*srcery-options-inverse*
+						*srcery-options-inverse*
 g:srcery_inverse
 
 	Enables inverse colors.
 
 	Default: 1
 
-							*srcery-options-matches*
+						*srcery-options-matches*
 g:srcery_inverse_matches
 
 	Enables inverse search matches.
 
 	Default: 0
 
-							*srcery-options-inverse_match_paren*
+					*srcery-options-inverse_match_paren*
 g:srcery_inverse_match_paren
 
 	When enabled will inverse matching delimiters.
@@ -94,7 +94,7 @@ g:srcery_inverse_match_paren
 
 	Default: 0
 
-							*srcery-options-dim_list_paren*
+						*srcery-options-dim_list_paren*
 g:srcery_dim_lisp_paren
 
 	Dims lisp dialects delimiters to a fairly dark gray (xgray5
