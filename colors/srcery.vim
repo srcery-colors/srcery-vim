@@ -332,7 +332,7 @@ endif
 " Cursor: {{{
 
 " Character under cursor
-call s:HL('Cursor', s:none, s:none, s:inverse)
+call s:HL('Cursor', s:black, s:yellow)
 " Visual mode cursor, selection
 hi! link vCursor Cursor
 " Input moder cursor
