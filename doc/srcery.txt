@@ -3,7 +3,7 @@
 
 Version:   0.10.0
 Author:    Daniel Berg <mail at roosta.sh>
-	   w/ contributers
+	w/ contributers
 License:   MIT license
 
 CONTENTS						*srcery-contents*
