@@ -72,25 +72,25 @@ g:srcery_inverse_match_paren
 
 	Default: 0
 
-						*srcery-options-italic*
+							*srcery-options-italic*
 g:srcery_italic
 
 	Enables italic text.
 
 	Default: gui 1, term 0
 
-						*srcery-options-underline*
-g:srcery_underline
-
-	Enables underlined text.
-	
-	Default: 1
-
 						*srcery-options-undercurl*
 g:srcery_undercurl
 
 	Enables undercurled text.
 
+	Default: 1
+
+						*srcery-options-underline*
+g:srcery_underline
+
+	Enables underlined text.
+	
 	Default: 1
 
 					*srcery-options-transparent_background*
