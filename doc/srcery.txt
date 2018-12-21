@@ -1,0 +1,108 @@
+*srcery.txt* Color scheme with clearly defined contrasting colors	*srcery*
+	   and a slightly earthy tone.
+
+Version:   0.10.0
+Author:    Daniel Berg <mail at roosta.sh>
+	w/ contributers
+License:   MIT license
+
+CONTENTS						*srcery-contents*
+
+Introduction						|srcery-introduction|
+Options							|srcery-options|
+
+==============================================================================
+INTRODUCTION						*srcery-introduction*
+
+Created using colors that logically adheres to the 16 color base palette of a
+given terminal, while trying to retain its own identity. The colors are
+designed to be easy on the eyes yet contrast well with the background for long
+sessions using an editor or terminal emulator.
+
+==============================================================================
+INSTALL								*srcery-install*
+
+Look to one of your favorite package managers for instructions.
+(Will add some later on.)
+
+==============================================================================
+OPTIONS								*srcery-options*
+
+I've included a few toggles due to discrepancies in the various setups
+possible. To change any of these you'd put something like this in your .vimrc:
+
+>
+    let g:srcery_italic = 1
+<
+
+	Make sure that you set these variables before assigning colorscheme.
+
+						*srcery-options-srcery_bold*
+g:srcery_bold
+
+	Enables bold text.
+
+	Default: 1
+
+						*srcery-options-dim_list_paren*
+g:srcery_dim_lisp_paren
+
+	Dims lisp dialects delimiters to a fairly dark gray (xgray5
+	specifically).
+
+	Default: 0
+
+							*srcery-options-inverse*
+g:srcery_inverse
+
+	Enables inverse colors.
+
+	Default: 1
+
+							*srcery-options-matches*
+g:srcery_inverse_matches
+
+	Enables inverse search matches.
+
+	Default: 0
+
+					*srcery-options-inverse_match_paren*
+g:srcery_inverse_match_paren
+
+	When enabled will inverse matching delimiters.
+
+	Works best with Rainbow parenthesis.
+
+	Default: 0
+
+							*srcery-options-italic*
+g:srcery_italic
+
+	Enables italic text.
+
+	Default: gui 1, term 0
+
+						*srcery-options-undercurl*
+g:srcery_undercurl
+
+	Enables undercurled text.
+
+	Default: 1
+
+						*srcery-options-underline*
+g:srcery_underline
+
+	Enables underlined text.
+	
+	Default: 1
+
+					*srcery-options-transparent_background*
+g:srcery_transparent_background
+
+	Removes the background color in terminal. This is a bit of an
+	experimental option, and it cause issues in certain terminals.
+
+	Default: 0
+
+==============================================================================
+vim: tw=78:ts=8:ft=help:norl:noet:fen:noet :
