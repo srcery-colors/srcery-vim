@@ -22,6 +22,9 @@ sessions using an editor or terminal emulator.
 ==============================================================================
 INSTALL								*srcery-install*
 
+Look to one of your favorite package managers for instructions.
+(Will add some later on.)
+
 ==============================================================================
 OPTIONS								*srcery-options*
 
