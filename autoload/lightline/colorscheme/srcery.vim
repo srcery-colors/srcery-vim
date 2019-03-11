@@ -35,7 +35,7 @@ if exists('g:lightline')
   let s:xgray4       = s:getSrcColor('SrceryXgray4')
   let s:xgray5       = s:getSrcColor('SrceryXgray5')
 
-  let s:p                 = {'normal':{}, 'inactive':{}, 'insert':{}, 'replace':{}, 'visual':{}, 'tabline':{}}
+  let s:p = {'normal':{}, 'inactive':{}, 'insert':{}, 'replace':{}, 'visual':{}, 'tabline':{}, 'terminal':{}}
   let s:p.normal.left     = [ [ s:bright_white, s:xgray4 ], [ s:bright_white, s:xgray2 ] ]
   let s:p.normal.right    = [ [ s:bright_white, s:xgray4 ], [ s:bright_white, s:xgray2 ] ]
   let s:p.normal.middle   = [ [ s:bright_white, s:bright_black ] ]
@@ -57,6 +57,9 @@ if exists('g:lightline')
   let s:p.tabline.right   = [ [ s:black, s:bright_white ] ]
   let s:p.normal.error    = [ [ s:bright_white, s:red ] ]
   let s:p.normal.warning  = [ [ s:black, s:orange ] ]
+  let s:p.terminal.left   = [ [ s:black, s:green ], [ s:bright_white, s:xgray4 ] ]
+  let s:p.terminal.right  = [ [ s:black, s:green ], [ s:bright_white, s:xgray4 ] ]
+  let s:p.terminal.middle = [ [ s:bright_white, s:bright_black ] ]
 
   let g:lightline#colorscheme#srcery#palette = lightline#colorscheme#flatten(s:p)
 endif
