@@ -131,17 +131,21 @@ If you like what you see and decide to make srcery your default colorscheme, add
 colorscheme srcery
 ```
 ## Screenshots
-Shell script, viml
-![bash_viml](assets/bash_viml.png)
+viml, bash
+![viml_bash](assets/viml_bash.png)
 
-clojure/script
-![cljs_clj](assets/cljs_clj.png)
+clojure, elisp
+![lisp](assets/lisp.png)
 
 c, rust
 ![c_rust](assets/c_rust.png)
 
 python, js
 ![py_js](assets/py_js.png)
+
+git, terminal
+![py_js](assets/git_term.png)
+
 
 Typeface used in screenshots is [Iosevka](https://github.com/be5invis/Iosevka)
 
