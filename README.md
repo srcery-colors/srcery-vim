@@ -74,7 +74,7 @@ Plug 'srcery-colors/srcery-vim'
 
 ## Configuration
 
-I've included a few toggles due to discrepancies in the various setups possible.
+Srcery includes a few toggles due to discrepancies in the various setups possible.
 To change any of these you'd put something like this in your `.vimrc`
 
 ```viml
