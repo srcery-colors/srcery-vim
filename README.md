@@ -34,11 +34,6 @@ brightmagenta | 13 | #FF5C8F | 255, 92, 143
 brightcyan    | 14 | #53FDE9 | 83, 253, 233
 brightwhite   | 15 | #FCE8C3 | 252, 232, 195
 
-If the colors still don't look right, ensure that 256 colors are enabled in vim by setting this option **before** setting the colorscheme.
-```viml
-set t_Co=256
-```
-
 ## Installation
 
 ### Manually
@@ -74,7 +69,7 @@ Plug 'srcery-colors/srcery-vim'
 
 ## Configuration
 
-I've included a few toggles due to discrepancies in the various setups possible.
+Srcery includes a few toggles due to discrepancies in the various setups possible.
 To change any of these you'd put something like this in your `.vimrc`
 
 ```viml
@@ -210,13 +205,6 @@ xgrey4       | 238  | #444444 | 68, 68, 68
 xgrey5       | 239  | #4E4E4E | 78, 78, 78
 
 
-## Contributors
-
- * [roosta](https://github.com/roosta)
- * [MindTooth](https://github.com/MindTooth)
- * [schtibe](https://github.com/schtibe)
- * [jswinarton](https://github.com/jswinarton)
-
 ## Attribution
 
 This project started as essentially a palette swap of
@@ -231,6 +219,40 @@ Srcery:
  * [Badwolf](https://github.com/sjl/badwolf)
  * [Jellybeans](https://github.com/nanotech/jellybeans.vim)
  * [Molokai](https://github.com/tomasr/molokai)
+ 
+## Troubleshooting
+
+### Colors don't look right
+
+Ensure that 256 colors are enabled in vim by setting this option **before** setting the colorscheme.
+```viml
+set t_Co=256
+```
+
+### 24-bit color, tmux and Neovim
+
+If you want to use GUI colors in terminal make sure that tmux pass
+through 24-bit color codes. For example, if you use
+[Termite](https://github.com/thestinger/termite) add it to the
+terminal overrides setting:
+
+```tmux
+set -ga terminal-overrides ",xterm-termite:Tc"
+```
+
+For other terminals, replace `xterm-termite` with the relevant
+terminal type. (stored in `$TERM`).
+
+See [Arch wiki](https://wiki.archlinux.org/index.php/Tmux#24-bit_color)
+and this [issue](https://github.com/srcery-colors/srcery-vim/issues/36).
+
+## Contributors
+
+ * [roosta](https://github.com/roosta)
+ * [MindTooth](https://github.com/MindTooth)
+ * [schtibe](https://github.com/schtibe)
+ * [jswinarton](https://github.com/jswinarton)
+ * [xfbs](https://github.com/xfbs)
 
 ## Extra
 
