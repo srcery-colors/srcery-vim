@@ -229,9 +229,9 @@ Ensure that 256 colors are enabled in vim by setting this option **before** sett
 set t_Co=256
 ```
 
-### 24-bit color, Tmux and NeoVim
+### 24-bit color, tmux and Neovim
 
-If you want to use GUI colors in terminal make sure that Tmux pass
+If you want to use GUI colors in terminal make sure that tmux pass
 through 24-bit color codes. For example, if you use
 [Termite](https://github.com/thestinger/termite) add it to the
 terminal overrides setting:
