@@ -44,6 +44,18 @@ set t_Co=256
 ### Manually
 Put `srcery.vim` in `~/.vim/colors/` (on unix-like systems) or `%userprofile%\vimfiles\colors\` (on Windows).
 
+### Vim 8
+
+Vim 8 has native support for loading plugins. All you need to do to is to clone
+this repository into `~/.vim/plug/default/opt`.
+
+    git clone https://github.com/srcery-colors/srcery-vim ~/.vim/plug/default/opt
+
+The same works for NeoVim, but you have to clone it into a path where NeoVim can
+find it.
+
+    git clone https://github.com/srcery-colors/srcery-vim ~/.config/nvim/plug/default/opt
+
 ### [dein.vim](https://github.com/Shougo/dein.vim)
 ```vim
 call dein#add('srcery-colors/srcery-vim')
