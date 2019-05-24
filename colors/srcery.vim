@@ -283,8 +283,8 @@ if v:version >= 703
 
 endif
 
-hi! link NonText SrceryWhiteAlt
-hi! link SpecialKey SrceryWhiteAlt
+hi! link NonText SrceryXgray3
+hi! link SpecialKey SrceryXgray3
 
 if g:srcery_inverse == 1
   call s:HL('Visual', s:none, s:none, s:inverse)
