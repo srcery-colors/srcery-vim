@@ -38,7 +38,7 @@ let s:bright_cyan    = ['#53FDE9', 14]
 let s:bright_white   = ['#FCE8C3', 15]
 
 " xterm colors.
-let s:orange        = ['#D75F00', 166]
+let s:orange        = ['#FF5F00', 202]
 let s:bright_orange = ['#FF8700', 208]
 let s:hard_black    = ['#121212', 233]
 let s:xgray1        = ['#262626', 235]
@@ -525,13 +525,13 @@ hi! link SneakStreakStatusLine Search
 if !exists('g:rbpt_colorpairs')
   let g:rbpt_colorpairs =
     \ [
-      \ ['blue',  '#2C78BF'], ['166',  '#D75F00'],
+      \ ['blue',  '#2C78BF'], ['202',  '#FF5F00'],
       \ ['red',  '#EF2F27'], ['magenta', '#E02C6D']
     \ ]
 endif
 
 let g:rainbow_guifgs = [ '#E02C6D', '#EF2F27', '#D75F00', '#2C78BF']
-let g:rainbow_ctermfgs = [ 'magenta', 'red', '166', 'blue' ]
+let g:rainbow_ctermfgs = [ 'magenta', 'red', '202', 'blue' ]
 
 if !exists('g:rainbow_conf')
   let g:rainbow_conf = {}
