@@ -195,7 +195,7 @@ to pad out the color selection:
 
    TERMCOL   |  NR  |   HEX   |    RGB
 ------------ | ---- |  -------| ----------
-orange       | 166  | #D75F00 | 215, 95, 0
+orange       | 202  | #FF5F00 | 255, 95, 0
 brightorange | 208  | #FF8700 | 255, 135, 0
 hard_black   | 233  | #121212 | 18, 18, 18
 xgrey1       | 235  | #262626 | 38, 38, 38
