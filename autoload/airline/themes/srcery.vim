@@ -21,7 +21,7 @@ let s:bright_cyan    = [ '#53fde9',  14 ]
 let s:bright_white   = [ '#fce8c3',  15 ]
 
 " xterm Colors
-let s:orange         = [ '#d75f00', 166 ]
+let s:orange         = [ '#FF5F00', 202 ]
 let s:bright_orange  = [ '#ff8700', 208 ]
 let s:hard_black     = [ '#121212', 233 ]
 let s:xgray1         = [ '#262626', 235 ]
