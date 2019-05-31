@@ -60,9 +60,9 @@ if exists('g:lightline')
   let s:p.terminal.left   = [ [ s:black, s:green ], [ s:bright_white, s:xgray4 ] ]
   let s:p.terminal.right  = [ [ s:black, s:green ], [ s:bright_white, s:xgray4 ] ]
   let s:p.terminal.middle = [ [ s:bright_white, s:bright_black ] ]
-  let s:p.command.left   = [ [ s:black, s:yellow ], [ s:bright_white, s:xgray4 ] ]
-  let s:p.command.right  = [ [ s:black, s:yellow ], [ s:bright_white, s:xgray4 ] ]
-  let s:p.command.middle = [ [ s:bright_white, s:bright_black ] ]
+  let s:p.command.left    = [ [ s:black, s:yellow ], [ s:bright_white, s:xgray4 ] ]
+  let s:p.command.right   = [ [ s:black, s:yellow ], [ s:bright_white, s:xgray4 ] ]
+  let s:p.command.middle  = [ [ s:bright_white, s:bright_black ] ]
 
 
   let g:lightline#colorscheme#srcery#palette = lightline#colorscheme#flatten(s:p)
