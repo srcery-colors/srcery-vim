@@ -1,6 +1,6 @@
 ![logo](assets/title.png)
 
-[![Build Status](https://travis-ci.org/srcery-colors/srcery-vim.svg?branch=master)](https://travis-ci.org/srcery-colors/srcery-vim)
+[![Build Status](https://travis-ci.com/srcery-colors/srcery-vim.svg?branch=master)](https://travis-ci.com/srcery-colors/srcery-vim)
 
 Color scheme with clearly defined contrasting colors and a slightly earthy tone.
 
