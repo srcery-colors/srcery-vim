@@ -60,22 +60,22 @@ let g:airline#themes#srcery#palette.normal_modified = s:modified
 let g:airline#themes#srcery#palette.normal_paste = s:modified
 
 " Inactive Mode
-let s:in1 = [ s:xgray6[0] , s:xgray4[0] , s:white[1] , s:xgray4[1] ]
-let s:in2 = [ s:xgray6[0] , s:xgray3[0] , s:white[1] , s:xgray3[1] ]
-let s:in3 = [ s:xgray6[0] , s:xgray2[0] , s:white[1] , s:xgray2[1] ]
+let s:in1 = [ s:xgray6[0] , s:xgray4[0] , s:bright_black[1] , s:xgray4[1] ]
+let s:in2 = [ s:xgray6[0] , s:xgray3[0] , s:bright_black[1] , s:xgray3[1] ]
+let s:in3 = [ s:xgray6[0] , s:xgray2[0] , s:bright_black[1] , s:xgray2[1] ]
 let g:airline#themes#srcery#palette.inactive = airline#themes#generate_color_map(s:in1, s:in2, s:in3)
 let g:airline#themes#srcery#palette.inactive_modified = s:modified
 
 " Insert Mode
 let s:i1 = [ s:black[0]        , s:bright_white[0] , s:black[1]        , s:bright_white[1] ]
-let s:i2 = [ s:black[0]        , s:white[0]        , s:black[1]        , s:white[1]        ]
+let s:i2 = [ s:black[0]        , s:bright_black[0]        , s:black[1]        , s:bright_black[1]        ]
 let s:i3 = [ s:bright_white[0] , s:xgray1[0] , s:bright_white[1] , s:xgray1[1] ]
 let g:airline#themes#srcery#palette.insert = airline#themes#generate_color_map(s:i1, s:i2, s:i3)
 let g:airline#themes#srcery#palette.insert_modified = s:modified
 
 " Replace Mode
 let s:r1  = [ s:bright_white[0] , s:bright_red[0]   , s:bright_white[1] , s:bright_red[1]   ]
-let s:r2  = [ s:black[0]        , s:white[0]        , s:black[1]        , s:white[1]        ]
+let s:r2  = [ s:black[0]        , s:bright_black[0]        , s:black[1]        , s:bright_black[1]        ]
 let s:r3  = [ s:bright_white[0] , s:xgray1[0] , s:bright_white[1] , s:xgray1[1] ]
 let g:airline#themes#srcery#palette.replace = airline#themes#generate_color_map(s:r1, s:r2, s:r3)
 let g:airline#themes#srcery#palette.replace_modified = s:modified
