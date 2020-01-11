@@ -10,8 +10,8 @@ let s:yellow         = [ '#fbb829',   3 ]
 let s:blue           = [ '#2c78bf',   4 ]
 let s:magenta        = [ '#e02c6d',   5 ]
 let s:cyan           = [ '#0aaeb3',   6 ]
-let s:white          = [ '#918175',   7 ]
-let s:bright_black   = [ '#2d2c29',   8 ]
+let s:white          = [ '#B6A88D',   7 ]
+let s:bright_black   = [ '#918175',   8 ]
 let s:bright_red     = [ '#f75341',   9 ]
 let s:bright_green   = [ '#98bc37',  10 ]
 let s:bright_yellow  = [ '#fed06e',  11 ]
@@ -29,6 +29,7 @@ let s:xgray2         = [ '#303030', 236 ]
 let s:xgray3         = [ '#3a3a3a', 237 ]
 let s:xgray4         = [ '#444444', 238 ]
 let s:xgray5         = [ '#4e4e4e', 239 ]
+let s:xgray6         = [ '#585858', 240 ]
 
 " }}}
 
