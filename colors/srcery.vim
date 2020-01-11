@@ -311,7 +311,7 @@ call s:HL('Underlined', s:blue, s:none, s:underline)
 call s:HL('StatusLine',   s:bright_white, s:xgray1)
 
 if g:srcery_transparent_background == 1 && !has('gui_running')
-  call s:HL('StatusLineNC', s:white, s:none, s:underline)
+  call s:HL('StatusLineNC', s:bright_black, s:none, s:underline)
 
   " The column separating vertically split windows
   call s:HL('VertSplit', s:bright_white, s:none)
@@ -319,7 +319,7 @@ if g:srcery_transparent_background == 1 && !has('gui_running')
   " Current match in wildmenu completion
   call s:HL('WildMenu', s:blue, s:none, s:bold)
 else
-  call s:HL('StatusLineNC', s:white, s:black, s:underline)
+  call s:HL('StatusLineNC', s:bright_black, s:black, s:underline)
   call s:HL('VertSplit', s:bright_white, s:black)
   call s:HL('WildMenu', s:blue, s:black, s:bold)
 endif
@@ -345,20 +345,20 @@ hi! link WarningMsg SrceryRedBold
 " Gutter: {{{
 
 " Line number for :number and :# commands
-call s:HL('LineNr', s:white)
+call s:HL('LineNr', s:bright_black)
 
 if g:srcery_transparent_background == 1 && !has('gui_running')
   " Column where signs are displayed
   " TODO Possibly need to fix  SignColumn
   call s:HL('SignColumn', s:none, s:none)
   " Line used for closed folds
-  call s:HL('Folded', s:white, s:none, s:italic)
+  call s:HL('Folded', s:bright_black, s:none, s:italic)
   " Column where folds are displayed
-  call s:HL('FoldColumn', s:white, s:none)
+  call s:HL('FoldColumn', s:bright_black, s:none)
 else
   call s:HL('SignColumn', s:none, s:black)
-  call s:HL('Folded', s:white, s:black, s:italic)
-  call s:HL('FoldColumn', s:white, s:black)
+  call s:HL('Folded', s:bright_black, s:black, s:italic)
+  call s:HL('FoldColumn', s:bright_black, s:black)
 endif
 
 " }}}
@@ -378,7 +378,7 @@ hi! link lCursor Cursor
 
 hi! link Special SrceryOrange
 
-call s:HL('Comment', s:white, s:none, s:italic)
+call s:HL('Comment', s:bright_black, s:none, s:italic)
 
 if g:srcery_transparent_background == 1 && !has('gui_running')
   call s:HL('Todo', s:bright_white, s:none, s:bold . s:italic)
@@ -445,7 +445,7 @@ hi! link Typedef SrceryMagenta
 if g:srcery_dim_lisp_paren == 1
   hi! link Delimiter SrceryXgray6
 else
-  hi! link Delimiter SrceryWhite
+  hi! link Delimiter SrceryBrightBlack
 endif
 
 " }}}
@@ -615,7 +615,7 @@ hi! link htmlTag SrceryBlue
 hi! link htmlEndTag SrceryBlue
 
 hi! link htmlTagName SrceryBlue
-hi! link htmlTag SrceryWhite
+hi! link htmlTag SrceryBrightBlack
 hi! link htmlArg SrceryYellow
 
 hi! link htmlScriptTag SrceryRed
@@ -654,18 +654,18 @@ hi! link xmlTagName SrceryBlue
 hi! link xmlEqual SrceryBlue
 hi! link docbkKeyword SrceryCyanBold
 
-hi! link xmlDocTypeDecl SrceryWhite
+hi! link xmlDocTypeDecl SrceryBrightBlack
 hi! link xmlDocTypeKeyword SrceryMagenta
-hi! link xmlCdataStart SrceryWhite
+hi! link xmlCdataStart SrceryBrightBlack
 hi! link xmlCdataCdata SrceryMagenta
-hi! link dtdFunction SrceryWhite
+hi! link dtdFunction SrceryBrightBlack
 hi! link dtdTagName SrceryMagenta
 
 hi! link xmlAttrib SrceryCyan
-hi! link xmlProcessingDelim SrceryWhite
-hi! link dtdParamEntityPunct SrceryWhite
-hi! link dtdParamEntityDPunct SrceryWhite
-hi! link xmlAttribPunct SrceryWhite
+hi! link xmlProcessingDelim SrceryBrightBlack
+hi! link dtdParamEntityPunct SrceryBrightBlack
+hi! link dtdParamEntityDPunct SrceryBrightBlack
+hi! link xmlAttribPunct SrceryBrightBlack
 
 hi! link xmlEntity SrceryYellow
 hi! link xmlEntityPunct SrceryYellow
@@ -688,8 +688,8 @@ if g:srcery_dim_lisp_paren == 1
   hi! link schemeParentheses SrceryXgray6
   hi! link clojureParen SrceryXgray6
 else
-  hi! link schemeParentheses SrceryWhite
-  hi! link clojureParen SrceryWhite
+  hi! link schemeParentheses SrceryBrightBlack
+  hi! link clojureParen SrceryBrightBlack
 endif
 
 hi! link clojureKeyword SrceryBlue
@@ -921,11 +921,11 @@ hi! link markdownCode SrceryCyan
 hi! link markdownCodeBlock SrceryCyan
 hi! link markdownCodeDelimiter SrceryCyan
 
-hi! link markdownBlockquote SrceryWhite
-hi! link markdownListMarker SrceryWhite
-hi! link markdownOrderedListMarker SrceryWhite
-hi! link markdownRule SrceryWhite
-hi! link markdownHeadingRule SrceryWhite
+hi! link markdownBlockquote SrceryBrightBlack
+hi! link markdownListMarker SrceryBrightBlack
+hi! link markdownOrderedListMarker SrceryBrightBlack
+hi! link markdownRule SrceryBrightBlack
+hi! link markdownHeadingRule SrceryBrightBlack
 
 hi! link markdownUrlDelimiter SrceryBrightWhite
 hi! link markdownLinkDelimiter SrceryBrightWhite
@@ -935,7 +935,7 @@ hi! link markdownHeadingDelimiter SrceryYellow
 hi! link markdownUrl SrceryMagenta
 hi! link markdownUrlTitleDelimiter SrceryGreen
 
-call s:HL('markdownLinkText', s:white, s:none, s:underline)
+call s:HL('markdownLinkText', s:bright_black, s:none, s:underline)
 hi! link markdownIdDeclaration markdownLinkText
 
 " }}}
@@ -984,7 +984,7 @@ hi! link jsonString SrceryBlue
 " Rust: {{{
 "https://github.com/rust-lang/rust.vim/blob/master/syntax/rust.vim
 hi! link rustCommentLineDoc SrceryGreen
-hi! link rustModPathSep SrceryWhite
+hi! link rustModPathSep SrceryBrightBlack
 " }}}
 " Make: {{{
 hi! link makePreCondit SrceryRed
