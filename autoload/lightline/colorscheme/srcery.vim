@@ -34,6 +34,7 @@ if exists('g:lightline')
   let s:xgray4       = s:getSrcColor('SrceryXgray4')
   let s:xgray4       = s:getSrcColor('SrceryXgray4')
   let s:xgray5       = s:getSrcColor('SrceryXgray5')
+  let s:xgray6       = s:getSrcColor('SrceryXgray6')
 
   let s:p = {'normal':{}, 'inactive':{}, 'insert':{}, 'replace':{}, 'visual':{}, 'tabline':{}, 'terminal':{}, 'command':{}}
   let s:p.normal.left     = [ [ s:bright_white, s:xgray4 ], [ s:bright_white, s:xgray2 ] ]
