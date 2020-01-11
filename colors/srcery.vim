@@ -443,7 +443,7 @@ hi! link Structure SrceryCyan
 hi! link Typedef SrceryMagenta
 
 if g:srcery_dim_lisp_paren == 1
-  hi! link Delimiter SrceryXgray5
+  hi! link Delimiter SrceryXgray6
 else
   hi! link Delimiter SrceryWhite
 endif
@@ -685,8 +685,8 @@ hi! link vimContinue SrceryBrightWhite
 " }}}
 " Lisp dialects: {{{
 if g:srcery_dim_lisp_paren == 1
-  hi! link schemeParentheses SrceryXgray5
-  hi! link clojureParen SrceryXgray5
+  hi! link schemeParentheses SrceryXgray6
+  hi! link clojureParen SrceryXgray6
 else
   hi! link schemeParentheses SrceryWhite
   hi! link clojureParen SrceryWhite
