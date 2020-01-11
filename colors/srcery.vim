@@ -302,8 +302,8 @@ if g:srcery_inverse == 1 && g:srcery_inverse_matches == 1
   call s:HL('Search', s:none, s:none, s:inverse)
   call s:HL('IncSearch', s:none, s:none, s:inverse)
 else
-  call s:HL('Search', s:none, s:xgray4, s:bold)
-  call s:HL('IncSearch', s:none, s:xgray4, s:underline . s:bold)
+  call s:HL('Search', s:none, s:xgray5, s:bold)
+  call s:HL('IncSearch', s:none, s:xgray5, s:underline . s:bold)
 endif
 
 call s:HL('Underlined', s:blue, s:none, s:underline)
@@ -511,7 +511,7 @@ endif
 hi! link CtrlPMatch SrceryMagenta
 hi! link CtrlPLinePre SrceryBrightGreen
 call s:HL('CtrlPMode1', s:bright_white, s:xgray2)
-call s:HL('CtrlPMode2', s:bright_white, s:xgray4)
+call s:HL('CtrlPMode2', s:bright_white, s:xgray5)
 call s:HL('CtrlPStats', s:yellow, s:bright_black)
 " }}}
 
