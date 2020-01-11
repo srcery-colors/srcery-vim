@@ -29,8 +29,8 @@ let s:yellow         = ['#FBB829', 3]
 let s:blue           = ['#2C78BF', 4]
 let s:magenta        = ['#E02C6D', 5]
 let s:cyan           = ['#0AAEB3', 6]
-let s:white          = ['#918175', 7]
-let s:bright_black   = ['#2D2C29', 8]
+let s:white          = ['#B6A88D', 7]
+let s:bright_black   = ['#918175', 8]
 let s:bright_red     = ['#F75341', 9]
 let s:bright_green   = ['#98BC37', 10]
 let s:bright_yellow  = ['#FED06E', 11]
@@ -48,6 +48,7 @@ let s:xgray2        = ['#303030', 236]
 let s:xgray3        = ['#3A3A3A', 237]
 let s:xgray4        = ['#444444', 238]
 let s:xgray5        = ['#4E4E4E', 239]
+let s:xgray6        = ['#585858', 240]
 
 "}}}
 " Setup Variables: {{{
@@ -197,6 +198,7 @@ call s:HL('SrceryXgray2', s:xgray2)
 call s:HL('SrceryXgray3', s:xgray3)
 call s:HL('SrceryXgray4', s:xgray4)
 call s:HL('SrceryXgray5', s:xgray5)
+call s:HL('SrceryXgray6', s:xgray6)
 
 " }}}
 " Setup Terminal Colors For Neovim: {{{
