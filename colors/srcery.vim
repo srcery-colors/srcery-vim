@@ -510,7 +510,7 @@ endif
 " CtrlP: "{{{
 hi! link CtrlPMatch SrceryMagenta
 hi! link CtrlPLinePre SrceryBrightGreen
-call s:HL('CtrlPMode1', s:bright_white, s:xgray2)
+call s:HL('CtrlPMode1', s:bright_white, s:xgray3)
 call s:HL('CtrlPMode2', s:bright_white, s:xgray5)
 call s:HL('CtrlPStats', s:yellow, s:bright_black)
 " }}}
@@ -578,7 +578,7 @@ hi! link ALEInfoSign SrceryBlue
 " }}}
 " vim-indent-guides: {{{
 
-call s:HL('IndentGuidesEven', s:none, s:xgray2)
+call s:HL('IndentGuidesEven', s:none, s:xgray3)
 call s:HL('IndentGuidesOdd',  s:none, s:xgray4)
 
 " }}}
