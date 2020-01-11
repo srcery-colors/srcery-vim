@@ -244,7 +244,7 @@ endif
 
 if v:version >= 700
   " Screen line that the cursor is
-  call s:HL('CursorLine',   s:none, s:bright_black)
+  call s:HL('CursorLine',   s:none, s:xgray1)
   " Screen column that the cursor is
   hi! link CursorColumn CursorLine
 
@@ -273,7 +273,7 @@ endif
 
 if v:version >= 703
   " Highlighted screen columns
-  call s:HL('ColorColumn',  s:none, s:bright_black)
+  call s:HL('ColorColumn',  s:none, s:xgray1)
 
   " Concealed element: \lambda → λ
   call s:HL('Conceal', s:blue, s:none)
@@ -293,7 +293,7 @@ hi! link SpecialKey SrceryXgray4
 if g:srcery_inverse == 1
   call s:HL('Visual', s:none, s:none, s:inverse)
 else
-  call s:HL('Visual', s:none, s:bright_black, s:bold)
+  call s:HL('Visual', s:none, s:xgray1, s:bold)
 endif
 
 hi! link VisualNOS Visual
@@ -308,7 +308,7 @@ endif
 
 call s:HL('Underlined', s:blue, s:none, s:underline)
 
-call s:HL('StatusLine',   s:bright_white, s:bright_black)
+call s:HL('StatusLine',   s:bright_white, s:xgray1)
 
 if g:srcery_transparent_background == 1 && !has('gui_running')
   call s:HL('StatusLineNC', s:white, s:none, s:underline)
@@ -453,7 +453,7 @@ endif
 
 if v:version >= 700
   " Popup menu: normal item
-  call s:HL('Pmenu', s:bright_white, s:bright_black)
+  call s:HL('Pmenu', s:bright_white, s:xgray1)
   " Popup menu: selected item
   call s:HL('PmenuSel', s:bright_white, s:magenta, s:bold)
 
@@ -512,7 +512,7 @@ hi! link CtrlPMatch SrceryMagenta
 hi! link CtrlPLinePre SrceryBrightGreen
 call s:HL('CtrlPMode1', s:bright_white, s:xgray3)
 call s:HL('CtrlPMode2', s:bright_white, s:xgray5)
-call s:HL('CtrlPStats', s:yellow, s:bright_black)
+call s:HL('CtrlPStats', s:yellow, s:xgray1)
 " }}}
 
 " Plugin specific -------------------------------------------------------------
