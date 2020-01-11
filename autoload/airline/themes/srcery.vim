@@ -89,7 +89,7 @@ let g:airline#themes#srcery#palette.terminal.airline_term = s:t3
 
 " Visual Mode
 let s:v1  = [ s:black[0]        , s:cyan[0]         , s:black[1]        , s:cyan[1]         ]
-let s:v2  = [ s:bright_white[0] , s:xgray4[0]       , s:bright_white[1] , s:xgray4[1]       ]
+let s:v2  = [ s:bright_white[0] , s:xgray5[0]       , s:bright_white[1] , s:xgray5[1]       ]
 let s:v3  = [ s:bright_white[0] , s:bright_black[0] , s:bright_white[1] , s:bright_black[1] ]
 let g:airline#themes#srcery#palette.visual = airline#themes#generate_color_map(s:v1, s:v2, s:v3)
 let g:airline#themes#srcery#palette.visual_modified = s:modified
@@ -102,7 +102,7 @@ let g:airline#themes#srcery#palette.visual_modified = s:modified
 " ctrlp.vim
 if get(g:, 'loaded_ctrlp', 0)
   let s:cp1 = [ s:bright_white[0] , s:xgray1[0] , s:bright_white[1] , s:xgray1[1] ]
-  let s:cp2 = [ s:bright_white[0] , s:xgray4[0] , s:bright_white[1] , s:xgray4[1] ]
+  let s:cp2 = [ s:bright_white[0] , s:xgray5[0] , s:bright_white[1] , s:xgray5[1] ]
   let s:cp3 = [ s:bright_white[0] , s:xgray2[0] , s:bright_white[1] , s:xgray2[1] ]
 
   let g:airline#themes#srcery#palette.ctrlp = airline#extensions#ctrlp#generate_color_map(s:cp1, s:cp2, s:cp3)
