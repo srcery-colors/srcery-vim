@@ -287,8 +287,8 @@ if v:version >= 703
 
 endif
 
-hi! link NonText SrceryXgray3
-hi! link SpecialKey SrceryXgray3
+hi! link NonText SrceryXgray4
+hi! link SpecialKey SrceryXgray4
 
 if g:srcery_inverse == 1
   call s:HL('Visual', s:none, s:none, s:inverse)
@@ -579,7 +579,7 @@ hi! link ALEInfoSign SrceryBlue
 " vim-indent-guides: {{{
 
 call s:HL('IndentGuidesEven', s:none, s:xgray2)
-call s:HL('IndentGuidesOdd',  s:none, s:xgray3)
+call s:HL('IndentGuidesOdd',  s:none, s:xgray4)
 
 " }}}
 " vim-startify {{{
