@@ -42,7 +42,7 @@ if exists('g:lightline')
   let s:p.normal.middle   = [ [ s:bright_white, s:bright_black ] ]
   let s:p.inactive.right  = [ [ s:white, s:bright_black ], [ s:white, s:bright_black ] ]
   let s:p.inactive.left   = [ [ s:white, s:bright_black ], [ s:white, s:bright_black ] ]
-  let s:p.inactive.middle = [ [ s:xgray5, s:bright_black ] ]
+  let s:p.inactive.middle = [ [ s:xgray6, s:bright_black ] ]
   let s:p.insert.left     = [ [ s:black, s:bright_white ], [ s:black, s:white ] ]
   let s:p.insert.right    = [ [ s:black, s:bright_white ], [ s:black, s:white ] ]
   let s:p.insert.middle   = [ [ s:bright_white, s:bright_black ] ]
