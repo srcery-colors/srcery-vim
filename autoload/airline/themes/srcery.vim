@@ -62,7 +62,7 @@ let g:airline#themes#srcery#palette.normal_paste = s:modified
 " Inactive Mode
 let s:in1 = [ s:xgray6[0] , s:xgray4[0] , s:white[1] , s:xgray4[1] ]
 let s:in2 = [ s:xgray6[0] , s:xgray3[0] , s:white[1] , s:xgray3[1] ]
-let s:in3 = [ s:xgray6[0] , s:xgray1[0] , s:white[1] , s:xgray1[1] ]
+let s:in3 = [ s:xgray6[0] , s:xgray2[0] , s:white[1] , s:xgray2[1] ]
 let g:airline#themes#srcery#palette.inactive = airline#themes#generate_color_map(s:in1, s:in2, s:in3)
 let g:airline#themes#srcery#palette.inactive_modified = s:modified
 
@@ -101,7 +101,7 @@ let g:airline#themes#srcery#palette.visual_modified = s:modified
 
 " ctrlp.vim
 if get(g:, 'loaded_ctrlp', 0)
-  let s:cp1 = [ s:bright_white[0] , s:xgray1[0] , s:bright_white[1] , s:xgray1[1] ]
+  let s:cp1 = [ s:bright_white[0] , s:xgray2[0] , s:bright_white[1] , s:xgray2[1] ]
   let s:cp2 = [ s:bright_white[0] , s:xgray5[0] , s:bright_white[1] , s:xgray5[1] ]
   let s:cp3 = [ s:bright_white[0] , s:xgray3[0] , s:bright_white[1] , s:xgray3[1] ]
 
