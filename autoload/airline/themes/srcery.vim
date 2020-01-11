@@ -52,7 +52,7 @@ let g:airline#themes#srcery#palette.commandline_modified = s:modified
 let g:airline#themes#srcery#palette.commandline_paste = s:modified
 
 " Normal Mode
-let s:n1 = [ s:bright_white[0] , s:xgray3[0]       , s:bright_white[1] , s:xgray3[1]       ]
+let s:n1 = [ s:bright_white[0] , s:xgray4[0]       , s:bright_white[1] , s:xgray4[1]       ]
 let s:n2 = [ s:bright_white[0] , s:xgray2[0]       , s:bright_white[1] , s:xgray2[1]       ]
 let s:n3 = [ s:bright_white[0] , s:bright_black[0] , s:bright_white[1] , s:bright_black[1] ]
 let g:airline#themes#srcery#palette.normal = airline#themes#generate_color_map(s:n1, s:n2, s:n3)
@@ -60,7 +60,7 @@ let g:airline#themes#srcery#palette.normal_modified = s:modified
 let g:airline#themes#srcery#palette.normal_paste = s:modified
 
 " Inactive Mode
-let s:in1 = [ s:xgray6[0] , s:xgray3[0] , s:white[1] , s:xgray3[1] ]
+let s:in1 = [ s:xgray6[0] , s:xgray4[0] , s:white[1] , s:xgray4[1] ]
 let s:in2 = [ s:xgray6[0] , s:xgray2[0] , s:white[1] , s:xgray2[1] ]
 let s:in3 = [ s:xgray6[0] , s:xgray1[0] , s:white[1] , s:xgray1[1] ]
 let g:airline#themes#srcery#palette.inactive = airline#themes#generate_color_map(s:in1, s:in2, s:in3)
