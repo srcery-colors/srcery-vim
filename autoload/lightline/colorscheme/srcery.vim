@@ -31,14 +31,14 @@ if exists('g:lightline')
   let s:bright_green = s:getSrcColor('SrceryBrightGreen')
   let s:xgray1       = s:getSrcColor('SrceryXgray1')
   let s:xgray2       = s:getSrcColor('SrceryXgray2')
-  let s:xgray4       = s:getSrcColor('SrceryXgray4')
+  let s:xgray3       = s:getSrcColor('SrceryXgray3')
   let s:xgray4       = s:getSrcColor('SrceryXgray4')
   let s:xgray5       = s:getSrcColor('SrceryXgray5')
   let s:xgray6       = s:getSrcColor('SrceryXgray6')
 
   let s:p = {'normal':{}, 'inactive':{}, 'insert':{}, 'replace':{}, 'visual':{}, 'tabline':{}, 'terminal':{}, 'command':{}}
-  let s:p.normal.left     = [ [ s:bright_white, s:xgray5 ], [ s:bright_white, s:xgray2 ] ]
-  let s:p.normal.right    = [ [ s:bright_white, s:xgray5 ], [ s:bright_white, s:xgray2 ] ]
+  let s:p.normal.left     = [ [ s:bright_white, s:xgray5 ], [ s:bright_white, s:xgray3 ] ]
+  let s:p.normal.right    = [ [ s:bright_white, s:xgray5 ], [ s:bright_white, s:xgray3 ] ]
   let s:p.normal.middle   = [ [ s:bright_white, s:bright_black ] ]
   let s:p.inactive.right  = [ [ s:white, s:bright_black ], [ s:white, s:bright_black ] ]
   let s:p.inactive.left   = [ [ s:white, s:bright_black ], [ s:white, s:bright_black ] ]
