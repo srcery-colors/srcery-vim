@@ -1,4 +1,4 @@
-name: Srcery Vim Linting
+name: Check Them Vim Files
 # This workflow is triggered on pushes to the repository.
 on: [push]
 
@@ -6,7 +6,7 @@ jobs:
   lint:
     runs-on: ubuntu-latest
 
-    name: Vim Files Linting
+    name: Linting
 
     steps:
       - uses: actions/checkout@v2
