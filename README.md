@@ -1,6 +1,6 @@
 ![logo](assets/title.png)
 
-![Check Them Vim Files](https://github.com/srcery-colors/srcery-vim/workflows/Check%20Them%20Vim%20Files/badge.svg)
+[![Check Them Vim Files](https://github.com/srcery-colors/srcery-vim/workflows/Check%20Them%20Vim%20Files/badge.svg)](https://github.com/srcery-colors/srcery-vim/actions)
 
 Color scheme with clearly defined contrasting colors and a slightly earthy tone.
 
