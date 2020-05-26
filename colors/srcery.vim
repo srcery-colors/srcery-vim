@@ -518,10 +518,9 @@ call s:HL('CtrlPStats', s:yellow, s:xgray2)
 " Plugin specific -------------------------------------------------------------
 " Sneak: {{{
 
-hi! link SneakPluginTarget Search
-hi! link SneakStreakTarget Search
-call s:HL('SneakStreakMask', s:yellow, s:yellow)
-hi! link SneakStreakStatusLine Search
+hi! link Sneak Search
+call s:HL('SneakScope', s:none, s:hard_black)
+hi! link SneakLabel Search
 
 " }}}
 " Rainbow Parentheses: {{{
