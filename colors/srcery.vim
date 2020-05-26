@@ -994,5 +994,10 @@ hi! link makeTarget SrceryYellow
 " Misc: {{{
 call s:HL('shParenError', s:bright_white, s:bright_red)
 " }}}
+" fzf: {{{
+call s:HL('fzf1', s:magenta, s:xgray2)
+call s:HL('fzf2', s:bright_green, s:xgray2)
+call s:HL('fzf3', s:bright_white, s:xgray2)
+"}}}
 
 " vim: set sw=2 ts=2 sts=2 et tw=80 ft=vim fdm=marker :
