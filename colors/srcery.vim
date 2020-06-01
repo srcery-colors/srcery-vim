@@ -595,9 +595,26 @@ hi! link StartifySection Identifier
 
 " }}}
 " fzf: {{{
+
 call s:HL('fzf1', s:magenta, s:xgray2)
 call s:HL('fzf2', s:bright_green, s:xgray2)
 call s:HL('fzf3', s:bright_white, s:xgray2)
+
+"}}}
+" Netrw: {{{
+
+hi! link netrwDir SrceryCyan
+hi! link netrwClassify SrceryCyan
+hi! link netrwLink SrceryBrightBlack
+hi! link netrwSymLink SrceryWhite
+hi! link netrwExe SrceryYellow
+hi! link netrwComment SrceryBrightBlack
+hi! link netrwList SrceryBlue
+hi! link netrwTreeBar SrceryBrightBlack
+hi! link netrwHelpCmd SrceryCyan
+hi! link netrwVersion SrceryGreen
+hi! link netrwCmdSep SrceryBrightBlack
+
 "}}}
 
 " Filetype specific -----------------------------------------------------------
