@@ -616,6 +616,30 @@ hi! link netrwVersion SrceryGreen
 hi! link netrwCmdSep SrceryBrightBlack
 
 "}}}
+" coc.nvim: {{{
+
+hi! link CocErrorSign SrceryRed
+hi! link CocWarningSign SrceryOrange
+hi! link CocInfoSign SrceryYellow
+hi! link CocHintSign SrceryBlue
+hi! link CocErrorFloat SrceryRed
+hi! link CocWarningFloat SrceryOrange
+hi! link CocInfoFloat SrceryYellow
+hi! link CocHintFloat SrceryBlue
+hi! link CocDiagnosticsError SrceryRed
+hi! link CocDiagnosticsWarning SrceryOrange
+hi! link CocDiagnosticsInfo SrceryYellow
+hi! link CocDiagnosticsHint SrceryBlue
+
+hi! link CocSelectedText SrceryRed
+hi! link CocCodeLens SrceryWhite
+
+call s:HL('CocErrorHighlight', s:none, s:none, s:undercurl, s:red)
+call s:HL('CocWarningHighlight', s:none, s:none, s:undercurl, s:orange)
+call s:HL('CocInfoHighlight', s:none, s:none, s:undercurl, s:yellow)
+call s:HL('CocHintHighlight', s:none, s:none, s:undercurl, s:blue)
+
+" }}}
 
 " Filetype specific -----------------------------------------------------------
 " Diff: {{{
