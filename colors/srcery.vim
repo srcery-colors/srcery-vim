@@ -507,13 +507,6 @@ if has('terminal')
 endif
 
 " }}}
-" CtrlP: "{{{
-hi! link CtrlPMatch SrceryMagenta
-hi! link CtrlPLinePre SrceryBrightGreen
-call s:HL('CtrlPMode1', s:bright_white, s:xgray3)
-call s:HL('CtrlPMode2', s:bright_white, s:xgray5)
-call s:HL('CtrlPStats', s:yellow, s:xgray2)
-" }}}
 
 " Plugin specific -------------------------------------------------------------
 " Sneak: {{{
@@ -639,6 +632,13 @@ call s:HL('CocWarningHighlight', s:none, s:none, s:undercurl, s:bright_orange)
 call s:HL('CocInfoHighlight', s:none, s:none, s:undercurl, s:yellow)
 call s:HL('CocHintHighlight', s:none, s:none, s:undercurl, s:blue)
 
+" }}}
+" CtrlP: "{{{
+hi! link CtrlPMatch SrceryMagenta
+hi! link CtrlPLinePre SrceryBrightGreen
+call s:HL('CtrlPMode1', s:bright_white, s:xgray3)
+call s:HL('CtrlPMode2', s:bright_white, s:xgray5)
+call s:HL('CtrlPStats', s:yellow, s:xgray2)
 " }}}
 
 " Filetype specific -----------------------------------------------------------
