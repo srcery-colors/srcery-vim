@@ -230,6 +230,37 @@ if has('nvim')
 endif
 
 " }}}
+" Setup Terminal Colors For Vim with termguicolors: {{{
+
+if exists('*term_setansicolors')
+  let g:terminal_ansi_colors = repeat([0], 16)
+
+  let g:terminal_ansi_colors[0] = s:black[0]
+  let g:terminal_ansi_colors[8] = s:bright_black[0]
+
+  let g:terminal_ansi_colors[1] = s:red[0]
+  let g:terminal_ansi_colors[9] = s:bright_red[0]
+
+  let g:terminal_ansi_colors[2] = s:green[0]
+  let g:terminal_ansi_colors[10] = s:bright_green[0]
+
+  let g:terminal_ansi_colors[3] = s:yellow[0]
+  let g:terminal_ansi_colors[11] = s:bright_yellow[0]
+
+  let g:terminal_ansi_colors[4] = s:blue[0]
+  let g:terminal_ansi_colors[12] = s:bright_blue[0]
+
+  let g:terminal_ansi_colors[5] = s:magenta[0]
+  let g:terminal_ansi_colors[13] = s:bright_magenta[0]
+
+  let g:terminal_ansi_colors[6] = s:cyan[0]
+  let g:terminal_ansi_colors[14] = s:bright_cyan[0]
+
+  let g:terminal_ansi_colors[7] = s:white[0]
+  let g:terminal_ansi_colors[15] = s:bright_white[0]
+endif
+
+" }}}
 
 " Vanilla colorscheme ---------------------------------------------------------
 " General UI: {{{
