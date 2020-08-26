@@ -1,37 +1,56 @@
 " vim-airline-srcery theme
 " vim: expandtab shiftwidth=2 tabstop=2 :
 
-" Color Palette {{{
 
-let s:black          = [ '#1c1b19',   0 ]
-let s:red            = [ '#ef2f27',   1 ]
-let s:green          = [ '#519f50',   2 ]
-let s:yellow         = [ '#fbb829',   3 ]
-let s:blue           = [ '#2c78bf',   4 ]
-let s:magenta        = [ '#e02c6d',   5 ]
-let s:cyan           = [ '#0aaeb3',   6 ]
-let s:white          = [ '#d0bfa1',   7 ]
-let s:bright_black   = [ '#918175',   8 ]
-let s:bright_red     = [ '#f75341',   9 ]
-let s:bright_green   = [ '#98bc37',  10 ]
-let s:bright_yellow  = [ '#fed06e',  11 ]
-let s:bright_blue    = [ '#68a8e4',  12 ]
-let s:bright_magenta = [ '#ff5c8f',  13 ]
-let s:bright_cyan    = [ '#53fde9',  14 ]
-let s:bright_white   = [ '#fce8c3',  15 ]
+" Helper Functions {{{
 
-" xterm Colors
-let s:orange         = [ '#d75f00', 166 ]
-let s:bright_orange  = [ '#ff8700', 208 ]
-let s:hard_black     = [ '#121212', 233 ]
-let s:xgray1         = [ '#262626', 235 ]
-let s:xgray2         = [ '#303030', 236 ]
-let s:xgray3         = [ '#3a3a3a', 237 ]
-let s:xgray4         = [ '#444444', 238 ]
-let s:xgray5         = [ '#4e4e4e', 239 ]
-let s:xgray6         = [ '#585858', 240 ]
+function! s:GetHighlightColor(group, type) abort
+  if a:type ==? 'fg'
+    let l:gui_color = synIDattr(hlID(a:group), 'fg', 'gui')
+    let l:term_color = synIDattr(hlID(a:group), 'fg', 'cterm')
+  elseif a:type ==? 'bg'
+    let l:gui_color = synIDattr(hlID(a:group), 'bg', 'gui')
+    let l:term_color = synIDattr(hlID(a:group), 'bg', 'cterm')
+  endif
 
-" }}}
+  return [ l:gui_color, l:term_color ]
+endfunction
+
+ " }}}
+" Srcery Palette {{{
+
+" Normal Colors
+let s:black          = s:GetHighlightColor('SrceryBlack', 'fg')
+let s:red            = s:GetHighlightColor('SrceryRed', 'fg')
+let s:green          = s:GetHighlightColor('SrceryGreen', 'fg')
+let s:yellow         = s:GetHighlightColor('SrceryYellow', 'fg')
+let s:blue           = s:GetHighlightColor('SrceryBlue', 'fg')
+let s:magenta        = s:GetHighlightColor('SrceryMagenta', 'fg')
+let s:cyan           = s:GetHighlightColor('SrceryCyan', 'fg')
+let s:white          = s:GetHighlightColor('SrceryWhite', 'fg')
+
+" Bright Colors
+let s:bright_black   = s:GetHighlightColor('SrceryBrightBlack', 'fg')
+let s:bright_red     = s:GetHighlightColor('SrceryBrightRed', 'fg')
+let s:bright_green   = s:GetHighlightColor('SrceryBrightGreen', 'fg')
+let s:bright_yellow  = s:GetHighlightColor('SrceryBrightYellow', 'fg')
+let s:bright_blue    = s:GetHighlightColor('SrceryBrightBlue', 'fg')
+let s:bright_magenta = s:GetHighlightColor('SrceryBrightMagenta', 'fg')
+let s:bright_cyan    = s:GetHighlightColor('SrceryBrightCyan', 'fg')
+let s:bright_white   = s:GetHighlightColor('SrceryBrightWhite', 'fg')
+
+" Extra Colors
+let s:orange         = s:GetHighlightColor('SrceryOrange', 'fg')
+let s:bright_orange  = s:GetHighlightColor('SrceryBrightOrange', 'fg')
+let s:hard_black     = s:GetHighlightColor('SrceryHardBlack', 'fg')
+let s:xgray1         = s:GetHighlightColor('SrceryXgray1', 'fg')
+let s:xgray2         = s:GetHighlightColor('SrceryXgray2', 'fg')
+let s:xgray3         = s:GetHighlightColor('SrceryXgray3', 'fg')
+let s:xgray4         = s:GetHighlightColor('SrceryXgray4', 'fg')
+let s:xgray5         = s:GetHighlightColor('SrceryXgray5', 'fg')
+let s:xgray6         = s:GetHighlightColor('SrceryXgray6', 'fg')
+
+"}}}
 
 
 " Theme Initializing {{{
