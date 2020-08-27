@@ -1,4 +1,4 @@
-![logo](assets/title.png)
+![logo](https://raw.githubusercontent.com/srcery-colors/srcery-assets/master/title.png)
 
 [![Check Them Vim Files](https://github.com/srcery-colors/srcery-vim/workflows/Check%20Them%20Vim%20Files/badge.svg)](https://github.com/srcery-colors/srcery-vim/actions)
 
@@ -155,19 +155,19 @@ colorscheme srcery
 ```
 ## Screenshots
 viml, bash
-![viml_bash](assets/viml_bash.png)
+![viml_bash](https://raw.githubusercontent.com/srcery-colors/srcery-assets/master/vim/viml_bash.png)
 
 clojure, elisp
-![lisp](assets/lisp.png)
+![lisp](https://raw.githubusercontent.com/srcery-colors/srcery-assets/master/vim/lisp.png)
 
 c, rust
-![c_rust](assets/c_rust.png)
+![c_rust](https://raw.githubusercontent.com/srcery-colors/srcery-assets/master/vim/c_rust.png)
 
 python, js
-![py_js](assets/py_js.png)
+![py_js](https://raw.githubusercontent.com/srcery-colors/srcery-assets/master/vim/py_js.png)
 
 git, terminal
-![py_js](assets/git_term.png)
+![git_term](https://raw.githubusercontent.com/srcery-colors/srcery-assets/master/vim/git_term.png)
 
 
 Typeface used in screenshots is [Iosevka](https://github.com/be5invis/Iosevka)
@@ -175,7 +175,7 @@ Typeface used in screenshots is [Iosevka](https://github.com/be5invis/Iosevka)
 ## Plugin support
 
 ### Lightline
-![lightline](assets/lightline.png)
+![lightline](https://raw.githubusercontent.com/srcery-colors/srcery-assets/master/vim/lightline.png)
 
 [Lightline](https://github.com/itchyny/lightline.vim) colorscheme.
 To use it, include 'srcery' value in lightline configuration, like so:
@@ -187,7 +187,7 @@ let g:lightline = {
 ```
 
 ### Airline
-![airline](assets/airline.png)
+![airline](https://raw.githubusercontent.com/srcery-colors/srcery-assets/master/vim/airline.png)
 
 Thanks to [MindTooth](https://github.com/MindTooth), Srcery now includes an [Airline](https://github.com/vim-airline/vim-airline) theme.
 
