@@ -245,14 +245,6 @@ terminal type. (stored in `$TERM`).
 See [Arch wiki](https://wiki.archlinux.org/index.php/Tmux#24-bit_color)
 and this [issue](https://github.com/srcery-colors/srcery-vim/issues/36).
 
-## Contributors
-
- * [roosta](https://github.com/roosta)
- * [MindTooth](https://github.com/MindTooth)
- * [schtibe](https://github.com/schtibe)
- * [jswinarton](https://github.com/jswinarton)
- * [xfbs](https://github.com/xfbs)
-
 ## Extra
 
 ### Emacs
