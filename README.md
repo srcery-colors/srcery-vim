@@ -200,6 +200,11 @@ These don't require any additional configuration.
 * [vim-gitgutter](https://github.com/airblade/vim-gitgutter)
 * [vim-indent-guides](https://github.com/nathanaelkane/vim-indent-guides)
 * [vim-sneak](https://github.com/justinmk/vim-sneak)
+* [vim-clap](https://github.com/liuchengxu/vim-clap)
+* [vim-sneak](https://github.com/justinmk/vim-sneak)
+* [vim-startify](https://github.com/mhinz/vim-startify)
+* [fzf.vim](https://github.com/junegunn/fzf.vim)
+* [coc.nvim](https://github.com/neoclide/coc.nvim)
 
 Plugin support is still a work in progress and more will come, if there is
 anything missing that you'd like to add please open an issue and let me know.
