@@ -2,53 +2,38 @@
 " vim: expandtab shiftwidth=2 tabstop=2 :
 
 
-" Helper Functions {{{
-
-function! s:GetHighlightColor(group, type) abort
-  if a:type ==? 'fg'
-    let l:gui_color = synIDattr(hlID(a:group), 'fg', 'gui')
-    let l:term_color = synIDattr(hlID(a:group), 'fg', 'cterm')
-  elseif a:type ==? 'bg'
-    let l:gui_color = synIDattr(hlID(a:group), 'bg', 'gui')
-    let l:term_color = synIDattr(hlID(a:group), 'bg', 'cterm')
-  endif
-
-  return [ l:gui_color, l:term_color ]
-endfunction
-
- " }}}
 " Srcery Palette {{{
 
 " Normal Colors
-let s:black          = s:GetHighlightColor('SrceryBlack', 'fg')
-let s:red            = s:GetHighlightColor('SrceryRed', 'fg')
-let s:green          = s:GetHighlightColor('SrceryGreen', 'fg')
-let s:yellow         = s:GetHighlightColor('SrceryYellow', 'fg')
-let s:blue           = s:GetHighlightColor('SrceryBlue', 'fg')
-let s:magenta        = s:GetHighlightColor('SrceryMagenta', 'fg')
-let s:cyan           = s:GetHighlightColor('SrceryCyan', 'fg')
-let s:white          = s:GetHighlightColor('SrceryWhite', 'fg')
+let s:black          = srcery#helper#GetColor('SrceryBlack')
+let s:red            = srcery#helper#GetColor('SrceryRed')
+let s:green          = srcery#helper#GetColor('SrceryGreen')
+let s:yellow         = srcery#helper#GetColor('SrceryYellow')
+let s:blue           = srcery#helper#GetColor('SrceryBlue')
+let s:magenta        = srcery#helper#GetColor('SrceryMagenta')
+let s:cyan           = srcery#helper#GetColor('SrceryCyan')
+let s:white          = srcery#helper#GetColor('SrceryWhite')
 
 " Bright Colors
-let s:bright_black   = s:GetHighlightColor('SrceryBrightBlack', 'fg')
-let s:bright_red     = s:GetHighlightColor('SrceryBrightRed', 'fg')
-let s:bright_green   = s:GetHighlightColor('SrceryBrightGreen', 'fg')
-let s:bright_yellow  = s:GetHighlightColor('SrceryBrightYellow', 'fg')
-let s:bright_blue    = s:GetHighlightColor('SrceryBrightBlue', 'fg')
-let s:bright_magenta = s:GetHighlightColor('SrceryBrightMagenta', 'fg')
-let s:bright_cyan    = s:GetHighlightColor('SrceryBrightCyan', 'fg')
-let s:bright_white   = s:GetHighlightColor('SrceryBrightWhite', 'fg')
+let s:bright_black   = srcery#helper#GetColor('SrceryBrightBlack')
+let s:bright_red     = srcery#helper#GetColor('SrceryBrightRed')
+let s:bright_green   = srcery#helper#GetColor('SrceryBrightGreen')
+let s:bright_yellow  = srcery#helper#GetColor('SrceryBrightYellow')
+let s:bright_blue    = srcery#helper#GetColor('SrceryBrightBlue')
+let s:bright_magenta = srcery#helper#GetColor('SrceryBrightMagenta')
+let s:bright_cyan    = srcery#helper#GetColor('SrceryBrightCyan')
+let s:bright_white   = srcery#helper#GetColor('SrceryBrightWhite')
 
 " Extra Colors
-let s:orange         = s:GetHighlightColor('SrceryOrange', 'fg')
-let s:bright_orange  = s:GetHighlightColor('SrceryBrightOrange', 'fg')
-let s:hard_black     = s:GetHighlightColor('SrceryHardBlack', 'fg')
-let s:xgray1         = s:GetHighlightColor('SrceryXgray1', 'fg')
-let s:xgray2         = s:GetHighlightColor('SrceryXgray2', 'fg')
-let s:xgray3         = s:GetHighlightColor('SrceryXgray3', 'fg')
-let s:xgray4         = s:GetHighlightColor('SrceryXgray4', 'fg')
-let s:xgray5         = s:GetHighlightColor('SrceryXgray5', 'fg')
-let s:xgray6         = s:GetHighlightColor('SrceryXgray6', 'fg')
+let s:orange         = srcery#helper#GetColor('SrceryOrange')
+let s:bright_orange  = srcery#helper#GetColor('SrceryBrightOrange')
+let s:hard_black     = srcery#helper#GetColor('SrceryHardBlack')
+let s:xgray1         = srcery#helper#GetColor('SrceryXgray1')
+let s:xgray2         = srcery#helper#GetColor('SrceryXgray2')
+let s:xgray3         = srcery#helper#GetColor('SrceryXgray3')
+let s:xgray4         = srcery#helper#GetColor('SrceryXgray4')
+let s:xgray5         = srcery#helper#GetColor('SrceryXgray5')
+let s:xgray6         = srcery#helper#GetColor('SrceryXgray6')
 
 "}}}
 
