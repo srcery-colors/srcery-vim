@@ -201,7 +201,7 @@ These don't require any additional configuration.
 * [fzf.vim](https://github.com/junegunn/fzf.vim)
 * [vim-clap](https://github.com/liuchengxu/vim-clap)
 * [vim-gitgutter](https://github.com/airblade/vim-gitgutter)
-* [vim-indent-guides](https://github.com/nathanaelkane/vim-inde
+* [vim-indent-guides](https://github.com/nathanaelkane/vim-indent-guides)
 * [vim-sneak](https://github.com/justinmk/vim-sneak)
 * [vim-startify](https://github.com/mhinz/vim-startify)
 
