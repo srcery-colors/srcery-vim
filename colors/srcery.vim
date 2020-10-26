@@ -619,13 +619,13 @@ call s:HL('fzf3', s:bright_white, s:xgray2)
 "}}}
 " Netrw: {{{
 
-hi! link netrwDir SrceryCyan
+hi! link netrwDir SrceryBlue
 hi! link netrwClassify SrceryCyan
 hi! link netrwLink SrceryBrightBlack
-hi! link netrwSymLink SrceryWhite
+hi! link netrwSymLink SrceryCyan
 hi! link netrwExe SrceryYellow
 hi! link netrwComment SrceryBrightBlack
-hi! link netrwList SrceryBlue
+hi! link netrwList SrceryBrightBlue
 hi! link netrwTreeBar SrceryBrightBlack
 hi! link netrwHelpCmd SrceryCyan
 hi! link netrwVersion SrceryGreen
