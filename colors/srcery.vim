@@ -663,6 +663,22 @@ call s:HL('CtrlPMode1', s:bright_white, s:xgray3)
 call s:HL('CtrlPMode2', s:bright_white, s:xgray5)
 call s:HL('CtrlPStats', s:yellow, s:xgray2)
 " }}}
+" NERDTree: "{{{
+
+highlight! link NERDTreeDir SrceryBlue
+highlight! link NERDTreeDirSlash SrceryOrange
+highlight! link NERDTreeOpenable SrceryBlue
+highlight! link NERDTreeClosable SrceryBlue
+highlight! link NERDTreeFile SrceryBrightBlack
+highlight! link NERDTreeExecFile SrceryYellow
+highlight! link NERDTreeUp SrceryOrange
+highlight! link NERDTreeCWD SrceryGreen
+highlight! link NERDTreeHelp SrceryCyan
+highlight! link NERDTreeFlags SrceryCyan
+highlight! link NERDTreeLinkFile SrceryBrightBlack
+highlight! link NERDTreeLinkTarget SrceryBrightBlack
+
+" }}}
 
 " Filetype specific -----------------------------------------------------------
 " Diff: {{{
