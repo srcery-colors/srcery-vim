@@ -666,10 +666,10 @@ call s:HL('CtrlPStats', s:yellow, s:xgray2)
 " NERDTree: "{{{
 
 highlight! link NERDTreeDir SrceryBlue
-highlight! link NERDTreeDirSlash SrceryOrange
+highlight! link NERDTreeDirSlash SrceryCyan
 highlight! link NERDTreeOpenable SrceryBlue
 highlight! link NERDTreeClosable SrceryBlue
-highlight! link NERDTreeFile SrceryBrightBlack
+highlight! link NERDTreeFile SrceryWhite
 highlight! link NERDTreeExecFile SrceryYellow
 highlight! link NERDTreeUp SrceryOrange
 highlight! link NERDTreeCWD SrceryGreen
