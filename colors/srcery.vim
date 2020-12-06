@@ -665,18 +665,18 @@ call s:HL('CtrlPStats', s:yellow, s:xgray2)
 " }}}
 " NERDTree: "{{{
 
-highlight! link NERDTreeDir SrceryBlue
-highlight! link NERDTreeDirSlash SrceryCyan
-highlight! link NERDTreeOpenable SrceryBlue
-highlight! link NERDTreeClosable SrceryBlue
-highlight! link NERDTreeFile SrceryWhite
-highlight! link NERDTreeExecFile SrceryYellow
-highlight! link NERDTreeUp SrceryOrange
-highlight! link NERDTreeCWD SrceryGreen
-highlight! link NERDTreeHelp SrceryCyan
-highlight! link NERDTreeFlags SrceryCyan
-highlight! link NERDTreeLinkFile SrceryBrightBlack
-highlight! link NERDTreeLinkTarget SrceryBrightBlack
+hi! link NERDTreeDir SrceryBlue
+hi! link NERDTreeDirSlash SrceryCyan
+hi! link NERDTreeOpenable SrceryBlue
+hi! link NERDTreeClosable SrceryBlue
+hi! link NERDTreeFile SrceryWhite
+hi! link NERDTreeExecFile SrceryYellow
+hi! link NERDTreeUp SrceryOrange
+hi! link NERDTreeCWD SrceryGreen
+hi! link NERDTreeHelp SrceryCyan
+hi! link NERDTreeFlags SrceryCyan
+hi! link NERDTreeLinkFile SrceryBrightBlack
+hi! link NERDTreeLinkTarget SrceryBrightBlack
 
 " }}}
 
