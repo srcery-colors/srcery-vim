@@ -199,7 +199,6 @@ call s:HL('SrceryXgray3', s:xgray3)
 call s:HL('SrceryXgray4', s:xgray4)
 call s:HL('SrceryXgray5', s:xgray5)
 call s:HL('SrceryXgray6', s:xgray6)
-
 " }}}
 " Setup Terminal Colors For Neovim: {{{
 
@@ -457,7 +456,11 @@ hi! link Number SrceryBrightMagenta
 hi! link Float SrceryBrightMagenta
 
 " Generic type
-hi! link Type SrceryBrightBlue
+if get(g:, "srcery_italic_types", 0) == 1
+  call s:HL('Type', s:bright_blue, s:none, s:italic)
+else
+  hi! link Type SrceryBrightBlue
+end
 " static, register, volatile, etc
 hi! link StorageClass SrceryOrange
 " struct, union, enum, etc.
@@ -471,6 +474,8 @@ else
   hi! link Delimiter SrceryBrightBlack
 endif
 
+" Treesitter
+call s:HL('TSParameter', s:cyan, s:none, s:italic)
 " }}}
 " Completion Menu: {{{
 
@@ -679,7 +684,13 @@ hi! link NERDTreeLinkFile SrceryBrightBlack
 hi! link NERDTreeLinkTarget SrceryBrightBlack
 
 " }}}
-
+" Telescope: "{{{
+call s:HL('TelescopeNormal', s:white, s:none)
+call s:HL('TelescopeSelection', s:green, s:none, s:bold)
+call s:HL('TelescopeMatching', s:magenta)
+call s:HL('TelescopeSelectionCaret', s:magenta)
+call s:HL('TelescopePromptPrefix', s:bright_yellow)
+" }}}
 " Filetype specific -----------------------------------------------------------
 " Diff: {{{
 
