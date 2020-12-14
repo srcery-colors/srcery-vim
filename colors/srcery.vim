@@ -159,6 +159,7 @@ function! s:HL(group, fg, ...)
 
   execute join(l:histring, ' ')
 endfunction
+
 "}}}
 " Srcery Hi Groups: {{{
 
@@ -199,8 +200,8 @@ call s:HL('SrceryXgray3', s:xgray3)
 call s:HL('SrceryXgray4', s:xgray4)
 call s:HL('SrceryXgray5', s:xgray5)
 call s:HL('SrceryXgray6', s:xgray6)
-" }}}
 
+" }}}
 " Setup Terminal Colors For Neovim: {{{
 
 if has('nvim')
@@ -477,6 +478,7 @@ endif
 
 " Treesitter
 call s:HL('TSParameter', s:cyan, s:none, s:italic)
+
 " }}}
 " Completion Menu: {{{
 
@@ -663,11 +665,13 @@ call s:HL('CocHintHighlight', s:none, s:none, s:undercurl, s:blue)
 
 " }}}
 " CtrlP: "{{{
+"
 hi! link CtrlPMatch SrceryMagenta
 hi! link CtrlPLinePre SrceryBrightGreen
 call s:HL('CtrlPMode1', s:bright_white, s:xgray3)
 call s:HL('CtrlPMode2', s:bright_white, s:xgray5)
 call s:HL('CtrlPStats', s:yellow, s:xgray2)
+
 " }}}
 " NERDTree: "{{{
 
@@ -694,6 +698,7 @@ call s:HL('TelescopeSelectionCaret', s:magenta)
 call s:HL('TelescopePromptPrefix', s:bright_yellow)
 
 " }}}
+
 " Filetype specific -----------------------------------------------------------
 " Diff: {{{
 
@@ -742,7 +747,6 @@ else
   call s:HL('htmlItalic', s:bright_white, s:black, s:italic)
 endif
 
-
 " }}}
 " Xml: {{{
 
@@ -767,6 +771,7 @@ hi! link xmlAttribPunct SrceryBrightBlack
 
 hi! link xmlEntity SrceryYellow
 hi! link xmlEntityPunct SrceryYellow
+
 " }}}
 " Vim: {{{
 
@@ -782,6 +787,7 @@ hi! link vimContinue SrceryBrightWhite
 
 " }}}
 " Lisp dialects: {{{
+
 if g:srcery_dim_lisp_paren == 1
   hi! link schemeParentheses SrceryXgray6
   hi! link clojureParen SrceryXgray6
@@ -815,6 +821,7 @@ hi! link clojureMeta SrceryYellow
 hi! link clojureDeref SrceryYellow
 hi! link clojureQuote SrceryYellow
 hi! link clojureUnquote SrceryYellow
+
 " }}}
 " C: {{{
 
@@ -1043,13 +1050,13 @@ hi! link markdownIdDeclaration markdownLinkText
 " hi! link haskellOperators SrceryYellow
 " hi! link haskellConditional SrceryCyan
 " hi! link haskellLet SrceryYellow
-"
+
 hi! link haskellType SrceryBlue
 hi! link haskellIdentifier SrceryBlue
 hi! link haskellSeparator SrceryBlue
 hi! link haskellDelimiter SrceryBrightWhite
 hi! link haskellOperators SrceryBlue
-"
+
 hi! link haskellBacktick SrceryYellow
 hi! link haskellStatement SrceryYellow
 hi! link haskellConditional SrceryYellow
@@ -1080,18 +1087,24 @@ hi! link jsonString SrceryBlue
 
 " }}}
 " Rust: {{{
+
 "https://github.com/rust-lang/rust.vim/blob/master/syntax/rust.vim
 hi! link rustCommentLineDoc SrceryGreen
 hi! link rustModPathSep SrceryBrightBlack
+
 " }}}
 " Make: {{{
+
 hi! link makePreCondit SrceryRed
 hi! link makeCommands SrceryBrightWhite
 hi! link makeTarget SrceryYellow
+
 " }}}
 " Misc: {{{
+
 call s:HL('shParenError', s:bright_white, s:bright_red)
 call s:HL('ExtraWhitespace', s:none, s:red)
+
 " }}}
 
 " vim: set sw=2 ts=2 sts=2 et tw=80 ft=vim fdm=marker :
