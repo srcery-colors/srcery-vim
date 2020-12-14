@@ -456,7 +456,7 @@ hi! link Number SrceryBrightMagenta
 hi! link Float SrceryBrightMagenta
 
 " Generic type
-if get(g:, "srcery_italic_types", 0) == 1
+if get(g:, 'srcery_italic_types', 0) == 1
   call s:HL('Type', s:bright_blue, s:none, s:italic)
 else
   hi! link Type SrceryBrightBlue
