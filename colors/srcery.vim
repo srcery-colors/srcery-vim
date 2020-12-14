@@ -200,6 +200,7 @@ call s:HL('SrceryXgray4', s:xgray4)
 call s:HL('SrceryXgray5', s:xgray5)
 call s:HL('SrceryXgray6', s:xgray6)
 " }}}
+
 " Setup Terminal Colors For Neovim: {{{
 
 if has('nvim')
@@ -685,11 +686,13 @@ hi! link NERDTreeLinkTarget SrceryBrightBlack
 
 " }}}
 " Telescope: "{{{
+
 call s:HL('TelescopeNormal', s:white, s:none)
 call s:HL('TelescopeSelection', s:green, s:none, s:bold)
 call s:HL('TelescopeMatching', s:magenta)
 call s:HL('TelescopeSelectionCaret', s:magenta)
 call s:HL('TelescopePromptPrefix', s:bright_yellow)
+
 " }}}
 " Filetype specific -----------------------------------------------------------
 " Diff: {{{
