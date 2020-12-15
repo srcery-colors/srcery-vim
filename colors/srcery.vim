@@ -542,12 +542,12 @@ endif
 
 hi! link LspDiagnosticsDefaultError SrceryBrightRed
 hi! link LspDiagnosticsDefaultWarning SrceryBrightYellow
-hi! link LspDiagnosticsDefaultInformation SrceryBrightCyan
-hi! link LspDiagnosticsDefaultHint SrceryBrightBlack
+hi! link LspDiagnosticsDefaultInformation SrceryBrightGreen
+hi! link LspDiagnosticsDefaultHint SrceryBrightCyan
 call s:HL('LspDiagnosticsUnderlineError', s:bright_red, s:none, s:underline)
 call s:HL('LspDiagnosticsUnderlineWarning', s:bright_yellow, s:none, s:underline)
-call s:HL('LspDiagnosticsUnderlineInformation', s:bright_cyan, s:none, s:underline)
-call s:HL('LspDiagnosticsUnderlineHint', s:bright_black, s:none, s:underline)
+call s:HL('LspDiagnosticsUnderlineInformation', s:bright_green, s:none, s:underline)
+call s:HL('LspDiagnosticsUnderlineHint', s:bright_cyan, s:none, s:underline)
 
 " }}}
 
