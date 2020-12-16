@@ -538,6 +538,18 @@ if has('terminal')
 endif
 
 " }}}
+" Neovim's builtin LSP: {{{
+
+hi! link LspDiagnosticsDefaultError SrceryBrightRed
+hi! link LspDiagnosticsDefaultWarning SrceryBrightYellow
+hi! link LspDiagnosticsDefaultInformation SrceryBrightGreen
+hi! link LspDiagnosticsDefaultHint SrceryBrightCyan
+call s:HL('LspDiagnosticsUnderlineError', s:bright_red, s:none, s:underline)
+call s:HL('LspDiagnosticsUnderlineWarning', s:bright_yellow, s:none, s:underline)
+call s:HL('LspDiagnosticsUnderlineInformation', s:bright_green, s:none, s:underline)
+call s:HL('LspDiagnosticsUnderlineHint', s:bright_cyan, s:none, s:underline)
+
+" }}}
 
 " Plugin specific -------------------------------------------------------------
 " Sneak: {{{
