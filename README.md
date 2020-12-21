@@ -144,6 +144,19 @@ Dims lisp dialects delimiters to a fairly dark gray (xgray5 specifically)
 
 default: 0
 
+#### g:srcery_guisp_fallback
+
+
+Sets up alternate highlighting for colored underline/undercurl. Some
+environments are unable to color underline, so this setting will set either the
+background or foreground to whatever color the underline is supposed to be.
+
+This comes in handy if colored underline doesn't work, or underline is disabled entirely.
+
+default: 'NONE'
+
+possible Values: 'fg', 'bg'
+
 ## Usage
 ```
 :color srcery
