@@ -95,6 +95,10 @@ if !exists('g:srcery_dim_lisp_paren')
   let g:srcery_dim_lisp_paren=0
 endif
 
+if !exists('g:srcery_guisp_fallback') || index(['fg', 'bg'], g:srcery_guisp_fallback) == -1
+  let g:srcery_guisp_fallback='NONE'
+endif
+
 " }}}
 " Setup Emphasis: {{{
 
@@ -144,6 +148,18 @@ function! s:HL(group, fg, ...)
     let l:emstr = a:2
   else
     let l:emstr = 'NONE,'
+  endif
+
+  " special fallback
+  if a:0 >= 3
+    if g:srcery_guisp_fallback != 'NONE'
+      let fg = a:3
+    endif
+
+    " bg fallback mode should invert higlighting
+    if g:srcery_guisp_fallback == 'bg'
+      let emstr .= 'inverse,'
+    endif
   endif
 
   let l:histring = [ 'hi', a:group,
