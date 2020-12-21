@@ -152,12 +152,12 @@ function! s:HL(group, fg, ...)
 
   " special fallback
   if a:0 >= 3
-    if g:srcery_guisp_fallback != 'NONE'
+    if g:srcery_guisp_fallback !=# 'NONE'
       let fg = a:3
     endif
 
     " bg fallback mode should invert higlighting
-    if g:srcery_guisp_fallback == 'bg'
+    if g:srcery_guisp_fallback ==# 'bg'
       let emstr .= 'inverse,'
     endif
   endif
