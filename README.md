@@ -146,7 +146,6 @@ default: 0
 
 #### g:srcery_guisp_fallback
 
-
 Sets up alternate highlighting for colored underline/undercurl. Some
 environments are unable to color underline, so this setting will set either the
 background or foreground to whatever color the underline is supposed to be.
