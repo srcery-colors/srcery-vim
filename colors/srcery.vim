@@ -820,8 +820,8 @@ if g:srcery_dim_lisp_paren == 1
   hi! link schemeParentheses SrceryXgray6
   hi! link clojureParen SrceryXgray6
 else
-  hi! link schemeParentheses SrceryBrightBlack
-  hi! link clojureParen SrceryBrightBlack
+  hi! link schemeParentheses SrceryWhite
+  hi! link clojureParen SrceryWhite
 endif
 
 hi! link clojureKeyword SrceryBlue
