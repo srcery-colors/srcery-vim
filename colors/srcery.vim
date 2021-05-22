@@ -52,7 +52,7 @@ if !exists('g:srcery_cyan')
 endif
 
 if !exists('g:srcery_white')
-  let g:srcery_white='#D0BFA1'
+  let g:srcery_white='#BAA67F'
 endif
 
 if !exists('g:srcery_bright_black')
