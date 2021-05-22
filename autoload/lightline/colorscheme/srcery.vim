@@ -3,7 +3,6 @@
 " Description: Srcery colorscheme for Lightline (itchyny/lightline.vim)
 " Author: Roosta <mail@roosta>
 " Source: https://github.com/morhetz/gruvbox/blob/master/autoload/lightline/colorscheme/gruvbox.vim
-" Last Modified: 2017-03-28
 " -----------------------------------------------------------------------------
 
 if exists('g:lightline')
