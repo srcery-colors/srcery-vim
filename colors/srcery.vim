@@ -67,8 +67,8 @@ if !exists('g:srcery_italic')
   endif
 endif
 
-if !exists('g:srcery_transparent_background')
-  let g:srcery_transparent_background=0
+if !exists('g:srcery_bg_passthrough')
+  let g:srcery_bg_passthrough=0
 endif
 
 if !exists('g:srcery_undercurl')
@@ -284,7 +284,7 @@ endif
 
 " Normal text
 "
-if g:srcery_transparent_background == 1 && !has('gui_running')
+if g:srcery_bg_passthrough == 1 && !has('gui_running')
   call s:HL('Normal', s:bright_white, s:none)
  else
   call s:HL('Normal', s:bright_white, s:black)
@@ -319,7 +319,7 @@ if v:version >= 703
   call s:HL('Conceal', s:blue, s:none)
 
   " Line number of CursorLine
-  if g:srcery_transparent_background == 1 && !has('gui_running')
+  if g:srcery_bg_passthrough == 1 && !has('gui_running')
     call s:HL('CursorLineNr', s:yellow, s:none)
   else
     call s:HL('CursorLineNr', s:yellow, s:black)
@@ -350,7 +350,7 @@ call s:HL('Underlined', s:blue, s:none, s:underline)
 
 call s:HL('StatusLine',   s:bright_white, s:xgray2)
 
-if g:srcery_transparent_background == 1 && !has('gui_running')
+if g:srcery_bg_passthrough == 1 && !has('gui_running')
   call s:HL('StatusLineNC', s:bright_black, s:none, s:underline)
 
   " The column separating vertically split windows
@@ -387,7 +387,7 @@ hi! link WarningMsg SrceryRedBold
 " Line number for :number and :# commands
 call s:HL('LineNr', s:bright_black)
 
-if g:srcery_transparent_background == 1 && !has('gui_running')
+if g:srcery_bg_passthrough == 1 && !has('gui_running')
   " Column where signs are displayed
   " TODO Possibly need to fix  SignColumn
   call s:HL('SignColumn', s:none, s:none)
@@ -420,7 +420,7 @@ hi! link Special SrceryOrange
 
 call s:HL('Comment', s:bright_black, s:none, s:italic)
 
-if g:srcery_transparent_background == 1 && !has('gui_running')
+if g:srcery_bg_passthrough == 1 && !has('gui_running')
   call s:HL('Todo', s:bright_white, s:none, s:bold . s:italic)
 else
   call s:HL('Todo', s:bright_white, s:black, s:bold . s:italic)
@@ -504,7 +504,7 @@ if v:version >= 700
   " Popup menu: selected item
   call s:HL('PmenuSel', s:bright_white, s:blue, s:bold)
 
-  if g:srcery_transparent_background == 1 && !has('gui_running')
+  if g:srcery_bg_passthrough == 1 && !has('gui_running')
     " Popup menu: scrollbar
     call s:HL('PmenuSbar', s:none, s:none)
     " Popup menu: scrollbar thumb
@@ -518,7 +518,7 @@ endif
 " }}}
 " Diffs: {{{
 
-if g:srcery_transparent_background == 1 && !has('gui_running')
+if g:srcery_bg_passthrough == 1 && !has('gui_running')
   call s:HL('DiffDelete', s:red, s:none)
   call s:HL('DiffAdd',    s:green, s:none)
   call s:HL('DiffChange', s:cyan, s:none)
@@ -757,7 +757,7 @@ call s:HL('htmlLink', s:bright_white, s:none, s:underline)
 
 hi! link htmlSpecialChar SrceryYellow
 
-if g:srcery_transparent_background == 1 && !has('gui_running')
+if g:srcery_bg_passthrough == 1 && !has('gui_running')
   call s:HL('htmlBold', s:bright_white, s:none, s:bold)
   call s:HL('htmlBoldUnderline', s:bright_white, s:none, s:bold . s:underline)
   call s:HL('htmlBoldItalic', s:bright_white, s:none, s:bold . s:italic)
