@@ -170,6 +170,10 @@ if !exists('g:srcery_guisp_fallback') || index(['fg', 'bg'], g:srcery_guisp_fall
   let g:srcery_guisp_fallback='NONE'
 endif
 
+if !exists('g:srcery_italic_types')
+  let g:srcery_italic_types=0
+endif
+
 " }}}
 " }}}
 " Palette {{{
@@ -580,7 +584,7 @@ hi! link Number SrceryBrightMagenta
 hi! link Float SrceryBrightMagenta
 
 " Generic type
-if get(g:, 'srcery_italic_types', 0) == 1
+if g:srcery_italic_types == 1 && g:srcery_italic == 1
   call s:HL('Type', s:bright_blue, s:none, s:italic)
 else
   hi! link Type SrceryBrightBlue
