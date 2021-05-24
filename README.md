@@ -118,19 +118,6 @@ default: 1
 Enables italic text.
 default: gui 1, term 0
 
-#### g:srcery_bg_passthrough
-
-Lets the terminal control the background color in Vim, setting the background
-in vim to NONE.
-
-A possible use case for this could be you want to manipulate the background
-color in the terminal, and let the results bubble up to Vim, like [this](https://github.com/roosta/tmux-pop).
-
-This is a bit of an experimental option, and can cause issues in certain
-terminals.
-
-default: 0
-
 #### g:srcery_underline
 
 Enables underlined text.
@@ -162,6 +149,19 @@ default: 0
 #### g:srcery_dim_lisp_paren
 
 Dims lisp dialects delimiters to a fairly dark gray (xgray5 specifically)
+
+default: 0
+
+#### g:srcery_bg_passthrough
+
+Lets the terminal control the background color in Vim, setting the background
+in vim to NONE.
+
+A possible use case for this could be you want to manipulate the background
+color in the terminal, and let the results bubble up to Vim, like [this](https://github.com/roosta/tmux-pop).
+
+This is a bit of an experimental option, and can cause issues in certain
+terminals.
 
 default: 0
 
