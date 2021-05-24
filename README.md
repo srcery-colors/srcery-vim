@@ -177,6 +177,13 @@ default: 'NONE'
 
 possible Values: 'fg', 'bg'
 
+#### g:srcery_italic_types
+
+Italicize types if italic is enabled
+
+default: 0
+
+
 ## Usage
 ```
 :color srcery
