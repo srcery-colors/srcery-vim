@@ -43,12 +43,12 @@ to pad out the color selection, no extra configuration needed.
 | orange        | 202 | `g:srcery_orange`        | #FF5F00 | 255, 95, 0  | ![orange](https://place-hold.it/100x24/FF5F00?text=+)        |
 | bright_orange | 208 | `g:srcery_bright_orange` | #FF8700 | 255, 135, 0 | ![bright_orange](https://place-hold.it/100x24/FF8700?text=+) |
 | hard_black    | 233 | `g:srcery_hard_black`    | #121212 | 18, 18, 18  | ![hard_black](https://place-hold.it/100x24/121212?text=+)    |
-| xgray1        | 235 | `g:srcery_xgray`         | #262626 | 38, 38, 38  | ![xgray1](https://place-hold.it/100x24/262626?text=+)        |
-| xgray2        | 236 | `g:srcery_xgray`         | #303030 | 48, 48, 48  | ![xgray2](https://place-hold.it/100x24/303030?text=+)        |
-| xgray3        | 237 | `g:srcery_xgray`         | #3A3A3A | 58, 58, 58  | ![xgray3](https://place-hold.it/100x24/3A3A3A?text=+)        |
-| xgray4        | 238 | `g:srcery_xgray`         | #444444 | 68, 68, 68  | ![xgray4](https://place-hold.it/100x24/444444?text=+)        |
-| xgray5        | 239 | `g:srcery_xgray`         | #4E4E4E | 78, 78, 78  | ![xgray5](https://place-hold.it/100x24/4E4E4E?text=+)        |
-| xgray6        | 240 | `g:srcery_xgray`         | #585858 | 88, 88, 88  | ![xgray6](https://place-hold.it/100x24/585858?text=+)        |
+| xgray1        | 235 | `g:srcery_xgray1`         | #262626 | 38, 38, 38  | ![xgray1](https://place-hold.it/100x24/262626?text=+)        |
+| xgray2        | 236 | `g:srcery_xgray2`         | #303030 | 48, 48, 48  | ![xgray2](https://place-hold.it/100x24/303030?text=+)        |
+| xgray3        | 237 | `g:srcery_xgray3`         | #3A3A3A | 58, 58, 58  | ![xgray3](https://place-hold.it/100x24/3A3A3A?text=+)        |
+| xgray4        | 238 | `g:srcery_xgray4`         | #444444 | 68, 68, 68  | ![xgray4](https://place-hold.it/100x24/444444?text=+)        |
+| xgray5        | 239 | `g:srcery_xgray5`         | #4E4E4E | 78, 78, 78  | ![xgray5](https://place-hold.it/100x24/4E4E4E?text=+)        |
+| xgray6        | 240 | `g:srcery_xgray6`         | #585858 | 88, 88, 88  | ![xgray6](https://place-hold.it/100x24/585858?text=+)        |
 
 ## Installation
 
