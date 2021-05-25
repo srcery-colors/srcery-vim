@@ -165,21 +165,24 @@ g:srcery_undercurl
 							 *srcery-option-inverse*
 g:srcery_inverse
 
-	Enables inverse colors.
+	Enable or disable inverse highlighting (foreground becomes background, vice
+	versa) globally for theme, will fall back to other methods of highlighting when
+	this is disabled.
 
 	Default: 1
 
 						 *srcery-option-inverse-matches*
 g:srcery_inverse_matches
 
-	Enables inverse search matches.
+	Highlight search matches using inverse colors.
 
 	Default: 0
 
 					     *srcery-option-inverse-match-paren*
 g:srcery_inverse_match_paren
 
-	When enabled will inverse matching delimiters.
+	When enabled will highlight matching delimiters using inverse colors.
+	(`:DoMatchParen`)
 
 	Works best with Rainbow parenthesis.
 

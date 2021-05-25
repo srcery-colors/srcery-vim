@@ -130,17 +130,22 @@ default: 1
 
 #### g:srcery_inverse
 
-Enables inverse colors.
+Enable or disable inverse highlighting (foreground becomes background, vice
+versa) globally for theme, will fall back to other methods of highlighting when
+this is disabled
+
 default: 1
 
 #### g:srcery_inverse_matches
 
-Enables inverse search matches.
+Highlight search matches using inverse colors
+
 default: 0
 
 #### g:srcery_inverse_match_paren
 
-When enabled will inverse matching delimiters.
+When enabled will highlight matching delimiters using inverse colors.
+(`:DoMatchParen`)
 
 Works best with [Rainbow parenthesis](https://github.com/kien/rainbow_parentheses.vim)
 
@@ -171,7 +176,8 @@ Sets up alternate highlighting for colored underline/undercurl. Some
 environments are unable to color underline, so this setting will set either the
 background or foreground to whatever color the underline is supposed to be.
 
-This comes in handy if colored underline doesn't work, or underline is disabled entirely.
+This comes in handy if colored underline doesn't work, or underline is disabled
+entirely.
 
 default: 'NONE'
 
