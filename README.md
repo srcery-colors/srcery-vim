@@ -130,9 +130,12 @@ default: 1
 
 #### g:srcery_inverse
 
-Enable or disable inverse highlighting (foreground becomes background, vice
-versa) globally for theme, will fall back to other methods of highlighting when
-this is disabled
+Enable or disable inverse highlighting (foreground becomes background,
+vice versa). This is used for visual selection, search highlights and
+some other things.
+
+Srcery will fall back to other methods of highlighting if this is
+disabled.
 
 default: 1
 
