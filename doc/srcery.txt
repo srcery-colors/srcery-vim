@@ -8,14 +8,14 @@ License:   MIT license
 
 CONTENTS						*srcery-contents*
 
-Introduction			|srcery-introduction|
-Installation 			|srcery-installation|
-	Vim 8 			|srcery-install-vim8|
-	Dein 			|srcery-install-dein|
-	Pathogen 		|srcery-install-pathogen|
-	Plug 			|srcery-install-plug|
-Color table 			|srcery-color-table|
-Options				|srcery-options|
+Introduction				|srcery-introduction|
+Installation 				|srcery-installation|
+	Vim 8 				|srcery-install-vim8|
+	Dein 				|srcery-install-dein|
+	Pathogen 			|srcery-install-pathogen|
+	Plug 				|srcery-install-plug|
+Color Table 				|srcery-color-table|
+Options					|srcery-options|
 	g:srcery_[color] 		|srcery-option-color|
 	g:srcery_bold 			|srcery-option-bold|
 	g:srcery_italic 		|srcery-option-italic|
@@ -52,7 +52,7 @@ clone this repository into `~/.vim/plug/default/opt`.
 		~/.vim/plug/default/opt
 <
 
-The same works for NeoVim, but you have to clone it into a path where NeoVim
+The same works for Neovim, but you have to clone it into a path where Neovim
 can find it.
 >
 	git clone https://github.com/srcery-colors/srcery-vim \
@@ -117,7 +117,7 @@ no extra configuration needed.
 OPTIONS								*srcery-options*
 
 Srcery includes a few toggles due to discrepancies in the various setups
-possible. To change any of these you’d put something like this in your .vimrc
+possible. To change any of these you’d put something like this in your .vimrc:
 
 >
 	let g:srcery_italic = 1
@@ -168,7 +168,7 @@ g:srcery_inverse
 	Enable or disable inverse highlighting (foreground becomes background,
 	vice versa). This is used for visual selection, search highlights and
 	some other things.
-	
+
 	Srcery will fall back to other methods of highlighting if this is
 	disabled.
 
@@ -202,8 +202,8 @@ g:srcery_dim_lisp_paren
 						  *srcery-option-bg-passthrough*
 g:srcery_bg_passthrough
 
-	Lets the terminal control the background color in Vim, setting the
-	background in vim to NONE.
+	Lets the terminal control the background color in Vim by setting the
+	background NONE.
 
 	A possible use case for this could be you want to manipulate the
 	background color in the terminal, and let the results bubble up to
@@ -222,16 +222,16 @@ g:srcery_guisp_fallback
 	This comes in handy if colored underline doesn’t work, or underline is
 	disabled entirely.
 
-	default: `NONE`
+	Default: `NONE`
 
-	possible Values: `fg`, `bg`
+	Possible Values: `fg`, `bg`
 
 						    *srcery-option-italic-types*
 g:srcery_italic_types
 
-	Italicize types if italic is enabled
-	
-	default: 0
+	Italicize types if italic is enabled.
+
+	Default: 0
 
 ==============================================================================
 vim: tw=78:ts=8:ft=help:norl:noet:fen:noet :

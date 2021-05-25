@@ -7,9 +7,11 @@ Color scheme with clearly defined contrasting colors and a slightly earthy tone.
 ## Requirements
 
 ### GUI
-You don’t need to do anything for this colorscheme to work in GVim or MacVim.
+
+You don’t need to do anything for this colorscheme to work in gVim or MacVim.
 
 ### TUI
+
 To use Srcery in the terminal you need to change your terminal emulator’s
 so-called “ASCII” colors to the ones in the table below. There's a list of
 terminal configurations in the
@@ -53,6 +55,7 @@ to pad out the color selection, no extra configuration needed.
 ## Installation
 
 ### Manually
+
 Put `srcery.vim` in `~/.vim/colors/` (on unix-like systems) or `%userprofile%\vimfiles\colors\` (on Windows).
 
 ### Vim 8
@@ -62,25 +65,40 @@ this repository into `~/.vim/plug/default/opt`.
 
     git clone https://github.com/srcery-colors/srcery-vim ~/.vim/plug/default/opt
 
-The same works for NeoVim, but you have to clone it into a path where NeoVim can
+The same works for Neovim, but you have to clone it into a path where Neovim can
 find it.
 
     git clone https://github.com/srcery-colors/srcery-vim ~/.config/nvim/plug/default/opt
 
 ### [dein.vim](https://github.com/Shougo/dein.vim)
+
 ```vim
 call dein#add('srcery-colors/srcery-vim')
 ```
 
 ### [vim-pathogen](https://github.com/tpope/vim-pathogen)
+
 ```shell
 cd ~/.vim/bundle
 git clone https://github.com/srcery-colors/srcery-vim
 ```
 
 ### [vim-plug](https://github.com/junegunn/vim-plug)
+
 ```vim
 Plug 'srcery-colors/srcery-vim'
+```
+
+## Usage
+
+```
+:color srcery
+```
+
+If you like what you see and decide to make srcery your default colorscheme, add the relevant line to your `.vimrc`:
+
+```vim
+colorscheme srcery
 ```
 
 ## Configuration
@@ -94,39 +112,45 @@ let g:srcery_italic = 1
 
 Make sure that you set these variables before assigning `colorscheme`.
 
-#### Colors
+### Colors
 
 You can customize each of Srcery's colors, to customize say the red color:
+
 ```vim
 let g:srcery_red = '#FF0000'
 ```
 
 Refer to the [table](#TUI) for a full list of color variables, hexes and more.
 
-This will only work on `set termguicolors` and in Gvim, to override terminal
+This will only work on `set termguicolors` and in gVim, to override terminal
 colors, do so in your [terminal
 configuration](https://github.com/srcery-colors/srcery-terminal).
 
+### Options
 
 #### g:srcery_bold
 
 Enables bold text.
-default: 1
+
+Default: 1
 
 #### g:srcery_italic
 
 Enables italic text.
-default: gui 1, term 0
+
+Default: gui 1, term 0
 
 #### g:srcery_underline
 
 Enables underlined text.
-default: 1
+
+Default: 1
 
 #### g:srcery_undercurl
 
 Enables undercurled text.
-default: 1
+
+Default: 1
 
 #### g:srcery_inverse
 
@@ -137,33 +161,32 @@ some other things.
 Srcery will fall back to other methods of highlighting if this is
 disabled.
 
-default: 1
+Default: 1
 
 #### g:srcery_inverse_matches
 
-Highlight search matches using inverse colors
+Highlight search matches using inverse colors.
 
-default: 0
+Default: 0
 
 #### g:srcery_inverse_match_paren
 
 When enabled will highlight matching delimiters using inverse colors.
 (`:DoMatchParen`)
 
-Works best with [Rainbow parenthesis](https://github.com/kien/rainbow_parentheses.vim)
+Works best with [Rainbow parenthesis](https://github.com/kien/rainbow_parentheses.vim).
 
-default: 0
+Default: 0
 
 #### g:srcery_dim_lisp_paren
 
-Dims lisp dialects delimiters to a fairly dark gray (xgray5 specifically)
+Dims lisp dialects delimiters to a fairly dark gray (xgray5 specifically).
 
-default: 0
+Default: 0
 
 #### g:srcery_bg_passthrough
 
-Lets the terminal control the background color in Vim, setting the background
-in vim to NONE.
+Lets the terminal control the background color in Vim by setting the background to `NONE`.
 
 A possible use case for this could be you want to manipulate the background
 color in the terminal, and let the results bubble up to Vim, like [this](https://github.com/roosta/tmux-pop).
@@ -171,7 +194,7 @@ color in the terminal, and let the results bubble up to Vim, like [this](https:/
 This is a bit of an experimental option, and can cause issues in certain
 terminals.
 
-default: 0
+Default: 0
 
 #### g:srcery_guisp_fallback
 
@@ -182,27 +205,18 @@ background or foreground to whatever color the underline is supposed to be.
 This comes in handy if colored underline doesn't work, or underline is disabled
 entirely.
 
-default: 'NONE'
+Default: 'NONE'
 
-possible Values: 'fg', 'bg'
+Possible Values: 'fg', 'bg'
 
 #### g:srcery_italic_types
 
-Italicize types if italic is enabled
+Italicize types if italic is enabled.
 
-default: 0
+Default: 0
 
-
-## Usage
-```
-:color srcery
-```
-
-If you like what you see and decide to make srcery your default colorscheme, add the relevant line to your vimrc:
-```vim
-colorscheme srcery
-```
 ## Screenshots
+
 viml, bash
 ![viml_bash](https://raw.githubusercontent.com/srcery-colors/srcery-assets/master/vim/viml_bash.png)
 
@@ -218,12 +232,12 @@ python, js
 git, terminal
 ![git_term](https://raw.githubusercontent.com/srcery-colors/srcery-assets/master/vim/git_term.png)
 
-
 Typeface used in screenshots is [Iosevka](https://github.com/be5invis/Iosevka)
 
 ## Plugin support
 
 ### Lightline
+
 ![lightline](https://raw.githubusercontent.com/srcery-colors/srcery-assets/master/vim/lightline.png)
 
 [Lightline](https://github.com/itchyny/lightline.vim) colorscheme.
@@ -236,6 +250,7 @@ let g:lightline = {
 ```
 
 ### Airline
+
 ![airline](https://raw.githubusercontent.com/srcery-colors/srcery-assets/master/vim/airline.png)
 
 Thanks to [MindTooth](https://github.com/MindTooth), Srcery now includes an [Airline](https://github.com/vim-airline/vim-airline) theme.
@@ -277,6 +292,7 @@ Srcery:
 ### Colors don't look right
 
 Ensure that 256 colors are enabled in vim by setting this option **before** setting the colorscheme.
+
 ```viml
 set t_Co=256
 ```
