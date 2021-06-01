@@ -80,7 +80,7 @@ if !exists('g:srcery_bright_magenta')
 endif
 
 if !exists('g:srcery_bright_cyan')
-  let g:srcery_bright_cyan='#53FDE9'
+  let g:srcery_bright_cyan='#2BE4D0'
 endif
 
 if !exists('g:srcery_bright_white')

@@ -95,7 +95,7 @@ COLOR TABLE						    *srcery-color-table*
 | brightyellow  | 11 | g:srcery_bright_yellow 	 | #fed06e | 254, 208, 110 |
 | brightblue    | 12 | g:srcery_bright_blue   	 | #68a8e4 | 104, 168, 228 |
 | brightmagenta | 13 | g:srcery_bright_magenta	 | #ff5c8f | 255, 92, 143  |
-| brightcyan    | 14 | g:srcery_bright_cyan   	 | #53fde9 | 83, 253, 233  |
+| brightcyan    | 14 | g:srcery_bright_cyan   	 | #2be4d0 | 43, 228, 208  |
 | brightwhite   | 15 | g:srcery_bright_white  	 | #fce8c3 | 252, 232, 195 |
 
 Additionally Srcery uses some xterm 256 colors to pad out the color selection,
