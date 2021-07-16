@@ -315,6 +315,9 @@ call s:HL('SrceryBrightCyan', s:bright_cyan, s:none)
 call s:HL('SrceryBrightBlack', s:bright_black, s:none)
 call s:HL('SrceryBrightWhite', s:bright_white)
 
+call s:HL('SrceryBrightBlueBold', s:bright_blue, s:none, s:bold)
+call s:HL('SrceryBrightYellowBold', s:bright_yellow, s:none, s:bold)
+
 " special
 call s:HL('SrceryOrange', s:orange)
 call s:HL('SrceryBrightOrange', s:bright_orange)
@@ -1153,16 +1156,16 @@ hi! link scalaInterpolation SrceryCyan
 
 call s:HL('markdownItalic', s:bright_white, s:none, s:italic)
 
-hi! link markdownH1 SrceryGreenBold
-hi! link markdownH2 SrceryGreenBold
-hi! link markdownH3 SrceryYellowBold
-hi! link markdownH4 SrceryYellowBold
-hi! link markdownH5 SrceryYellow
-hi! link markdownH6 SrceryYellow
+hi! link markdownH1 SrceryBrightBlueBold
+hi! link markdownH2 SrceryBrightBlueBold
+hi! link markdownH3 SrceryBrightYellowBold
+hi! link markdownH4 SrceryBrightYellowBold
+hi! link markdownH5 SrceryYellowBold
+hi! link markdownH6 SrceryYellowBold
 
-hi! link markdownCode SrceryCyan
-hi! link markdownCodeBlock SrceryCyan
-hi! link markdownCodeDelimiter SrceryCyan
+hi! link markdownCode SrceryWhite
+hi! link markdownCodeBlock SrceryWhite
+hi! link markdownCodeDelimiter SrceryWhite
 
 hi! link markdownBlockquote SrceryBrightBlack
 hi! link markdownListMarker SrceryBrightBlack
@@ -1170,15 +1173,15 @@ hi! link markdownOrderedListMarker SrceryBrightBlack
 hi! link markdownRule SrceryBrightBlack
 hi! link markdownHeadingRule SrceryBrightBlack
 
-hi! link markdownUrlDelimiter SrceryBrightWhite
-hi! link markdownLinkDelimiter SrceryBrightWhite
-hi! link markdownLinkTextDelimiter SrceryBrightWhite
+hi! link markdownUrlDelimiter SrceryBrightBlack
+hi! link markdownLinkDelimiter SrceryBrightBlack
+hi! link markdownLinkTextDelimiter SrceryBrightBlack
 
-hi! link markdownHeadingDelimiter SrceryYellow
-hi! link markdownUrl SrceryMagenta
+hi! link markdownHeadingDelimiter SrceryBrightBlack
+hi! link markdownUrl SrceryBrightGreen
 hi! link markdownUrlTitleDelimiter SrceryGreen
 
-call s:HL('markdownLinkText', s:bright_black, s:none, s:underline)
+call s:HL('markdownLinkText', s:bright_white, s:none, s:underline)
 hi! link markdownIdDeclaration markdownLinkText
 
 " }}}
