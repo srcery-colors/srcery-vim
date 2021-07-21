@@ -1,0 +1,17 @@
+name: Check Them Vim Files
+# This workflow is triggered on pushes to the repository.
+on: [push]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    name: Linting
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v1
+      - name: Install vint
+        run: |
+          python -m pip install --upgrade pip setuptools wheel
+          pip install --upgrade vim-vint
+      - name: Vinting code
+        run: vint --verbose --stat $(find . -type f -name '*.vim')
