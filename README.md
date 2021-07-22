@@ -215,6 +215,13 @@ Italicize types if italic is enabled.
 
 Default: 0
 
+#### g:srcery\_hard\_black\_terminal\_bg
+
+If enabled, will set the terminal background in vim to hard black.
+Note that this currently only works in Vim, not Neovim.
+
+Default: 1
+
 ## Screenshots
 
 viml, bash

@@ -174,6 +174,10 @@ if !exists('g:srcery_italic_types')
   let g:srcery_italic_types=0
 endif
 
+if !exists('g:srcery_hard_black_terminal_bg')
+  let g:srcery_hard_black_terminal_bg=1
+endif
+
 " }}}
 " }}}
 " Palette {{{
@@ -660,7 +664,7 @@ endif
 " }}}
 " Terminal: {{{
 
-if has('terminal')
+if g:srcery_hard_black_terminal_bg == 1 && has('terminal')
   " Must set an explicit background as NONE won't work
   " Therefore not useful with transparent background option
   call s:HL('Terminal', s:bright_white, s:hard_black)
