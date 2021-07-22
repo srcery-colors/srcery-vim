@@ -208,7 +208,7 @@ g:srcery_bg_passthrough
 
 	A possible use case for this could be you want to manipulate the
 	background color in the terminal, and let the results bubble up to
-	Vim, like this.
+	Vim.
 
 	Default: 0
 
