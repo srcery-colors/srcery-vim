@@ -611,6 +611,7 @@ endif
 
 " Treesitter
 call s:HL('TSParameter', s:cyan, s:none, s:italic)
+hi! link TSKeywordOperator Keyword
 
 " }}}
 " Completion Menu: {{{
