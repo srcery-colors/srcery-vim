@@ -1259,6 +1259,18 @@ hi! link makeCommands SrceryBrightWhite
 hi! link makeTarget SrceryYellow
 
 " }}}
+" shell script: {{{
+
+call s:HL('shParenError', s:bright_white, s:bright_red)
+hi! link shCmdSubRegion SrceryWhite
+hi! link shArithRegion SrceryWhite
+hi! link shArithRegion SrceryWhite
+hi! link shQuote SrceryWhite
+hi! link shRedir SrceryMagenta
+hi! link shOption SrceryBrightYellow
+hi! link shCommandSub SrceryBrightRed
+
+" }}}
 " Misc: {{{
 
 call s:HL('shParenError', s:bright_white, s:bright_red)
