@@ -1036,6 +1036,7 @@ hi! link sassClass SrceryBlue
 hi! link sassClassChar SrceryBlue
 hi! link sassVariable SrceryCyan
 hi! link sassIdChar SrceryBrightBlue
+hi! link sassId SrceryBrightBlue
 
 " }}}
 " JavaScript: {{{
