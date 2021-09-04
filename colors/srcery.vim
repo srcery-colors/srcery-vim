@@ -609,10 +609,6 @@ else
   hi! link Delimiter SrceryBrightBlack
 endif
 
-" Treesitter
-call s:HL('TSParameter', s:cyan, s:none, s:italic)
-hi! link TSKeywordOperator Keyword
-
 " }}}
 " Completion Menu: {{{
 
@@ -844,6 +840,32 @@ call s:HL('TelescopeSelectionCaret', s:magenta)
 call s:HL('TelescopePromptPrefix', s:bright_yellow)
 
 " }}}
+" nvim-treesitter {{{
+
+call s:HL('TSStrong', s:none, s:none, s:bold)
+call s:HL('TSEmphasis', s:none, s:none, s:bold)
+call s:HL('TSUnderline', s:none, s:none, s:underline)
+
+highlight! link TSWarning SrceryOrangeBold
+highlight! link TSDanger SrceryRedBold
+highlight! link TSConstBuiltin SrceryCyan
+highlight! link TSField SrceryGreen
+highlight! link TSFuncBuiltin SrceryYellow
+highlight! link TSFuncMacro SrceryOrange
+highlight! link TSFunction SrceryYellow
+call s:HL('TSNamespace', s:white, s:none, s:italic)
+call s:HL('TSParameter', s:cyan, s:none, s:italic)
+highlight! link TSProperty SrceryBrightBlue
+highlight! link TSSymbol SrceryBlue
+highlight! link TSTag SrceryBlue
+highlight! link TSTagAttribute SrceryYellow
+highlight! link TSVariableBuiltin SrceryCyan
+highlight! link TSType SrceryWhite
+highlight! link TSDelimiter SrceryWhite
+highlight! link TSURI SrceryGreen
+highlight! link TSVariable SrceryBrightWhite
+" }}}
+
 
 " Filetype specific -----------------------------------------------------------
 " Diff: {{{
@@ -1274,7 +1296,6 @@ hi! link shCommandSub SrceryBrightRed
 " Misc: {{{
 
 call s:HL('ExtraWhitespace', s:none, s:red)
-
 " }}}
 
 " vim: set sw=2 ts=2 sts=2 et tw=80 ft=vim fdm=marker :
