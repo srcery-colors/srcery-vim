@@ -1273,7 +1273,6 @@ hi! link shCommandSub SrceryBrightRed
 " }}}
 " Misc: {{{
 
-call s:HL('shParenError', s:bright_white, s:bright_red)
 call s:HL('ExtraWhitespace', s:none, s:red)
 
 " }}}
