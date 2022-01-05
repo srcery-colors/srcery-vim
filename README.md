@@ -88,6 +88,10 @@ git clone https://github.com/srcery-colors/srcery-vim
 ```vim
 Plug 'srcery-colors/srcery-vim'
 ```
+### [packer](https://github.com/wbthomason/packer.nvim)
+```lua
+  use {'srcery-colors/srcery-vim', as = 'srcery'}
+```
 
 ## Usage
 
