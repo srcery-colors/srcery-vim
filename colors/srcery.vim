@@ -319,8 +319,14 @@ call s:HL('SrceryBrightCyan', s:bright_cyan, s:none)
 call s:HL('SrceryBrightBlack', s:bright_black, s:none)
 call s:HL('SrceryBrightWhite', s:bright_white)
 
-call s:HL('SrceryBrightBlueBold', s:bright_blue, s:none, s:bold)
+call s:HL('SrceryBrightRedBold', s:bright_red, s:none, s:bold)
+call s:HL('SrceryBrightGreenBold', s:bright_green, s:none, s:bold)
 call s:HL('SrceryBrightYellowBold', s:bright_yellow, s:none, s:bold)
+call s:HL('SrceryBrightBlueBold', s:bright_blue, s:none, s:bold)
+call s:HL('SrceryBrightMagentaBold', s:bright_magenta, s:none, s:bold)
+call s:HL('SrceryBrightCyanBold', s:bright_cyan, s:none, s:bold)
+call s:HL('SrceryBrightBlackBold', s:bright_black, s:none, s:bold)
+call s:HL('SrceryBrightWhiteBold', s:bright_white, s:none, s:bold)
 
 " special
 call s:HL('SrceryOrange', s:orange)
