@@ -185,12 +185,12 @@ let g:srcery#palette.bright_white   = [g:srcery_bright_white, 15]
 let g:srcery#palette.orange         = [g:srcery_orange, 202]
 let g:srcery#palette.bright_orange  = [g:srcery_bright_orange, 208]
 let g:srcery#palette.hard_black     = [g:srcery_hard_black, 233]
-let g:srcery#palette.xgray1  = [g:srcery_xgray1, 235]
-let g:srcery#palette.xgray2  = [g:srcery_xgray2, 236]
-let g:srcery#palette.xgray3  = [g:srcery_xgray3, 237]
-let g:srcery#palette.xgray4  = [g:srcery_xgray4, 238]
-let g:srcery#palette.xgray5  = [g:srcery_xgray5, 239]
-let g:srcery#palette.xgray6  = [g:srcery_xgray6, 240]
+let g:srcery#palette.xgray1         = [g:srcery_xgray1, 235]
+let g:srcery#palette.xgray2         = [g:srcery_xgray2, 236]
+let g:srcery#palette.xgray3         = [g:srcery_xgray3, 237]
+let g:srcery#palette.xgray4         = [g:srcery_xgray4, 238]
+let g:srcery#palette.xgray5         = [g:srcery_xgray5, 239]
+let g:srcery#palette.xgray6         = [g:srcery_xgray6, 240]
 
 " }}}
 " Setup Emphasis: {{{
