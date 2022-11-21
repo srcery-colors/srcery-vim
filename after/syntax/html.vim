@@ -10,7 +10,7 @@ let s:bold = g:srcery#palette.bold
 let s:italic = g:srcery#palette.italic
 let s:underline = g:srcery#palette.underline
 
-" Html: {{{
+" HTML: {{{
 
 hi! link htmlTag SrceryBlue
 hi! link htmlEndTag SrceryBlue

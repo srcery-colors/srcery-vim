@@ -1,6 +1,7 @@
 if srcery#helper#ShouldAbort('scala')
   finish
 endif
+
 " Scala: {{{
 
 " NB: scala vim syntax file is kinda horrible

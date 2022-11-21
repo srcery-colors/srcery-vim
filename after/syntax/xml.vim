@@ -1,7 +1,8 @@
 if srcery#helper#ShouldAbort('xml')
   finish
 endif
-" Xml: {{{
+
+" XML: {{{
 
 hi! link xmlTag SrceryBlue
 hi! link xmlEndTag SrceryBlue
@@ -26,4 +27,3 @@ hi! link xmlEntity SrceryYellow
 hi! link xmlEntityPunct SrceryYellow
 
 " }}}
-

@@ -1,6 +1,7 @@
 if srcery#helper#ShouldAbort('java')
   finish
 endif
+
 " Java: {{{
 
 hi! link javaAnnotation SrceryBlue

@@ -1,6 +1,7 @@
 if srcery#helper#ShouldAbort('haskell')
   finish
 endif
+
 " Haskell: {{{
 
 " hi! link haskellType SrceryYellow
@@ -35,4 +36,3 @@ hi! link haskellString SrceryGreen
 hi! link haskellChar SrceryGreen
 
 " }}}
-

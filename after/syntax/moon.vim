@@ -1,6 +1,7 @@
 if srcery#helper#ShouldAbort('moon')
   finish
 endif
+
 " MoonScript: {{{
 
 hi! link moonSpecialOp SrceryBrightWhite

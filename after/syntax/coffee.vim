@@ -1,6 +1,7 @@
 if srcery#helper#ShouldAbort('coffee')
   finish
 endif
+
 " CoffeeScript: {{{
 
 hi! link coffeeExtendedOp SrceryBrightWhite

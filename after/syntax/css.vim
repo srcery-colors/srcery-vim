@@ -1,6 +1,7 @@
 if srcery#helper#ShouldAbort('css')
   finish
 endif
+
 " CSS: {{{
 
 hi! link cssBraces SrceryBrightWhite

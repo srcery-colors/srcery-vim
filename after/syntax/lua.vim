@@ -1,6 +1,7 @@
 if srcery#helper#ShouldAbort('lua')
   finish
 endif
+
 " Lua: {{{
 
 hi! link luaIn SrceryRed

@@ -40,4 +40,3 @@ call srcery#helper#Highlight('markdownLinkText', s:bright_white, s:none, s:under
 hi! link markdownIdDeclaration markdownLinkText
 
 " }}}
-

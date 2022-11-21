@@ -17,4 +17,3 @@ hi! link shOption SrceryBrightYellow
 hi! link shCommandSub SrceryBrightRed
 
 " }}}
-

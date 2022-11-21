@@ -1,6 +1,7 @@
 if srcery#helper#ShouldAbort('ruby')
   finish
 endif
+
 " Ruby: {{{
 
 hi! link rubyStringDelimiter SrceryGreen

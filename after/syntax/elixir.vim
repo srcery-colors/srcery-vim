@@ -1,6 +1,7 @@
 if srcery#helper#ShouldAbort('elixir')
   finish
 endif
+
 " Elixir: {{{
 
 hi! link elixirDocString Comment

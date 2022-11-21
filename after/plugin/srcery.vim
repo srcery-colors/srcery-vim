@@ -45,8 +45,8 @@ let s:undercurl = g:srcery#palette.undercurl
 let s:inverse = g:srcery#palette.inverse
 
 " }}}
-
 " Sneak: {{{
+
 if exists('g:loaded_sneak_plugin')
   hi! link Sneak Search
   call srcery#helper#Highlight('SneakScope', s:none, s:hard_black)
@@ -92,6 +92,7 @@ endif
 
 " }}}
 " Asynchronous Lint Engine: {{{
+
 if exists('g:ale_enabled')
   call srcery#helper#Highlight('ALEError', s:none, s:none, s:undercurl, s:red)
   call srcery#helper#Highlight('ALEWarning', s:none, s:none, s:undercurl, s:yellow)
@@ -103,6 +104,7 @@ if exists('g:ale_enabled')
 endif
 
 " }}}
+
 " vim-indent-guides: {{{
 if exists('g:loaded_indent_guides')
   call srcery#helper#Highlight('IndentGuidesEven', s:none, s:xgray3)
@@ -111,6 +113,7 @@ endif
 
 " }}}
 " vim-startify: {{{
+
 if exists('g:loaded_startify')
   hi! link StartifyNumber Statement
   hi! link StartifyFile Normal
@@ -125,6 +128,7 @@ endif
 
 " }}}
 " fzf: {{{
+
 if exists('g:loaded_fzf')
   call srcery#helper#Highlight('fzf1', s:magenta, s:xgray2)
   call srcery#helper#Highlight('fzf2', s:bright_green, s:xgray2)
@@ -132,6 +136,7 @@ if exists('g:loaded_fzf')
 endif
 
 "}}}
+
 " Netrw: {{{
 
 hi! link netrwDir SrceryBlue
@@ -148,6 +153,7 @@ hi! link netrwCmdSep SrceryBrightBlack
 
 "}}}
 " coc.nvim: {{{
+
 if exists('g:did_coc_loaded')
   hi! link CocErrorSign SrceryRed
   hi! link CocWarningSign SrceryBrightOrange

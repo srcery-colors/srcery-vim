@@ -43,4 +43,3 @@ hi! link clojureQuote SrceryYellow
 hi! link clojureUnquote SrceryYellow
 
 " }}}
-

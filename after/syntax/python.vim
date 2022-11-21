@@ -1,6 +1,7 @@
 if srcery#helper#ShouldAbort('python')
   finish
 endif
+
 " Python: {{{
 
 hi! link pythonBuiltin SrceryYellow
@@ -18,4 +19,3 @@ hi! link pythonBoolean SrceryMagenta
 hi! link pythonDot SrceryBrightWhite
 
 " }}}
-
