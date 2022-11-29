@@ -225,32 +225,33 @@ if has('nvim')
   " nvim-treesitter: {{{
 
   if exists('g:loaded_nvim_treesitter')
+    " This is deprecated in new nvim releases
+    call srcery#helper#Highlight('TSStrong', s:none, s:none, s:bold)
+    call srcery#helper#Highlight('TSEmphasis', s:none, s:none, s:bold)
+    call srcery#helper#Highlight('TSUnderline', s:none, s:none, s:underline)
+
+    highlight! link TSWarning SrceryOrangeBold
+    highlight! link TSDanger SrceryRedBold
+    highlight! link TSConstBuiltin SrceryCyan
+    highlight! link TSField SrceryGreen
+    highlight! link TSFuncBuiltin SrceryYellow
+    highlight! link TSFuncMacro SrceryOrange
+    highlight! link TSFunction SrceryYellow
+    call srcery#helper#Highlight('TSNamespace', s:white, s:none, s:italic)
+    call srcery#helper#Highlight('TSParameter', s:cyan, s:none, s:italic)
+    highlight! link TSProperty SrceryBrightBlue
+    highlight! link TSSymbol SrceryBlue
+    highlight! link TSTag SrceryBlue
+    highlight! link TSTagAttribute SrceryYellow
+    highlight! link TSVariableBuiltin SrceryCyan
+    highlight! link TSType SrceryWhite
+    highlight! link TSDelimiter SrceryWhite
+    highlight! link TSURI SrceryGreen
+    highlight! link TSVariable SrceryBrightWhite
+
     if has('nvim-0.8')
-
-    else
-      " This is deprecated in new nvim releases
-      call srcery#helper#Highlight('TSStrong', s:none, s:none, s:bold)
-      call srcery#helper#Highlight('TSEmphasis', s:none, s:none, s:bold)
-      call srcery#helper#Highlight('TSUnderline', s:none, s:none, s:underline)
-
-      highlight! link TSWarning SrceryOrangeBold
-      highlight! link TSDanger SrceryRedBold
-      highlight! link TSConstBuiltin SrceryCyan
-      highlight! link TSField SrceryGreen
-      highlight! link TSFuncBuiltin SrceryYellow
-      highlight! link TSFuncMacro SrceryOrange
-      highlight! link TSFunction SrceryYellow
-      call srcery#helper#Highlight('TSNamespace', s:white, s:none, s:italic)
-      call srcery#helper#Highlight('TSParameter', s:cyan, s:none, s:italic)
-      highlight! link TSProperty SrceryBrightBlue
-      highlight! link TSSymbol SrceryBlue
-      highlight! link TSTag SrceryBlue
-      highlight! link TSTagAttribute SrceryYellow
-      highlight! link TSVariableBuiltin SrceryCyan
-      highlight! link TSType SrceryWhite
-      highlight! link TSDelimiter SrceryWhite
-      highlight! link TSURI SrceryGreen
-      highlight! link TSVariable SrceryBrightWhite
+      " TODO: Implement new nvim syntax
+      " Example could be taken from: https://github.com/dracula/vim/blob/b9f4f3a169266031d3744335595eee02a6e396c6/after/plugin/dracula.vim#L103
     endif
   endif
 
