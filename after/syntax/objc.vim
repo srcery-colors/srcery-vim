@@ -1,5 +1,6 @@
 if srcery#helper#ShouldAbort('objc')
   finish
+
 endif
 " ObjectiveC: {{{
 

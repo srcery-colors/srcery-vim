@@ -7,7 +7,6 @@ let s:bright_white = g:srcery#palette.bright_white
 let s:bold = g:srcery#palette.bold
 let s:italic = g:srcery#palette.italic
 
-
 " Vim: {{{
 
 call srcery#helper#Highlight('vimCommentTitle', s:bright_white, s:none, s:bold . s:italic)
