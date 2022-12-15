@@ -25,7 +25,7 @@ endfunction
 " With the help of dracula!
 " Helper function that takes a variadic list of filetypes as args and returns
 " whether or not the execution of the ftplugin should be aborted.
-function! srcery#helper#ShouldAbort(...)
+function! srcery#helper#ShouldAbort(...) abort
   if ! exists('g:colors_name') || g:colors_name !=# 'srcery'
     return 1
   elseif a:0 > 0 && (! exists('b:current_syntax') || index(a:000, b:current_syntax) == -1)
@@ -34,7 +34,7 @@ function! srcery#helper#ShouldAbort(...)
   return 0
 endfunction
 
-function! srcery#helper#Highlight(group, fg, ...)
+function! srcery#helper#Highlight(group, fg, ...) abort
   " Arguments: group, guifg, guibg, gui, guisp
 
   " foreground
