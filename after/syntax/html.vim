@@ -12,11 +12,10 @@ let s:underline = g:srcery#palette.underline
 
 " HTML: {{{
 
-hi! link htmlTag SrceryBlue
-hi! link htmlEndTag SrceryBlue
 
 hi! link htmlTagName SrceryBlue
 hi! link htmlTag SrceryBrightBlack
+hi! link htmlEndTag SrceryBrightBlack
 hi! link htmlArg SrceryYellow
 
 hi! link htmlScriptTag SrceryRed
