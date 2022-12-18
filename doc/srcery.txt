@@ -40,17 +40,25 @@ sessions using an editor or terminal emulator.
 
 ==============================================================================
 INSTALLATION						   *srcery-installation*
-
 Put srcery.vim in `~/.vim/colors/` (on unix-like systems) or
-`%userprofile%\vimfiles\colors\` (on Windows).
+`%userprofile%\vimfiles\colors\` (on Windows). You can also install with your
+favourite plugin manager.
+
+Don't forget to set your 'runtimepath' correctly, otherwise srcery will not
+work as it relies on 'autoload' functionality.
 
 							   *srcery-install-vim8*
 
-Vim 8 has native support for loading plugins. All you need to do to is to
-clone this repository into `~/.vim/plug/default/opt`.
+Vim 8 has native support for loading plugins by using |packages|. All you need
+to do to is to clone this repository into `~/.vim/pack/themes/opt`.
 >
 	git clone https://github.com/srcery-colors/srcery-vim \
-		~/.vim/plug/default/opt
+		~/.vim/pack/themes/opt
+<
+And then set your `.vimrc` accordingly.
+>
+	packadd! srcery-vim
+	colorscheme srcery
 <
 
 The same works for Neovim, but you have to clone it into a path where Neovim
@@ -236,7 +244,7 @@ g:srcery_italic_types
 
 					  *srcery-option-hard-black-terminal-bg*
 g:srcery_hard_black_terminal_bg
-	
+
 	If enabled, will set the terminal background in vim to hard black.
 	Note that this currently only works in Vim, not Neovim.
 
