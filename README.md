@@ -56,19 +56,27 @@ to pad out the color selection, no extra configuration needed.
 
 ### Manually
 
-Put `srcery.vim` in `~/.vim/colors/` (on unix-like systems) or `%userprofile%\vimfiles\colors\` (on Windows).
+Download or clone srcery's repository to a location of your choosing and set your `runtimepath` correctly, otherwise srcery will not work as it relies on the `autoload` functionality.
+
+You can also install with your favourite plugin manager.
 
 ### Vim 8
 
-Vim 8 has native support for loading plugins. All you need to do to is to clone
-this repository into `~/.vim/pack/default/opt`.
+Vim 8 has native support for loading plugins by using `packages`. All you need to do to, is to clone this repository into `~/.vim/pack/themes/opt`.
 
-    git clone https://github.com/srcery-colors/srcery-vim ~/.vim/pack/default/opt/srcery-vim
+    git clone https://github.com/srcery-colors/srcery-vim ~/.vim/pack/themes/opt/srcery-vim
+
+And then set your `.vimrc` accordingly.
+
+```vim
+packadd! srcery-vim
+colorscheme srcery
+```
 
 The same works for Neovim, but you have to clone it into a path where Neovim can
 find it.
 
-    git clone https://github.com/srcery-colors/srcery-vim ~/.config/nvim/plug/default/opt/srcery-vim
+    git clone https://github.com/srcery-colors/srcery-vim $XDG_CONFIG_HOME/nvim/pack/themes/opt
 
 ### [dein.vim](https://github.com/Shougo/dein.vim)
 
