@@ -23,6 +23,49 @@ Srcery is a color scheme with clearly defined contrasting colors and a
 slightly earthy tone.
 </p>
 
+<details>
+<summary><strong>Table of content</strong></summary>
+
+- [Requirements](#requirements)
+    - [GUI](#gui)
+    - [TUI](#tui)
+- [Installation](#installation)
+    - [Manually](#manually)
+    - [Vim 8](#vim-8)
+    - [dein.vim](#dein.vim)
+    - [vim-pathogen](#vim-pathogen)
+    - [vim-plug](#vim-plug)
+    - [packer](#packer)
+- [Usage](#usage)
+- [Configuration](#configuration)
+    - [Colors](#colors)
+    - [Options](#options)
+        - [g:srcery\_bold](#g%3Asrcery_bold)
+        - [g:srcery\_italic](#g%3Asrcery_italic)
+        - [g:srcery\_underline](#g%3Asrcery_underline)
+        - [g:srcery\_undercurl](#g%3Asrcery_undercurl)
+        - [g:srcery\_inverse](#g%3Asrcery_inverse)
+        - [g:srcery\_inverse\_matches](#g%3Asrcery_inverse_matches)
+        - [g:srcery\_inverse\_match\_paren](#g%3Asrcery_inverse_match_paren)
+        - [g:srcery\_dim\_lisp\_paren](#g%3Asrcery_dim_lisp_paren)
+        - [g:srcery\_bg\_passthrough](#g%3Asrcery_bg_passthrough)
+        - [g:srcery\_guisp\_fallback](#g%3Asrcery_guisp_fallback)
+        - [g:srcery\_italic\_types](#g%3Asrcery_italic_types)
+        - [g:srcery\_hard\_black\_terminal\_bg](#g%3Asrcery_hard_black_terminal_bg)
+- [Screenshots](#screenshots)
+- [Plugin support](#plugin-support)
+    - [Lightline](#lightline)
+    - [Airline](#airline)
+    - [Other](#other)
+- [Attribution](#attribution)
+- [Troubleshooting](#troubleshooting)
+    - [Colors dont look right](#colors-don’t-look-right)
+    - [24-bit color, tmux and Neovim](#24-bit-color%2C-tmux-and-neovim)
+- [Extra](#extra)
+    - [Emacs](#emacs)
+
+</details>
+
 ## Requirements
 
 ### GUI
