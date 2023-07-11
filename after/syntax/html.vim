@@ -22,6 +22,8 @@ hi! link htmlScriptTag SrceryRed
 hi! link htmlTagN SrceryBlue
 hi! link htmlSpecialTagName SrceryBlue
 
+hi! link javaScript Normal
+
 call srcery#helper#Highlight('htmlLink', s:bright_white, s:none, s:underline)
 
 hi! link htmlSpecialChar SrceryYellow
