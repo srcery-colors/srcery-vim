@@ -4,6 +4,7 @@ endif
 
 " JavaScript: {{{
 
+hi! link javascript Normal
 hi! link javascriptMember SrceryBlue
 hi! link javascriptNull SrceryMagenta
 
