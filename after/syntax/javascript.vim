@@ -10,9 +10,6 @@ hi! link javaScriptNull SrceryMagenta
 hi! link javasCriptParens SrceryWhite
 hi! link javaScriptBraces SrceryWhite
 hi! link javaScriptReserved SrceryOrange
-hi! link javaScriptIdentifier SrceryRed
-hi! link javaScriptFunction SrceryRed
-hi! link javaScriptOperator SrceryBrightCyan
 
 " }}}
 " YAJS: {{{
