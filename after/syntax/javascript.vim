@@ -4,14 +4,18 @@ endif
 
 " JavaScript: {{{
 
-hi! link javascript Normal
-hi! link javascriptMember SrceryBlue
-hi! link javascriptNull SrceryMagenta
+hi! link javaScript Normal
+hi! link javaScriptMember SrceryBlue
+hi! link javaScriptNull SrceryMagenta
+hi! link javasCriptParens SrceryWhite
+hi! link javaScriptBraces SrceryWhite
+hi! link javaScriptReserved SrceryOrange
+hi! link javaScriptIdentifier SrceryRed
+hi! link javaScriptFunction SrceryRed
+hi! link javaScriptOperator SrceryBrightCyan
 
-hi! link javascriptParens SrceryWhite
-hi! link javascriptBraces SrceryWhite
-hi! link javascriptReserved SrceryOrange
-hi! link javascriptIdentifier SrceryRed
+" }}}
+" YAJS: {{{
 
 hi! link javascriptFuncArg Normal
 hi! link javascriptDocComment SrceryGreen
@@ -21,18 +25,16 @@ hi! link javascriptStringMethod Function
 hi! link javascriptObjectMethod Function
 hi! link javascriptObjectStaticMethod Function
 hi! link javascriptObjectLabel SrceryBlue
-hi! link javascriptFunction SrceryRed
-
 hi! link javascriptProp SrceryBlue
-
 hi! link javascriptVariable SrceryBrightBlue
-hi! link javascriptOperator SrceryBrightCyan
 hi! link javascriptFuncKeyword SrceryBrightRed
 hi! link javascriptFunctionMethod SrceryYellow
 hi! link javascriptReturn SrceryBrightRed
 hi! link javascriptEndColons SrceryWhite
 
-" vim-javascript
+" }}}
+" pangloss/vim-javascript {{{
+
 hi! link jsFunction SrceryRed
 hi! link jsImport SrceryRed
 hi! link jsObjectSeparator SrceryWhite
@@ -43,3 +45,5 @@ hi! link jsEnvComment SrceryBrightBlack
 hi! link jsOperator SrceryBrightCyan
 
 " }}}
+
+" vim: set ts=2 sw=2 tw=78 fdm=marker et :
