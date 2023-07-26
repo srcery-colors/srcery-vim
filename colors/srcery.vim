@@ -441,14 +441,25 @@ endif
 " Neovim LSP: {{{
 
 if has('nvim')
-  hi! link LspDiagnosticsDefaultError SrceryBrightRed
-  hi! link LspDiagnosticsDefaultWarning SrceryBrightYellow
-  hi! link LspDiagnosticsDefaultInformation SrceryBrightGreen
-  hi! link LspDiagnosticsDefaultHint SrceryBrightCyan
-  call s:HL('LspDiagnosticsUnderlineError', s:bright_red, s:none, s:undercurl)
-  call s:HL('LspDiagnosticsUnderlineWarning', s:bright_yellow, s:none, s:undercurl)
-  call s:HL('LspDiagnosticsUnderlineInformation', s:bright_green, s:none, s:undercurl)
-  call s:HL('LspDiagnosticsUnderlineHint', s:bright_cyan, s:none, s:undercurl)
+  " for backward compatibility with neovim v0.5.x
+  hi! link LspDiagnosticsDefaultError DiagnosticError
+  hi! link LspDiagnosticsDefaultWarning DiagnosticWarn
+  hi! link LspDiagnosticsDefaultInformation DiagnosticInfo
+  hi! link LspDiagnosticsDefaultHint DiagnosticHint
+  hi! link LspDiagnosticsUnderlineError DiagnosticUnderlineError
+  hi! link LspDiagnosticsUnderlineHint DiagnosticUnderlineHint
+  hi! link LspDiagnosticsUnderlineInformation DiagnosticUnderlineInfo
+  hi! link LspDiagnosticsUnderlineWarning DiagnosticUnderlineWarn
+
+  " latest hl groups
+  hi! link DiagnosticError SrceryBrightRed
+  hi! link DiagnosticWarn SrceryBrightYellow
+  hi! link DiagnosticInfo SrceryBrightGreen
+  hi! link DiagnosticHint SrceryBrightCyan
+  call s:HL('DiagnosticUnderlineError', s:bright_red, s:none, s:undercurl)
+  call s:HL('DiagnosticUnderlineWarn', s:bright_yellow, s:none, s:undercurl)
+  call s:HL('DiagnosticUnderlineInfo', s:bright_green, s:none, s:undercurl)
+  call s:HL('DiagnosticUnderlineHint', s:bright_cyan, s:none, s:undercurl)
 endif
 
 " }}}
