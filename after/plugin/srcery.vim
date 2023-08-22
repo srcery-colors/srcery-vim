@@ -218,6 +218,17 @@ if exists('g:loaded_telescope')
 endif
 
 " }}}
+" nvim-cmp: "{{{
+if g:loaded_cmp
+  echo "loading"
+  hi! link CmpItemAbbr Pmenu
+  hi! link CmpItemAbbrDeprecated Comment
+  hi! link CmpItemAbbrMatch Pmenu
+  hi! link CmpItemAbbrMatchFuzzy Pmenu
+  hi! link CmpItemKind Special
+  hi! link CmpItemMenu Pmenu
+endif
+" }}}
 " nvim: {{{
 
 if has('nvim')
