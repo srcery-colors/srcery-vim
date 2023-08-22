@@ -395,7 +395,7 @@ if v:version >= 700
     call s:HL('PmenuThumb', s:none, s:none)
   else
     call s:HL('PmenuSbar', s:none, s:black)
-    call s:HL('PmenuThumb', s:none, s:black)
+    call s:HL('PmenuThumb', s:none, s:orange)
   endif
 endif
 
