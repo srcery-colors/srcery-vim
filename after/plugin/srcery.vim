@@ -220,7 +220,6 @@ endif
 " }}}
 " nvim-cmp: "{{{
 if g:loaded_cmp
-  echo "loading"
   hi! link CmpItemAbbr Pmenu
   hi! link CmpItemAbbrDeprecated Comment
   hi! link CmpItemAbbrMatch Pmenu
