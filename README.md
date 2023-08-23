@@ -337,6 +337,18 @@ let g:lightline = {
       \ 'colorscheme': 'srcery',
       \ }
 ```
+### Lualine
+
+[Lualine](https://github.com/nvim-lualine/lualine.nvim) colorscheme.
+It's the same as Lightline's. Enable it in your configuration:
+
+```
+require('lualine').setup {
+  options = {
+    theme = 'srcery',
+  },
+}
+```
 
 ### Airline
 
