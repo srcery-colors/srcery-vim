@@ -219,7 +219,8 @@ endif
 
 " }}}
 " nvim-cmp: "{{{
-if g:loaded_cmp
+
+if exists('g:loaded_cmp')
   hi! link CmpItemAbbr Pmenu
   hi! link CmpItemAbbrDeprecated Comment
   hi! link CmpItemAbbrMatch Pmenu
@@ -227,6 +228,7 @@ if g:loaded_cmp
   hi! link CmpItemKind Special
   hi! link CmpItemMenu Pmenu
 endif
+
 " }}}
 " nvim: {{{
 
