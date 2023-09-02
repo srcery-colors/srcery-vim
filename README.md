@@ -352,15 +352,15 @@ These don't require any additional configuration.
 * [coc.nvim](https://github.com/neoclide/coc.nvim)
 * [ctrlp.vim](https://github.com/ctrlpvim/ctrlp.vim)
 * [fzf.vim](https://github.com/junegunn/fzf.vim)
+* [nerdtree](https://github.com/preservim/nerdtree)
+* [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
+* [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
+* [telescope-nvim](https://github.com/nvim-telescope/telescope.nvim)
 * [vim-clap](https://github.com/liuchengxu/vim-clap)
 * [vim-gitgutter](https://github.com/airblade/vim-gitgutter)
 * [vim-indent-guides](https://github.com/nathanaelkane/vim-indent-guides)
 * [vim-sneak](https://github.com/justinmk/vim-sneak)
 * [vim-startify](https://github.com/mhinz/vim-startify)
-* [nerdtree](https://github.com/preservim/nerdtree)
-* [telescope-nvim](https://github.com/nvim-telescope/telescope.nvim)
-* [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
-* [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
 
 Plugin support is still a work in progress and more will come, if there is
 anything missing that you'd like to add please open an issue and let me know.
