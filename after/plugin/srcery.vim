@@ -217,7 +217,6 @@ if exists('g:loaded_telescope')
   call srcery#helper#Highlight('TelescopePromptPrefix', s:bright_yellow)
 endif
 
-
 " }}}
 " nvim: {{{
 
