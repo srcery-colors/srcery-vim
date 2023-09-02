@@ -217,17 +217,6 @@ if exists('g:loaded_telescope')
   call srcery#helper#Highlight('TelescopePromptPrefix', s:bright_yellow)
 endif
 
-" }}}
-" nvim-cmp: "{{{
-
-if exists('g:loaded_cmp')
-  hi! link CmpItemAbbr Pmenu
-  hi! link CmpItemAbbrDeprecated Comment
-  hi! link CmpItemAbbrMatch Pmenu
-  hi! link CmpItemAbbrMatchFuzzy Pmenu
-  hi! link CmpItemKind Special
-  hi! link CmpItemMenu Pmenu
-endif
 
 " }}}
 " nvim: {{{
