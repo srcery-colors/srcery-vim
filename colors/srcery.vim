@@ -173,7 +173,9 @@ call s:HL('SrceryXgray6', s:xgray6)
 "
 if g:srcery_bg_passthrough == 1 && !has('gui_running')
   call s:HL('Normal', s:bright_white, s:none)
- else
+elseif g:srcery_hard_black_gui_bg == 1
+  call s:HL('Normal', s:bright_white, s:hard_black)
+else
   call s:HL('Normal', s:bright_white, s:black)
 endif
 
@@ -208,6 +210,8 @@ if v:version >= 703
   " Line number of CursorLine
   if g:srcery_bg_passthrough == 1 && !has('gui_running')
     call s:HL('CursorLineNr', s:yellow, s:none)
+  elseif g:srcery_hard_black_gui_bg == 1
+    call s:HL('CursorLineNr', s:yellow, s:hard_black)
   else
     call s:HL('CursorLineNr', s:yellow, s:black)
   endif
@@ -245,6 +249,10 @@ if g:srcery_bg_passthrough == 1 && !has('gui_running')
 
   " Current match in wildmenu completion
   call s:HL('WildMenu', s:blue, s:none, s:bold)
+elseif g:srcery_hard_black_gui_bg == 1
+  call s:HL('StatusLineNC', s:bright_black, s:hard_black, s:underline)
+  call s:HL('VertSplit', s:bright_white, s:hard_black)
+  call s:HL('WildMenu', s:blue, s:hard_black, s:bold)
 else
   call s:HL('StatusLineNC', s:bright_black, s:black, s:underline)
   call s:HL('VertSplit', s:bright_white, s:black)
@@ -282,6 +290,10 @@ if g:srcery_bg_passthrough == 1 && !has('gui_running')
   call s:HL('Folded', s:bright_black, s:none, s:italic)
   " Column where folds are displayed
   call s:HL('FoldColumn', s:bright_black, s:none)
+elseif g:srcery_hard_black_gui_bg == 1
+  call s:HL('SignColumn', s:none, s:hard_black)
+  call s:HL('Folded', s:bright_black, s:hard_black, s:italic)
+  call s:HL('FoldColumn', s:bright_black, s:hard_black)
 else
   call s:HL('SignColumn', s:none, s:black)
   call s:HL('Folded', s:bright_black, s:black, s:italic)
@@ -309,6 +321,8 @@ call s:HL('Comment', s:bright_black, s:none, s:italic)
 
 if g:srcery_bg_passthrough == 1 && !has('gui_running')
   call s:HL('Todo', s:bright_white, s:none, s:bold . s:italic)
+elseif g:srcery_hard_black_gui_bg == 1
+  call s:HL('Todo', s:bright_white, s:hard_black, s:bold . s:italic)
 else
   call s:HL('Todo', s:bright_white, s:black, s:bold . s:italic)
 endif
@@ -393,6 +407,9 @@ if v:version >= 700
     call s:HL('PmenuSbar', s:none, s:none)
     " Popup menu: scrollbar thumb
     call s:HL('PmenuThumb', s:none, s:none)
+  elseif g:srcery_hard_black_gui_bg == 1
+    call s:HL('PmenuSbar', s:none, s:hard_black)
+    call s:HL('PmenuThumb', s:none, s:orange)
   else
     call s:HL('PmenuSbar', s:none, s:black)
     call s:HL('PmenuThumb', s:none, s:orange)
@@ -407,6 +424,11 @@ if g:srcery_bg_passthrough == 1 && !has('gui_running')
   call s:HL('DiffAdd',    s:green, s:none)
   call s:HL('DiffChange', s:cyan, s:none)
   call s:HL('DiffText',   s:yellow, s:none)
+elseif g:srcery_hard_black_gui_bg == 1
+  call s:HL('DiffDelete', s:red, s:hard_black)
+  call s:HL('DiffAdd',    s:green, s:hard_black)
+  call s:HL('DiffChange', s:cyan, s:hard_black)
+  call s:HL('DiffText',   s:yellow, s:hard_black)
 else
   call s:HL('DiffDelete', s:red, s:black)
   call s:HL('DiffAdd',    s:green, s:black)
