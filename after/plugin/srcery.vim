@@ -262,8 +262,28 @@ if has('nvim')
     highlight! link TSVariable SrceryBrightWhite
 
     if has('nvim-0.8')
-      " TODO: Implement new nvim syntax
-      " Example could be taken from: https://github.com/dracula/vim/blob/b9f4f3a169266031d3744335595eee02a6e396c6/after/plugin/dracula.vim#L103
+      highlight! link @text.strong TSStrong
+      highlight! link @text.emphasis TSEmphasis
+      highlight! link @text.underline TSUnderline
+      highlight! link @text.warning TSWarning 
+      highlight! link @text.danger TSDanger 
+      highlight! link @constant.builtin TSConstBuiltin 
+      highlight! link @field TSField 
+      highlight! link @function.builtin TSFuncBuiltin 
+      highlight! link @function.macro TSFuncMacro 
+      highlight! link @function TSFunction 
+      highlight! link @namespace TSNamespace
+      highlight! link @parameter TSParameter
+      highlight! link @property TSProperty
+      highlight! link @symbol TSSymbol
+      highlight! link @tag TSTag
+      highlight! link @tag.attribute TSTagAttribute
+      highlight! link @variable.builtin TSVariableBuiltin
+      highlight! link @type TSType
+      highlight! link @delimiter TSDelimiter
+      highlight! link @text.uri TSURI
+      highlight! link @variable TSVariable
+
     endif
   endif
 
