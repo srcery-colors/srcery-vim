@@ -152,8 +152,8 @@ if !exists('g:srcery_italic_types')
   let g:srcery_italic_types=0
 endif
 
-if !exists('g:srcery_hard_black_gui_bg')
-  let g:srcery_hard_black_gui_bg=0
+if !exists('g:srcery_bg')
+  let g:srcery_bg=g:srcery_black
 endif
 
 if !exists('g:srcery_hard_black_terminal_bg')

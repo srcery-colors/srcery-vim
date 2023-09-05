@@ -28,7 +28,7 @@ Options					|srcery-options|
 	g:srcery_bg_passthrough 	|srcery-option-bg-passthrough|
 	g:srcery_guisp_fallback 	|srcery-option-guisp-fallback|
 	g:srcery_italic_types 		|srcery-option-italic-types|
-	g:srcery_hard_black_gui_bg	|srcery-option-hard-black-gui-bg|
+	g:srcery_bg			|srcery-option-bg|
 	g:srcery_hard_black_terminal_bg |srcery-option-hard-black-terminal-bg|
 
 ==============================================================================
@@ -243,13 +243,12 @@ g:srcery_italic_types
 
 	Default: 0
 
-					       *srcery-option-hard-black-gui-bg*
-g:srcery_hard_black_gui_bg
+							 	     *srcery-bg*
+g:srcery_bg
+	Background color, specified as an RGB value.
+	Note that this will only work with `set termguicolors` in your config, and that it is mutually exclusive with `g:srcery_hard_black_terminal_bg`.
 
-	If enabled, and termguicolors is set, Srcery will utilize g:hard_black
-	as the background color.
-
-	Default: 0
+	Default: `g:srcery_black`
 
 					  *srcery-option-hard-black-terminal-bg*
 g:srcery_hard_black_terminal_bg
