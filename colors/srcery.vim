@@ -171,11 +171,7 @@ call s:HL('SrceryXgray6', s:xgray6)
 
 " Normal text
 "
-if g:srcery_bg_passthrough == 1 && !has('gui_running')
-  call s:HL('Normal', s:bright_white, s:none)
-else
-  call s:HL('Normal', s:bright_white, [g:srcery_bg, 0])
-endif
+call s:HL('Normal', s:bright_white, g:srcery_bg)
 
 if v:version >= 700
   " Screen line that the cursor is
@@ -206,11 +202,7 @@ if v:version >= 703
   call s:HL('Conceal', s:blue, s:none)
 
   " Line number of CursorLine
-  if g:srcery_bg_passthrough == 1 && !has('gui_running')
-    call s:HL('CursorLineNr', s:yellow, s:none)
-  else
-    call s:HL('CursorLineNr', s:yellow, [g:srcery_bg, 0])
-  endif
+  call s:HL('CursorLineNr', s:yellow, g:srcery_bg)
 
 endif
 
@@ -237,19 +229,11 @@ call s:HL('Underlined', s:blue, s:none, s:underline)
 
 call s:HL('StatusLine',   s:bright_white, s:xgray2)
 
-if g:srcery_bg_passthrough == 1 && !has('gui_running')
-  call s:HL('StatusLineNC', s:bright_black, s:none, s:underline)
-
-  " The column separating vertically split windows
-  call s:HL('VertSplit', s:bright_white, s:none)
-
-  " Current match in wildmenu completion
-  call s:HL('WildMenu', s:blue, s:none, s:bold)
-else
-  call s:HL('StatusLineNC', s:bright_black, [g:srcery_bg, 0], s:underline)
-  call s:HL('VertSplit', s:bright_white, [g:srcery_bg, 0])
-  call s:HL('WildMenu', s:blue, [g:srcery_bg, 0], s:bold)
-endif
+call s:HL('StatusLineNC', s:bright_black, g:srcery_bg, s:underline)
+" The column separating vertically split windows
+call s:HL('VertSplit', s:bright_white, g:srcery_bg)
+" Current match in wildmenu completion
+call s:HL('WildMenu', s:blue, g:srcery_bg, s:bold)
 
 " Directory names, special names in listing
 hi! link Directory SrceryGreenBold
@@ -274,19 +258,13 @@ hi! link WarningMsg SrceryRedBold
 " Line number for :number and :# commands
 call s:HL('LineNr', s:bright_black)
 
-if g:srcery_bg_passthrough == 1 && !has('gui_running')
-  " Column where signs are displayed
-  " TODO Possibly need to fix  SignColumn
-  call s:HL('SignColumn', s:none, s:none)
-  " Line used for closed folds
-  call s:HL('Folded', s:bright_black, s:none, s:italic)
-  " Column where folds are displayed
-  call s:HL('FoldColumn', s:bright_black, s:none)
-else
-  call s:HL('SignColumn', s:none, [g:srcery_bg, 0])
-  call s:HL('Folded', s:bright_black, [g:srcery_bg, 0], s:italic)
-  call s:HL('FoldColumn', s:bright_black, [g:srcery_bg, 0])
-endif
+" Column where signs are displayed
+" TODO Possibly need to fix  SignColumn
+call s:HL('SignColumn', s:none, g:srcery_bg)
+" Line used for closed folds
+call s:HL('Folded', s:bright_black, g:srcery_bg, s:italic)
+" Column where folds are displayed
+call s:HL('FoldColumn', s:bright_black, g:srcery_bg)
 
 " }}}
 " Cursor: {{{
@@ -307,11 +285,7 @@ hi! link Special SrceryOrange
 
 call s:HL('Comment', s:bright_black, s:none, s:italic)
 
-if g:srcery_bg_passthrough == 1 && !has('gui_running')
-  call s:HL('Todo', s:bright_white, s:none, s:bold . s:italic)
-else
-  call s:HL('Todo', s:bright_white, [g:srcery_bg, 0], s:bold . s:italic)
-endif
+call s:HL('Todo', s:bright_white, g:srcery_bg, s:bold . s:italic)
 
 call s:HL('Error', s:bright_white, s:red, s:bold)
 
@@ -388,31 +362,19 @@ if v:version >= 700
   " Popup menu: selected item
   call s:HL('PmenuSel', s:bright_white, s:blue, s:bold)
 
-  if g:srcery_bg_passthrough == 1 && !has('gui_running')
-    " Popup menu: scrollbar
-    call s:HL('PmenuSbar', s:none, s:none)
-    " Popup menu: scrollbar thumb
-    call s:HL('PmenuThumb', s:none, s:none)
-  else
-    call s:HL('PmenuSbar', s:none, [g:srcery_bg, 0])
-    call s:HL('PmenuThumb', s:none, s:orange)
-  endif
+  " Popup menu: scrollbar
+  call s:HL('PmenuSbar', s:none, g:srcery_bg)
+  " Popup menu: scrollbar thumb
+  call s:HL('PmenuThumb', s:none, s:orange)
 endif
 
 " }}}
 " Diffs: {{{
 
-if g:srcery_bg_passthrough == 1 && !has('gui_running')
-  call s:HL('DiffDelete', s:red, s:none)
-  call s:HL('DiffAdd',    s:green, s:none)
-  call s:HL('DiffChange', s:cyan, s:none)
-  call s:HL('DiffText',   s:yellow, s:none)
-else
-  call s:HL('DiffDelete', s:red, [g:srcery_bg, 0])
-  call s:HL('DiffAdd',    s:green, [g:srcery_bg, 0])
-  call s:HL('DiffChange', s:cyan, [g:srcery_bg, 0])
-  call s:HL('DiffText',   s:yellow, [g:srcery_bg, 0])
-endif
+call s:HL('DiffDelete', s:red, g:srcery_bg)
+call s:HL('DiffAdd',    s:green, g:srcery_bg)
+call s:HL('DiffChange', s:cyan, g:srcery_bg)
+call s:HL('DiffText',   s:yellow, g:srcery_bg)
 
 " }}}
 " Spelling: {{{
@@ -426,15 +388,6 @@ if has('spell')
   call s:HL('SpellLocal', s:none, s:none, s:undercurl, s:cyan)
   " Rare word
   call s:HL('SpellRare',  s:none, s:none, s:undercurl, s:magenta)
-endif
-
-" }}}
-" Terminal: {{{
-
-if g:srcery_hard_black_terminal_bg == 1 && has('terminal')
-  " Must set an explicit background as NONE won't work
-  " Therefore not useful with transparent background option
-  call s:HL('Terminal', s:bright_white, s:hard_black)
 endif
 
 " }}}
