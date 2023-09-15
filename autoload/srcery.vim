@@ -116,10 +116,6 @@ if !exists('g:srcery_italic')
   endif
 endif
 
-if !exists('g:srcery_bg_passthrough')
-  let g:srcery_bg_passthrough=0
-endif
-
 if !exists('g:srcery_undercurl')
   let g:srcery_undercurl=1
 endif
