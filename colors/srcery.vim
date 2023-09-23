@@ -391,6 +391,14 @@ if has('spell')
 endif
 
 " }}}
+" Terminal: {{{
+
+if g:srcery_hard_black_terminal_bg == 1 && has('terminal')
+  " Must set an explicit background as NONE won't work
+  " Therefore not useful with transparent background option
+  call s:HL('Terminal', s:bright_white, s:hard_black)
+endif
+" }}}
 " Neovim LSP: {{{
 
 if has('nvim')

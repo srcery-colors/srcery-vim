@@ -160,6 +160,10 @@ elseif (index(g:srcery_bg, 'DEFAULT') >= 0) || (index(g:srcery_bg, 'NONE') >= 0 
   endfor
 endif
 
+if !exists('g:srcery_hard_black_terminal_bg')
+  let g:srcery_hard_black_terminal_bg=1
+endif
+
 " }}}
 " }}}
 " Palette: {{{
