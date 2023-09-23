@@ -28,6 +28,7 @@ Options					|srcery-options|
 	g:srcery_bg_passthrough 	|srcery-option-bg-passthrough|
 	g:srcery_guisp_fallback 	|srcery-option-guisp-fallback|
 	g:srcery_italic_types 		|srcery-option-italic-types|
+	g:srcery_bg			|srcery-option-bg|
 	g:srcery_hard_black_terminal_bg |srcery-option-hard-black-terminal-bg|
 
 ==============================================================================
@@ -241,6 +242,13 @@ g:srcery_italic_types
 	Italicize types if italic is enabled.
 
 	Default: 0
+
+							 	     *srcery-bg*
+g:srcery_bg
+	Background color, specified as an RGB value.
+	Note that this will only work with `set termguicolors` in your config, and that it is mutually exclusive with `g:srcery_hard_black_terminal_bg`.
+
+	Default: `g:srcery_black`
 
 					  *srcery-option-hard-black-terminal-bg*
 g:srcery_hard_black_terminal_bg

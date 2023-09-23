@@ -51,6 +51,7 @@ slightly earthy tone.
         - [g:srcery\_bg\_passthrough](#gsrcery_bg_passthrough)
         - [g:srcery\_guisp\_fallback](#gsrcery_guisp_fallback)
         - [g:srcery\_italic\_types](#gsrcery_italic_types)
+        - [g:srcery\_bg](#gsrcery_bg)
         - [g:srcery\_hard\_black\_terminal\_bg](#gsrcery_hard_black_terminal_bg)
 - [Screenshots](#screenshots)
 - [Plugin support](#plugin-support)
@@ -296,6 +297,13 @@ Possible Values: 'fg', 'bg'
 Italicize types if italic is enabled.
 
 Default: 0
+
+#### g:srcery\_bg
+
+Background color, specified as an RGB value.
+Note that this will only work with 'set termguicolors' in your config, and that it is mutually exclusive with 'g:srcery_hard_black_terminal_bg'.
+
+Default: 'g:srcery_black'
 
 #### g:srcery\_hard\_black\_terminal\_bg
 

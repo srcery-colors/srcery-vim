@@ -116,10 +116,6 @@ if !exists('g:srcery_italic')
   endif
 endif
 
-if !exists('g:srcery_bg_passthrough')
-  let g:srcery_bg_passthrough=0
-endif
-
 if !exists('g:srcery_undercurl')
   let g:srcery_undercurl=1
 endif
@@ -150,6 +146,18 @@ endif
 
 if !exists('g:srcery_italic_types')
   let g:srcery_italic_types=0
+endif
+
+if !exists('g:srcery_bg')
+  "Sets the default color for both guisp and cterm backgrounds.
+  let g:srcery_bg=[g:srcery_black, 0]
+elseif (index(g:srcery_bg, 'DEFAULT') >= 0) || (index(g:srcery_bg, 'NONE') >= 0 && has('gui_running'))
+  "Defaults should be set if the user specifies it, or if the background is set as 'NONE' whilst the gui is running.
+  for i in [0, 1]
+    if g:srcery_bg[i] ==# 'DEFAULT' || (g:srcery_bg[i] ==# 'NONE' && has('gui_running'))
+      let g:srcery_bg[i] = (i==1 ? 0 : g:srcery_black)
+    endif
+  endfor
 endif
 
 if !exists('g:srcery_hard_black_terminal_bg')
