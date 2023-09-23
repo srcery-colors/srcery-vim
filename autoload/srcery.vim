@@ -154,7 +154,7 @@ if !exists('g:srcery_bg')
 elseif (index(g:srcery_bg, 'DEFAULT') >= 0) || (index(g:srcery_bg, 'NONE') >= 0 && has('gui_running'))
   "Defaults should be set if the user specifies it, or if the background is set as 'NONE' whilst the gui is running.
   for i in [0, 1]
-    if g:srcery_bg[i] == 'DEFAULT' || (g:srcery_bg[i] == 'NONE' && has('gui_running'))
+    if g:srcery_bg[i] ==# 'DEFAULT' || (g:srcery_bg[i] ==# 'NONE' && has('gui_running'))
       let g:srcery_bg[i] = (i==1 ? 0 : g:srcery_black)
     endif
   endfor
