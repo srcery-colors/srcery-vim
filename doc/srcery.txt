@@ -9,30 +9,30 @@ License:   MIT license
 CONTENTS						*srcery-contents*
 
 Introduction				|srcery-introduction|
-Installation 				|srcery-installation|
-	Vim 8 				|srcery-install-vim8|
-	Dein 				|srcery-install-dein|
-	Pathogen 			|srcery-install-pathogen|
-	Plug 				|srcery-install-plug|
-Color Table 				|srcery-color-table|
+Installation				|srcery-installation|
+	Vim 8				|srcery-install-vim8|
+	Dein				|srcery-install-dein|
+	Pathogen			|srcery-install-pathogen|
+	Plug				|srcery-install-plug|
+Color Table				|srcery-color-table|
 Options					|srcery-options|
-	g:srcery_[color] 		|srcery-option-color|
-	g:srcery_bold 			|srcery-option-bold|
-	g:srcery_italic 		|srcery-option-italic|
-	g:srcery_underline 		|srcery-option-underline|
-	g:srcery_undercurl 		|srcery-option-undercurl|
-	g:srcery_inverse 		|srcery-option-inverse|
-	g:srcery_inverse_matche 	|srcery-option-inverse-matches|
-	g:srcery_inverse_match_paren 	|srcery-option-inverse-match-paren|
-	g:srcery_dim_lisp_paren 	|srcery-option-dim-lisp-paren|
-	g:srcery_bg_passthrough 	|srcery-option-bg-passthrough|
-	g:srcery_guisp_fallback 	|srcery-option-guisp-fallback|
-	g:srcery_italic_types 		|srcery-option-italic-types|
+	g:srcery_[color]		|srcery-option-color|
+	g:srcery_bold			|srcery-option-bold|
+	g:srcery_italic			|srcery-option-italic|
+	g:srcery_underline		|srcery-option-underline|
+	g:srcery_undercurl		|srcery-option-undercurl|
+	g:srcery_inverse		|srcery-option-inverse|
+	g:srcery_inverse_matche		|srcery-option-inverse-matches|
+	g:srcery_inverse_match_paren	|srcery-option-inverse-match-paren|
+	g:srcery_dim_lisp_paren		|srcery-option-dim-lisp-paren|
+	g:srcery_bg_passthrough		|srcery-option-bg-passthrough|
+	g:srcery_guisp_fallback		|srcery-option-guisp-fallback|
+	g:srcery_italic_types		|srcery-option-italic-types|
 	g:srcery_bg			|srcery-option-bg|
-	g:srcery_hard_black_terminal_bg |srcery-option-hard-black-terminal-bg|
+	g:srcery_hard_black_terminal_bg	|srcery-option-hard-black-terminal-bg|
 
 ==============================================================================
-INTRODUCTION 						   *srcery-introduction*
+INTRODUCTION						   *srcery-introduction*
 
 Created using colors that logically adheres to the 16 color base palette of a
 given terminal, while trying to retain its own identity. The colors are
@@ -89,24 +89,24 @@ https://github.com/junegunn/vim-plug
 ==============================================================================
 COLOR TABLE						    *srcery-color-table*
 
-| termcol       | nr | var                       | hex     | rgb           |
-| ------------- | -- | ------------------------- | ------- | ------------- |
-| black         | 0  | g:srcery_black            | #1c1b19 | 28,  27,  25  |
-| red           | 1  | g:srcery_red              | #ef2f27 | 239, 47, 39   |
-| green         | 2  | g:srcery_green         	 | #519f50 | 81,  159, 80  |
-| yellow        | 3  | g:srcery_yellow        	 | #fbb829 | 251, 184, 41  |
-| blue          | 4  | g:srcery_blue          	 | #2c78bf | 44, 120, 191  |
-| magenta       | 5  | g:srcery_magenta       	 | #e02c6d | 224, 44,  109 |
-| cyan          | 6  | g:srcery_cyan          	 | #0aaeb3 | 10, 174, 179  |
-| white         | 7  | g:srcery_white         	 | #baa67f | 186, 166, 127 |
-| brightblack   | 8  | g:srcery_bright_black  	 | #918175 | 145, 129, 117 |
-| brightred     | 9  | g:srcery_bright_red    	 | #f75341 | 247, 83, 65   |
-| brightgreen   | 10 | g:srcery_bright_green  	 | #98bc37 | 152, 188, 55  |
-| brightyellow  | 11 | g:srcery_bright_yellow 	 | #fed06e | 254, 208, 110 |
-| brightblue    | 12 | g:srcery_bright_blue   	 | #68a8e4 | 104, 168, 228 |
-| brightmagenta | 13 | g:srcery_bright_magenta	 | #ff5c8f | 255, 92, 143  |
-| brightcyan    | 14 | g:srcery_bright_cyan   	 | #2be4d0 | 43, 228, 208  |
-| brightwhite   | 15 | g:srcery_bright_white  	 | #fce8c3 | 252, 232, 195 |
+| TERMCOL       | NR | VAR                     | HEX     | RGB           |
+| ------------- | -- | ----------------------- | ------- | ------------- |
+| black         | 0  | g:srcery_black          | #1C1B19 | 28,  27,  25  |
+| red           | 1  | g:srcery_red            | #EF2F27 | 239, 47, 39   |
+| green         | 2  | g:srcery_green          | #519F50 | 81,  159, 80  |
+| yellow        | 3  | g:srcery_yellow         | #FBB829 | 251, 184, 41  |
+| blue          | 4  | g:srcery_blue           | #2C78BF | 44, 120, 191  |
+| magenta       | 5  | g:srcery_magenta        | #E02C6D | 224, 44,  109 |
+| cyan          | 6  | g:srcery_cyan           | #0AAEB3 | 10, 174, 179  |
+| white         | 7  | g:srcery_white          | #BAA67F | 186, 166, 127 |
+| brightblack   | 8  | g:srcery_bright_black   | #918175 | 145, 129, 117 |
+| brightred     | 9  | g:srcery_bright_red     | #F75341 | 247, 83, 65   |
+| brightgreen   | 10 | g:srcery_bright_green   | #98BC37 | 152, 188, 55  |
+| brightyellow  | 11 | g:srcery_bright_yellow  | #FED06E | 254, 208, 110 |
+| brightblue    | 12 | g:srcery_bright_blue    | #68A8E4 | 104, 168, 228 |
+| brightmagenta | 13 | g:srcery_bright_magenta | #FF5C8F | 255, 92, 143  |
+| brightcyan    | 14 | g:srcery_bright_cyan    | #2BE4D0 | 43, 228, 208  |
+| brightwhite   | 15 | g:srcery_bright_white   | #FCE8C3 | 252, 232, 195 |
 
 Additionally Srcery uses some xterm 256 colors to pad out the color selection,
 no extra configuration needed.
@@ -128,11 +128,9 @@ OPTIONS								*srcery-options*
 
 Srcery includes a few toggles due to discrepancies in the various setups
 possible. To change any of these you’d put something like this in your .vimrc:
-
 >
 	let g:srcery_italic = 1
 <
-
 Make sure that you set these variables before assigning colorscheme.
 
 g:srcery_[color] 					   *srcery-option-color*
@@ -206,7 +204,7 @@ g:srcery_inverse_match_paren
 
 	Default: 0
 
-					 	  *srcery-option-dim-lisp-paren*
+						  *srcery-option-dim-lisp-paren*
 g:srcery_dim_lisp_paren
 
 	Dims lisp dialects delimiters to a fairly dark gray (xgray5
@@ -248,10 +246,11 @@ g:srcery_italic_types
 
 	Default: 0
 
-							 	     *srcery-bg*
+								     *srcery-bg*
 g:srcery_bg
 	Background color, specified as an RGB value.
-	Note that this will only work with `set termguicolors` in your config, and that it is mutually exclusive with `g:srcery_hard_black_terminal_bg`.
+	Note that this will only work with `set termguicolors` in your config,
+	and that it is mutually exclusive with `g:srcery_hard_black_terminal_bg`.
 
 	Default: `g:srcery_black`
 
