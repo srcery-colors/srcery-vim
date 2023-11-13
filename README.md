@@ -104,24 +104,25 @@ Additionally Srcery uses some [xterm 256
 colors](https://en.wikipedia.org/wiki/Xterm#/media/File:Xterm_256color_chart.svg)
 to pad out the color selection, no extra configuration needed.
 
-| IMG  | NAME | NR | HEX | RGB  | HSL |
-|------|------|----|-----|-----|------|
-| ![orange](https://place-hold.it/24x24/ff5f00?text=+) | orange | 202 | #FF5F00 | 255, 95, 0 | 22, 100%, 50% |
-| ![bright_orange](https://place-hold.it/24x24/ff8700?text=+) | bright_orange | 208 | #FF8700 | 255, 135, 0 | 32, 100%, 50% |
-| ![hard_black](https://place-hold.it/24x24/121212?text=+) | hard_black | 233 | #121212 | 18, 18, 18 | 0, 0%, 7% |
-| ![teal](https://place-hold.it/24x24/008080?text=+) | teal | 30 | #008080 | 0, 128, 128 | 180, 100%, 25% |
-| ![xgray1](https://place-hold.it/24x24/262626?text=+) | xgray1 | 235 | #262626 | 38, 38, 38 | 0, 0%, 15% |
-| ![xgray2](https://place-hold.it/24x24/303030?text=+) | xgray2 | 236 | #303030 | 48, 48, 48 | 0, 0%, 19% |
-| ![xgray3](https://place-hold.it/24x24/3a3a3a?text=+) | xgray3 | 237 | #3A3A3A | 58, 58, 58 | 0, 0%, 23% |
-| ![xgray4](https://place-hold.it/24x24/444444?text=+) | xgray4 | 238 | #444444 | 68, 68, 68 | 0, 0%, 27% |
-| ![xgray5](https://place-hold.it/24x24/4e4e4e?text=+) | xgray5 | 239 | #4E4E4E | 78, 78, 78 | 0, 0%, 31% |
-| ![xgray6](https://place-hold.it/24x24/585858?text=+) | xgray6 | 240 | #585858 | 88, 88, 88 | 0, 0%, 35% |
-| ![xgray7](https://place-hold.it/24x24/626262?text=+) | xgray7 | 241 | #626262 | 98, 98, 98 | 0, 0%, 38% |
-| ![xgray8](https://place-hold.it/24x24/6c6c6c?text=+) | xgray8 | 242 | #6C6C6C | 108, 108, 108 | 0, 0%, 42% |
-| ![xgray9](https://place-hold.it/24x24/767676?text=+) | xgray9 | 243 | #767676 | 118, 118, 118 | 0, 0%, 46% |
-| ![xgray10](https://place-hold.it/24x24/808080?text=+) | xgray10 | 244 | #808080 | 128, 128, 128 | 0, 0%, 50% |
-| ![xgray11](https://place-hold.it/24x24/8a8a8a?text=+) | xgray11 | 245 | #8A8A8A | 138, 138, 138 | 0, 0%, 54% |
-| ![xgray12](https://place-hold.it/24x24/949494?text=+) | xgray12 | 246 | #949494 | 148, 148, 148 | 0, 0%, 58% |
+| IMG  | NAME | NR | VAR | HEX | RGB  | HSL |
+|------|------|----|-----|-----|------|-----|
+| ![orange](https://place-hold.it/24x24/ff5f00?text=+) | orange | 202 | `g:srcery_orange`, `g:srcery_orange_cterm` | #FF5F00 | 255, 95, 0 | 22, 100%, 50% |
+| ![bright_orange](https://place-hold.it/24x24/ff8700?text=+) | bright_orange | 208 | `g:srcery_bright_orange`, `g:srcery_bright_orange_cterm` | #FF8700 | 255, 135, 0 | 32, 100%, 50% |
+| ![hard_black](https://place-hold.it/24x24/121212?text=+) | hard_black | 233 | `g:srcery_hard_black`, `g:srcery_hard_black_cterm`| #121212 | 18, 18, 18 | 0, 0%, 7% |
+| ![xgray1](https://place-hold.it/24x24/262626?text=+) | xgray1 | 235 | `g:srcery_xgray1`, `g:srcery_xgray1_cterm` | #262626 | 38, 38, 38 | 0, 0%, 15% |
+| ![xgray2](https://place-hold.it/24x24/303030?text=+) | xgray2 | 236 | `g:srcery_xgray2`, `g:srcery_xgray2_cterm` | #303030 | 48, 48, 48 | 0, 0%, 19% |
+| ![xgray3](https://place-hold.it/24x24/3a3a3a?text=+) | xgray3 | 237 | `g:srcery_xgray3`, `g:srcery_xgray3_cterm` | #3A3A3A | 58, 58, 58 | 0, 0%, 23% |
+| ![xgray4](https://place-hold.it/24x24/444444?text=+) | xgray4 | 238 | `g:srcery_xgray4`, `g:srcery_xgray4_cterm` |#444444 | 68, 68, 68 | 0, 0%, 27% |
+| ![xgray5](https://place-hold.it/24x24/4e4e4e?text=+) | xgray5 | 239 | `g:srcery_xgray5`, `g:srcery_xgray5_cterm` | #4E4E4E | 78, 78, 78 | 0, 0%, 31% |
+| ![xgray6](https://place-hold.it/24x24/585858?text=+) | xgray6 | 240 | `g:srcery_xgray6`, `g:srcery_xgray6_cterm` | #585858 | 88, 88, 88 | 0, 0%, 35% |
+<!-- | ![teal](https://place-hold.it/24x24/008080?text=+) | teal | 30 | N/A* | #008080 | 0, 128, 128 | 180, 100%, 25% | -->
+<!-- | ![xgray7](https://place-hold.it/24x24/626262?text=+) | xgray7 | 241 | N/A* | #626262 | 98, 98, 98 | 0, 0%, 38% | -->
+<!-- | ![xgray8](https://place-hold.it/24x24/6c6c6c?text=+) | xgray8 | 242 | N/A* | #6C6C6C | 108, 108, 108 | 0, 0%, 42% | -->
+<!-- | ![xgray9](https://place-hold.it/24x24/767676?text=+) | xgray9 | 243 | N/A* | #767676 | 118, 118, 118 | 0, 0%, 46% | -->
+<!-- | ![xgray10](https://place-hold.it/24x24/808080?text=+) | xgray10 | 244 | N/A* | #808080 | 128, 128, 128 | 0, 0%, 50% | -->
+<!-- | ![xgray11](https://place-hold.it/24x24/8a8a8a?text=+) | xgray11 | 245 | N/A* | #8A8A8A | 138, 138, 138 | 0, 0%, 54% | -->
+<!-- | ![xgray12](https://place-hold.it/24x24/949494?text=+) | xgray12 | 246 | N/A* | #949494 | 148, 148, 148 | 0, 0%, 58% | -->
+<!-- > \* N/A on variables means the color isn't used in the vim theme, but are used in other Srcery derivatives. If there is a need for more colors these can easily be included. -->
 
 ## Installation
 
