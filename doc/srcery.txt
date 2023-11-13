@@ -25,7 +25,6 @@ Options					|srcery-options|
 	g:srcery_inverse_matche		|srcery-option-inverse-matches|
 	g:srcery_inverse_match_paren	|srcery-option-inverse-match-paren|
 	g:srcery_dim_lisp_paren		|srcery-option-dim-lisp-paren|
-	g:srcery_bg_passthrough		|srcery-option-bg-passthrough|
 	g:srcery_guisp_fallback		|srcery-option-guisp-fallback|
 	g:srcery_italic_types		|srcery-option-italic-types|
 	g:srcery_bg			|srcery-option-bg|
@@ -212,18 +211,6 @@ g:srcery_dim_lisp_paren
 
 	Default: 0
 
-						  *srcery-option-bg-passthrough*
-g:srcery_bg_passthrough
-
-	Lets the terminal control the background color in Vim by setting the
-	background NONE.
-
-	A possible use case for this could be you want to manipulate the
-	background color in the terminal, and let the results bubble up to
-	Vim.
-
-	Default: 0
-
  						  *srcery-option-guisp-fallback*
 g:srcery_guisp_fallback
 
@@ -246,13 +233,21 @@ g:srcery_italic_types
 
 	Default: 0
 
-								     *srcery-bg*
+							      *srcery-option-bg*
 g:srcery_bg
-	Background color, specified as an RGB value.
-	Note that this will only work with `set termguicolors` in your config,
-	and that it is mutually exclusive with `g:srcery_hard_black_terminal_bg`.
 
-	Default: `g:srcery_black`
+	Let's you customize the background color. This var takes a list with
+	two elements, with a HEX in the first position, and a terminal color
+	index for the second position. This lets you set both a 24-bit color,
+	and a 8bit terminal color index.
+
+	You can specify `NONE` as a value, which would be the same as the
+	previous option `srcery_bg_passthrough`
+
+	You can specify `DEFAULT` as a value, if you only want to customize
+	one value.
+
+	Default: `[g:srcery_black, 0]`
 
 					  *srcery-option-hard-black-terminal-bg*
 g:srcery_hard_black_terminal_bg

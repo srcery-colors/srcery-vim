@@ -48,7 +48,6 @@ slightly earthy tone.
         - [g:srcery\_inverse\_matches](#gsrcery_inverse_matches)
         - [g:srcery\_inverse\_match\_paren](#gsrcery_inverse_match_paren)
         - [g:srcery\_dim\_lisp\_paren](#gsrcery_dim_lisp_paren)
-        - [g:srcery\_bg\_passthrough](#gsrcery_bg_passthrough)
         - [g:srcery\_guisp\_fallback](#gsrcery_guisp_fallback)
         - [g:srcery\_italic\_types](#gsrcery_italic_types)
         - [g:srcery\_bg](#gsrcery_bg)
@@ -275,18 +274,6 @@ Dims lisp dialects delimiters to a fairly dark gray (xgray5 specifically).
 
 Default: 0
 
-#### g:srcery\_bg\_passthrough
-
-Lets the terminal control the background color in Vim by setting the background to `NONE`.
-
-A possible use case for this could be you want to manipulate the background
-color in the terminal, and let the results bubble up to Vim, like [this](https://github.com/roosta/tmux-pop).
-
-This is a bit of an experimental option, and can cause issues in certain
-terminals.
-
-Default: 0
-
 #### g:srcery\_guisp\_fallback
 
 Sets up alternate highlighting for colored underline/undercurl. Some
@@ -308,10 +295,17 @@ Default: 0
 
 #### g:srcery\_bg
 
-Background color, specified as an RGB value.
-Note that this will only work with 'set termguicolors' in your config, and that it is mutually exclusive with 'g:srcery_hard_black_terminal_bg'.
+Default: `[g:srcery_black, 0]`
 
-Default: 'g:srcery_black'
+Let's you customize the background color. This var takes a list with two
+elements, with a HEX in the first position, and a terminal color index for the
+second position. This lets you set both a 24-bit color, and a 8bit terminal
+color index.
+
+You can specify `NONE` as a value, which would be the same as the previous
+option `srcery_bg_passthrough`
+
+You can specify `DEFAULT` as a value, if you only want to customize one value.
 
 #### g:srcery\_hard\_black\_terminal\_bg
 
