@@ -203,6 +203,13 @@ You can customize each of Srcery's colors, to customize say the red color:
 let g:srcery_red = '#FF0000'
 ```
 
+Inside a 256-color terminal emulator, additional colors are configurable
+via setting the corresponding variable with the \_cterm suffix, e.g.
+
+```vim
+let g:srcery_hard_black_cterm = 232
+```
+
 Refer to the [table](#TUI) for a full list of color variables, hexes and more.
 
 This will only work on `set termguicolors` and in gVim, to override terminal

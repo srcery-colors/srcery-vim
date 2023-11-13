@@ -69,36 +69,72 @@ if !exists('g:srcery_orange')
   let g:srcery_orange='#FF5F00'
 endif
 
+if !exists('g:srcery_orange_cterm')
+  let g:srcery_orange_cterm=202
+endif
+
 if !exists('g:srcery_bright_orange')
   let g:srcery_bright_orange='#FF8700'
+endif
+
+if !exists('g:srcery_bright_orange_cterm')
+  let g:srcery_bright_orange_cterm=208
 endif
 
 if !exists('g:srcery_hard_black')
   let g:srcery_hard_black='#121212'
 endif
 
+if !exists('g:srcery_hard_black_cterm')
+  let g:srcery_hard_black_cterm=233
+endif
+
 if !exists('g:srcery_xgray1')
   let g:srcery_xgray1='#262626'
+endif
+
+if !exists('g:srcery_xgray1_cterm')
+  let g:srcery_xgray1_cterm=235
 endif
 
 if !exists('g:srcery_xgray2')
   let g:srcery_xgray2='#303030'
 endif
 
+if !exists('g:srcery_xgray2_cterm')
+  let g:srcery_xgray2_cterm=236
+endif
+
 if !exists('g:srcery_xgray3')
   let g:srcery_xgray3='#3A3A3A'
+endif
+
+if !exists('g:srcery_xgray3_cterm')
+  let g:srcery_xgray3_cterm=237
 endif
 
 if !exists('g:srcery_xgray4')
   let g:srcery_xgray4='#444444'
 endif
 
+if !exists('g:srcery_xgray4_cterm')
+  let g:srcery_xgray4_cterm=238
+endif
+
 if !exists('g:srcery_xgray5')
   let g:srcery_xgray5='#4E4E4E'
 endif
 
+if !exists('g:srcery_xgray5_cterm')
+  let g:srcery_xgray5_cterm=239
+endif
+
 if !exists('g:srcery_xgray6')
   let g:srcery_xgray6='#585858'
+endif
+
+if !exists('g:srcery_xgray6_cterm')
+  let g:srcery_xgray6_cterm=240
 endif
 
 " }}}
@@ -190,15 +226,18 @@ let g:srcery#palette.bright_cyan    = [g:srcery_bright_cyan, 14]
 let g:srcery#palette.bright_white   = [g:srcery_bright_white, 15]
 
 " xterm colors
-let g:srcery#palette.orange         = [g:srcery_orange, 202]
-let g:srcery#palette.bright_orange  = [g:srcery_bright_orange, 208]
-let g:srcery#palette.hard_black     = [g:srcery_hard_black, 233]
-let g:srcery#palette.xgray1         = [g:srcery_xgray1, 235]
-let g:srcery#palette.xgray2         = [g:srcery_xgray2, 236]
-let g:srcery#palette.xgray3         = [g:srcery_xgray3, 237]
-let g:srcery#palette.xgray4         = [g:srcery_xgray4, 238]
-let g:srcery#palette.xgray5         = [g:srcery_xgray5, 239]
-let g:srcery#palette.xgray6         = [g:srcery_xgray6, 240]
+let g:srcery#palette.orange         = [g:srcery_orange,
+                                    \  g:srcery_orange_cterm]
+let g:srcery#palette.bright_orange  = [g:srcery_bright_orange,
+                                    \  g:srcery_bright_orange_cterm]
+let g:srcery#palette.hard_black     = [g:srcery_hard_black,
+                                    \  g:srcery_hard_black_cterm]
+let g:srcery#palette.xgray1         = [g:srcery_xgray1, g:srcery_xgray1_cterm]
+let g:srcery#palette.xgray2         = [g:srcery_xgray2, g:srcery_xgray2_cterm]
+let g:srcery#palette.xgray3         = [g:srcery_xgray3, g:srcery_xgray3_cterm]
+let g:srcery#palette.xgray4         = [g:srcery_xgray4, g:srcery_xgray4_cterm]
+let g:srcery#palette.xgray5         = [g:srcery_xgray5, g:srcery_xgray5_cterm]
+let g:srcery#palette.xgray6         = [g:srcery_xgray6, g:srcery_xgray6_cterm]
 
 " }}}
 " Setup Emphasis: {{{
