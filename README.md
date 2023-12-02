@@ -295,17 +295,19 @@ Default: 0
 
 #### g:srcery\_bg
 
-Default: `[g:srcery_black, 0]`
-
 Let's you customize the background color. This var takes a list with two
-elements, with a HEX in the first position, and a terminal color index for the
-second position. This lets you set both a 24-bit color, and a 8bit terminal
+values, with a quoted HEX in the first position, and a terminal color index for
+the second position. This lets you set both a 24-bit color, and a 8bit terminal
 color index.
 
-You can specify `NONE` as a value, which would be the same as the previous
-option `srcery_bg_passthrough`
+You can specify `'NONE'` as one of the values to make it transparent, as such
+`['NONE', 'NONE']` would be the same as the previous option
+`g:srcery_bg_passthrough = 1`.
 
-You can specify `DEFAULT` as a value, if you only want to customize one value.
+You can specify `'DEFAULT'` as one of the values in order to use that
+position's default value.
+
+Default: `[g:srcery_black, 0]`
 
 #### g:srcery\_hard\_black\_terminal\_bg
 
