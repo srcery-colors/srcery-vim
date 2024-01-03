@@ -303,7 +303,7 @@ hi! link Label SrceryRed
 " try, catch, throw
 hi! link Exception SrceryRed
 " sizeof, "+", "*", etc.
-hi! link Operator Normal
+hi! link Operator SrceryBrightWhite
 " Any other keyword
 hi! link Keyword SrceryRed
 
