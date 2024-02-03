@@ -4,11 +4,13 @@ endif
 
 let s:none = g:srcery#palette.none
 let s:bright_white = g:srcery#palette.bright_white
+let s:bold = g:srcery#palette.bold
 let s:italic = g:srcery#palette.italic
 let s:underline = g:srcery#palette.underline
 
 " Markdown: {{{
 
+call srcery#helper#Highlight('markdownBold', s:bright_white, s:none, s:bold)
 call srcery#helper#Highlight('markdownItalic', s:bright_white, s:none, s:italic)
 
 hi! link markdownH1 SrceryBrightBlueBold
