@@ -173,7 +173,6 @@ call s:HL('SrceryXgray6', s:xgray6)
 "
 call s:HL('Normal', s:bright_white, g:srcery_bg)
 
-call s:HL('NormalFloat', s:bright_white, g:srcery_bg)
 call s:HL('FloatBorder', s:white, g:srcery_bg)
 
 if v:version >= 700
