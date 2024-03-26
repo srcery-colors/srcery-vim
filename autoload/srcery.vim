@@ -160,6 +160,10 @@ if !exists('g:srcery_underline')
   let g:srcery_underline=1
 endif
 
+if !exists('g:srcery_strikethrough')
+  let g:srcery_strikethrough=1
+endif
+
 if !exists('g:srcery_inverse')
   let g:srcery_inverse=1
 endif
@@ -265,6 +269,11 @@ endif
 let g:srcery#palette.inverse = 'inverse,'
 if g:srcery_inverse == 0
   let g:srcery#palette.inverse = ''
+endif
+
+let g:srcery#palette.strikethrough = 'strikethrough,'
+if g:srcery_strikethrough == 0
+  let g:srcery#palette.strikethrough = ''
 endif
 
 " }}}

@@ -44,6 +44,7 @@ slightly earthy tone.
         - [g:srcery\_italic](#gsrcery_italic)
         - [g:srcery\_underline](#gsrcery_underline)
         - [g:srcery\_undercurl](#gsrcery_undercurl)
+        - [g:srcery\_strikethrough](#gsrcery_strikethrough)
         - [g:srcery\_inverse](#gsrcery_inverse)
         - [g:srcery\_inverse\_matches](#gsrcery_inverse_matches)
         - [g:srcery\_inverse\_match\_paren](#gsrcery_inverse_match_paren)
@@ -239,6 +240,12 @@ Default: 1
 #### g:srcery\_undercurl
 
 Enables undercurled text.
+
+Default: 1
+
+#### g:srcery\_strikethrough
+
+Enables strikethrough text.
 
 Default: 1
 

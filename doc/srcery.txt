@@ -21,6 +21,7 @@ Options					|srcery-options|
 	g:srcery_italic			|srcery-option-italic|
 	g:srcery_underline		|srcery-option-underline|
 	g:srcery_undercurl		|srcery-option-undercurl|
+	g:srcery_strikethrough		|srcery-option-strikethrough|
 	g:srcery_inverse		|srcery-option-inverse|
 	g:srcery_inverse_matche		|srcery-option-inverse-matches|
 	g:srcery_inverse_match_paren	|srcery-option-inverse-match-paren|
@@ -171,6 +172,13 @@ g:srcery_underline
 g:srcery_undercurl
 
 	Enables undercurled text.
+
+	Default: 1
+
+						   *srcery-option-strikethrough*
+g:srcery_strikethrough
+
+	Enables strikethrough text.
 
 	Default: 1
 
