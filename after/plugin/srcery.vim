@@ -265,13 +265,13 @@ if has('nvim')
       highlight! link @text.strong TSStrong
       highlight! link @text.emphasis TSEmphasis
       highlight! link @text.underline TSUnderline
-      highlight! link @text.warning TSWarning 
-      highlight! link @text.danger TSDanger 
-      highlight! link @constant.builtin TSConstBuiltin 
-      highlight! link @field TSField 
-      highlight! link @function.builtin TSFuncBuiltin 
-      highlight! link @function.macro TSFuncMacro 
-      highlight! link @function TSFunction 
+      highlight! link @text.warning TSWarning
+      highlight! link @text.danger TSDanger
+      highlight! link @constant.builtin TSConstBuiltin
+      highlight! link @field TSField
+      highlight! link @function.builtin TSFuncBuiltin
+      highlight! link @function.macro TSFuncMacro
+      highlight! link @function TSFunction
       highlight! link @namespace TSNamespace
       highlight! link @parameter TSParameter
       highlight! link @property TSProperty
