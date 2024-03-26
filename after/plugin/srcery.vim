@@ -43,6 +43,7 @@ let s:italic = g:srcery#palette.italic
 let s:underline = g:srcery#palette.underline
 let s:undercurl = g:srcery#palette.undercurl
 let s:inverse = g:srcery#palette.inverse
+let s:strikethrough = g:srcery#palette.strikethrough
 
 " }}}
 " Sneak: {{{
@@ -283,6 +284,11 @@ if has('nvim')
       highlight! link @delimiter TSDelimiter
       highlight! link @text.uri TSURI
       highlight! link @variable TSVariable
+
+      call srcery#helper#Highlight('@markup.strong', s:none, s:none, s:bold)
+      call srcery#helper#Highlight('@markup.italic', s:none, s:none, s:italic)
+      call srcery#helper#Highlight('@markup.underline', s:none, s:none, s:underline)
+      call srcery#helper#Highlight('@markup.strikethrough', s:none, s:none, s:strikethrough)
 
     endif
   endif
