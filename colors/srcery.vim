@@ -222,10 +222,12 @@ hi! link VisualNOS Visual
 
 if g:srcery_inverse == 1 && g:srcery_inverse_matches == 1
   call s:HL('Search', s:none, s:none, s:inverse)
-  call s:HL('IncSearch', s:none, s:none, s:inverse)
+  call s:HL('IncSearch', s:none, s:none, s:underline . s:inverse . s:bold)
+  call s:HL('CurSearch', s:none, s:none, s:underline . s:inverse . s:bold)
 else
-  call s:HL('Search', s:none, s:xgray5, s:bold)
+  call s:HL('Search', s:none, s:xgray5)
   call s:HL('IncSearch', s:none, s:xgray5, s:underline . s:bold)
+  call s:HL('CurSearch', s:none, s:xgray5, s:underline . s:bold)
 endif
 
 call s:HL('Underlined', s:blue, s:none, s:underline)
