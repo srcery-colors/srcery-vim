@@ -20,48 +20,283 @@ if !has('gui_running') && &t_Co != 256
   finish
 endif
 
+" Setup Variables: {{{
+
+" Colors {{{
+
+if !exists('g:srcery_black')
+  let g:srcery_black='#1C1B19'
+endif
+
+if !exists('g:srcery_red')
+  let g:srcery_red='#EF2F27'
+endif
+
+if !exists('g:srcery_green')
+  let g:srcery_green='#519F50'
+endif
+
+if !exists('g:srcery_yellow')
+  let g:srcery_yellow='#FBB829'
+endif
+
+if !exists('g:srcery_blue')
+  let g:srcery_blue='#2C78BF'
+endif
+
+if !exists('g:srcery_magenta')
+  let g:srcery_magenta='#E02C6D'
+endif
+
+if !exists('g:srcery_cyan')
+  let g:srcery_cyan='#0AAEB3'
+endif
+
+if !exists('g:srcery_white')
+  let g:srcery_white='#BAA67F'
+endif
+
+if !exists('g:srcery_bright_black')
+  let g:srcery_bright_black='#918175'
+endif
+
+if !exists('g:srcery_bright_red')
+  let g:srcery_bright_red='#F75341'
+endif
+
+if !exists('g:srcery_bright_green')
+  let g:srcery_bright_green='#98BC37'
+endif
+
+if !exists('g:srcery_bright_yellow')
+  let g:srcery_bright_yellow='#FED06E'
+endif
+
+if !exists('g:srcery_bright_blue')
+  let g:srcery_bright_blue='#68A8E4'
+endif
+
+if !exists('g:srcery_bright_magenta')
+  let g:srcery_bright_magenta='#FF5C8F'
+endif
+
+if !exists('g:srcery_bright_cyan')
+  let g:srcery_bright_cyan='#2BE4D0'
+endif
+
+if !exists('g:srcery_bright_white')
+  let g:srcery_bright_white='#FCE8C3'
+endif
+
+if !exists('g:srcery_orange')
+  let g:srcery_orange='#FF5F00'
+endif
+
+if !exists('g:srcery_orange_cterm')
+  let g:srcery_orange_cterm=202
+endif
+
+if !exists('g:srcery_bright_orange')
+  let g:srcery_bright_orange='#FF8700'
+endif
+
+if !exists('g:srcery_bright_orange_cterm')
+  let g:srcery_bright_orange_cterm=208
+endif
+
+if !exists('g:srcery_hard_black')
+  let g:srcery_hard_black='#121212'
+endif
+
+if !exists('g:srcery_hard_black_cterm')
+  let g:srcery_hard_black_cterm=233
+endif
+
+if !exists('g:srcery_xgray1')
+  let g:srcery_xgray1='#262626'
+endif
+
+if !exists('g:srcery_xgray1_cterm')
+  let g:srcery_xgray1_cterm=235
+endif
+
+if !exists('g:srcery_xgray2')
+  let g:srcery_xgray2='#303030'
+endif
+
+if !exists('g:srcery_xgray2_cterm')
+  let g:srcery_xgray2_cterm=236
+endif
+
+if !exists('g:srcery_xgray3')
+  let g:srcery_xgray3='#3A3A3A'
+endif
+
+if !exists('g:srcery_xgray3_cterm')
+  let g:srcery_xgray3_cterm=237
+endif
+
+if !exists('g:srcery_xgray4')
+  let g:srcery_xgray4='#444444'
+endif
+
+if !exists('g:srcery_xgray4_cterm')
+  let g:srcery_xgray4_cterm=238
+endif
+
+if !exists('g:srcery_xgray5')
+  let g:srcery_xgray5='#4E4E4E'
+endif
+
+if !exists('g:srcery_xgray5_cterm')
+  let g:srcery_xgray5_cterm=239
+endif
+
+if !exists('g:srcery_xgray6')
+  let g:srcery_xgray6='#585858'
+endif
+
+if !exists('g:srcery_xgray6_cterm')
+  let g:srcery_xgray6_cterm=240
+endif
+
+" }}}
+" Options {{{
+
+if !exists('g:srcery_bold')
+  let g:srcery_bold=1
+endif
+
+if !exists('g:srcery_italic')
+  if has('gui_running') || $TERM_ITALICS ==? 'true'
+    let g:srcery_italic=1
+  else
+    let g:srcery_italic=0
+  endif
+endif
+
+if !exists('g:srcery_undercurl')
+  let g:srcery_undercurl=1
+endif
+
+if !exists('g:srcery_underline')
+  let g:srcery_underline=1
+endif
+
+if !exists('g:srcery_strikethrough')
+  let g:srcery_strikethrough=1
+endif
+
+if !exists('g:srcery_inverse')
+  let g:srcery_inverse=1
+endif
+
+if !exists('g:srcery_inverse_matches')
+  let g:srcery_inverse_matches=0
+endif
+
+if !exists('g:srcery_inverse_match_paren')
+  let g:srcery_inverse_match_paren=0
+endif
+
+if !exists('g:srcery_dim_lisp_paren')
+  let g:srcery_dim_lisp_paren=0
+endif
+
+if !exists('g:srcery_guisp_fallback') || index(['fg', 'bg'], g:srcery_guisp_fallback) == -1
+  let g:srcery_guisp_fallback='NONE'
+endif
+
+if !exists('g:srcery_italic_types')
+  let g:srcery_italic_types=0
+endif
+
+if !exists('g:srcery_bg')
+  "Sets the default color for both guisp and cterm backgrounds.
+  let g:srcery_bg=[g:srcery_black, 0]
+elseif (index(g:srcery_bg, 'DEFAULT') >= 0) || (index(g:srcery_bg, 'NONE') >= 0 && has('gui_running'))
+  "Defaults should be set if the user specifies it, or if the background is set as 'NONE' whilst the gui is running.
+  for i in [0, 1]
+    if g:srcery_bg[i] ==# 'DEFAULT' || (g:srcery_bg[i] ==# 'NONE' && has('gui_running'))
+      let g:srcery_bg[i] = (i==1 ? 0 : g:srcery_black)
+    endif
+  endfor
+endif
+
+if !exists('g:srcery_hard_black_terminal_bg')
+  let g:srcery_hard_black_terminal_bg=1
+endif
+
+" }}}
+
+" }}}
+
 " Palette {{{
 
-let s:none           = g:srcery#palette.none
+let s:none           = ['NONE', 'NONE']
 
 " 16 base colors
-let s:black          = g:srcery#palette.black
-let s:red            = g:srcery#palette.red
-let s:green          = g:srcery#palette.green
-let s:yellow         = g:srcery#palette.yellow
-let s:blue           = g:srcery#palette.blue
-let s:magenta        = g:srcery#palette.magenta
-let s:cyan           = g:srcery#palette.cyan
-let s:white          = g:srcery#palette.white
-let s:bright_black   = g:srcery#palette.bright_black
-let s:bright_red     = g:srcery#palette.bright_red
-let s:bright_green   = g:srcery#palette.bright_green
-let s:bright_yellow  = g:srcery#palette.bright_yellow
-let s:bright_blue    = g:srcery#palette.bright_blue
-let s:bright_magenta = g:srcery#palette.bright_magenta
-let s:bright_cyan    = g:srcery#palette.bright_cyan
-let s:bright_white   = g:srcery#palette.bright_white
+let s:black          = [g:srcery_black, 0]
+let s:red            = [g:srcery_red, 1]
+let s:green          = [g:srcery_green, 2]
+let s:yellow         = [g:srcery_yellow, 3]
+let s:blue           = [g:srcery_blue, 4]
+let s:magenta        = [g:srcery_magenta, 5]
+let s:cyan           = [g:srcery_cyan, 6]
+let s:white          = [g:srcery_white, 7]
+let s:bright_black   = [g:srcery_bright_black, 8]
+let s:bright_red     = [g:srcery_bright_red, 9]
+let s:bright_green   = [g:srcery_bright_green, 10]
+let s:bright_yellow  = [g:srcery_bright_yellow, 11]
+let s:bright_blue    = [g:srcery_bright_blue, 12]
+let s:bright_magenta = [g:srcery_bright_magenta, 13]
+let s:bright_cyan    = [g:srcery_bright_cyan, 14]
+let s:bright_white   = [g:srcery_bright_white, 15]
 
 " xterm colors
-let s:orange         = g:srcery#palette.orange
-let s:bright_orange  = g:srcery#palette.bright_orange
-let s:hard_black     = g:srcery#palette.hard_black
-let s:xgray1         = g:srcery#palette.xgray1
-let s:xgray2         = g:srcery#palette.xgray2
-let s:xgray3         = g:srcery#palette.xgray3
-let s:xgray4         = g:srcery#palette.xgray4
-let s:xgray5         = g:srcery#palette.xgray5
-let s:xgray6         = g:srcery#palette.xgray6
+let s:orange         = [g:srcery_orange, g:srcery_orange_cterm]
+let s:bright_orange  = [g:srcery_bright_orange, g:srcery_bright_orange_cterm]
+let s:hard_black     = [g:srcery_hard_black, g:srcery_hard_black_cterm]
+let s:xgray1         = [g:srcery_xgray1, g:srcery_xgray1_cterm]
+let s:xgray2         = [g:srcery_xgray2, g:srcery_xgray2_cterm]
+let s:xgray3         = [g:srcery_xgray3, g:srcery_xgray3_cterm]
+let s:xgray4         = [g:srcery_xgray4, g:srcery_xgray4_cterm]
+let s:xgray5         = [g:srcery_xgray5, g:srcery_xgray5_cterm]
+let s:xgray6         = [g:srcery_xgray6, g:srcery_xgray6_cterm]
 
 "}}}
 
 " Setup Emphasis: {{{
 
-let s:bold      = g:srcery#palette.bold
-let s:italic    = g:srcery#palette.italic
-let s:underline = g:srcery#palette.underline
-let s:undercurl = g:srcery#palette.undercurl
-let s:inverse   = g:srcery#palette.inverse
+let s:bold = 'bold,'
+if g:srcery_bold == 0
+  let s:bold = ''
+endif
+
+let s:italic = 'italic,'
+if g:srcery_italic == 0
+  let s:italic = ''
+endif
+
+let s:underline = 'underline,'
+if g:srcery_underline == 0
+  let s:underline = ''
+endif
+
+let s:undercurl = 'undercurl,'
+if g:srcery_undercurl == 0
+  let s:undercurl = ''
+endif
+
+let s:inverse = 'inverse,'
+if g:srcery_inverse == 0
+  let s:inverse = ''
+endif
+
+let s:strikethrough = 'strikethrough,'
+if g:srcery_strikethrough == 0
+  let s:strikethrough = ''
+endif
 
 " }}}
 
@@ -165,6 +400,68 @@ call s:HL('SrceryXgray3', s:xgray3)
 call s:HL('SrceryXgray4', s:xgray4)
 call s:HL('SrceryXgray5', s:xgray5)
 call s:HL('SrceryXgray6', s:xgray6)
+
+" }}}
+
+" Setup Terminal Colors For Neovim: {{{
+
+if has('nvim')
+  let g:terminal_color_0 = s:black[0]
+  let g:terminal_color_8 = s:bright_black[0]
+
+  let g:terminal_color_1 = s:red[0]
+  let g:terminal_color_9 = s:bright_red[0]
+
+  let g:terminal_color_2 = s:green[0]
+  let g:terminal_color_10 = s:bright_green[0]
+
+  let g:terminal_color_3 = s:yellow[0]
+  let g:terminal_color_11 = s:bright_yellow[0]
+
+  let g:terminal_color_4 = s:blue[0]
+  let g:terminal_color_12 = s:bright_blue[0]
+
+  let g:terminal_color_5 = s:magenta[0]
+  let g:terminal_color_13 = s:bright_magenta[0]
+
+  let g:terminal_color_6 = s:cyan[0]
+  let g:terminal_color_14 = s:bright_cyan[0]
+
+  let g:terminal_color_7 = s:white[0]
+  let g:terminal_color_15 = s:bright_white[0]
+endif
+
+" }}}
+
+" Setup Terminal Colors For Vim with termguicolors: {{{
+
+if exists('*term_setansicolors')
+  let g:terminal_ansi_colors = repeat([0], 16)
+
+  let g:terminal_ansi_colors[0] = s:black[0]
+  let g:terminal_ansi_colors[8] = s:bright_black[0]
+
+  let g:terminal_ansi_colors[1] = s:red[0]
+  let g:terminal_ansi_colors[9] = s:bright_red[0]
+
+  let g:terminal_ansi_colors[2] = s:green[0]
+  let g:terminal_ansi_colors[10] = s:bright_green[0]
+
+  let g:terminal_ansi_colors[3] = s:yellow[0]
+  let g:terminal_ansi_colors[11] = s:bright_yellow[0]
+
+  let g:terminal_ansi_colors[4] = s:blue[0]
+  let g:terminal_ansi_colors[12] = s:bright_blue[0]
+
+  let g:terminal_ansi_colors[5] = s:magenta[0]
+  let g:terminal_ansi_colors[13] = s:bright_magenta[0]
+
+  let g:terminal_ansi_colors[6] = s:cyan[0]
+  let g:terminal_ansi_colors[14] = s:bright_cyan[0]
+
+  let g:terminal_ansi_colors[7] = s:white[0]
+  let g:terminal_ansi_colors[15] = s:bright_white[0]
+endif
 
 " }}}
 
@@ -568,17 +865,17 @@ hi! link htmlSpecialTagName SrceryBlue
 
 hi! link javaScript Normal
 
-call srcery#helper#Highlight('htmlLink', s:bright_white, s:none, s:underline)
+call s:HL('htmlLink', s:bright_white, s:none, s:underline)
 
 hi! link htmlSpecialChar SrceryYellow
 
-call srcery#helper#Highlight('htmlBold', s:bright_white, g:srcery_bg, s:bold)
-call srcery#helper#Highlight('htmlBoldUnderline', s:bright_white, g:srcery_bg, s:bold . s:underline)
-call srcery#helper#Highlight('htmlBoldItalic', s:bright_white, g:srcery_bg, s:bold . s:italic)
-call srcery#helper#Highlight('htmlBoldUnderlineItalic', s:bright_white, g:srcery_bg, s:bold . s:underline . s:italic)
-call srcery#helper#Highlight('htmlUnderline', s:bright_white, g:srcery_bg, s:underline)
-call srcery#helper#Highlight('htmlUnderlineItalic', s:bright_white, g:srcery_bg, s:underline . s:italic)
-call srcery#helper#Highlight('htmlItalic', s:bright_white, g:srcery_bg, s:italic)
+call s:HL('htmlBold', s:bright_white, g:srcery_bg, s:bold)
+call s:HL('htmlBoldUnderline', s:bright_white, g:srcery_bg, s:bold . s:underline)
+call s:HL('htmlBoldItalic', s:bright_white, g:srcery_bg, s:bold . s:italic)
+call s:HL('htmlBoldUnderlineItalic', s:bright_white, g:srcery_bg, s:bold . s:underline . s:italic)
+call s:HL('htmlUnderline', s:bright_white, g:srcery_bg, s:underline)
+call s:HL('htmlUnderlineItalic', s:bright_white, g:srcery_bg, s:underline . s:italic)
+call s:HL('htmlItalic', s:bright_white, g:srcery_bg, s:italic)
 
 " }}}
 " Java: {{{
@@ -667,7 +964,7 @@ hi! link clojureException SrceryRed
 
 hi! link clojureRegexp SrceryCyan
 hi! link clojureRegexpEscape SrceryCyan
-call srcery#helper#Highlight('clojureRegexpCharClass', s:bright_white, s:none, s:bold)
+call s:HL('clojureRegexpCharClass', s:bright_white, s:none, s:bold)
 hi! link clojureRegexpMod clojureRegexpCharClass
 hi! link clojureRegexpQuantifier clojureRegexpCharClass
 
@@ -697,8 +994,8 @@ hi! link makeTarget SrceryYellow
 " }}}
 " Markdown: {{{
 
-call srcery#helper#Highlight('markdownBold', s:bright_white, s:none, s:bold)
-call srcery#helper#Highlight('markdownItalic', s:bright_white, s:none, s:italic)
+call s:HL('markdownBold', s:bright_white, s:none, s:bold)
+call s:HL('markdownItalic', s:bright_white, s:none, s:italic)
 
 hi! link markdownH1 SrceryBrightBlueBold
 hi! link markdownH2 SrceryBrightBlueBold
@@ -725,7 +1022,7 @@ hi! link markdownHeadingDelimiter SrceryBrightBlack
 hi! link markdownUrl SrceryBrightGreen
 hi! link markdownUrlTitleDelimiter SrceryGreen
 
-call srcery#helper#Highlight('markdownLinkText', s:bright_white, s:none, s:underline)
+call s:HL('markdownLinkText', s:bright_white, s:none, s:underline)
 hi! link markdownIdDeclaration markdownLinkText
 
 " }}}
@@ -806,7 +1103,7 @@ hi! link sassId SrceryBrightBlue
 " }}}
 " Shellscript: {{{
 
-call srcery#helper#Highlight('shParenError', s:bright_white, s:bright_red)
+call s:HL('shParenError', s:bright_white, s:bright_red)
 hi! link shCmdSubRegion SrceryWhite
 hi! link shArithRegion SrceryWhite
 hi! link shArithRegion SrceryWhite
@@ -818,7 +1115,7 @@ hi! link shCommandSub SrceryBrightRed
 " }}}
 " Vim: {{{
 
-call srcery#helper#Highlight('vimCommentTitle', s:bright_white, s:none, s:bold . s:italic)
+call s:HL('vimCommentTitle', s:bright_white, s:none, s:bold . s:italic)
 
 hi! link vimNotation SrceryYellow
 hi! link vimBracket SrceryYellow
@@ -863,7 +1160,7 @@ hi! link xmlEntityPunct SrceryYellow
 
 if exists('g:loaded_sneak_plugin')
   hi! link Sneak Search
-  call srcery#helper#Highlight('SneakScope', s:none, s:hard_black)
+  call s:HL('SneakScope', s:none, s:hard_black)
   hi! link SneakLabel Search
 endif
 
@@ -908,9 +1205,9 @@ endif
 " Asynchronous Lint Engine: {{{
 
 if exists('g:ale_enabled')
-  call srcery#helper#Highlight('ALEError', s:none, s:none, s:undercurl, s:red)
-  call srcery#helper#Highlight('ALEWarning', s:none, s:none, s:undercurl, s:yellow)
-  call srcery#helper#Highlight('ALEInfo', s:none, s:none, s:undercurl, s:blue)
+  call s:HL('ALEError', s:none, s:none, s:undercurl, s:red)
+  call s:HL('ALEWarning', s:none, s:none, s:undercurl, s:yellow)
+  call s:HL('ALEInfo', s:none, s:none, s:undercurl, s:blue)
 
   hi! link ALEErrorSign SrceryRed
   hi! link ALEWarningSign SrceryYellow
@@ -921,8 +1218,8 @@ endif
 
 " vim-indent-guides: {{{
 if exists('g:loaded_indent_guides')
-  call srcery#helper#Highlight('IndentGuidesEven', s:none, s:xgray3)
-  call srcery#helper#Highlight('IndentGuidesOdd',  s:none, s:xgray4)
+  call s:HL('IndentGuidesEven', s:none, s:xgray3)
+  call s:HL('IndentGuidesOdd',  s:none, s:xgray4)
 endif
 
 " }}}
@@ -944,9 +1241,9 @@ endif
 " fzf: {{{
 
 if exists('g:loaded_fzf')
-  call srcery#helper#Highlight('fzf1', s:magenta, s:xgray2)
-  call srcery#helper#Highlight('fzf2', s:bright_green, s:xgray2)
-  call srcery#helper#Highlight('fzf3', s:bright_white, s:xgray2)
+  call s:HL('fzf1', s:magenta, s:xgray2)
+  call s:HL('fzf2', s:bright_green, s:xgray2)
+  call s:HL('fzf3', s:bright_white, s:xgray2)
 endif
 
 "}}}
@@ -985,10 +1282,10 @@ if exists('g:did_coc_loaded')
   hi! link CocSelectedText SrceryRed
   hi! link CocCodeLens SrceryWhite
 
-  call srcery#helper#Highlight('CocErrorHighlight', s:none, s:none, s:undercurl, s:red)
-  call srcery#helper#Highlight('CocWarningHighlight', s:none, s:none, s:undercurl, s:bright_orange)
-  call srcery#helper#Highlight('CocInfoHighlight', s:none, s:none, s:undercurl, s:yellow)
-  call srcery#helper#Highlight('CocHintHighlight', s:none, s:none, s:undercurl, s:blue)
+  call s:HL('CocErrorHighlight', s:none, s:none, s:undercurl, s:red)
+  call s:HL('CocWarningHighlight', s:none, s:none, s:undercurl, s:bright_orange)
+  call s:HL('CocInfoHighlight', s:none, s:none, s:undercurl, s:yellow)
+  call s:HL('CocHintHighlight', s:none, s:none, s:undercurl, s:blue)
 endif
 
 " }}}
@@ -997,9 +1294,9 @@ endif
 if exists('g:loaded_ctrlp')
   hi! link CtrlPMatch SrceryMagenta
   hi! link CtrlPLinePre SrceryBrightGreen
-  call srcery#helper#Highlight('CtrlPMode1', s:bright_white, s:xgray3)
-  call srcery#helper#Highlight('CtrlPMode2', s:bright_white, s:xgray5)
-  call srcery#helper#Highlight('CtrlPStats', s:yellow, s:xgray2)
+  call s:HL('CtrlPMode1', s:bright_white, s:xgray3)
+  call s:HL('CtrlPMode2', s:bright_white, s:xgray5)
+  call s:HL('CtrlPStats', s:yellow, s:xgray2)
 endif
 
 " }}}
@@ -1024,11 +1321,11 @@ endif
 " Telescope: "{{{
 
 if exists('g:loaded_telescope')
-  call srcery#helper#Highlight('TelescopeNormal', s:white, s:none)
-  call srcery#helper#Highlight('TelescopeSelection', s:green, s:none, s:bold)
-  call srcery#helper#Highlight('TelescopeMatching', s:magenta)
-  call srcery#helper#Highlight('TelescopeSelectionCaret', s:magenta)
-  call srcery#helper#Highlight('TelescopePromptPrefix', s:bright_yellow)
+  call s:HL('TelescopeNormal', s:white, s:none)
+  call s:HL('TelescopeSelection', s:green, s:none, s:bold)
+  call s:HL('TelescopeMatching', s:magenta)
+  call s:HL('TelescopeSelectionCaret', s:magenta)
+  call s:HL('TelescopePromptPrefix', s:bright_yellow)
 endif
 
 " }}}
@@ -1052,9 +1349,9 @@ if has('nvim')
 
   if exists('g:loaded_nvim_treesitter')
     " This is deprecated in new nvim releases
-    call srcery#helper#Highlight('TSStrong', s:none, s:none, s:bold)
-    call srcery#helper#Highlight('TSEmphasis', s:none, s:none, s:bold)
-    call srcery#helper#Highlight('TSUnderline', s:none, s:none, s:underline)
+    call s:HL('TSStrong', s:none, s:none, s:bold)
+    call s:HL('TSEmphasis', s:none, s:none, s:bold)
+    call s:HL('TSUnderline', s:none, s:none, s:underline)
 
     highlight! link TSWarning SrceryOrangeBold
     highlight! link TSDanger SrceryRedBold
@@ -1063,8 +1360,8 @@ if has('nvim')
     highlight! link TSFuncBuiltin SrceryYellow
     highlight! link TSFuncMacro SrceryOrange
     highlight! link TSFunction SrceryYellow
-    call srcery#helper#Highlight('TSNamespace', s:white, s:none, s:italic)
-    call srcery#helper#Highlight('TSParameter', s:cyan, s:none, s:italic)
+    call s:HL('TSNamespace', s:white, s:none, s:italic)
+    call s:HL('TSParameter', s:cyan, s:none, s:italic)
     highlight! link TSProperty SrceryBrightBlue
     highlight! link TSSymbol SrceryBlue
     highlight! link TSTag SrceryBlue
@@ -1098,10 +1395,10 @@ if has('nvim')
       highlight! link @text.uri TSURI
       highlight! link @variable TSVariable
 
-      call srcery#helper#Highlight('@markup.strong', s:none, s:none, s:bold)
-      call srcery#helper#Highlight('@markup.italic', s:none, s:none, s:italic)
-      call srcery#helper#Highlight('@markup.underline', s:none, s:none, s:underline)
-      call srcery#helper#Highlight('@markup.strikethrough', s:none, s:none, s:strikethrough)
+      call s:HL('@markup.strong', s:none, s:none, s:bold)
+      call s:HL('@markup.italic', s:none, s:none, s:italic)
+      call s:HL('@markup.underline', s:none, s:none, s:underline)
+      call s:HL('@markup.strikethrough', s:none, s:none, s:strikethrough)
 
     endif
   endif
