@@ -1158,11 +1158,9 @@ hi! link xmlEntityPunct SrceryYellow
 
 " Sneak: {{{
 
-if exists('g:loaded_sneak_plugin')
-  hi! link Sneak Search
-  call s:HL('SneakScope', s:none, s:hard_black)
-  hi! link SneakLabel Search
-endif
+hi! link Sneak Search
+call s:HL('SneakScope', s:none, s:hard_black)
+hi! link SneakLabel Search
 
 " }}}
 " Rainbow Parentheses: {{{
@@ -1194,57 +1192,47 @@ let g:niji_light_colours = g:rbpt_colorpairs
 "}}}
 " GitGutter: {{{
 
-if exists('g:loaded_gitgutter')
-  hi! link GitGutterAdd SrceryGreen
-  hi! link GitGutterChange SrceryYellow
-  hi! link GitGutterDelete SrceryRed
-  hi! link GitGutterChangeDelete SrceryYellow
-endif
+hi! link GitGutterAdd SrceryGreen
+hi! link GitGutterChange SrceryYellow
+hi! link GitGutterDelete SrceryRed
+hi! link GitGutterChangeDelete SrceryYellow
 
 " }}}
 " Asynchronous Lint Engine: {{{
 
-if exists('g:ale_enabled')
-  call s:HL('ALEError', s:none, s:none, s:undercurl, s:red)
-  call s:HL('ALEWarning', s:none, s:none, s:undercurl, s:yellow)
-  call s:HL('ALEInfo', s:none, s:none, s:undercurl, s:blue)
+call s:HL('ALEError', s:none, s:none, s:undercurl, s:red)
+call s:HL('ALEWarning', s:none, s:none, s:undercurl, s:yellow)
+call s:HL('ALEInfo', s:none, s:none, s:undercurl, s:blue)
 
-  hi! link ALEErrorSign SrceryRed
-  hi! link ALEWarningSign SrceryYellow
-  hi! link ALEInfoSign SrceryBlue
-endif
+hi! link ALEErrorSign SrceryRed
+hi! link ALEWarningSign SrceryYellow
+hi! link ALEInfoSign SrceryBlue
 
 " }}}
 
 " vim-indent-guides: {{{
-if exists('g:loaded_indent_guides')
-  call s:HL('IndentGuidesEven', s:none, s:xgray3)
-  call s:HL('IndentGuidesOdd',  s:none, s:xgray4)
-endif
+call s:HL('IndentGuidesEven', s:none, s:xgray3)
+call s:HL('IndentGuidesOdd',  s:none, s:xgray4)
 
 " }}}
 " vim-startify: {{{
 
-if exists('g:loaded_startify')
-  hi! link StartifyNumber Statement
-  hi! link StartifyFile Normal
-  hi! link StartifyPath String
-  hi! link StartifySlash Normal
-  hi! link StartifyBracket Comment
-  hi! link StartifyHeader Type
-  hi! link StartifyFooter Normal
-  hi! link StartifySpecial Comment
-  hi! link StartifySection Identifier
-endif
+hi! link StartifyNumber Statement
+hi! link StartifyFile Normal
+hi! link StartifyPath String
+hi! link StartifySlash Normal
+hi! link StartifyBracket Comment
+hi! link StartifyHeader Type
+hi! link StartifyFooter Normal
+hi! link StartifySpecial Comment
+hi! link StartifySection Identifier
 
 " }}}
 " fzf: {{{
 
-if exists('g:loaded_fzf')
-  call s:HL('fzf1', s:magenta, s:xgray2)
-  call s:HL('fzf2', s:bright_green, s:xgray2)
-  call s:HL('fzf3', s:bright_white, s:xgray2)
-endif
+call s:HL('fzf1', s:magenta, s:xgray2)
+call s:HL('fzf2', s:bright_green, s:xgray2)
+call s:HL('fzf3', s:bright_white, s:xgray2)
 
 "}}}
 
@@ -1265,142 +1253,129 @@ hi! link netrwCmdSep SrceryBrightBlack
 "}}}
 " coc.nvim: {{{
 
-if exists('g:did_coc_loaded')
-  hi! link CocErrorSign SrceryRed
-  hi! link CocWarningSign SrceryBrightOrange
-  hi! link CocInfoSign SrceryYellow
-  hi! link CocHintSign SrceryBlue
-  hi! link CocErrorFloat SrceryRed
-  hi! link CocWarningFloat SrceryOrange
-  hi! link CocInfoFloat SrceryYellow
-  hi! link CocHintFloat SrceryBlue
-  hi! link CocDiagnosticsError SrceryRed
-  hi! link CocDiagnosticsWarning SrceryOrange
-  hi! link CocDiagnosticsInfo SrceryYellow
-  hi! link CocDiagnosticsHint SrceryBlue
+hi! link CocErrorSign SrceryRed
+hi! link CocWarningSign SrceryBrightOrange
+hi! link CocInfoSign SrceryYellow
+hi! link CocHintSign SrceryBlue
+hi! link CocErrorFloat SrceryRed
+hi! link CocWarningFloat SrceryOrange
+hi! link CocInfoFloat SrceryYellow
+hi! link CocHintFloat SrceryBlue
+hi! link CocDiagnosticsError SrceryRed
+hi! link CocDiagnosticsWarning SrceryOrange
+hi! link CocDiagnosticsInfo SrceryYellow
+hi! link CocDiagnosticsHint SrceryBlue
 
-  hi! link CocSelectedText SrceryRed
-  hi! link CocCodeLens SrceryWhite
+hi! link CocSelectedText SrceryRed
+hi! link CocCodeLens SrceryWhite
 
-  call s:HL('CocErrorHighlight', s:none, s:none, s:undercurl, s:red)
-  call s:HL('CocWarningHighlight', s:none, s:none, s:undercurl, s:bright_orange)
-  call s:HL('CocInfoHighlight', s:none, s:none, s:undercurl, s:yellow)
-  call s:HL('CocHintHighlight', s:none, s:none, s:undercurl, s:blue)
-endif
+call s:HL('CocErrorHighlight', s:none, s:none, s:undercurl, s:red)
+call s:HL('CocWarningHighlight', s:none, s:none, s:undercurl, s:bright_orange)
+call s:HL('CocInfoHighlight', s:none, s:none, s:undercurl, s:yellow)
+call s:HL('CocHintHighlight', s:none, s:none, s:undercurl, s:blue)
 
 " }}}
 " CtrlP: "{{{
 
-if exists('g:loaded_ctrlp')
-  hi! link CtrlPMatch SrceryMagenta
-  hi! link CtrlPLinePre SrceryBrightGreen
-  call s:HL('CtrlPMode1', s:bright_white, s:xgray3)
-  call s:HL('CtrlPMode2', s:bright_white, s:xgray5)
-  call s:HL('CtrlPStats', s:yellow, s:xgray2)
-endif
+hi! link CtrlPMatch SrceryMagenta
+hi! link CtrlPLinePre SrceryBrightGreen
+call s:HL('CtrlPMode1', s:bright_white, s:xgray3)
+call s:HL('CtrlPMode2', s:bright_white, s:xgray5)
+call s:HL('CtrlPStats', s:yellow, s:xgray2)
 
 " }}}
 " NERDTree: "{{{
 
-if exists('g:loaded_nerd_tree')
-  hi! link NERDTreeDir SrceryBlue
-  hi! link NERDTreeDirSlash SrceryCyan
-  hi! link NERDTreeOpenable SrceryBlue
-  hi! link NERDTreeClosable SrceryBlue
-  hi! link NERDTreeFile SrceryWhite
-  hi! link NERDTreeExecFile SrceryYellow
-  hi! link NERDTreeUp SrceryOrange
-  hi! link NERDTreeCWD SrceryGreen
-  hi! link NERDTreeHelp SrceryCyan
-  hi! link NERDTreeFlags SrceryCyan
-  hi! link NERDTreeLinkFile SrceryBrightBlack
-  hi! link NERDTreeLinkTarget SrceryBrightBlack
-endif
+hi! link NERDTreeDir SrceryBlue
+hi! link NERDTreeDirSlash SrceryCyan
+hi! link NERDTreeOpenable SrceryBlue
+hi! link NERDTreeClosable SrceryBlue
+hi! link NERDTreeFile SrceryWhite
+hi! link NERDTreeExecFile SrceryYellow
+hi! link NERDTreeUp SrceryOrange
+hi! link NERDTreeCWD SrceryGreen
+hi! link NERDTreeHelp SrceryCyan
+hi! link NERDTreeFlags SrceryCyan
+hi! link NERDTreeLinkFile SrceryBrightBlack
+hi! link NERDTreeLinkTarget SrceryBrightBlack
 
 " }}}
 " Telescope: "{{{
 
-if exists('g:loaded_telescope')
-  call s:HL('TelescopeNormal', s:white, s:none)
-  call s:HL('TelescopeSelection', s:green, s:none, s:bold)
-  call s:HL('TelescopeMatching', s:magenta)
-  call s:HL('TelescopeSelectionCaret', s:magenta)
-  call s:HL('TelescopePromptPrefix', s:bright_yellow)
-endif
+call s:HL('TelescopeNormal', s:white, s:none)
+call s:HL('TelescopeSelection', s:green, s:none, s:bold)
+call s:HL('TelescopeMatching', s:magenta)
+call s:HL('TelescopeSelectionCaret', s:magenta)
+call s:HL('TelescopePromptPrefix', s:bright_yellow)
 
 " }}}
 " nvim-cmp: "{{{
 
-if exists('g:loaded_cmp')
-  hi! link CmpItemAbbr Pmenu
-  hi! link CmpItemAbbrDeprecated Comment
-  hi! link CmpItemAbbrMatch Pmenu
-  hi! link CmpItemAbbrMatchFuzzy Pmenu
-  hi! link CmpItemKind Special
-  hi! link CmpItemMenu Pmenu
-endif
+hi! link CmpItemAbbr Pmenu
+hi! link CmpItemAbbrDeprecated Comment
+hi! link CmpItemAbbrMatch Pmenu
+hi! link CmpItemAbbrMatchFuzzy Pmenu
+hi! link CmpItemKind Special
+hi! link CmpItemMenu Pmenu
 
 " }}}
 " nvim: {{{
 
 if has('nvim')
-
   " nvim-treesitter: {{{
 
-  if exists('g:loaded_nvim_treesitter')
-    " This is deprecated in new nvim releases
-    call s:HL('TSStrong', s:none, s:none, s:bold)
-    call s:HL('TSEmphasis', s:none, s:none, s:bold)
-    call s:HL('TSUnderline', s:none, s:none, s:underline)
+  " This is deprecated in new nvim releases
+  call s:HL('TSStrong', s:none, s:none, s:bold)
+  call s:HL('TSEmphasis', s:none, s:none, s:bold)
+  call s:HL('TSUnderline', s:none, s:none, s:underline)
 
-    highlight! link TSWarning SrceryOrangeBold
-    highlight! link TSDanger SrceryRedBold
-    highlight! link TSConstBuiltin SrceryCyan
-    highlight! link TSField SrceryGreen
-    highlight! link TSFuncBuiltin SrceryYellow
-    highlight! link TSFuncMacro SrceryOrange
-    highlight! link TSFunction SrceryYellow
-    call s:HL('TSNamespace', s:white, s:none, s:italic)
-    call s:HL('TSParameter', s:cyan, s:none, s:italic)
-    highlight! link TSProperty SrceryBrightBlue
-    highlight! link TSSymbol SrceryBlue
-    highlight! link TSTag SrceryBlue
-    highlight! link TSTagAttribute SrceryYellow
-    highlight! link TSVariableBuiltin SrceryCyan
-    highlight! link TSType SrceryWhite
-    highlight! link TSDelimiter SrceryWhite
-    highlight! link TSURI SrceryGreen
-    highlight! link TSVariable SrceryBrightWhite
+  highlight! link TSWarning SrceryOrangeBold
+  highlight! link TSDanger SrceryRedBold
+  highlight! link TSConstBuiltin SrceryCyan
+  highlight! link TSField SrceryGreen
+  highlight! link TSFuncBuiltin SrceryYellow
+  highlight! link TSFuncMacro SrceryOrange
+  highlight! link TSFunction SrceryYellow
+  call s:HL('TSNamespace', s:white, s:none, s:italic)
+  call s:HL('TSParameter', s:cyan, s:none, s:italic)
+  highlight! link TSProperty SrceryBrightBlue
+  highlight! link TSSymbol SrceryBlue
+  highlight! link TSTag SrceryBlue
+  highlight! link TSTagAttribute SrceryYellow
+  highlight! link TSVariableBuiltin SrceryCyan
+  highlight! link TSType SrceryWhite
+  highlight! link TSDelimiter SrceryWhite
+  highlight! link TSURI SrceryGreen
+  highlight! link TSVariable SrceryBrightWhite
 
-    if has('nvim-0.8')
-      highlight! link @text.strong TSStrong
-      highlight! link @text.emphasis TSEmphasis
-      highlight! link @text.underline TSUnderline
-      highlight! link @text.warning TSWarning
-      highlight! link @text.danger TSDanger
-      highlight! link @constant.builtin TSConstBuiltin
-      highlight! link @field TSField
-      highlight! link @function.builtin TSFuncBuiltin
-      highlight! link @function.macro TSFuncMacro
-      highlight! link @function TSFunction
-      highlight! link @namespace TSNamespace
-      highlight! link @parameter TSParameter
-      highlight! link @property TSProperty
-      highlight! link @symbol TSSymbol
-      highlight! link @tag TSTag
-      highlight! link @tag.attribute TSTagAttribute
-      highlight! link @variable.builtin TSVariableBuiltin
-      highlight! link @type TSType
-      highlight! link @delimiter TSDelimiter
-      highlight! link @text.uri TSURI
-      highlight! link @variable TSVariable
+  if has('nvim-0.8')
+    highlight! link @text.strong TSStrong
+    highlight! link @text.emphasis TSEmphasis
+    highlight! link @text.underline TSUnderline
+    highlight! link @text.warning TSWarning
+    highlight! link @text.danger TSDanger
+    highlight! link @constant.builtin TSConstBuiltin
+    highlight! link @field TSField
+    highlight! link @function.builtin TSFuncBuiltin
+    highlight! link @function.macro TSFuncMacro
+    highlight! link @function TSFunction
+    highlight! link @namespace TSNamespace
+    highlight! link @parameter TSParameter
+    highlight! link @property TSProperty
+    highlight! link @symbol TSSymbol
+    highlight! link @tag TSTag
+    highlight! link @tag.attribute TSTagAttribute
+    highlight! link @variable.builtin TSVariableBuiltin
+    highlight! link @type TSType
+    highlight! link @delimiter TSDelimiter
+    highlight! link @text.uri TSURI
+    highlight! link @variable TSVariable
 
-      call s:HL('@markup.strong', s:none, s:none, s:bold)
-      call s:HL('@markup.italic', s:none, s:none, s:italic)
-      call s:HL('@markup.underline', s:none, s:none, s:underline)
-      call s:HL('@markup.strikethrough', s:none, s:none, s:strikethrough)
+    call s:HL('@markup.strong', s:none, s:none, s:bold)
+    call s:HL('@markup.italic', s:none, s:none, s:italic)
+    call s:HL('@markup.underline', s:none, s:none, s:underline)
+    call s:HL('@markup.strikethrough', s:none, s:none, s:strikethrough)
 
-    endif
   endif
 
   " }}}
