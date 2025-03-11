@@ -1379,6 +1379,30 @@ if has('nvim')
   endif
 
   " }}}
+  " snacks.nvim {{{
+
+  highlight! link SnacksNormal Normal
+  highlight! link SnacksNormalNC Normal
+  highlight! link SnacksPicker Normal
+  highlight! link SnacksPickerDir Comment
+  highlight! link SnacksPickerGitStatusIgnored Comment
+  highlight! link SnacksPickerGitStatusUntracked Comment
+  highlight! link SnacksPickerPathHidden Comment
+  highlight! link SnacksPickerPathIgnored Comment
+  highlight! link SnacksPickerTotals Comment
+
+  " }}}
+  " trouble.nvim {{{
+
+  highlight! link TroubleNormal Normal
+  highlight! link TroubleNormalNC Normal
+
+  " }}}
+  " which-key.nvim {{{
+
+  highlight! link WhichKeyNormal Normal
+
+  " }}}
 endif
 
 " }}}
