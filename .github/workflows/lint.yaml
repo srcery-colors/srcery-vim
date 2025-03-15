@@ -1,7 +1,7 @@
 ---
 name: Check Them Vim Files
 
-on:
+on: # yamllint disable-line
   push:
   pull_request:
     branches: [$default-branch]
