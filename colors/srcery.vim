@@ -1440,7 +1440,12 @@ hi! link gitcommitDiscardedFile SrceryRed
 call s:HL('ExtraWhitespace', s:none, s:red)
 
 " }}}
+" avante.nvim: {{{
 
+call s:HL('AvanteSidebarNormal', s:none, s:xgray1)
+call s:HL('AvanteSidebarSeparator', s:none, s:xgray1)
+
+" }}}
 " }}}
 
 " vim: set sw=2 ts=2 sts=2 et tw=80 ft=vim fdm=marker :
