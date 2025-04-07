@@ -401,6 +401,14 @@ call s:HL('SrceryXgray4', s:xgray4)
 call s:HL('SrceryXgray5', s:xgray5)
 call s:HL('SrceryXgray6', s:xgray6)
 
+" headings
+call s:HL('SrceryH1', s:blue, s:xgray1, s:bold)
+call s:HL('SrceryH2', s:yellow, s:xgray1, s:bold)
+call s:HL('SrceryH3', s:bright_yellow, s:xgray1, s:bold)
+call s:HL('SrceryH4', s:green, s:xgray1, s:bold)
+call s:HL('SrceryH5', s:magenta, s:xgray1, s:bold)
+call s:HL('SrceryH6', s:bright_magenta, s:xgray1, s:bold)
+
 " }}}
 
 " Setup Terminal Colors For Neovim: {{{
@@ -877,6 +885,14 @@ call s:HL('htmlUnderline', s:bright_white, g:srcery_bg, s:underline)
 call s:HL('htmlUnderlineItalic', s:bright_white, g:srcery_bg, s:underline . s:italic)
 call s:HL('htmlItalic', s:bright_white, g:srcery_bg, s:italic)
 
+
+hi! link htmlH1 SrceryH1
+hi! link htmlH2 SrceryH2
+hi! link htmlH3 SrceryH3
+hi! link htmlH4 SrceryH4
+hi! link htmlH5 SrceryH5
+hi! link htmlH6 SrceryH6
+
 " }}}
 " Java: {{{
 
@@ -997,12 +1013,12 @@ hi! link makeTarget SrceryYellow
 call s:HL('markdownBold', s:bright_white, s:none, s:bold)
 call s:HL('markdownItalic', s:bright_white, s:none, s:italic)
 
-hi! link markdownH1 SrceryBrightBlueBold
-hi! link markdownH2 SrceryBrightBlueBold
-hi! link markdownH3 SrceryBrightYellowBold
-hi! link markdownH4 SrceryBrightYellowBold
-hi! link markdownH5 SrceryYellowBold
-hi! link markdownH6 SrceryYellowBold
+hi! link markdownH1 SrceryH1
+hi! link markdownH2 SrceryH2
+hi! link markdownH3 SrceryH3
+hi! link markdownH4 SrceryH4
+hi! link markdownH5 SrceryH5
+hi! link markdownH6 SrceryH6
 
 hi! link markdownCode SrceryWhite
 hi! link markdownCodeBlock SrceryWhite
@@ -1376,6 +1392,12 @@ if has('nvim')
     call s:HL('@markup.underline', s:none, s:none, s:underline)
     call s:HL('@markup.strikethrough', s:none, s:none, s:strikethrough)
 
+    highlight! link @markup.heading.1.markdown SrceryH1
+    highlight! link @markup.heading.2.markdown SrceryH2
+    highlight! link @markup.heading.3.markdown SrceryH3
+    highlight! link @markup.heading.4.markdown SrceryH4
+    highlight! link @markup.heading.5.markdown SrceryH5
+    highlight! link @markup.heading.6.markdown SrceryH6
   endif
 
   " }}}
