@@ -1176,7 +1176,7 @@ hi! link xmlEntityPunct SrceryYellow
 " Sneak: {{{
 
 hi! link Sneak Search
-call s:HL('SneakScope', s:none, s:hard_black)
+hi! link SneakCurrent CurSearch
 hi! link SneakLabel Search
 
 " }}}
