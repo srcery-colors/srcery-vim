@@ -16,10 +16,6 @@ endif
 
 let g:colors_name='srcery'
 
-if !has('gui_running') && &t_Co != 256
-  finish
-endif
-
 " Setup Variables: {{{
 
 " Colors {{{
