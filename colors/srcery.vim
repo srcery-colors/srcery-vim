@@ -595,7 +595,7 @@ hi! link Special SrceryBrightOrange
 
 call s:HL('Comment', s:bright_black, s:none, s:italic)
 
-call s:HL('Todo', s:bright_white, g:srcery_bg, s:bold . s:italic)
+call s:HL('Todo', s:bright_orange, g:srcery_bg, s:bold . s:italic)
 
 call s:HL('Error', s:bright_white, s:red, s:bold)
 
