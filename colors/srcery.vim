@@ -689,6 +689,15 @@ call s:HL('DiffAdd',    s:green, g:srcery_bg)
 call s:HL('DiffChange', s:cyan, g:srcery_bg)
 call s:HL('DiffText',   s:yellow, g:srcery_bg)
 
+" legacy groups
+hi! link diffAdded DiffAdd
+hi! link diffRemoved DiffDelete
+hi! link diffChanged DiffChange
+hi! link diffFile SrceryOrange
+hi! link diffNewFile SrceryYellow
+hi! link diffLine SrceryBlue
+
+
 " }}}
 " Spelling: {{{
 
@@ -812,18 +821,6 @@ hi! link goConstants SrceryMagenta
 hi! link goDeclaration SrceryRed
 hi! link goDeclType SrceryBlue
 hi! link goBuiltins SrceryYellow
-
-" }}}
-" Diff: {{{
-
-hi! link diffAdded SrceryGreen
-hi! link diffRemoved SrceryRed
-hi! link diffChanged SrceryCyan
-
-hi! link diffFile SrceryOrange
-hi! link diffNewFile SrceryYellow
-
-hi! link diffLine SrceryBlue
 
 " }}}
 " Haskell: {{{
