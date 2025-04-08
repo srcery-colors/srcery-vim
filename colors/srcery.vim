@@ -869,8 +869,8 @@ hi! link htmlEndTag SrceryBrightBlack
 hi! link htmlArg SrceryYellow
 
 hi! link htmlScriptTag SrceryRed
-hi! link htmlTagN SrceryBlue
-hi! link htmlSpecialTagName SrceryBlue
+hi! link htmlTagN SrceryCyan
+hi! link htmlSpecialTagName SrceryBrightBlue
 
 hi! link javaScript Normal
 
