@@ -594,7 +594,7 @@ hi! link lCursor Cursor
 " }}}
 " Syntax Highlighting: {{{
 
-hi! link Special SrceryOrange
+hi! link Special SrceryBrightOrange
 
 call s:HL('Comment', s:bright_black, s:none, s:italic)
 
@@ -612,16 +612,17 @@ hi! link Conditional SrceryRed
 " for, do, while, etc.
 hi! link Repeat SrceryRed
 " case, default, etc.
-hi! link Label SrceryRed
+call s:HL('Label', s:bright_white, s:xgray5)
+
 " try, catch, throw
 hi! link Exception SrceryRed
 " sizeof, "+", "*", etc.
-hi! link Operator SrceryBrightWhite
+hi! link Operator SrceryWhite
 " Any other keyword
 hi! link Keyword SrceryRed
 
 " Variable name
-hi! link Identifier SrceryCyan
+hi! link Identifier SrceryBrightWhite
 " Function name
 hi! link Function SrceryYellow
 
@@ -914,7 +915,7 @@ hi! link javaVarArg SrceryGreen
 
 " Vanilla
 " -------
-hi! link javaScriptMember SrceryBlue
+hi! link javaScriptMember SrceryCyan
 hi! link javaScriptNull SrceryMagenta
 hi! link javasCriptParens SrceryWhite
 hi! link javaScriptBraces SrceryWhite
@@ -1030,12 +1031,12 @@ hi! link markdownOrderedListMarker SrceryBrightBlack
 hi! link markdownRule SrceryBrightBlack
 hi! link markdownHeadingRule SrceryBrightBlack
 
-hi! link markdownUrlDelimiter SrceryBrightBlack
-hi! link markdownLinkDelimiter SrceryBrightBlack
-hi! link markdownLinkTextDelimiter SrceryBrightBlack
+hi! link markdownUrlDelimiter Delimiter
+hi! link markdownLinkDelimiter Delimiter
+hi! link markdownLinkTextDelimiter Delimiter
 
 hi! link markdownHeadingDelimiter SrceryBrightBlack
-hi! link markdownUrl SrceryBrightGreen
+hi! link markdownUrl htmlLink
 hi! link markdownUrlTitleDelimiter SrceryGreen
 
 call s:HL('markdownLinkText', s:bright_white, s:none, s:underline)
@@ -1098,7 +1099,7 @@ hi! link scalaTypeExtension SrceryBlue
 hi! link scalaKeyword SrceryRed
 hi! link scalaKeywordModifier SrceryRed
 
-hi! link scalaSpecial SrceryCyan
+hi! link scalaSpecial Special
 hi! link scalaOperator SrceryBlue
 
 hi! link scalaTypeDeclaration SrceryYellow
@@ -1346,23 +1347,24 @@ if has('nvim')
   call s:HL('TSUnderline', s:none, s:none, s:underline)
 
   highlight! link TSWarning SrceryOrangeBold
-  highlight! link TSDanger SrceryRedBold
-  highlight! link TSConstBuiltin SrceryCyan
+  highlight! link TSDanger WarningMsg
+  highlight! link TSConstBuiltin Constant
   highlight! link TSField SrceryGreen
   highlight! link TSFuncBuiltin SrceryYellow
   highlight! link TSFuncMacro SrceryOrange
   highlight! link TSFunction SrceryYellow
   call s:HL('TSNamespace', s:white, s:none, s:italic)
   call s:HL('TSParameter', s:cyan, s:none, s:italic)
-  highlight! link TSProperty SrceryBrightBlue
+  highlight! link TSProperty Function
   highlight! link TSSymbol SrceryBlue
   highlight! link TSTag SrceryBlue
   highlight! link TSTagAttribute SrceryYellow
-  highlight! link TSVariableBuiltin SrceryCyan
-  highlight! link TSType SrceryWhite
-  highlight! link TSDelimiter SrceryWhite
-  highlight! link TSURI SrceryGreen
-  highlight! link TSVariable SrceryBrightWhite
+  highlight! link TSVariableBuiltin TSFuncBuiltin
+  highlight! link TSType Type
+  highlight! link TSDelimiter Delimiter
+  highlight! link TSURI htmlLink
+  highlight! link TSVariable Identifier
+  highlight! link TSVariable Identifier
 
   if has('nvim-0.8')
     highlight! link @text.strong TSStrong
@@ -1381,10 +1383,10 @@ if has('nvim')
     highlight! link @symbol TSSymbol
     highlight! link @tag TSTag
     highlight! link @tag.attribute TSTagAttribute
-    highlight! link @variable.builtin TSVariableBuiltin
+    highlight! link @variable.builtin SrceryWhite
     highlight! link @type TSType
     highlight! link @delimiter TSDelimiter
-    highlight! link @text.uri TSURI
+    highlight! link @text.uri htmlLink
     highlight! link @variable TSVariable
 
     call s:HL('@markup.strong', s:none, s:none, s:bold)
@@ -1398,6 +1400,8 @@ if has('nvim')
     highlight! link @markup.heading.4.markdown SrceryH4
     highlight! link @markup.heading.5.markdown SrceryH5
     highlight! link @markup.heading.6.markdown SrceryH6
+
+    highlight! link @variable.member javascriptMember
   endif
 
   " }}}
