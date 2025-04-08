@@ -668,6 +668,8 @@ else
   hi! link Delimiter SrceryBrightBlack
 endif
 
+hi! link Decorator SrceryWhite
+
 " }}}
 " Completion Menu: {{{
 
