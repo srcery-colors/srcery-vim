@@ -535,7 +535,7 @@ else
   call s:HL('CurSearch', s:none, s:xgray5, s:underline . s:bold)
 endif
 
-call s:HL('Underlined', s:blue, s:none, s:underline)
+call s:HL('Underlined', s:none, s:none, s:underline)
 
 call s:HL('StatusLine',   s:bright_white, s:xgray2)
 
