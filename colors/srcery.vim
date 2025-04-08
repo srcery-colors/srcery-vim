@@ -689,6 +689,11 @@ call s:HL('DiffAdd',    s:green, g:srcery_bg)
 call s:HL('DiffChange', s:cyan, g:srcery_bg)
 call s:HL('DiffText',   s:yellow, g:srcery_bg)
 
+" legacy groups
+hi! link diffAdded DiffAdd
+hi! link diffChanged DiffChange
+hi! link diffRemoved DiffDelete
+
 " }}}
 " Spelling: {{{
 
