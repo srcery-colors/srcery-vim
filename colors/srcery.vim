@@ -875,7 +875,7 @@ hi! link htmlSpecialTagName SrceryBrightBlue
 
 hi! link javaScript Normal
 
-call s:HL('htmlLink', s:bright_white, s:none, s:underline)
+call s:HL('htmlLink', s:white, s:none, s:underline)
 
 hi! link htmlSpecialChar SrceryYellow
 
