@@ -632,7 +632,7 @@ hi! link PreProc SrceryCyan
 " Preprocessor #include
 hi! link Include SrceryCyan
 " Preprocessor #define
-hi! link Define SrceryCyan
+hi! link Define SrceryOrange
 " Same as Define
 hi! link Macro SrceryOrange
 " Preprocessor #if, #else, #endif, etc.
