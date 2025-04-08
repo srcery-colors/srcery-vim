@@ -482,7 +482,8 @@ endif
 call s:HL('Normal', s:bright_white, g:srcery_bg)
 
 call s:HL('FloatBorder', s:white, g:srcery_bg)
-call s:HL('NormalFloat', s:none, s:xgray2)
+call s:HL('NormalFloat', s:none, s:xgray1)
+call s:HL('WinSeparator', s:none, s:xgray1)
 
 if v:version >= 700
   " Screen line that the cursor is
