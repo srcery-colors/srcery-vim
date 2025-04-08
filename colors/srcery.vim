@@ -608,8 +608,9 @@ hi! link Statement SrceryRed
 hi! link Conditional SrceryRed
 " for, do, while, etc.
 hi! link Repeat SrceryRed
+
 " case, default, etc.
-call s:HL('Label', s:bright_white, s:xgray5)
+hi! link Label SrceryBrightRed
 
 " try, catch, throw
 hi! link Exception SrceryRed
