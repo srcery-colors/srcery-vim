@@ -638,7 +638,7 @@ hi! link PreCondit SrceryCyan
 " Generic constant
 hi! link Constant SrceryBrightMagenta
 " Character constant: 'c', '/n'
-hi! link Character SrceryBrightMagenta
+hi! link Character SrceryGreen
 " Boolean constant: TRUE, false
 hi! link Boolean SrceryBrightMagenta
 " Number constant: 234, 0xff
