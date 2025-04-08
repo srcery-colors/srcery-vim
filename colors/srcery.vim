@@ -1395,6 +1395,8 @@ if has('nvim')
     call s:HL('@markup.underline', s:none, s:none, s:underline)
     call s:HL('@markup.strikethrough', s:none, s:none, s:strikethrough)
 
+    highlight! link @markup.link htmlLink
+
     highlight! link @markup.heading.1.markdown SrceryH1
     highlight! link @markup.heading.2.markdown SrceryH2
     highlight! link @markup.heading.3.markdown SrceryH3
