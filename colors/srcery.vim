@@ -916,7 +916,7 @@ hi! link javaVarArg SrceryGreen
 
 " Vanilla
 " -------
-hi! link javaScriptMember SrceryCyan
+hi! link javaScriptMember SrceryBrightBlue
 hi! link javaScriptNull SrceryMagenta
 hi! link javasCriptParens SrceryWhite
 hi! link javaScriptBraces SrceryWhite
@@ -1356,7 +1356,7 @@ if has('nvim')
   highlight! link TSFunction SrceryYellow
   call s:HL('TSNamespace', s:white, s:none, s:italic)
   call s:HL('TSParameter', s:cyan, s:none, s:italic)
-  highlight! link TSProperty Function
+  highlight! link TSProperty SrceryBrightBlue
   highlight! link TSSymbol SrceryBlue
   highlight! link TSTag SrceryBlue
   highlight! link TSTagAttribute SrceryYellow
