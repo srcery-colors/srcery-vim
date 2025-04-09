@@ -1,7 +1,7 @@
-" 'srcery.vim' -- Vim color scheme.
-" Maintainer:   Roosta (mail@roosta.sh)
-" Description:  Colorscheme that focus ease of use and clearly defined contrasting colors with a slightly earthy tone.
-" Original Source: https://github.com/morhetz/gruvbox
+"  'srcery.vim' -- Dark Ritual (N)Vim Color Scheme.
+"  Maintainer:   Srcery Team, https://srcery.sh
+"  Description:  Colorscheme that focus ease of use and clearly defined
+"  contrasting colors with a slightly earthy tone.
 
 scriptencoding utf-8
 
@@ -16,10 +16,11 @@ endif
 
 let g:colors_name='srcery'
 
-" Setup Variables: {{{
+" Setup: {{{
+" -----------------------------------------------------------------------------
 
-" Colors {{{
-
+" Colors
+" ---------
 if !exists('g:srcery_black')
   let g:srcery_black='#1C1B19'
 endif
@@ -156,9 +157,9 @@ if !exists('g:srcery_xgray6_cterm')
   let g:srcery_xgray6_cterm=240
 endif
 
-" }}}
-" Options {{{
 
+" Options
+" ---------
 if !exists('g:srcery_bold')
   let g:srcery_bold=1
 endif
@@ -199,7 +200,8 @@ if !exists('g:srcery_dim_lisp_paren')
   let g:srcery_dim_lisp_paren=0
 endif
 
-if !exists('g:srcery_guisp_fallback') || index(['fg', 'bg'], g:srcery_guisp_fallback) == -1
+if !exists('g:srcery_guisp_fallback')
+      \ || index(['fg', 'bg'], g:srcery_guisp_fallback) == -1
   let g:srcery_guisp_fallback='NONE'
 endif
 
@@ -210,10 +212,15 @@ endif
 if !exists('g:srcery_bg')
   "Sets the default color for both guisp and cterm backgrounds.
   let g:srcery_bg=[g:srcery_black, 0]
-elseif (index(g:srcery_bg, 'DEFAULT') >= 0) || (index(g:srcery_bg, 'NONE') >= 0 && has('gui_running'))
-  "Defaults should be set if the user specifies it, or if the background is set as 'NONE' whilst the gui is running.
+elseif (index(g:srcery_bg, 'DEFAULT') >= 0)
+      \ || (index(g:srcery_bg, 'NONE') >= 0
+      \ && has('gui_running'))
+  "Defaults should be set if the user specifies it, or if the background is set
+  "as 'NONE' whilst the gui is running.
   for i in [0, 1]
-    if g:srcery_bg[i] ==# 'DEFAULT' || (g:srcery_bg[i] ==# 'NONE' && has('gui_running'))
+    if g:srcery_bg[i] ==# 'DEFAULT'
+          \ || (g:srcery_bg[i] ==# 'NONE'
+          \ && has('gui_running'))
       let g:srcery_bg[i] = (i==1 ? 0 : g:srcery_black)
     endif
   endfor
@@ -223,11 +230,41 @@ if !exists('g:srcery_hard_black_terminal_bg')
   let g:srcery_hard_black_terminal_bg=1
 endif
 
-" }}}
+" Emphasis:
+" ---------
+let s:bold = 'bold,'
+if g:srcery_bold == 0
+  let s:bold = ''
+endif
+
+let s:italic = 'italic,'
+if g:srcery_italic == 0
+  let s:italic = ''
+endif
+
+let s:underline = 'underline,'
+if g:srcery_underline == 0
+  let s:underline = ''
+endif
+
+let s:undercurl = 'undercurl,'
+if g:srcery_undercurl == 0
+  let s:undercurl = ''
+endif
+
+let s:inverse = 'inverse,'
+if g:srcery_inverse == 0
+  let s:inverse = ''
+endif
+
+let s:strikethrough = 'strikethrough,'
+if g:srcery_strikethrough == 0
+  let s:strikethrough = ''
+endif
 
 " }}}
-
-" Palette {{{
+" Palette: {{{
+" -----------------------------------------------------------------------------
 
 let s:none           = ['NONE', 'NONE']
 
@@ -261,42 +298,7 @@ let s:xgray5         = [g:srcery_xgray5, g:srcery_xgray5_cterm]
 let s:xgray6         = [g:srcery_xgray6, g:srcery_xgray6_cterm]
 
 "}}}
-
-" Setup Emphasis: {{{
-
-let s:bold = 'bold,'
-if g:srcery_bold == 0
-  let s:bold = ''
-endif
-
-let s:italic = 'italic,'
-if g:srcery_italic == 0
-  let s:italic = ''
-endif
-
-let s:underline = 'underline,'
-if g:srcery_underline == 0
-  let s:underline = ''
-endif
-
-let s:undercurl = 'undercurl,'
-if g:srcery_undercurl == 0
-  let s:undercurl = ''
-endif
-
-let s:inverse = 'inverse,'
-if g:srcery_inverse == 0
-  let s:inverse = ''
-endif
-
-let s:strikethrough = 'strikethrough,'
-if g:srcery_strikethrough == 0
-  let s:strikethrough = ''
-endif
-
-" }}}
-
-" Highlighting Function: {{{
+" HL function: {{{
 
 function! s:HL(group, fg, ...)
   " Arguments: group, guifg, guibg, gui, guisp
@@ -345,7 +347,6 @@ function! s:HL(group, fg, ...)
 endfunction
 
 "}}}
-
 " Srcery Hi Groups: {{{
 
 " memoize common hi groups
@@ -406,125 +407,63 @@ call s:HL('SrceryH5', s:magenta, s:xgray1, s:bold)
 call s:HL('SrceryH6', s:bright_magenta, s:xgray1, s:bold)
 
 " }}}
+" UI groups: {{{
+" -----------------------------------------------------------------------------
 
-" Setup Terminal Colors For Neovim: {{{
-
-if has('nvim')
-  let g:terminal_color_0 = s:black[0]
-  let g:terminal_color_8 = s:bright_black[0]
-
-  let g:terminal_color_1 = s:red[0]
-  let g:terminal_color_9 = s:bright_red[0]
-
-  let g:terminal_color_2 = s:green[0]
-  let g:terminal_color_10 = s:bright_green[0]
-
-  let g:terminal_color_3 = s:yellow[0]
-  let g:terminal_color_11 = s:bright_yellow[0]
-
-  let g:terminal_color_4 = s:blue[0]
-  let g:terminal_color_12 = s:bright_blue[0]
-
-  let g:terminal_color_5 = s:magenta[0]
-  let g:terminal_color_13 = s:bright_magenta[0]
-
-  let g:terminal_color_6 = s:cyan[0]
-  let g:terminal_color_14 = s:bright_cyan[0]
-
-  let g:terminal_color_7 = s:white[0]
-  let g:terminal_color_15 = s:bright_white[0]
-endif
-
-" }}}
-
-" Setup Terminal Colors For Vim with termguicolors: {{{
-
-if exists('*term_setansicolors')
-  let g:terminal_ansi_colors = repeat([0], 16)
-
-  let g:terminal_ansi_colors[0] = s:black[0]
-  let g:terminal_ansi_colors[8] = s:bright_black[0]
-
-  let g:terminal_ansi_colors[1] = s:red[0]
-  let g:terminal_ansi_colors[9] = s:bright_red[0]
-
-  let g:terminal_ansi_colors[2] = s:green[0]
-  let g:terminal_ansi_colors[10] = s:bright_green[0]
-
-  let g:terminal_ansi_colors[3] = s:yellow[0]
-  let g:terminal_ansi_colors[11] = s:bright_yellow[0]
-
-  let g:terminal_ansi_colors[4] = s:blue[0]
-  let g:terminal_ansi_colors[12] = s:bright_blue[0]
-
-  let g:terminal_ansi_colors[5] = s:magenta[0]
-  let g:terminal_ansi_colors[13] = s:bright_magenta[0]
-
-  let g:terminal_ansi_colors[6] = s:cyan[0]
-  let g:terminal_ansi_colors[14] = s:bright_cyan[0]
-
-  let g:terminal_ansi_colors[7] = s:white[0]
-  let g:terminal_ansi_colors[15] = s:bright_white[0]
-endif
-
-" }}}
-
-" Vanilla Colorscheme: {{{
-
-" General UI: {{{
-
-" Normal text
-"
+call s:HL('ColorColumn',  s:none, s:xgray2)
+call s:HL('Conceal', s:blue, s:none)
+call s:HL('Cursor', s:black, s:yellow)
+call s:HL('CursorLine',   s:none, s:xgray2)
+call s:HL('CursorLineNr', s:yellow, g:srcery_bg)
+call s:HL('ErrorMsg', s:bright_white, s:red)
+call s:HL('FoldColumn', s:bright_black, g:srcery_bg)
+call s:HL('Folded', s:bright_black, g:srcery_bg, s:italic)
+call s:HL('LineNr', s:bright_black)
 call s:HL('Normal', s:bright_white, g:srcery_bg)
-
-call s:HL('FloatBorder', s:white, g:srcery_bg)
-call s:HL('NormalFloat', s:none, s:xgray1)
+call s:HL('Pmenu', s:bright_white, s:xgray2)
+call s:HL('PmenuSbar', s:none, g:srcery_bg)
+call s:HL('PmenuSel', s:bright_white, s:blue, s:bold)
+call s:HL('PmenuThumb', s:none, s:orange)
+call s:HL('SignColumn', s:none, g:srcery_bg)
+call s:HL('SpellBad',   s:none, s:none, s:undercurl, s:blue)
+call s:HL('SpellCap',   s:green, s:none, s:bold . s:italic)
+call s:HL('SpellLocal', s:none, s:none, s:undercurl, s:cyan)
+call s:HL('SpellRare',  s:none, s:none, s:undercurl, s:magenta)
+call s:HL('StatusLine',   s:bright_white, s:xgray2)
+call s:HL('StatusLineNC', s:bright_black, g:srcery_bg, s:underline)
+call s:HL('TabLineFill', s:bright_black, s:xgray2)
+call s:HL('TabLineSel', s:bright_white, s:xgray5)
+call s:HL('Underlined', s:none, s:none, s:underline)
+call s:HL('VertSplit', s:bright_white, g:srcery_bg)
+call s:HL('WildMenu', s:blue, g:srcery_bg, s:bold)
 call s:HL('WinSeparator', s:none, s:xgray1)
-
-if v:version >= 700
-  " Screen line that the cursor is
-  call s:HL('CursorLine',   s:none, s:xgray2)
-  " Screen column that the cursor is
-  hi! link CursorColumn CursorLine
-
-  call s:HL('TabLineFill', s:bright_black, s:xgray2)
-  call s:HL('TabLineSel', s:bright_white, s:xgray5)
-
-  " Not active tab page label
-  hi! link TabLine TabLineFill
-
-  " Match paired bracket under the cursor
-  "
-  if g:srcery_inverse_match_paren == 1
-    call s:HL('MatchParen', s:bright_magenta, s:none, s:inverse . s:bold)
-  else
-    call s:HL('MatchParen', s:bright_magenta, s:none, s:bold)
-  endif
-endif
-
-if v:version >= 703
-  " Highlighted screen columns
-  call s:HL('ColorColumn',  s:none, s:xgray2)
-
-  " Concealed element: \lambda → λ
-  call s:HL('Conceal', s:blue, s:none)
-
-  " Line number of CursorLine
-  call s:HL('CursorLineNr', s:yellow, g:srcery_bg)
-
-endif
-
+hi! link CursorColumn CursorLine
+hi! link Directory SrceryGreenBold
+hi! link iCursor Cursor
+hi! link lCursor Cursor
+hi! link ModeMsg SrceryYellowBold
+hi! link MoreMsg SrceryYellowBold
 hi! link NonText SrceryXgray4
+hi! link Question SrceryOrangeBold
 hi! link SpecialKey SrceryBlue
+hi! link TabLine TabLineFill
+hi! link Title SrceryGreenBold
+hi! link vCursor Cursor
+hi! link VisualNOS Visual
+hi! link WarningMsg SrceryRedBold
 
+" Conditionals
 if g:srcery_inverse == 1
   call s:HL('Visual', s:none, s:none, s:inverse)
 else
   call s:HL('Visual', s:none, s:xgray2, s:bold)
 endif
 
-hi! link VisualNOS Visual
-
+if g:srcery_inverse_match_paren == 1
+  call s:HL('MatchParen', s:bright_magenta, s:none, s:inverse . s:bold)
+else
+  call s:HL('MatchParen', s:bright_magenta, s:none, s:bold)
+endif
 if g:srcery_inverse == 1 && g:srcery_inverse_matches == 1
   call s:HL('Search', s:none, s:none, s:inverse)
   call s:HL('IncSearch', s:none, s:none, s:underline . s:inverse . s:bold)
@@ -535,61 +474,74 @@ else
   call s:HL('CurSearch', s:none, s:xgray5, s:underline . s:bold)
 endif
 
-call s:HL('Underlined', s:none, s:none, s:underline)
+" Vim 8 terminal
+if has('terminal')
+  let g:terminal_ansi_colors = repeat([0], 16)
+  let g:terminal_ansi_colors[0] = s:black[0]
+  let g:terminal_ansi_colors[1] = s:red[0]
+  let g:terminal_ansi_colors[2] = s:green[0]
+  let g:terminal_ansi_colors[3] = s:yellow[0]
+  let g:terminal_ansi_colors[4] = s:blue[0]
+  let g:terminal_ansi_colors[5] = s:magenta[0]
+  let g:terminal_ansi_colors[6] = s:cyan[0]
+  let g:terminal_ansi_colors[7] = s:white[0]
+  let g:terminal_ansi_colors[8] = s:bright_black[0]
+  let g:terminal_ansi_colors[9] = s:bright_red[0]
+  let g:terminal_ansi_colors[10] = s:bright_green[0]
+  let g:terminal_ansi_colors[11] = s:bright_yellow[0]
+  let g:terminal_ansi_colors[12] = s:bright_blue[0]
+  let g:terminal_ansi_colors[13] = s:bright_magenta[0]
+  let g:terminal_ansi_colors[14] = s:bright_cyan[0]
+  let g:terminal_ansi_colors[15] = s:bright_white[0]
 
-call s:HL('StatusLine',   s:bright_white, s:xgray2)
+  " Must set an explicit background as NONE won't work
+  " Therefore not useful with transparent background option
+  if g:srcery_hard_black_terminal_bg == 1
+    call s:HL('Terminal', s:bright_white, s:hard_black)
+  endif
 
-call s:HL('StatusLineNC', s:bright_black, g:srcery_bg, s:underline)
-" The column separating vertically split windows
-call s:HL('VertSplit', s:bright_white, g:srcery_bg)
-" Current match in wildmenu completion
-call s:HL('WildMenu', s:blue, g:srcery_bg, s:bold)
+endif
 
-" Directory names, special names in listing
-hi! link Directory SrceryGreenBold
+if has('nvim')
 
-" Titles for output from :set all, :autocmd, etc.
-hi! link Title SrceryGreenBold
+  " Neovim terminal
+  let g:terminal_color_0 = s:black[0]
+  let g:terminal_color_1 = s:red[0]
+  let g:terminal_color_2 = s:green[0]
+  let g:terminal_color_3 = s:yellow[0]
+  let g:terminal_color_4 = s:blue[0]
+  let g:terminal_color_5 = s:magenta[0]
+  let g:terminal_color_6 = s:cyan[0]
+  let g:terminal_color_7 = s:white[0]
+  let g:terminal_color_8 = s:bright_black[0]
+  let g:terminal_color_9 = s:bright_red[0]
+  let g:terminal_color_10 = s:bright_green[0]
+  let g:terminal_color_11 = s:bright_yellow[0]
+  let g:terminal_color_12 = s:bright_blue[0]
+  let g:terminal_color_13 = s:bright_magenta[0]
+  let g:terminal_color_14 = s:bright_cyan[0]
+  let g:terminal_color_15 = s:bright_white[0]
 
-" Error messages on the command line
-call s:HL('ErrorMsg', s:bright_white, s:red)
-" More prompt: -- More --
-hi! link MoreMsg SrceryYellowBold
-" Current mode message: -- INSERT --
-hi! link ModeMsg SrceryYellowBold
-" 'Press enter' prompt and yes/no questions
-hi! link Question SrceryOrangeBold
-" Warning messages
-hi! link WarningMsg SrceryRedBold
+  " Neovim Diagnostic
+  hi! link DiagnosticError SrceryBrightRed
+  hi! link DiagnosticWarn SrceryBrightYellow
+  hi! link DiagnosticInfo SrceryBrightGreen
+  hi! link DiagnosticHint SrceryBrightCyan
+  call s:HL('DiagnosticUnderlineError', s:bright_red, s:none, s:undercurl)
+  call s:HL('DiagnosticUnderlineWarn', s:bright_yellow, s:none, s:undercurl)
+  call s:HL('DiagnosticUnderlineInfo', s:bright_green, s:none, s:undercurl)
+  call s:HL('DiagnosticUnderlineHint', s:bright_cyan, s:none, s:undercurl)
+
+  " Neovim Support
+  hi! link healthError SrceryRed
+  hi! link healthSuccess SrceryGreen
+  hi! link healthWarning SrceryOrange
+  call s:HL('TermCursorNC', s:xgray1, s:none)
+endif
 
 " }}}
-" Gutter: {{{
-
-" Line number for :number and :# commands
-call s:HL('LineNr', s:bright_black)
-
-" Column where signs are displayed
-" TODO Possibly need to fix  SignColumn
-call s:HL('SignColumn', s:none, g:srcery_bg)
-" Line used for closed folds
-call s:HL('Folded', s:bright_black, g:srcery_bg, s:italic)
-" Column where folds are displayed
-call s:HL('FoldColumn', s:bright_black, g:srcery_bg)
-
-" }}}
-" Cursor: {{{
-
-" Character under cursor
-call s:HL('Cursor', s:black, s:yellow)
-" Visual mode cursor, selection
-hi! link vCursor Cursor
-" Input moder cursor
-hi! link iCursor Cursor
-" Language mapping cursor
-hi! link lCursor Cursor
-
-" }}}
-" Syntax Highlighting: {{{
+" Main groups: {{{
+" -----------------------------------------------------------------------------
 
 hi! link Special SrceryBrightOrange
 
@@ -599,176 +551,76 @@ call s:HL('Todo', s:bright_orange, g:srcery_bg, s:bold . s:italic)
 
 call s:HL('Error', s:bright_white, s:red, s:bold)
 
-" String constant: "this is a string"
 call s:HL('String',  s:bright_green)
-
-" Generic statement
 hi! link Statement SrceryRed
-" if, then, else, endif, swicth, etc.
 hi! link Conditional SrceryRed
-" for, do, while, etc.
-hi! link Repeat SrceryRed
-
-" case, default, etc.
+hi! link Repeat SrceryBlue
 hi! link Label SrceryBrightRed
-
-" try, catch, throw
 hi! link Exception SrceryRed
-" sizeof, "+", "*", etc.
 hi! link Operator SrceryWhite
-" Any other keyword
 hi! link Keyword SrceryRed
-
-" Variable name
 hi! link Identifier SrceryBrightWhite
-" Function name
 hi! link Function SrceryYellow
-
-" Generic preprocessor
 hi! link PreProc SrceryCyan
-" Preprocessor #include
 hi! link Include SrceryCyan
-" Preprocessor #define
 hi! link Define SrceryOrange
-" Same as Define
-hi! link Macro SrceryOrange
-" Preprocessor #if, #else, #endif, etc.
 hi! link PreCondit SrceryCyan
-
-" Generic constant
 hi! link Constant SrceryBrightMagenta
-" Character constant: 'c', '/n'
 hi! link Character SrceryGreen
-" Boolean constant: TRUE, false
 hi! link Boolean SrceryBrightMagenta
-" Number constant: 234, 0xff
 hi! link Number SrceryBrightMagenta
-" Floating point constant: 2.3e10
 hi! link Float SrceryBrightMagenta
-
-" Generic type
 if g:srcery_italic_types == 1 && g:srcery_italic == 1
-  call s:HL('Type', s:bright_blue, s:none, s:italic)
+  call s:HL('Type', s:brightCyane, s:none, s:italic)
 else
   hi! link Type SrceryBrightBlue
 end
-" static, register, volatile, etc
-hi! link StorageClass SrceryOrange
-" struct, union, enum, etc.
 hi! link Structure SrceryCyan
-" typedef
 hi! link Typedef SrceryMagenta
-
 if g:srcery_dim_lisp_paren == 1
   hi! link Delimiter SrceryXgray6
 else
   hi! link Delimiter SrceryBrightBlack
 endif
-
-hi! link Decorator SrceryWhite
-
-" }}}
-" Completion Menu: {{{
-
-if v:version >= 700
-  " Popup menu: normal item
-  call s:HL('Pmenu', s:bright_white, s:xgray2)
-  " Popup menu: selected item
-  call s:HL('PmenuSel', s:bright_white, s:blue, s:bold)
-
-  " Popup menu: scrollbar
-  call s:HL('PmenuSbar', s:none, g:srcery_bg)
-  " Popup menu: scrollbar thumb
-  call s:HL('PmenuThumb', s:none, s:orange)
-endif
+hi! link Decorator SrceryBrightOrange
+hi! link Annotation Decorator
+hi! link Macro Define
+hi! link PreCondit PreProc
+hi! link Variable Identifier
 
 " }}}
-" Diffs: {{{
-
-call s:HL('DiffDelete', s:red, g:srcery_bg)
-call s:HL('DiffAdd',    s:green, g:srcery_bg)
-call s:HL('DiffChange', s:cyan, g:srcery_bg)
-call s:HL('DiffText',   s:yellow, g:srcery_bg)
-
-" legacy groups
-hi! link diffAdded DiffAdd
-hi! link diffRemoved DiffDelete
-hi! link diffChanged DiffChange
-hi! link diffFile SrceryOrange
-hi! link diffNewFile SrceryYellow
-hi! link diffLine SrceryBlue
-
-
-" }}}
-" Spelling: {{{
-
-if has('spell')
-  " Not capitalised word, or compile warnings
-  call s:HL('SpellCap',   s:green, s:none, s:bold . s:italic)
-  " Not recognized word
-  call s:HL('SpellBad',   s:none, s:none, s:undercurl, s:blue)
-  " Wrong spelling for selected region
-  call s:HL('SpellLocal', s:none, s:none, s:undercurl, s:cyan)
-  " Rare word
-  call s:HL('SpellRare',  s:none, s:none, s:undercurl, s:magenta)
-endif
-
-" }}}
-" Terminal: {{{
-
-if g:srcery_hard_black_terminal_bg == 1 && has('terminal')
-  " Must set an explicit background as NONE won't work
-  " Therefore not useful with transparent background option
-  call s:HL('Terminal', s:bright_white, s:hard_black)
-endif
-" }}}
-" Neovim LSP: {{{
-
-if has('nvim')
-  " for backward compatibility with neovim v0.5.x
-  hi! link LspDiagnosticsDefaultError DiagnosticError
-  hi! link LspDiagnosticsDefaultWarning DiagnosticWarn
-  hi! link LspDiagnosticsDefaultInformation DiagnosticInfo
-  hi! link LspDiagnosticsDefaultHint DiagnosticHint
-  hi! link LspDiagnosticsUnderlineError DiagnosticUnderlineError
-  hi! link LspDiagnosticsUnderlineHint DiagnosticUnderlineHint
-  hi! link LspDiagnosticsUnderlineInformation DiagnosticUnderlineInfo
-  hi! link LspDiagnosticsUnderlineWarning DiagnosticUnderlineWarn
-
-  " latest hl groups
-  hi! link DiagnosticError SrceryBrightRed
-  hi! link DiagnosticWarn SrceryBrightYellow
-  hi! link DiagnosticInfo SrceryBrightGreen
-  hi! link DiagnosticHint SrceryBrightCyan
-  call s:HL('DiagnosticUnderlineError', s:bright_red, s:none, s:undercurl)
-  call s:HL('DiagnosticUnderlineWarn', s:bright_yellow, s:none, s:undercurl)
-  call s:HL('DiagnosticUnderlineInfo', s:bright_green, s:none, s:undercurl)
-  call s:HL('DiagnosticUnderlineHint', s:bright_cyan, s:none, s:undercurl)
-endif
-
-" }}}
-
-" }}}
-
 " Languages: {{{
+" -----------------------------------------------------------------------------
 
-" C: {{{
+" nvim-treesitter
+if has('nvim')
+  hi! link TSAnnotation Annotation
+  hi! link TSConstBuiltin Constant
+  hi! link TSConstructor Function
+  hi! link TSEmphasis Italic
+  hi! link TSFuncBuiltin Function
+  hi! link TSFuncMacro Function
+  hi! link TSStringRegex SpecialChar
+  hi! link TSStrong Bold
+  hi! link TSStructure Structure
+  hi! link TSTagDelimiter TSTag
+  hi! link TSUnderline Underline
+  hi! link TSVariable Variable
+  hi! link TSVariableBuiltin Keyword
+endif
 
-hi! link cOperator SrceryMagenta
-hi! link cStructure SrceryYellow
+" C
+" hi! link cOperator SrceryMagenta
+" hi! link cStructure SrceryYellow
 
-" }}}
-" CoffeeScript: {{{
+" CoffeeScript
+" hi! link coffeeExtendedOp SrceryBrightWhite
+" hi! link coffeeSpecialOp SrceryBrightWhite
+" hi! link coffeeCurly SrceryYellow
+" hi! link coffeeParen SrceryBrightWhite
+" hi! link coffeeBracket SrceryYellow
 
-hi! link coffeeExtendedOp SrceryBrightWhite
-hi! link coffeeSpecialOp SrceryBrightWhite
-hi! link coffeeCurly SrceryYellow
-hi! link coffeeParen SrceryBrightWhite
-hi! link coffeeBracket SrceryYellow
-
-" }}}
-" CSS: {{{
-
+" CSS:
 hi! link cssBraces SrceryBrightWhite
 hi! link cssFunctionName SrceryYellow
 hi! link cssIdentifier SrceryBlue
@@ -782,7 +634,6 @@ hi! link cssVendor SrceryBlue
 hi! link cssMediaProp SrceryYellow
 hi! link cssBorderProp SrceryYellow
 hi! link cssAttrComma SrceryBrightWhite
-
 hi! link cssTextProp SrceryYellow
 hi! link cssAnimationProp SrceryYellow
 hi! link cssUIProp SrceryYellow
@@ -806,41 +657,27 @@ hi! link cssColorProp SrceryYellow
 hi! link cssGeneratedContentProp SrceryYellow
 hi! link cssTagName SrceryBrightBlue
 
-" }}}
-" Elixir: {{{
-
+" Elixir
 hi! link elixirDocString Comment
-
 hi! link elixirStringDelimiter SrceryGreen
 hi! link elixirInterpolationDelimiter SrceryCyan
 
-" }}}
-" Go: {{{
-
+" Go
 hi! link goDirective SrceryCyan
 hi! link goConstants SrceryMagenta
 hi! link goDeclaration SrceryRed
 hi! link goDeclType SrceryBlue
 hi! link goBuiltins SrceryYellow
 
-" }}}
-" Haskell: {{{
-
-" hi! link haskellType SrceryYellow
-" hi! link haskellOperators SrceryYellow
-" hi! link haskellConditional SrceryCyan
-" hi! link haskellLet SrceryYellow
-
+" Haskell
 hi! link haskellType SrceryBlue
 hi! link haskellIdentifier SrceryBlue
 hi! link haskellSeparator SrceryBlue
 hi! link haskellDelimiter SrceryBrightWhite
 hi! link haskellOperators SrceryBlue
-
 hi! link haskellBacktick SrceryYellow
 hi! link haskellStatement SrceryYellow
 hi! link haskellConditional SrceryYellow
-
 hi! link haskellLet SrceryCyan
 hi! link haskellDefault SrceryCyan
 hi! link haskellWhere SrceryCyan
@@ -850,40 +687,33 @@ hi! link haskellImportKeywords SrceryCyan
 hi! link haskellDeclKeyword SrceryCyan
 hi! link haskellDeriving SrceryCyan
 hi! link haskellAssocType SrceryCyan
-
 hi! link haskellNumber SrceryMagenta
 hi! link haskellPragma SrceryMagenta
-
 hi! link haskellString SrceryGreen
 hi! link haskellChar SrceryGreen
 
-" }}}
-" HTML: {{{
-
+" HTML
 hi! link htmlTagName SrceryBlue
 hi! link htmlTag SrceryBrightBlack
 hi! link htmlEndTag SrceryBrightBlack
 hi! link htmlArg SrceryYellow
-
 hi! link htmlScriptTag SrceryRed
 hi! link htmlTagN SrceryCyan
 hi! link htmlSpecialTagName SrceryBrightBlue
-
-hi! link javaScript Normal
-
 call s:HL('htmlLink', s:white, s:none, s:underline)
-
 hi! link htmlSpecialChar SrceryYellow
-
 call s:HL('htmlBold', s:bright_white, g:srcery_bg, s:bold)
-call s:HL('htmlBoldUnderline', s:bright_white, g:srcery_bg, s:bold . s:underline)
-call s:HL('htmlBoldItalic', s:bright_white, g:srcery_bg, s:bold . s:italic)
-call s:HL('htmlBoldUnderlineItalic', s:bright_white, g:srcery_bg, s:bold . s:underline . s:italic)
-call s:HL('htmlUnderline', s:bright_white, g:srcery_bg, s:underline)
-call s:HL('htmlUnderlineItalic', s:bright_white, g:srcery_bg, s:underline . s:italic)
+call s:HL('htmlBoldUnderline',
+      \ s:bright_white, g:srcery_bg, s:bold . s:underline)
+call s:HL('htmlBoldItalic',
+      \ s:bright_white, g:srcery_bg, s:bold . s:italic)
+call s:HL('htmlBoldUnderlineItalic',
+      \ s:bright_white, g:srcery_bg, s:bold . s:underline . s:italic)
+call s:HL('htmlUnderline',
+      \ s:bright_white, g:srcery_bg, s:underline)
+call s:HL('htmlUnderlineItalic',
+      \ s:bright_white, g:srcery_bg, s:underline . s:italic)
 call s:HL('htmlItalic', s:bright_white, g:srcery_bg, s:italic)
-
-
 hi! link htmlH1 SrceryH1
 hi! link htmlH2 SrceryH2
 hi! link htmlH3 SrceryH3
@@ -891,9 +721,7 @@ hi! link htmlH4 SrceryH4
 hi! link htmlH5 SrceryH5
 hi! link htmlH6 SrceryH6
 
-" }}}
-" Java: {{{
-
+" Java:
 hi! link javaAnnotation SrceryBlue
 hi! link javaDocTags SrceryCyan
 hi! link javaCommentTitle vimCommentTitle
@@ -904,22 +732,14 @@ hi! link javaParen3 SrceryBrightWhite
 hi! link javaParen4 SrceryBrightWhite
 hi! link javaParen5 SrceryBrightWhite
 hi! link javaOperator SrceryYellow
-
 hi! link javaVarArg SrceryGreen
 
-" }}}
-" JavaScript: {{{
-
-" Vanilla
-" -------
+" JavaScript:
 hi! link javaScriptMember SrceryBrightBlue
 hi! link javaScriptNull SrceryMagenta
 hi! link javasCriptParens SrceryWhite
 hi! link javaScriptBraces SrceryWhite
 hi! link javaScriptReserved SrceryOrange
-
-" YAJS
-" ----
 hi! link javascriptFuncArg Normal
 hi! link javascriptDocComment SrceryGreen
 hi! link javascriptArrayMethod Function
@@ -934,9 +754,6 @@ hi! link javascriptFuncKeyword SrceryBrightRed
 hi! link javascriptFunctionMethod SrceryYellow
 hi! link javascriptReturn SrceryBrightRed
 hi! link javascriptEndColons SrceryWhite
-
-" pangloss/vim-javascript
-" -----------------------
 hi! link jsFunction SrceryRed
 hi! link jsImport SrceryRed
 hi! link jsObjectSeparator SrceryWhite
@@ -946,17 +763,13 @@ hi! link jsNoise SrceryWhite
 hi! link jsEnvComment SrceryBrightBlack
 hi! link jsOperator SrceryBrightCyan
 
-" }}}
-" JSON: {{{
-
+" JSON:
 hi! link jsonKeyword SrceryGreen
 hi! link jsonQuote SrceryGreen
 hi! link jsonBraces SrceryBlue
 hi! link jsonString SrceryBlue
 
-" }}}
-" Lisp Dialects: {{{
-
+" LISP:
 if g:srcery_dim_lisp_paren == 1
   hi! link schemeParentheses SrceryXgray6
   hi! link clojureParen SrceryXgray6
@@ -965,97 +778,76 @@ else
   hi! link clojureParen SrceryWhite
 endif
 
+" Clojure
 hi! link clojureKeyword SrceryBlue
 hi! link clojureCond SrceryRed
 hi! link clojureSpecial SrceryRed
 hi! link clojureDefine SrceryRed
-
 hi! link clojureFunc SrceryYellow
 hi! link clojureRepeat SrceryYellow
 hi! link clojureCharacter SrceryCyan
 hi! link clojureStringEscape SrceryCyan
 hi! link clojureException SrceryRed
-
 hi! link clojureRegexp SrceryCyan
 hi! link clojureRegexpEscape SrceryCyan
 call s:HL('clojureRegexpCharClass', s:bright_white, s:none, s:bold)
 hi! link clojureRegexpMod clojureRegexpCharClass
 hi! link clojureRegexpQuantifier clojureRegexpCharClass
-
 hi! link clojureAnonArg SrceryYellow
 hi! link clojureVariable SrceryBlue
 hi! link clojureMacro SrceryOrangeBold
-
 hi! link clojureMeta SrceryYellow
 hi! link clojureDeref SrceryYellow
 hi! link clojureQuote SrceryYellow
 hi! link clojureUnquote SrceryYellow
 
-" }}}
-" Lua: {{{
-
+" Lua
 hi! link luain srceryred
 hi! link luafunction srcerycyan
 hi! link luatable srceryyellow
 
-" }}}
-" Make: {{{
-
+" Make
 hi! link makePreCondit SrceryRed
 hi! link makeCommands SrceryBrightWhite
 hi! link makeTarget SrceryYellow
 
-" }}}
-" Markdown: {{{
-
+" Markdown
 call s:HL('markdownBold', s:bright_white, s:none, s:bold)
 call s:HL('markdownItalic', s:bright_white, s:none, s:italic)
-
+call s:HL('markdownLinkText', s:bright_white, s:none, s:underline)
 hi! link markdownH1 SrceryH1
 hi! link markdownH2 SrceryH2
 hi! link markdownH3 SrceryH3
 hi! link markdownH4 SrceryH4
 hi! link markdownH5 SrceryH5
 hi! link markdownH6 SrceryH6
-
 hi! link markdownCode SrceryWhite
 hi! link markdownCodeBlock SrceryWhite
 hi! link markdownCodeDelimiter SrceryWhite
-
 hi! link markdownBlockquote SrceryBrightBlack
 hi! link markdownListMarker SrceryBrightBlack
 hi! link markdownOrderedListMarker SrceryBrightBlack
 hi! link markdownRule SrceryBrightBlack
 hi! link markdownHeadingRule SrceryBrightBlack
-
 hi! link markdownUrlDelimiter Delimiter
 hi! link markdownLinkDelimiter Delimiter
 hi! link markdownLinkTextDelimiter Delimiter
-
 hi! link markdownHeadingDelimiter SrceryBrightBlack
 hi! link markdownUrl htmlLink
 hi! link markdownUrlTitleDelimiter SrceryGreen
-
-call s:HL('markdownLinkText', s:bright_white, s:none, s:underline)
 hi! link markdownIdDeclaration markdownLinkText
 
-" }}}
-" MoonScript: {{{
+" MoonScript:
+hi! link moonSpecialOp Operator
+hi! link moonExtendedOp Operator
+hi! link moonFunction Function
+hi! link moonObject Structure
 
-hi! link moonSpecialOp SrceryBrightWhite
-hi! link moonExtendedOp SrceryBrightWhite
-hi! link moonFunction SrceryBrightWhite
-hi! link moonObject SrceryYellow
-
-" }}}
-" ObjectiveC: {{{
-
+" ObjectiveC
 hi! link objcTypeModifier SrceryRed
 hi! link objcDirective SrceryBlue
 
-" }}}
-" Python: {{{
-
+" Python
 hi! link pythonBuiltin SrceryYellow
 hi! link pythonBuiltinObj SrceryYellow
 hi! link pythonBuiltinFunc SrceryYellow
@@ -1070,53 +862,38 @@ hi! link pythonExceptions SrceryMagenta
 hi! link pythonBoolean SrceryMagenta
 hi! link pythonDot SrceryBrightWhite
 
-" }}}
-" Ruby: {{{
-
+" Ruby
 hi! link rubyStringDelimiter SrceryGreen
 hi! link rubyInterpolationDelimiter SrceryCyan
 hi! link rubyDefine Keyword
 
-" }}}
-" Rust: {{{
-
+" Rust
 "https://github.com/rust-lang/rust.vim/blob/master/syntax/rust.vim
 hi! link rustCommentLineDoc SrceryGreen
 hi! link rustModPathSep SrceryBrightBlack
 
-" }}}
-" Scala: {{{
-
-" NB: scala vim syntax file is kinda horrible
+" Scala
 hi! link scalaNameDefinition SrceryBlue
 hi! link scalaCaseFollowing SrceryBlue
 hi! link scalaCapitalWord SrceryBlue
 hi! link scalaTypeExtension SrceryBlue
-
 hi! link scalaKeyword SrceryRed
 hi! link scalaKeywordModifier SrceryRed
-
 hi! link scalaSpecial Special
 hi! link scalaOperator SrceryBlue
-
 hi! link scalaTypeDeclaration SrceryYellow
 hi! link scalaTypeTypePostDeclaration SrceryYellow
-
 hi! link scalaInstanceDeclaration SrceryBlue
 hi! link scalaInterpolation SrceryCyan
 
-" }}}
-" SASS: {{{
-
+" SASS:
 hi! link sassClass SrceryBlue
 hi! link sassClassChar SrceryBlue
 hi! link sassVariable SrceryCyan
 hi! link sassIdChar SrceryBrightBlue
 hi! link sassId SrceryBrightBlue
 
-" }}}
-" Shellscript: {{{
-
+" Shellscript:
 call s:HL('shParenError', s:bright_white, s:bright_red)
 hi! link shCmdSubRegion SrceryWhite
 hi! link shArithRegion SrceryWhite
@@ -1126,11 +903,8 @@ hi! link shRedir SrceryMagenta
 hi! link shOption SrceryBrightYellow
 hi! link shCommandSub SrceryBrightRed
 
-" }}}
-" Vim: {{{
-
+" Vim:
 call s:HL('vimCommentTitle', s:bright_white, s:none, s:bold . s:italic)
-
 hi! link vimNotation SrceryYellow
 hi! link vimBracket SrceryYellow
 hi! link vimMapModKey SrceryYellow
@@ -1139,46 +913,102 @@ hi! link vimSetSep SrceryBrightWhite
 hi! link vimSep SrceryBrightWhite
 hi! link vimContinue SrceryBrightWhite
 
-" }}}
-" XML: {{{
-
+" XML:
 hi! link xmlTag SrceryBlue
 hi! link xmlEndTag SrceryBlue
 hi! link xmlTagName SrceryBlue
 hi! link xmlEqual SrceryBlue
 hi! link docbkKeyword SrceryCyanBold
-
 hi! link xmlDocTypeDecl SrceryBrightBlack
 hi! link xmlDocTypeKeyword SrceryMagenta
 hi! link xmlCdataStart SrceryBrightBlack
 hi! link xmlCdataCdata SrceryMagenta
 hi! link dtdFunction SrceryBrightBlack
 hi! link dtdTagName SrceryMagenta
-
 hi! link xmlAttrib SrceryCyan
 hi! link xmlProcessingDelim SrceryBrightBlack
 hi! link dtdParamEntityPunct SrceryBrightBlack
 hi! link dtdParamEntityDPunct SrceryBrightBlack
 hi! link xmlAttribPunct SrceryBrightBlack
-
 hi! link xmlEntity SrceryYellow
 hi! link xmlEntityPunct SrceryYellow
 
-" }}}
+" Diffs:
+call s:HL('DiffDelete', s:red, g:srcery_bg)
+call s:HL('DiffAdd',    s:green, g:srcery_bg)
+call s:HL('DiffChange', s:cyan, g:srcery_bg)
+call s:HL('DiffText',   s:yellow, g:srcery_bg)
+
+" legacy groups
+hi! link diffAdded DiffAdd
+hi! link diffRemoved DiffDelete
+hi! link diffChanged DiffChange
+hi! link diffFile SrceryOrange
+hi! link diffNewFile SrceryYellow
+hi! link diffLine SrceryBlue
 
 " }}}
-
 " Plugins: {{{
+" -----------------------------------------------------------------------------
 
-" Sneak: {{{
+if has('nvim')
+  " Neovim LSP:
+  " for backward compatibility with neovim v0.5.x
+  if has("nvim-0.5")
+    hi! link LspDiagnosticsDefaultError DiagnosticError
+    hi! link LspDiagnosticsDefaultWarning DiagnosticWarn
+    hi! link LspDiagnosticsDefaultInformation DiagnosticInfo
+    hi! link LspDiagnosticsDefaultHint DiagnosticHint
+    hi! link LspDiagnosticsUnderlineError DiagnosticUnderlineError
+    hi! link LspDiagnosticsUnderlineHint DiagnosticUnderlineHint
+    hi! link LspDiagnosticsUnderlineInformation DiagnosticUnderlineInfo
+    hi! link LspDiagnosticsUnderlineWarning DiagnosticUnderlineWarn
+  endif
 
+  " snacks.nvim:
+  hi! link SnacksNormal Normal
+  hi! link SnacksNormalNC Normal
+  hi! link SnacksPicker Normal
+  hi! link SnacksPickerDir Comment
+  hi! link SnacksPickerGitStatusIgnored Comment
+  hi! link SnacksPickerGitStatusUntracked Comment
+  hi! link SnacksPickerPathHidden Comment
+  hi! link SnacksPickerPathIgnored Comment
+  hi! link SnacksPickerTotals Comment
+
+  " trouble.nvim:
+  hi! link TroubleNormal Normal
+  hi! link TroubleNormalNC Normal
+
+  " which-key.nvim:
+  hi! link WhichKeyNormal Normal
+
+  " nvimpager:
+  hi! link NvimPagerFG_black_BG_ SrceryBlack
+  hi! link NvimPagerFG_red_BG_ SrceryRed
+  hi! link NvimPagerFG_green_BG_ SrceryGreen
+  hi! link NvimPagerFG_yellow_BG_ SrceryYellow
+  hi! link NvimPagerFG_blue_BG_ SrceryBlue
+  hi! link NvimPagerFG_magenta_BG_ SrceryMagenta
+  hi! link NvimPagerFG_cyan_BG_ SrceryMagenta
+  hi! link NvimPagerFG_white_BG_ SrceryMagenta
+
+  hi! link NvimPagerFG_black_BG__bold SrceryBlackBold
+  hi! link NvimPagerFG_red_BG__bold SrceryRedBold
+  hi! link NvimPagerFG_green_BG__bold SrceryGreenBold
+  hi! link NvimPagerFG_yellow_BG__bold SrceryYellowBold
+  hi! link NvimPagerFG_blue_BG__bold SrceryBlueBold
+  hi! link NvimPagerFG_magenta_BG__bold SrceryMagentaBold
+  hi! link NvimPagerFG_cyan_BG__bold SrceryMagentaBold
+  hi! link NvimPagerFG_white_BG__bold SrceryMagentaBold
+endif
+
+" Sneak:
 hi! link Sneak Search
 hi! link SneakCurrent CurSearch
 hi! link SneakLabel Search
 
-" }}}
-" Rainbow Parentheses: {{{
-
+" Rainbow Parentheses:
 if !exists('g:rbpt_colorpairs')
   let g:rbpt_colorpairs =
     \ [
@@ -1186,10 +1016,8 @@ if !exists('g:rbpt_colorpairs')
       \ ['red',  '#EF2F27'], ['magenta', '#E02C6D']
     \ ]
 endif
-
 let g:rainbow_guifgs = [ '#E02C6D', '#EF2F27', '#D75F00', '#2C78BF']
 let g:rainbow_ctermfgs = [ 'magenta', 'red', '202', 'blue' ]
-
 if !exists('g:rainbow_conf')
   let g:rainbow_conf = {}
 endif
@@ -1199,38 +1027,28 @@ endif
 if !has_key(g:rainbow_conf, 'ctermfgs')
   let g:rainbow_conf['ctermfgs'] = g:rainbow_ctermfgs
 endif
-
 let g:niji_dark_colours = g:rbpt_colorpairs
 let g:niji_light_colours = g:rbpt_colorpairs
 
-"}}}
-" GitGutter: {{{
-
+" GitGutter:
 hi! link GitGutterAdd SrceryGreen
 hi! link GitGutterChange SrceryYellow
 hi! link GitGutterDelete SrceryRed
 hi! link GitGutterChangeDelete SrceryYellow
 
-" }}}
-" Asynchronous Lint Engine: {{{
-
+" Ale:
 call s:HL('ALEError', s:none, s:none, s:undercurl, s:red)
 call s:HL('ALEWarning', s:none, s:none, s:undercurl, s:yellow)
 call s:HL('ALEInfo', s:none, s:none, s:undercurl, s:blue)
-
 hi! link ALEErrorSign SrceryRed
 hi! link ALEWarningSign SrceryYellow
 hi! link ALEInfoSign SrceryBlue
 
-" }}}
-
-" vim-indent-guides: {{{
+" vim-indent-guides:
 call s:HL('IndentGuidesEven', s:none, s:xgray3)
 call s:HL('IndentGuidesOdd',  s:none, s:xgray4)
 
-" }}}
-" vim-startify: {{{
-
+" vim-startify:
 hi! link StartifyNumber Statement
 hi! link StartifyFile Normal
 hi! link StartifyPath String
@@ -1241,32 +1059,25 @@ hi! link StartifyFooter Normal
 hi! link StartifySpecial Comment
 hi! link StartifySection Identifier
 
-" }}}
-" fzf: {{{
-
+" fzf:
 call s:HL('fzf1', s:magenta, s:xgray2)
 call s:HL('fzf2', s:bright_green, s:xgray2)
 call s:HL('fzf3', s:bright_white, s:xgray2)
 
-"}}}
+" Netrw:
+" hi! link netrwDir SrceryBlue
+" hi! link netrwClassify SrceryCyan
+" hi! link netrwLink SrceryBrightBlack
+" hi! link netrwSymLink SrceryCyan
+" hi! link netrwExe SrceryYellow
+" hi! link netrwComment SrceryBrightBlack
+" hi! link netrwList SrceryBrightBlue
+" hi! link netrwTreeBar SrceryBrightBlack
+" hi! link netrwHelpCmd SrceryCyan
+" hi! link netrwVersion SrceryGreen
+" hi! link netrwCmdSep SrceryBrightBlack
 
-" Netrw: {{{
-
-hi! link netrwDir SrceryBlue
-hi! link netrwClassify SrceryCyan
-hi! link netrwLink SrceryBrightBlack
-hi! link netrwSymLink SrceryCyan
-hi! link netrwExe SrceryYellow
-hi! link netrwComment SrceryBrightBlack
-hi! link netrwList SrceryBrightBlue
-hi! link netrwTreeBar SrceryBrightBlack
-hi! link netrwHelpCmd SrceryCyan
-hi! link netrwVersion SrceryGreen
-hi! link netrwCmdSep SrceryBrightBlack
-
-"}}}
-" coc.nvim: {{{
-
+" coc.nvim:
 hi! link CocErrorSign SrceryRed
 hi! link CocWarningSign SrceryBrightOrange
 hi! link CocInfoSign SrceryYellow
@@ -1288,18 +1099,14 @@ call s:HL('CocWarningHighlight', s:none, s:none, s:undercurl, s:bright_orange)
 call s:HL('CocInfoHighlight', s:none, s:none, s:undercurl, s:yellow)
 call s:HL('CocHintHighlight', s:none, s:none, s:undercurl, s:blue)
 
-" }}}
-" CtrlP: "{{{
-
+" CtrlP:
 hi! link CtrlPMatch SrceryMagenta
 hi! link CtrlPLinePre SrceryBrightGreen
 call s:HL('CtrlPMode1', s:bright_white, s:xgray3)
 call s:HL('CtrlPMode2', s:bright_white, s:xgray5)
 call s:HL('CtrlPStats', s:yellow, s:xgray2)
 
-" }}}
-" NERDTree: "{{{
-
+" NERDTree:
 hi! link NERDTreeDir SrceryBlue
 hi! link NERDTreeDirSlash SrceryCyan
 hi! link NERDTreeOpenable SrceryBlue
@@ -1313,18 +1120,14 @@ hi! link NERDTreeFlags SrceryCyan
 hi! link NERDTreeLinkFile SrceryBrightBlack
 hi! link NERDTreeLinkTarget SrceryBrightBlack
 
-" }}}
-" Telescope: "{{{
+" Telescope:
+hi! link TelescopeNormal SrceryWhite
+" call s:HL('TelescopeSelection', s:green, s:none, s:bold)
+" call s:HL('TelescopeMatching', s:magenta)
+" call s:HL('TelescopeSelectionCaret', s:magenta)
+" call s:HL('TelescopePromptPrefix', s:bright_yellow)
 
-call s:HL('TelescopeNormal', s:white, s:none)
-call s:HL('TelescopeSelection', s:green, s:none, s:bold)
-call s:HL('TelescopeMatching', s:magenta)
-call s:HL('TelescopeSelectionCaret', s:magenta)
-call s:HL('TelescopePromptPrefix', s:bright_yellow)
-
-" }}}
-" nvim-cmp: "{{{
-
+" nvim-cmp:
 hi! link CmpItemAbbr Pmenu
 hi! link CmpItemAbbrDeprecated Comment
 hi! link CmpItemAbbrMatch Pmenu
@@ -1332,120 +1135,146 @@ hi! link CmpItemAbbrMatchFuzzy Pmenu
 hi! link CmpItemKind Special
 hi! link CmpItemMenu Pmenu
 
-" }}}
-" nvim: {{{
+" nvim:
+" if has('nvim')
+  " call s:HL('NormalFloat', s:none, s:xgray1)
+  " hi! link NormalNC NormalFloat
+  " hi! link MsgArea Normal
+  " hi! link MsgSeparator StatusLine
+  " hi! link QuickFixLine Search
+  " hi! link Substitute Search
 
-if has('nvim')
-  " nvim-treesitter: {{{
+  " call s:HL('Whitespace', s:bright_black, s:none)
+  " call s:HL('TermCursor', s:black, s:bright_white)
+  " call s:HL('TermCursorNC', s:xgray1, s:white)
+
+  " call s:HL('FloatBorder', s:white, g:srcery_bg)
+  " call s:HL('FloatShadow', s:black, s:hard_black)
+  " call s:HL('FloatShadowThrough', s:black, s:none)
+
+  " nvim-treesitter:
 
   " This is deprecated in new nvim releases
-  call s:HL('TSStrong', s:none, s:none, s:bold)
-  call s:HL('TSEmphasis', s:none, s:none, s:bold)
-  call s:HL('TSUnderline', s:none, s:none, s:underline)
+  " call s:HL('TSStrong', s:none, s:none, s:bold)
+  " call s:HL('TSEmphasis', s:none, s:none, s:italic)
+  " call s:HL('TSUnderline', s:none, s:none, s:underline)
+  "
+  " " hi! link TSWarning SrceryOrangeBold
+  " " hi! link TSDanger WarningMsg
+  " hi! link TSConstBuiltin Constant
+  " " hi! link TSField SrceryGreen
+  " hi! link TSFuncBuiltin Function
+  " hi! link TSFuncMacro Macro
+  " hi! link TSFunction Function
+  " " call s:HL('TSNamespace', s:white, s:none, s:italic)
+  " " call s:HL('TSParameter', s:cyan, s:none, s:italic)
+  " " hi! link TSProperty SrceryBrightBlue
+  " hi! link TSTagDelimiter TSTag
+  " " hi! link TSTagAttribute SrceryYellow
+  " hi! link TSVariableBuiltin TSFuncBuiltin
+  " " hi! link TSType Type
+  " " hi! link TSDelimiter Delimiter
+  " " hi! link TSURI htmlLink
+  " hi! link TSVariable Variable
+  " hi! link TSVariableBuiltin Keyword
+  "
+  " " Additional treesitter groups
+  " " hi! link TSComment Comment
+  " hi! link TSConstructor Function
+  " " hi! link TSConditional Conditional
+  " " hi! link TSRepeat Repeat
+  " " hi! link TSLabel Label
+  " " hi! link TSOperator Operator
+  " " hi! link TSKeyword Keyword
+  " " hi! link TSException Exception
+  " " hi! link TSString String
+  " hi! link TSStringRegex SpecialChar
+  " " hi! link TSStringEscape SpecialChar
+  " " hi! link TSCharacter Character
+  " " hi! link TSNumber Number
+  " " hi! link TSBoolean Boolean
+  " " hi! link TSFloat Float
+  " hi! link TSAnnotation Annotation
+  " hi! link TSAttribute PreProc
+  " hi! link TSInclude Include
+  "
+  " if has('nvim-0.8')
+    " hi! link @text.strong TSStrong
+    " hi! link @text.emphasis TSEmphasis
+    " hi! link @text.underline TSUnderline
+    " hi! link @text.warning TSWarning
+    " hi! link @text.danger TSDanger
+    " hi! link @constant.builtin TSConstBuiltin
+    " hi! link @field TSField
+    " hi! link @function.builtin TSFuncBuiltin
+    " hi! link @function.macro TSFuncMacro
+    " hi! link @function TSFunction
+    " hi! link @namespace TSNamespace
+    " hi! link @parameter TSParameter
+    " hi! link @property TSProperty
+    " hi! link @symbol TSSymbol
+    " hi! link @tag TSTag
+    " hi! link @tag.attribute TSTagAttribute
+    " hi! link @variable.builtin SrceryWhite
+    " hi! link @type TSType
+    " hi! link @delimiter TSDelimiter
+    " hi! link @text.uri htmlLink
+    " hi! link @variable TSVariable
 
-  highlight! link TSWarning SrceryOrangeBold
-  highlight! link TSDanger WarningMsg
-  highlight! link TSConstBuiltin Constant
-  highlight! link TSField SrceryGreen
-  highlight! link TSFuncBuiltin SrceryYellow
-  highlight! link TSFuncMacro SrceryOrange
-  highlight! link TSFunction SrceryYellow
-  call s:HL('TSNamespace', s:white, s:none, s:italic)
-  call s:HL('TSParameter', s:cyan, s:none, s:italic)
-  highlight! link TSProperty SrceryBrightBlue
-  highlight! link TSSymbol SrceryBlue
-  highlight! link TSTag SrceryBlue
-  highlight! link TSTagAttribute SrceryYellow
-  highlight! link TSVariableBuiltin TSFuncBuiltin
-  highlight! link TSType Type
-  highlight! link TSDelimiter Delimiter
-  highlight! link TSURI htmlLink
-  highlight! link TSVariable Identifier
-  highlight! link TSVariable Identifier
+    " Additional treesitter groups for nvim 0.8+
+    " hi! link @comment Comment
+    " hi! link @constructor Type
+    " hi! link @conditional Conditional
+    " hi! link @repeat Repeat
+    " hi! link @label Label
+    " hi! link @operator Operator
+    " hi! link @keyword Keyword
+    " hi! link @exception Exception
+    " hi! link @string String
+    " hi! link @string.regex String
+    " hi! link @string.escape SpecialChar
+    " hi! link @character Character
+    " hi! link @number Number
+    " hi! link @boolean Boolean
+    " hi! link @float Float
+    " hi! link @annotation PreProc
+    " hi! link @attribute PreProc
+    " hi! link @include Include
+    " hi! link @method Function
+    " hi! link @constant Constant
+    " hi! link @punctuation.delimiter Delimiter
+    " hi! link @punctuation.bracket Delimiter
+    " hi! link @punctuation.special Special
 
-  if has('nvim-0.8')
-    highlight! link @text.strong TSStrong
-    highlight! link @text.emphasis TSEmphasis
-    highlight! link @text.underline TSUnderline
-    highlight! link @text.warning TSWarning
-    highlight! link @text.danger TSDanger
-    highlight! link @constant.builtin TSConstBuiltin
-    highlight! link @field TSField
-    highlight! link @function.builtin TSFuncBuiltin
-    highlight! link @function.macro TSFuncMacro
-    highlight! link @function TSFunction
-    highlight! link @namespace TSNamespace
-    highlight! link @parameter TSParameter
-    highlight! link @property TSProperty
-    highlight! link @symbol TSSymbol
-    highlight! link @tag TSTag
-    highlight! link @tag.attribute TSTagAttribute
-    highlight! link @variable.builtin SrceryWhite
-    highlight! link @type TSType
-    highlight! link @delimiter TSDelimiter
-    highlight! link @text.uri htmlLink
-    highlight! link @variable TSVariable
+    " call s:HL('@markup.strong', s:none, s:none, s:bold)
+    " call s:HL('@markup.italic', s:none, s:none, s:italic)
+    " call s:HL('@markup.underline', s:none, s:none, s:underline)
+    " call s:HL('@markup.strikethrough', s:none, s:none, s:strikethrough)
+    "
+    " hi! link @markup.link htmlLink
+    " hi! link @markup.list Special
+    " hi! link @markup.raw String
+    " hi! link @markup.quote Comment
+    "
+    " hi! link @markup.heading.1.markdown SrceryH1
+    " hi! link @markup.heading.2.markdown SrceryH2
+    " hi! link @markup.heading.3.markdown SrceryH3
+    " hi! link @markup.heading.4.markdown SrceryH4
+    " hi! link @markup.heading.5.markdown SrceryH5
+    " hi! link @markup.heading.6.markdown SrceryH6
+    "
+    " hi! link @variable.member javascriptMember
+  " endif
+" endif
 
-    call s:HL('@markup.strong', s:none, s:none, s:bold)
-    call s:HL('@markup.italic', s:none, s:none, s:italic)
-    call s:HL('@markup.underline', s:none, s:none, s:underline)
-    call s:HL('@markup.strikethrough', s:none, s:none, s:strikethrough)
-
-    highlight! link @markup.link htmlLink
-
-    highlight! link @markup.heading.1.markdown SrceryH1
-    highlight! link @markup.heading.2.markdown SrceryH2
-    highlight! link @markup.heading.3.markdown SrceryH3
-    highlight! link @markup.heading.4.markdown SrceryH4
-    highlight! link @markup.heading.5.markdown SrceryH5
-    highlight! link @markup.heading.6.markdown SrceryH6
-
-    highlight! link @variable.member javascriptMember
-  endif
-
-  " }}}
-  " snacks.nvim {{{
-
-  highlight! link SnacksNormal Normal
-  highlight! link SnacksNormalNC Normal
-  highlight! link SnacksPicker Normal
-  highlight! link SnacksPickerDir Comment
-  highlight! link SnacksPickerGitStatusIgnored Comment
-  highlight! link SnacksPickerGitStatusUntracked Comment
-  highlight! link SnacksPickerPathHidden Comment
-  highlight! link SnacksPickerPathIgnored Comment
-  highlight! link SnacksPickerTotals Comment
-
-  " }}}
-  " trouble.nvim {{{
-
-  highlight! link TroubleNormal Normal
-  highlight! link TroubleNormalNC Normal
-
-  " }}}
-  " which-key.nvim {{{
-
-  highlight! link WhichKeyNormal Normal
-
-  " }}}
-endif
-
-" }}}
-
-" GitCommit: "{{{
-
+" GitCommit:
 hi! link gitcommitSelectedFile SrceryGreen
 hi! link gitcommitDiscardedFile SrceryRed
 
-" }}}
-" Better whitespace: {{{
-
+" Better whitespace:
 call s:HL('ExtraWhitespace', s:none, s:red)
 
-" }}}
-
-" render-markdown.nvim: {{{
-
+" render-markdown.nvim:
 call s:HL('RenderMarkdownCode', s:none, s:xgray1)
 call s:HL('RenderMarkdownH1Bg', s:none, s:xgray1)
 call s:HL('RenderMarkdownH2Bg', s:none, s:xgray1)
@@ -1454,28 +1283,6 @@ call s:HL('RenderMarkdownH4Bg', s:none, s:xgray1)
 call s:HL('RenderMarkdownH5Bg', s:none, s:xgray1)
 call s:HL('RenderMarkdownH6Bg', s:none, s:xgray1)
 
-  " }}}
-  "
-" nvimpager: {{{
-
-hi! link NvimPagerFG_black_BG_ SrceryBlack
-hi! link NvimPagerFG_red_BG_ SrceryRed
-hi! link NvimPagerFG_green_BG_ SrceryGreen
-hi! link NvimPagerFG_yellow_BG_ SrceryYellow
-hi! link NvimPagerFG_blue_BG_ SrceryBlue
-hi! link NvimPagerFG_magenta_BG_ SrceryMagenta
-hi! link NvimPagerFG_cyan_BG_ SrceryMagenta
-hi! link NvimPagerFG_white_BG_ SrceryMagenta
-
-hi! link NvimPagerFG_black_BG__bold SrceryBlackBold
-hi! link NvimPagerFG_red_BG__bold SrceryRedBold
-hi! link NvimPagerFG_green_BG__bold SrceryGreenBold
-hi! link NvimPagerFG_yellow_BG__bold SrceryYellowBold
-hi! link NvimPagerFG_blue_BG__bold SrceryBlueBold
-hi! link NvimPagerFG_magenta_BG__bold SrceryMagentaBold
-hi! link NvimPagerFG_cyan_BG__bold SrceryMagentaBold
-hi! link NvimPagerFG_white_BG__bold SrceryMagentaBold
-  " }}}
 " }}}
 
 " vim: set sw=2 ts=2 sts=2 et tw=80 ft=vim fdm=marker :
