@@ -398,7 +398,7 @@ call s:HL('SrceryXgray5', s:xgray5)
 call s:HL('SrceryXgray6', s:xgray6)
 
 " headings
-call s:HL('SrceryH1', s:blue, s:xgray1, s:bold)
+call s:HL('SrceryH1', s:bright_blue, s:xgray1, s:bold)
 call s:HL('SrceryH2', s:yellow, s:xgray1, s:bold)
 call s:HL('SrceryH3', s:bright_yellow, s:xgray1, s:bold)
 call s:HL('SrceryH4', s:green, s:xgray1, s:bold)
