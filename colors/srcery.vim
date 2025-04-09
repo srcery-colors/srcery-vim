@@ -1455,6 +1455,27 @@ call s:HL('RenderMarkdownH5Bg', s:none, s:xgray1)
 call s:HL('RenderMarkdownH6Bg', s:none, s:xgray1)
 
   " }}}
+  "
+" nvimpager: {{{
+
+hi! link NvimPagerFG_black_BG_ SrceryBlack
+hi! link NvimPagerFG_red_BG_ SrceryRed
+hi! link NvimPagerFG_green_BG_ SrceryGreen
+hi! link NvimPagerFG_yellow_BG_ SrceryYellow
+hi! link NvimPagerFG_blue_BG_ SrceryBlue
+hi! link NvimPagerFG_magenta_BG_ SrceryMagenta
+hi! link NvimPagerFG_cyan_BG_ SrceryMagenta
+hi! link NvimPagerFG_white_BG_ SrceryMagenta
+
+hi! link NvimPagerFG_black_BG__bold SrceryBlackBold
+hi! link NvimPagerFG_red_BG__bold SrceryRedBold
+hi! link NvimPagerFG_green_BG__bold SrceryGreenBold
+hi! link NvimPagerFG_yellow_BG__bold SrceryYellowBold
+hi! link NvimPagerFG_blue_BG__bold SrceryBlueBold
+hi! link NvimPagerFG_magenta_BG__bold SrceryMagentaBold
+hi! link NvimPagerFG_cyan_BG__bold SrceryMagentaBold
+hi! link NvimPagerFG_white_BG__bold SrceryMagentaBold
+  " }}}
 " }}}
 
 " vim: set sw=2 ts=2 sts=2 et tw=80 ft=vim fdm=marker :
