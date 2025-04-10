@@ -595,7 +595,7 @@ hi! link vimUserFunc Function
 
 " CSS:
 call s:HL('cssAttributeSelector', s:green)
-call s:HL('cssDefinition', s:green)
+hi! link cssDefinition Type
 call s:HL('cssStringQ', s:green)
 hi! link cssAttr Keyword
 hi! link cssBraces Delimiter
@@ -635,8 +635,9 @@ hi! link htmlH5 SrceryH5
 hi! link htmlH6 SrceryH6
 hi! link htmlLink Link
 hi! link htmlSpecialChar SpecialChar
-hi! link htmlTag Delimiter
+hi! link htmlTag Special
 hi! link htmlTagN htmlTag
+hi! link htmlTagName htmlTag
 
 " Java:
 call s:HL('javaDocTags', s:green)
