@@ -382,19 +382,19 @@ call s:HL('VertSplit', s:bright_white, g:srcery_bg)
 call s:HL('WildMenu', s:blue, g:srcery_bg, s:bold)
 call s:HL('WinSeparator', s:none, s:xgray1)
 hi! link CursorColumn CursorLine
-call s:HL("Directory", s:green, s:none, s:bold)
+call s:HL('Directory', s:green, s:none, s:bold)
 hi! link iCursor Cursor
 hi! link lCursor Cursor
-call s:HL("ModeMsg", s:yellow, s:none, s:bold)
-call s:HL("MoreMsg", s:yellow, s:none, s:bold)
+call s:HL('ModeMsg', s:yellow, s:none, s:bold)
+call s:HL('MoreMsg', s:yellow, s:none, s:bold)
 call s:HL('NonText', s:xgray4)
-call s:HL("Question", s:orange, s:none, s:bold)
+call s:HL('Question', s:orange, s:none, s:bold)
 call s:HL('SpecialKey', s:yellow)
 hi! link TabLine TabLineFill
-call s:HL("Title", s:green, s:none, s:bold)
+call s:HL('Title', s:green, s:none, s:bold)
 hi! link vCursor Cursor
 hi! link VisualNOS Visual
-call s:HL("WarningMsg", s:red, s:none, s:bold)
+call s:HL('WarningMsg', s:red, s:none, s:bold)
 call s:HL('Link', s:white, s:none, s:underline)
 
 " Conditionals
@@ -748,8 +748,8 @@ hi! link shDerefSimple Identifier
 hi! link shDerefVar Identifier
 
 " XML:
-call s:HL("xmlCdataStart", s:bright_black)
-call s:HL("xmlAttrib", s:cyan)
+call s:HL('xmlCdataStart', s:bright_black)
+call s:HL('xmlAttrib', s:cyan)
 hi! link xmlAttribPunct Delimiter
 hi! link xmlCdata Comment
 hi! link xmlCdataCdata xmlCdataStart
@@ -768,7 +768,7 @@ hi! link xmlTagName Statement
 if has('nvim')
   " Neovim LSP:
   " for backward compatibility with neovim v0.5.x
-  if has("nvim-0.5")
+  if has('nvim-0.5')
     hi! link LspDiagnosticsDefaultError DiagnosticError
     hi! link LspDiagnosticsDefaultWarning DiagnosticWarn
     hi! link LspDiagnosticsDefaultInformation DiagnosticInfo
@@ -798,7 +798,7 @@ if has('nvim')
   hi! link WhichKeyNormal Normal
 
   " nvimpager:
-  call s:HL("NvimPagerFG_black_BG_", s:black)
+  call s:HL('NvimPagerFG_black_BG_', s:black)
   call s:HL('NvimPagerFG_red_BG_', s:red)
   call s:HL('NvimPagerFG_green_BG_', s:green)
   call s:HL('NvimPagerFG_yellow_BG_', s:yellow)
