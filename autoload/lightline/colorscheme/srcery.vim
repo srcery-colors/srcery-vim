@@ -7,36 +7,34 @@
 
 if exists('g:lightline')
 
-  " Normal Colors
-  let s:black          = srcery#helper#GetColor('SrceryBlack')
-  let s:red            = srcery#helper#GetColor('SrceryRed')
-  let s:green          = srcery#helper#GetColor('SrceryGreen')
-  let s:yellow         = srcery#helper#GetColor('SrceryYellow')
-  let s:blue           = srcery#helper#GetColor('SrceryBlue')
-  let s:magenta        = srcery#helper#GetColor('SrceryMagenta')
-  let s:cyan           = srcery#helper#GetColor('SrceryCyan')
-  let s:white          = srcery#helper#GetColor('SrceryWhite')
+  " 16 base colors
+  let s:black          = [g:srcery_black, 0]
+  let s:red            = [g:srcery_red, 1]
+  let s:green          = [g:srcery_green, 2]
+  let s:yellow         = [g:srcery_yellow, 3]
+  let s:blue           = [g:srcery_blue, 4]
+  let s:magenta        = [g:srcery_magenta, 5]
+  let s:cyan           = [g:srcery_cyan, 6]
+  let s:white          = [g:srcery_white, 7]
+  let s:bright_black   = [g:srcery_bright_black, 8]
+  let s:bright_red     = [g:srcery_bright_red, 9]
+  let s:bright_green   = [g:srcery_bright_green, 10]
+  let s:bright_yellow  = [g:srcery_bright_yellow, 11]
+  let s:bright_blue    = [g:srcery_bright_blue, 12]
+  let s:bright_magenta = [g:srcery_bright_magenta, 13]
+  let s:bright_cyan    = [g:srcery_bright_cyan, 14]
+  let s:bright_white   = [g:srcery_bright_white, 15]
 
-  " Bright Colors
-  let s:bright_black   = srcery#helper#GetColor('SrceryBrightBlack')
-  let s:bright_red     = srcery#helper#GetColor('SrceryBrightRed')
-  let s:bright_green   = srcery#helper#GetColor('SrceryBrightGreen')
-  let s:bright_yellow  = srcery#helper#GetColor('SrceryBrightYellow')
-  let s:bright_blue    = srcery#helper#GetColor('SrceryBrightBlue')
-  let s:bright_magenta = srcery#helper#GetColor('SrceryBrightMagenta')
-  let s:bright_cyan    = srcery#helper#GetColor('SrceryBrightCyan')
-  let s:bright_white   = srcery#helper#GetColor('SrceryBrightWhite')
-
-  " Extra Colors
-  let s:orange         = srcery#helper#GetColor('SrceryOrange')
-  let s:bright_orange  = srcery#helper#GetColor('SrceryBrightOrange')
-  let s:hard_black     = srcery#helper#GetColor('SrceryHardBlack')
-  let s:xgray1         = srcery#helper#GetColor('SrceryXgray1')
-  let s:xgray2         = srcery#helper#GetColor('SrceryXgray2')
-  let s:xgray3         = srcery#helper#GetColor('SrceryXgray3')
-  let s:xgray4         = srcery#helper#GetColor('SrceryXgray4')
-  let s:xgray5         = srcery#helper#GetColor('SrceryXgray5')
-  let s:xgray6         = srcery#helper#GetColor('SrceryXgray6')
+  " xterm colors
+  let s:orange         = [g:srcery_orange, g:srcery_orange_cterm]
+  let s:bright_orange  = [g:srcery_bright_orange, g:srcery_bright_orange_cterm]
+  let s:hard_black     = [g:srcery_hard_black, g:srcery_hard_black_cterm]
+  let s:xgray1         = [g:srcery_xgray1, g:srcery_xgray1_cterm]
+  let s:xgray2         = [g:srcery_xgray2, g:srcery_xgray2_cterm]
+  let s:xgray3         = [g:srcery_xgray3, g:srcery_xgray3_cterm]
+  let s:xgray4         = [g:srcery_xgray4, g:srcery_xgray4_cterm]
+  let s:xgray5         = [g:srcery_xgray5, g:srcery_xgray5_cterm]
+  let s:xgray6         = [g:srcery_xgray6, g:srcery_xgray6_cterm]
 
   let s:p = {'normal':{}, 'inactive':{}, 'insert':{}, 'replace':{}, 'visual':{}, 'tabline':{}, 'terminal':{}, 'command':{}}
   let s:p.normal.left     = [ [ s:bright_white, s:xgray5 ], [ s:bright_white, s:xgray3 ] ]
