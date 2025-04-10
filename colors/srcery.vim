@@ -348,66 +348,6 @@ function! s:HL(group, fg, ...)
 endfunction
 
 "}}}
-" Srcery Hi Groups: {{{
-
-" memoize common hi groups
-call s:HL('SrceryRed', s:red)
-call s:HL('SrceryGreen', s:green)
-call s:HL('SrceryYellow', s:yellow)
-call s:HL('SrceryBlue', s:blue)
-call s:HL('SrceryMagenta', s:magenta)
-call s:HL('SrceryCyan', s:cyan)
-call s:HL('SrceryBlack', s:black)
-call s:HL('SrceryWhite', s:white)
-
-call s:HL('SrceryRedBold', s:red, s:none, s:bold)
-call s:HL('SrceryGreenBold', s:green, s:none, s:bold)
-call s:HL('SrceryYellowBold', s:yellow, s:none, s:bold)
-call s:HL('SrceryBlueBold', s:blue, s:none, s:bold)
-call s:HL('SrceryMagentaBold', s:magenta, s:none, s:bold)
-call s:HL('SrceryCyanBold', s:cyan, s:none, s:bold)
-call s:HL('SrceryBlackBold', s:black, s:none, s:bold)
-call s:HL('SrceryWhiteBold', s:white, s:none, s:bold)
-
-call s:HL('SrceryBrightRed', s:bright_red, s:none)
-call s:HL('SrceryBrightGreen', s:bright_green, s:none)
-call s:HL('SrceryBrightYellow', s:bright_yellow, s:none)
-call s:HL('SrceryBrightBlue', s:bright_blue, s:none)
-call s:HL('SrceryBrightMagenta', s:bright_magenta, s:none)
-call s:HL('SrceryBrightCyan', s:bright_cyan, s:none)
-call s:HL('SrceryBrightBlack', s:bright_black, s:none)
-call s:HL('SrceryBrightWhite', s:bright_white)
-
-call s:HL('SrceryBrightRedBold', s:bright_red, s:none, s:bold)
-call s:HL('SrceryBrightGreenBold', s:bright_green, s:none, s:bold)
-call s:HL('SrceryBrightYellowBold', s:bright_yellow, s:none, s:bold)
-call s:HL('SrceryBrightBlueBold', s:bright_blue, s:none, s:bold)
-call s:HL('SrceryBrightMagentaBold', s:bright_magenta, s:none, s:bold)
-call s:HL('SrceryBrightCyanBold', s:bright_cyan, s:none, s:bold)
-call s:HL('SrceryBrightBlackBold', s:bright_black, s:none, s:bold)
-call s:HL('SrceryBrightWhiteBold', s:bright_white, s:none, s:bold)
-
-" special
-call s:HL('SrceryOrange', s:orange)
-call s:HL('SrceryBrightOrange', s:bright_orange)
-call s:HL('SrceryOrangeBold', s:orange, s:none, s:bold)
-call s:HL('SrceryHardBlack', s:hard_black)
-call s:HL('SrceryXgray1', s:xgray1)
-call s:HL('SrceryXgray2', s:xgray2)
-call s:HL('SrceryXgray3', s:xgray3)
-call s:HL('SrceryXgray4', s:xgray4)
-call s:HL('SrceryXgray5', s:xgray5)
-call s:HL('SrceryXgray6', s:xgray6)
-
-" headings
-call s:HL('SrceryH1', s:bright_blue, s:xgray1, s:bold)
-call s:HL('SrceryH2', s:yellow, s:xgray1, s:bold)
-call s:HL('SrceryH3', s:bright_yellow, s:xgray1, s:bold)
-call s:HL('SrceryH4', s:green, s:xgray1, s:bold)
-call s:HL('SrceryH5', s:magenta, s:xgray1, s:bold)
-call s:HL('SrceryH6', s:bright_magenta, s:xgray1, s:bold)
-
-" }}}
 " UI groups: {{{
 " -----------------------------------------------------------------------------
 
@@ -441,19 +381,19 @@ call s:HL('VertSplit', s:bright_white, g:srcery_bg)
 call s:HL('WildMenu', s:blue, g:srcery_bg, s:bold)
 call s:HL('WinSeparator', s:none, s:xgray1)
 hi! link CursorColumn CursorLine
-hi! link Directory SrceryGreenBold
+call s:HL("Directory", s:green, s:none, s:bold)
 hi! link iCursor Cursor
 hi! link lCursor Cursor
-hi! link ModeMsg SrceryYellowBold
-hi! link MoreMsg SrceryYellowBold
-hi! link NonText SrceryXgray4
-hi! link Question SrceryOrangeBold
-hi! link SpecialKey SrceryYellow
+call s:HL("ModeMsg", s:yellow, s:none, s:bold)
+call s:HL("MoreMsg", s:yellow, s:none, s:bold)
+call s:HL('NonText', s:xgray4)
+call s:HL("Question", s:orange, s:none, s:bold)
+call s:HL('SpecialKey', s:yellow)
 hi! link TabLine TabLineFill
-hi! link Title SrceryGreenBold
+call s:HL("Title", s:green, s:none, s:bold)
 hi! link vCursor Cursor
 hi! link VisualNOS Visual
-hi! link WarningMsg SrceryRedBold
+call s:HL("WarningMsg", s:red, s:none, s:bold)
 call s:HL('Link', s:white, s:none, s:underline)
 
 " Conditionals
@@ -527,19 +467,19 @@ if has('nvim')
   let g:terminal_color_15 = s:bright_white[0]
 
   " Neovim Diagnostic
-  hi! link DiagnosticError SrceryBrightRed
-  hi! link DiagnosticWarn SrceryBrightYellow
-  hi! link DiagnosticInfo SrceryBrightGreen
-  hi! link DiagnosticHint SrceryBrightCyan
+  call s:HL('DiagnosticError', s:bright_red)
+  call s:HL('DiagnosticWarn', s:bright_yellow)
+  call s:HL('DiagnosticInfo', s:bright_green)
+  call s:HL('DiagnosticHint', s:bright_cyan)
   call s:HL('DiagnosticUnderlineError', s:bright_red, s:none, s:undercurl)
   call s:HL('DiagnosticUnderlineWarn', s:bright_yellow, s:none, s:undercurl)
   call s:HL('DiagnosticUnderlineInfo', s:bright_green, s:none, s:undercurl)
   call s:HL('DiagnosticUnderlineHint', s:bright_cyan, s:none, s:undercurl)
 
   " Neovim Support
-  hi! link healthError SrceryRed
-  hi! link healthSuccess SrceryGreen
-  hi! link healthWarning SrceryOrange
+  call s:HL('healthError', s:red)
+  call s:HL('healthSuccess', s:green)
+  call s:HL('healthWarning', s:orange)
   call s:HL('TermCursorNC', s:xgray1, s:none)
 endif
 
@@ -584,7 +524,15 @@ hi! link Annotation Decorator
 hi! link Macro Define
 hi! link PreCondit PreProc
 hi! link Variable Identifier
-hi! link Member SrceryBrightBlue
+call s:HL('Member', s:bright_blue)
+
+" heading groups
+call s:HL('SrceryH1', s:bright_blue, s:xgray1, s:bold)
+call s:HL('SrceryH2', s:yellow, s:xgray1, s:bold)
+call s:HL('SrceryH3', s:bright_yellow, s:xgray1, s:bold)
+call s:HL('SrceryH4', s:green, s:xgray1, s:bold)
+call s:HL('SrceryH5', s:magenta, s:xgray1, s:bold)
+call s:HL('SrceryH6', s:bright_magenta, s:xgray1, s:bold)
 
 " }}}
 " Languages: {{{
@@ -660,14 +608,14 @@ call s:HL('DiffText',   s:yellow, g:srcery_bg)
 hi! link diffAdded DiffAdd
 hi! link diffRemoved DiffDelete
 hi! link diffChanged DiffChange
-hi! link diffFile SrceryOrange
-hi! link diffNewFile SrceryYellow
-hi! link diffLine SrceryBlue
+call s:HL('diffFile', s:orange)
+call s:HL('diffNewFile', s:yellow)
+call s:HL('diffLine', s:blue)
 
 " Vim:
 call s:HL('vimCommentTitle', s:white, s:none, s:bold . s:italic)
-hi! link vimNotation SrceryGreen
-hi! link vimAugroup SrceryGreen
+call s:HL('vimNotation', s:green)
+call s:HL('vimAugroup', s:green)
 hi! link vimFunc Function
 hi! link vimFunction Function
 hi! link vimUserFunc Function
@@ -690,10 +638,10 @@ hi! link vimUserFunc Function
 " hi! link coffeeBracket SrceryYellow
 
 " CSS:
-hi! link cssAttributeSelector SrceryGreen
-hi! link cssDefinition SrceryGreen
+call s:HL('cssAttributeSelector', s:green)
+call s:HL('cssDefinition', s:green)
 hi! link cssIdentifier Identifier
-hi! link cssStringQ SrceryGreen
+call s:HL('cssStringQ', s:green)
 hi! link cssAttr Keyword
 hi! link cssBraces Delimiter
 hi! link cssClassName cssDefinition
@@ -705,15 +653,15 @@ hi! link cssVendor Keyword
 
 " Elixir
 hi! link elixirDocString Comment
-hi! link elixirStringDelimiter SrceryGreen
-hi! link elixirInterpolationDelimiter SrceryCyan
+call s:HL('elixirStringDelimiter', s:green)
+call s:HL('elixirInterpolationDelimiter', s:cyan)
 
 " Go
-hi! link goDirective SrceryCyan
-hi! link goConstants SrceryMagenta
-hi! link goDeclaration SrceryRed
-hi! link goDeclType SrceryBlue
-hi! link goBuiltins SrceryYellow
+" hi! link goDirective SrceryCyan
+hi! link goConstants Keyword
+" hi! link goDeclaration SrceryRed
+" hi! link goDeclType SrceryBlue
+call s:HL('goBuiltins', s:yellow)
 
 " Haskell
 hi! link haskellPreProc PrePrec
@@ -810,7 +758,7 @@ hi! link javaScriptNumber Number
 " hi! link jsOperator SrceryBrightCyan
 
 " JSON:
-hi! link jsonKeyword SrceryGreen
+call s:HL('jsonKeyword', s:green)
 " hi! link jsonQuote SrceryGreen
 " hi! link jsonBraces SrceryBlue
 " hi! link jsonString SrceryBlue
@@ -863,7 +811,7 @@ hi! link luaFunc Function
 call s:HL('markdownBold', s:none, s:none, s:bold)
 call s:HL('markdownItalic', s:none, s:none, s:italic)
 hi! link mkdCode Special
-hi! link mkdFootnote SrceryCyan
+call s:HL('mkdFootnote', s:cyan)
 hi! link mkdRule Special
 hi! link mkdLineBreak Delimiter
 hi! link markdownLinkText Link
