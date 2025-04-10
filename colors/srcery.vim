@@ -299,6 +299,7 @@ let s:xgray6         = [g:srcery_xgray6, g:srcery_xgray6_cterm]
 
 "}}}
 " HL function: {{{
+" -----------------------------------------------------------------------------
 
 " original source: https://github.com/morhetz/gruvbox/blob/master/colors/gruvbox.vim#L374
 function! s:HL(group, fg, ...)
@@ -494,7 +495,6 @@ call s:HL('String',  s:bright_green)
 call s:HL('Special', s:blue)
 call s:HL('Statement', s:red)
 call s:HL('Conditional', s:red)
-call s:HL('Conditional', s:yellow)
 call s:HL('Repeat', s:yellow)
 call s:HL('Label', s:bright_red)
 call s:HL('Exception', s:red)
@@ -555,36 +555,9 @@ if has('nvim')
   hi! link TSVariable Variable
   hi! link TSVariableBuiltin Keyword
   hi! link TSTagAttribute Function
-
-  " hi! link @text.strong TSStrong
-  " hi! link @text.emphasis TSEmphasis
-  " hi! link @text.underline TSUnderline
-  " hi! link @text.warning TSWarning
-  " hi! link @text.danger TSDanger
-  " hi! link @constant.builtin TSConstBuiltin
-  " hi! link @field TSField
-  " hi! link @function.builtin TSFuncBuiltin
-  " hi! link @function.macro TSFuncMacro
-  " hi! link @function TSFunction
-  " hi! link @namespace TSNamespace
-  " hi! link @parameter TSParameter
-  " hi! link @property TSProperty
-  " hi! link @symbol TSSymbol
-  " hi! link @tag TSTag
   hi! link @tag.attribute TSTagAttribute
-  " hi! link @variable.builtin SrceryWhite
-
-  " call s:HL('@markup.strong', s:none, s:none, s:bold)
-  " call s:HL('@markup.italic', s:none, s:none, s:italic)
-  " call s:HL('@markup.underline', s:none, s:none, s:underline)
-  " call s:HL('@markup.strikethrough', s:none, s:none, s:strikethrough)
-  "
   hi! link @markup.link Link
   hi! link @markup.link.url String
-  " hi! link @markup.list Special
-  " hi! link @markup.raw String
-  " hi! link @markup.quote Comment
-  "
   hi! link @markup.heading.1.markdown SrceryH1
   hi! link @markup.heading.2.markdown SrceryH2
   hi! link @markup.heading.3.markdown SrceryH3
@@ -613,39 +586,23 @@ call s:HL('diffNewFile', s:yellow)
 call s:HL('diffLine', s:blue)
 
 " Vim:
+call s:HL('vimAugroup', s:green)
 call s:HL('vimCommentTitle', s:white, s:none, s:bold . s:italic)
 call s:HL('vimNotation', s:green)
-call s:HL('vimAugroup', s:green)
 hi! link vimFunc Function
 hi! link vimFunction Function
 hi! link vimUserFunc Function
-" hi! link vimBracket SrceryYellow
-" hi! link vimMapModKey SrceryYellow
-" hi! link vimFuncSID SrceryBrightWhite
-" hi! link vimSetSep SrceryBrightWhite
-" hi! link vimSep SrceryWhite
-" hi! link vimContinue SrceryBrightWhite
-
-" C
-" hi! link cOperator SrceryMagenta
-" hi! link cStructure SrceryYellow
-
-" CoffeeScript
-" hi! link coffeeExtendedOp SrceryBrightWhite
-" hi! link coffeeSpecialOp SrceryBrightWhite
-" hi! link coffeeCurly SrceryYellow
-" hi! link coffeeParen SrceryBrightWhite
-" hi! link coffeeBracket SrceryYellow
 
 " CSS:
 call s:HL('cssAttributeSelector', s:green)
 call s:HL('cssDefinition', s:green)
-hi! link cssIdentifier Identifier
 call s:HL('cssStringQ', s:green)
 hi! link cssAttr Keyword
 hi! link cssBraces Delimiter
+hi! link cssFunctionComma Delimiter
 hi! link cssClassName cssDefinition
 hi! link cssColor Number
+hi! link cssIdentifier Identifier
 hi! link cssProp cssDefinition
 hi! link cssPseudoClass cssDefinition
 hi! link cssPseudoClassId cssPseudoClass
@@ -657,66 +614,29 @@ call s:HL('elixirStringDelimiter', s:green)
 call s:HL('elixirInterpolationDelimiter', s:cyan)
 
 " Go
-" hi! link goDirective SrceryCyan
-hi! link goConstants Keyword
-" hi! link goDeclaration SrceryRed
-" hi! link goDeclType SrceryBlue
 call s:HL('goBuiltins', s:yellow)
+hi! link goConstants Keyword
 
 " Haskell
+hi! link haskellPragma haskellPreProc
 hi! link haskellPreProc PrePrec
 hi! link haskellType Type
-hi! link haskellPragma haskellPreProc
-
-" hi! link haskellType SrceryBlue
-" hi! link haskellIdentifier SrceryBlue
-" hi! link haskellSeparator SrceryBlue
-" hi! link haskellDelimiter SrceryBrightWhite
-" hi! link haskellOperators SrceryBlue
-" hi! link haskellBacktick SrceryYellow
-" hi! link haskellStatement SrceryYellow
-" hi! link haskellConditional SrceryYellow
-" hi! link haskellLet SrceryCyan
-" hi! link haskellDefault SrceryCyan
-" hi! link haskellWhere SrceryCyan
-" hi! link haskellBottom SrceryCyan
-" hi! link haskellBlockKeywords SrceryCyan
-" hi! link haskellImportKeywords SrceryCyan
-" hi! link haskellDeclKeyword SrceryCyan
-" hi! link haskellDeriving SrceryCyan
-" hi! link haskellAssocType SrceryCyan
-" hi! link haskellNumber SrceryMagenta
-" hi! link haskellPragma SrceryMagenta
-" hi! link haskellString SrceryGreen
-" hi! link haskellChar SrceryGreen
 
 " HTML
-" hi! link htmlBold Bold
-" hi! link htmlEndTag htmlTag
-" hi! link htmlTag Keyword
-" hi! link htmlTagN htmlTag
-" hi! link htmlTagName Special
-"
-hi! link htmlTag Delimiter
-hi! link htmlTagN htmlTag
-hi! link htmlEndTag htmlTag
-hi! link htmlArg Function
-hi! link htmlLink Link
-hi! link htmlSpecialChar SpecialChar
 call s:HL('htmlBold', s:none, s:none, s:bold)
-" call s:HL('htmlBoldUnderline', s:none, s:none, s:bold . s:underline)
-" call s:HL('htmlBoldItalic', s:none, s:none, s:bold . s:italic)
-" call s:HL('htmlBoldUnderlineItalic',
-"       \ s:none, s:none, s:bold . s:underline . s:italic)
-" call s:HL('htmlUnderline', s:none, s:none, s:underline)
-" call s:HL('htmlUnderlineItalic', s:none, s:none, s:underline . s:italic)
 call s:HL('htmlItalic', s:none, g:srcery_bg, s:italic)
+hi! link htmlArg Function
+hi! link htmlEndTag htmlTag
 hi! link htmlH1 SrceryH1
 hi! link htmlH2 SrceryH2
 hi! link htmlH3 SrceryH3
 hi! link htmlH4 SrceryH4
 hi! link htmlH5 SrceryH5
 hi! link htmlH6 SrceryH6
+hi! link htmlLink Link
+hi! link htmlSpecialChar SpecialChar
+hi! link htmlTag Delimiter
+hi! link htmlTagN htmlTag
 
 " Java:
 call s:HL('javaDocTags', s:green)
@@ -728,123 +648,51 @@ hi! link javaCommentTitle Comment
 hi! link javaScriptBraces Delimiter
 hi! link javaScriptIdentifier Keyword
 hi! link javaScriptNumber Number
-
-" hi! link javaScriptMember Member
-" hi! link javaScriptNull SrceryMagenta
-" hi! link javasCriptParens SrceryWhite
-" hi! link javaScriptBraces SrceryWhite
-" hi! link javaScriptReserved SrceryOrange
-" hi! link javascriptFuncArg Normal
-" hi! link javascriptDocComment SrceryGreen
-" hi! link javascriptArrayMethod Function
-" hi! link javascriptReflectMethod Function
-" hi! link javascriptStringMethod Function
-" hi! link javascriptObjectMethod Function
-" hi! link javascriptObjectStaticMethod Function
-" hi! link javascriptObjectLabel SrceryBlue
-" hi! link javascriptProp SrceryBlue
-" hi! link javascriptVariable SrceryBrightBlue
-" hi! link javascriptFuncKeyword SrceryBrightRed
-" hi! link javascriptFunctionMethod SrceryYellow
-" hi! link javascriptReturn SrceryBrightRed
-" hi! link javascriptEndColons SrceryWhite
-" hi! link jsFunction SrceryRed
-" hi! link jsImport SrceryRed
-" hi! link jsObjectSeparator SrceryWhite
-" hi! link jsParens SrceryWhite
-" hi! link jsFuncParens SrceryWhite
-" hi! link jsNoise SrceryWhite
-" hi! link jsEnvComment SrceryBrightBlack
-" hi! link jsOperator SrceryBrightCyan
+hi! link jsArrowFunction Operator
+hi! link jsBrackets Delimiter
+hi! link jsClassMethodType Keyword
+hi! link jsDocTags Keyword
+hi! link jsDocType Type
+hi! link jsFuncArgOperator Operator
+hi! link jsFuncCall Function
+hi! link jsFuncParens Delimiter
+hi! link jsNoise Delimiter
+hi! link jsNull Constant
+hi! link jsPrototype Keyword
+hi! link jsRegexpString SpecialChar
+hi! link jsTemplateBraces Special
+hi! link jsThis Special
+hi! link jsUndefined Constant
 
 " JSON:
 call s:HL('jsonKeyword', s:green)
-" hi! link jsonQuote SrceryGreen
-" hi! link jsonBraces SrceryBlue
-" hi! link jsonString SrceryBlue
-
-" LISP:
-" if g:srcery_dim_lisp_paren == 1
-"   hi! link schemeParentheses SrceryXgray6
-"   hi! link clojureParen SrceryXgray6
-" else
-" hi! link schemeParentheses Delimiter
-" hi! link clojureParen Delimiter
-" endif
-
-" " Clojure
-" hi! link clojureKeyword SrceryBlue
-" hi! link clojureCond SrceryRed
-" hi! link clojureSpecial SrceryRed
-" hi! link clojureDefine SrceryRed
-" hi! link clojureFunc SrceryYellow
-" hi! link clojureRepeat SrceryYellow
-" hi! link clojureCharacter SrceryCyan
-" hi! link clojureStringEscape SrceryCyan
-" hi! link clojureException SrceryRed
-" hi! link clojureRegexp SrceryCyan
-" hi! link clojureRegexpEscape SrceryCyan
-" call s:HL('clojureRegexpCharClass', s:bright_white, s:none, s:bold)
-" hi! link clojureRegexpMod clojureRegexpCharClass
-" hi! link clojureRegexpQuantifier clojureRegexpCharClass
-" hi! link clojureAnonArg SrceryYellow
-" hi! link clojureVariable SrceryBlue
-" hi! link clojureMacro SrceryOrangeBold
-" hi! link clojureMeta SrceryYellow
-" hi! link clojureDeref SrceryYellow
-" hi! link clojureQuote SrceryYellow
-" hi! link clojureUnquote SrceryYellow
 
 " Lua
 hi! link luaFunc Function
 
-" hi! link luain srceryred
-" hi! link luafunction srcerycyan
-" hi! link luatable srceryyellow
-
-" Make
-" hi! link makePreCondit SrceryRed
-" hi! link makeCommands SrceryBrightWhite
-" hi! link makeTarget SrceryYellow
-
 " Markdown
 call s:HL('markdownBold', s:none, s:none, s:bold)
 call s:HL('markdownItalic', s:none, s:none, s:italic)
-hi! link mkdCode Special
 call s:HL('mkdFootnote', s:cyan)
-hi! link mkdRule Special
-hi! link mkdLineBreak Delimiter
-hi! link markdownLinkText Link
+hi! link markdownCodeBlock Special
 hi! link markdownH1 SrceryH1
 hi! link markdownH2 SrceryH2
 hi! link markdownH3 SrceryH3
 hi! link markdownH4 SrceryH4
 hi! link markdownH5 SrceryH5
 hi! link markdownH6 SrceryH6
+hi! link markdownHeadingDelimiter Keyword
 hi! link markdownIdDelimiter Keyword
 hi! link markdownItalicDelimiter Delimiter
 hi! link markdownLinkDelimiter Delimiter
+hi! link markdownLinkText Link
 hi! link markdownLinkTextDelimiter Delimiter
 hi! link markdownListMarker Keyword
 hi! link markdownRule Keyword
-hi! link markdownHeadingDelimiter Keyword
 hi! link markdownUrl String
-hi! link markdownCodeBlock Special
-
-" hi! link markdownCode SrceryWhite
-" hi! link markdownCodeDelimiter SrceryWhite
-" hi! link markdownBlockquote SrceryBrightBlack
-" hi! link markdownListMarker SrceryBrightBlack
-" hi! link markdownOrderedListMarker SrceryBrightBlack
-" hi! link markdownRule SrceryBrightBlack
-" hi! link markdownHeadingRule SrceryBrightBlack
-" hi! link markdownUrlDelimiter Delimiter
-" hi! link markdownLinkDelimiter Delimiter
-" hi! link markdownLinkTextDelimiter Delimiter
-" hi! link markdownHeadingDelimiter SrceryBrightBlack
-" hi! link markdownUrl Link
-" hi! link markdownUrlTitleDelimiter SrceryGreen
-" hi! link markdownIdDeclaration markdownLinkText
+hi! link mkdCode Special
+hi! link mkdLineBreak Delimiter
+hi! link mkdRule Special
 
 " MoonScript:
 hi! link moonSpecialOp Operator
@@ -852,32 +700,17 @@ hi! link moonExtendedOp Operator
 hi! link moonFunction Function
 hi! link moonObject Structure
 
-" ObjectiveC
-" hi! link objcTypeModifier SrceryRed
-" hi! link objcDirective SrceryBlue
-
 " Python
-" hi! link pythonBuiltin SrceryYellow
-" hi! link pythonBuiltinObj SrceryYellow
-" hi! link pythonBuiltinFunc SrceryYellow
-" hi! link pythonFunction SrceryCyan
-" hi! link pythonDecorator SrceryRed
-" hi! link pythonInclude SrceryBlue
-" hi! link pythonImport SrceryBlue
-" hi! link pythonRun SrceryBlue
-" hi! link pythonCoding SrceryBlue
-" hi! link pythonOperator SrceryRed
-" hi! link pythonExceptions SrceryMagenta
-" hi! link pythonBoolean SrceryMagenta
-" hi! link pythonDot SrceryBrightWhite
-
 hi! link pythonBuiltin Type
+hi! link pythonBuiltinObj Type
+hi! link pythonBuiltinObject Type
+hi! link pythonBuiltinType Type
 hi! link pythonEscape SpecialChar
+hi! link pythonExClass Type
+hi! link pythonNone Type
+hi! link pythonRun Comment
 
 " Ruby
-" hi! link rubyStringDelimiter SrceryGreen
-" hi! link rubyInterpolationDelimiter SrceryCyan
-" hi! link rubyDefine Keyword
 " rubyConstant
 " rubySymbol
 hi! link rubyAttribute Identifier
@@ -889,22 +722,8 @@ hi! link rubyPseudoVariable Keyword
 hi! link rubyRegexp SpecialChar
 
 " Rust
-call s:HL('rustCommentLineDoc', s:green)
+hi! link rustCommentLineDoc Comment
 hi! link rustModPathSep Delimiter
-
-" Scala
-" hi! link scalaNameDefinition SrceryBlue
-" hi! link scalaCaseFollowing SrceryBlue
-" hi! link scalaCapitalWord SrceryBlue
-" hi! link scalaTypeExtension SrceryBlue
-" hi! link scalaKeyword SrceryRed
-" hi! link scalaKeywordModifier SrceryRed
-" hi! link scalaSpecial Special
-" hi! link scalaOperator SrceryBlue
-" hi! link scalaTypeDeclaration SrceryYellow
-" hi! link scalaTypeTypePostDeclaration SrceryYellow
-" hi! link scalaInstanceDeclaration SrceryBlue
-" hi! link scalaInterpolation SrceryCyan
 
 " SASS:
 call s:HL('sassId', s:green, s:none, s:underline)
@@ -923,40 +742,12 @@ hi! link sassMixinName Function
 hi! link sassReturn Keyword
 
 " Shellscript:
-" call s:HL('shParenError', s:bright_white, s:bright_red)
-" hi! link shCmdSubRegion SrceryWhite
-" hi! link shArithRegion SrceryWhite
-" hi! link shArithRegion SrceryWhite
-" hi! link shQuote SrceryWhite
-" hi! link shRedir SrceryMagenta
-" hi! link shOption SrceryBrightYellow
-" hi! link shCommandSub SrceryBrightRed
-
 hi! link shCmdParenRegion Delimiter
 hi! link shCmdSubRegion Delimiter
 hi! link shDerefSimple Identifier
 hi! link shDerefVar Identifier
 
 " XML:
-" hi! link xmlTag SrceryBlue
-" hi! link xmlEndTag SrceryBlue
-" hi! link xmlTagName SrceryBlue
-" hi! link xmlEqual SrceryBlue
-" hi! link docbkKeyword SrceryCyanBold
-" hi! link xmlDocTypeDecl SrceryBrightBlack
-" hi! link xmlDocTypeKeyword SrceryMagenta
-" hi! link xmlCdataStart SrceryBrightBlack
-" hi! link xmlCdataCdata SrceryMagenta
-" hi! link dtdFunction SrceryBrightBlack
-" hi! link dtdTagName SrceryMagenta
-" hi! link xmlAttrib SrceryCyan
-" hi! link xmlProcessingDelim SrceryBrightBlack
-" hi! link dtdParamEntityPunct SrceryBrightBlack
-" hi! link dtdParamEntityDPunct SrceryBrightBlack
-" hi! link xmlAttribPunct SrceryBrightBlack
-" hi! link xmlEntity SrceryYellow
-" hi! link xmlEntityPunct SrceryYellow
-
 call s:HL("xmlCdataStart", s:bright_black)
 call s:HL("xmlAttrib", s:cyan)
 hi! link xmlAttribPunct Delimiter
@@ -1088,36 +879,11 @@ call s:HL('fzf1', s:magenta, s:xgray2)
 call s:HL('fzf2', s:bright_green, s:xgray2)
 call s:HL('fzf3', s:bright_white, s:xgray2)
 
-" Netrw:
-" hi! link netrwDir SrceryBlue
-" hi! link netrwClassify SrceryCyan
-" hi! link netrwLink SrceryBrightBlack
-" hi! link netrwSymLink SrceryCyan
-" hi! link netrwExe SrceryYellow
-" hi! link netrwComment SrceryBrightBlack
-" hi! link netrwList SrceryBrightBlue
-" hi! link netrwTreeBar SrceryBrightBlack
-" hi! link netrwHelpCmd SrceryCyan
-" hi! link netrwVersion SrceryGreen
-" hi! link netrwCmdSep SrceryBrightBlack
-
 " coc.nvim:
 call s:HL('CocErrorSign', s:red)
 call s:HL('CocWarningSign', s:bright_orange)
 call s:HL('CocInfoSign', s:yellow)
 call s:HL('CocHintSign', s:blue)
-" hi! link CocErrorFloat SrceryRed
-" hi! link CocWarningFloat SrceryOrange
-" hi! link CocInfoFloat SrceryYellow
-" hi! link CocHintFloat SrceryBlue
-" hi! link CocDiagnosticsError SrceryRed
-" hi! link CocDiagnosticsWarning SrceryOrange
-" hi! link CocDiagnosticsInfo SrceryYellow
-" hi! link CocDiagnosticsHint SrceryBlue
-"
-" hi! link CocSelectedText SrceryRed
-" hi! link CocCodeLens SrceryWhite
-
 call s:HL('CocErrorHighlight', s:none, s:none, s:undercurl, s:red)
 call s:HL('CocWarningHighlight', s:none, s:none, s:undercurl, s:bright_orange)
 call s:HL('CocInfoHighlight', s:none, s:none, s:undercurl, s:yellow)
@@ -1126,172 +892,14 @@ call s:HL('CocHintHighlight', s:none, s:none, s:undercurl, s:blue)
 " CtrlP:
 hi! link CtrlPMatch Keyword
 hi! link CtrlPBufferHid Normal
-" hi! link CtrlPMatch SrceryMagenta
-" hi! link CtrlPLinePre SrceryBrightGreen
-" call s:HL('CtrlPMode1', s:bright_white, s:xgray3)
-" call s:HL('CtrlPMode2', s:bright_white, s:xgray5)
-" call s:HL('CtrlPStats', s:yellow, s:xgray2)
 
 " NERDTree:
-" hi! link NERDTreeDir SrceryBlue
 hi! link NERDTreeDirSlash Keyword
-" hi! link NERDTreeOpenable SrceryBlue
-" hi! link NERDTreeClosable SrceryBlue
-" hi! link NERDTreeFile SrceryWhite
-hi! link NERDTreeExecFile Special
-" hi! link NERDTreeUp SrceryOrange
-" hi! link NERDTreeCWD SrceryGreen
+hi! link NERDTreeExecFile Macro
 hi! link NERDTreeHelp Comment
-" hi! link NERDTreeFlags SrceryCyan
-" hi! link NERDTreeLinkFile SrceryBrightBlack
-" hi! link NERDTreeLinkTarget SrceryBrightBlack
 
 " Telescope:
-hi! link TelescopeNormal SrceryWhite
-" call s:HL('TelescopeSelection', s:green, s:none, s:bold)
-" call s:HL('TelescopeMatching', s:magenta)
-" call s:HL('TelescopeSelectionCaret', s:magenta)
-" call s:HL('TelescopePromptPrefix', s:bright_yellow)
-
-" nvim-cmp:
-" hi! link CmpItemAbbr Pmenu
-" hi! link CmpItemAbbrDeprecated Comment
-" hi! link CmpItemAbbrMatch Pmenu
-" hi! link CmpItemAbbrMatchFuzzy Pmenu
-" hi! link CmpItemKind Special
-" hi! link CmpItemMenu Pmenu
-
-" nvim:
-" if has('nvim')
-  " call s:HL('NormalFloat', s:none, s:xgray1)
-  " hi! link NormalNC NormalFloat
-  " hi! link MsgArea Normal
-  " hi! link MsgSeparator StatusLine
-  " hi! link QuickFixLine Search
-  " hi! link Substitute Search
-
-  " call s:HL('Whitespace', s:bright_black, s:none)
-  " call s:HL('TermCursor', s:black, s:bright_white)
-  " call s:HL('TermCursorNC', s:xgray1, s:white)
-
-  " call s:HL('FloatBorder', s:white, g:srcery_bg)
-  " call s:HL('FloatShadow', s:black, s:hard_black)
-  " call s:HL('FloatShadowThrough', s:black, s:none)
-
-  " nvim-treesitter:
-
-  " This is deprecated in new nvim releases
-  " call s:HL('TSStrong', s:none, s:none, s:bold)
-  " call s:HL('TSEmphasis', s:none, s:none, s:italic)
-  " call s:HL('TSUnderline', s:none, s:none, s:underline)
-  "
-  " " hi! link TSWarning SrceryOrangeBold
-  " " hi! link TSDanger WarningMsg
-  " hi! link TSConstBuiltin Constant
-  " " hi! link TSField SrceryGreen
-  " hi! link TSFuncBuiltin Function
-  " hi! link TSFuncMacro Macro
-  " hi! link TSFunction Function
-  " " call s:HL('TSNamespace', s:white, s:none, s:italic)
-  " " call s:HL('TSParameter', s:cyan, s:none, s:italic)
-  " " hi! link TSProperty SrceryBrightBlue
-  " hi! link TSTagDelimiter TSTag
-  " " hi! link TSTagAttribute SrceryYellow
-  " hi! link TSVariableBuiltin TSFuncBuiltin
-  " " hi! link TSType Type
-  " " hi! link TSDelimiter Delimiter
-  " " hi! link TSURI htmlLink
-  " hi! link TSVariable Variable
-  " hi! link TSVariableBuiltin Keyword
-  "
-  " " Additional treesitter groups
-  " " hi! link TSComment Comment
-  " hi! link TSConstructor Function
-  " " hi! link TSConditional Conditional
-  " " hi! link TSRepeat Repeat
-  " " hi! link TSLabel Label
-  " " hi! link TSOperator Operator
-  " " hi! link TSKeyword Keyword
-  " " hi! link TSException Exception
-  " " hi! link TSString String
-  " hi! link TSStringRegex SpecialChar
-  " " hi! link TSStringEscape SpecialChar
-  " " hi! link TSCharacter Character
-  " " hi! link TSNumber Number
-  " " hi! link TSBoolean Boolean
-  " " hi! link TSFloat Float
-  " hi! link TSAnnotation Annotation
-  " hi! link TSAttribute PreProc
-  " hi! link TSInclude Include
-  "
-  " if has('nvim-0.8')
-    " hi! link @text.strong TSStrong
-    " hi! link @text.emphasis TSEmphasis
-    " hi! link @text.underline TSUnderline
-    " hi! link @text.warning TSWarning
-    " hi! link @text.danger TSDanger
-    " hi! link @constant.builtin TSConstBuiltin
-    " hi! link @field TSField
-    " hi! link @function.builtin TSFuncBuiltin
-    " hi! link @function.macro TSFuncMacro
-    " hi! link @function TSFunction
-    " hi! link @namespace TSNamespace
-    " hi! link @parameter TSParameter
-    " hi! link @property TSProperty
-    " hi! link @symbol TSSymbol
-    " hi! link @tag TSTag
-    " hi! link @tag.attribute TSTagAttribute
-    " hi! link @variable.builtin SrceryWhite
-    " hi! link @type TSType
-    " hi! link @delimiter TSDelimiter
-    " hi! link @text.uri htmlLink
-    " hi! link @variable TSVariable
-
-    " Additional treesitter groups for nvim 0.8+
-    " hi! link @comment Comment
-    " hi! link @constructor Type
-    " hi! link @conditional Conditional
-    " hi! link @repeat Repeat
-    " hi! link @label Label
-    " hi! link @operator Operator
-    " hi! link @keyword Keyword
-    " hi! link @exception Exception
-    " hi! link @string String
-    " hi! link @string.regex String
-    " hi! link @string.escape SpecialChar
-    " hi! link @character Character
-    " hi! link @number Number
-    " hi! link @boolean Boolean
-    " hi! link @float Float
-    " hi! link @annotation PreProc
-    " hi! link @attribute PreProc
-    " hi! link @include Include
-    " hi! link @method Function
-    " hi! link @constant Constant
-    " hi! link @punctuation.delimiter Delimiter
-    " hi! link @punctuation.bracket Delimiter
-    " hi! link @punctuation.special Special
-
-    " call s:HL('@markup.strong', s:none, s:none, s:bold)
-    " call s:HL('@markup.italic', s:none, s:none, s:italic)
-    " call s:HL('@markup.underline', s:none, s:none, s:underline)
-    " call s:HL('@markup.strikethrough', s:none, s:none, s:strikethrough)
-    "
-    " hi! link @markup.link htmlLink
-    " hi! link @markup.list Special
-    " hi! link @markup.raw String
-    " hi! link @markup.quote Comment
-    "
-    " hi! link @markup.heading.1.markdown SrceryH1
-    " hi! link @markup.heading.2.markdown SrceryH2
-    " hi! link @markup.heading.3.markdown SrceryH3
-    " hi! link @markup.heading.4.markdown SrceryH4
-    " hi! link @markup.heading.5.markdown SrceryH5
-    " hi! link @markup.heading.6.markdown SrceryH6
-    "
-    " hi! link @variable.member javascriptMember
-  " endif
-" endif
+call s:HL('TelescopeNormal', s:white)
 
 " GitCommit:
 call s:HL('gitcommitSelectedFile', s:green)
