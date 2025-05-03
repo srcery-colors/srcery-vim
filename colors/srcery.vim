@@ -205,10 +205,6 @@ if !exists('g:srcery_guisp_fallback')
   let g:srcery_guisp_fallback='NONE'
 endif
 
-if !exists('g:srcery_italic_types')
-  let g:srcery_italic_types=0
-endif
-
 if !exists('g:srcery_bg')
   "Sets the default color for both guisp and cterm backgrounds.
   let g:srcery_bg=[g:srcery_black, 0]
@@ -485,14 +481,19 @@ if has('nvim')
 endif
 
 " }}}
-" Main groups: {{{
+" Base groups: {{{
 " -----------------------------------------------------------------------------
 
 call s:HL('Comment', s:bright_black, s:none, s:italic)
+call s:HL('Conceal', s:none, s:none)
 call s:HL('Todo', s:bright_orange, g:srcery_bg, s:bold . s:italic)
 call s:HL('Error', s:bright_white, s:red, s:bold)
-call s:HL('String',  s:bright_green)
+call s:HL('String', s:bright_green)
+call s:HL('Tag', s:blue)
 call s:HL('Special', s:blue)
+call s:HL('SpecialChar', s:yellow, s:none)
+call s:HL('SpecialComment', s:bright_cyan, s:none, s:italic)
+call s:HL('StorageClass', s:bright_blue)
 call s:HL('Statement', s:red)
 call s:HL('Conditional', s:red)
 call s:HL('Repeat', s:yellow)
@@ -511,11 +512,7 @@ call s:HL('Character', s:green)
 call s:HL('Boolean', s:bright_magenta)
 call s:HL('Number', s:bright_magenta)
 call s:HL('Float', s:bright_magenta)
-if g:srcery_italic_types == 1 && g:srcery_italic == 1
-  call s:HL('Type', s:bright_blue, s:none, s:italic)
-else
-  call s:HL('Type', s:bright_blue)
-end
+call s:HL('Type', s:bright_blue, s:none, s:italic)
 call s:HL('Structure', s:cyan)
 call s:HL('Typedef', s:magenta)
 call s:HL('Delimiter', s:bright_black)
