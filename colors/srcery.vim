@@ -486,7 +486,7 @@ endif
 
 call s:HL('Comment', s:bright_black, s:none, s:italic)
 call s:HL('Conceal', s:none, s:none)
-call s:HL('Todo', s:bright_orange, g:srcery_bg, s:bold . s:italic)
+call s:HL('Todo', s:bright_orange, s:none, s:bold . s:italic)
 call s:HL('Error', s:bright_white, s:red, s:bold)
 call s:HL('String', s:bright_green)
 call s:HL('Tag', s:blue)
@@ -570,10 +570,10 @@ if has('nvim')
 endif
 
 " Diffs:
-call s:HL('DiffDelete', s:red, g:srcery_bg)
-call s:HL('DiffAdd',    s:green, g:srcery_bg)
-call s:HL('DiffChange', s:cyan, g:srcery_bg)
-call s:HL('DiffText',   s:yellow, g:srcery_bg)
+call s:HL('DiffDelete', s:red)
+call s:HL('DiffAdd',    s:green)
+call s:HL('DiffChange', s:cyan)
+call s:HL('DiffText',   s:yellow)
 " legacy groups
 hi! link diffAdded DiffAdd
 hi! link diffRemoved DiffDelete
@@ -621,7 +621,7 @@ hi! link haskellType Type
 
 " HTML
 call s:HL('htmlBold', s:none, s:none, s:bold)
-call s:HL('htmlItalic', s:none, g:srcery_bg, s:italic)
+call s:HL('htmlItalic', s:none, s:none, s:italic)
 hi! link htmlArg Function
 hi! link htmlEndTag htmlTag
 hi! link htmlH1 SrceryH1
