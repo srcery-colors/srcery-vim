@@ -349,22 +349,28 @@ endfunction
 " -----------------------------------------------------------------------------
 
 call s:HL('ColorColumn',  s:none, s:xgray2)
-" call s:HL('NormalFloat',  s:none, s:xgray1)
-call s:HL('NormalFloat',  s:none, s:xgray1)
 call s:HL('Conceal', s:blue, s:none)
 call s:HL('Cursor', s:black, s:yellow)
 call s:HL('CursorLine',   s:none, s:xgray2)
 call s:HL('CursorLineNr', s:yellow, g:srcery_bg)
+call s:HL('Directory', s:green, s:none, s:bold)
 call s:HL('ErrorMsg', s:bright_white, s:red)
 call s:HL('FoldColumn', s:bright_black, g:srcery_bg)
 call s:HL('Folded', s:bright_black, g:srcery_bg, s:italic)
 call s:HL('LineNr', s:bright_black)
+call s:HL('Link', s:white, s:none, s:underline)
+call s:HL('ModeMsg', s:yellow, s:none, s:bold)
+call s:HL('MoreMsg', s:yellow, s:none, s:bold)
+call s:HL('NonText', s:xgray4)
 call s:HL('Normal', s:bright_white, g:srcery_bg)
+call s:HL('NormalFloat',  s:none, s:xgray1)
 call s:HL('Pmenu', s:bright_white, s:xgray2)
 call s:HL('PmenuSbar', s:none, g:srcery_bg)
 call s:HL('PmenuSel', s:bright_white, s:blue, s:bold)
 call s:HL('PmenuThumb', s:none, s:orange)
+call s:HL('Question', s:orange, s:none, s:bold)
 call s:HL('SignColumn', s:none, g:srcery_bg)
+call s:HL('SpecialKey', s:yellow)
 call s:HL('SpellBad',   s:none, s:none, s:undercurl, s:blue)
 call s:HL('SpellCap',   s:green, s:none, s:bold . s:italic)
 call s:HL('SpellLocal', s:none, s:none, s:undercurl, s:cyan)
@@ -373,25 +379,18 @@ call s:HL('StatusLine',   s:bright_white, s:xgray2)
 call s:HL('StatusLineNC', s:bright_black, g:srcery_bg, s:underline)
 call s:HL('TabLineFill', s:bright_black, s:xgray2)
 call s:HL('TabLineSel', s:bright_white, s:xgray5)
+call s:HL('Title', s:green, s:none, s:bold)
 call s:HL('Underlined', s:none, s:none, s:underline)
 call s:HL('VertSplit', s:bright_white, g:srcery_bg)
+call s:HL('WarningMsg', s:red, s:none, s:bold)
 call s:HL('WildMenu', s:blue, g:srcery_bg, s:bold)
 call s:HL('WinSeparator', s:none, s:xgray1)
 hi! link CursorColumn CursorLine
-call s:HL('Directory', s:green, s:none, s:bold)
 hi! link iCursor Cursor
 hi! link lCursor Cursor
-call s:HL('ModeMsg', s:yellow, s:none, s:bold)
-call s:HL('MoreMsg', s:yellow, s:none, s:bold)
-call s:HL('NonText', s:xgray4)
-call s:HL('Question', s:orange, s:none, s:bold)
-call s:HL('SpecialKey', s:yellow)
 hi! link TabLine TabLineFill
-call s:HL('Title', s:green, s:none, s:bold)
 hi! link vCursor Cursor
 hi! link VisualNOS Visual
-call s:HL('WarningMsg', s:red, s:none, s:bold)
-call s:HL('Link', s:white, s:none, s:underline)
 
 " Conditionals
 if g:srcery_inverse == 1
@@ -465,13 +464,13 @@ if has('nvim')
 
   " Neovim Diagnostic
   call s:HL('DiagnosticError', s:bright_red)
-  call s:HL('DiagnosticWarn', s:bright_yellow)
-  call s:HL('DiagnosticInfo', s:bright_green)
   call s:HL('DiagnosticHint', s:bright_cyan)
+  call s:HL('DiagnosticInfo', s:bright_green)
   call s:HL('DiagnosticUnderlineError', s:bright_red, s:none, s:undercurl)
-  call s:HL('DiagnosticUnderlineWarn', s:bright_yellow, s:none, s:undercurl)
-  call s:HL('DiagnosticUnderlineInfo', s:bright_green, s:none, s:undercurl)
   call s:HL('DiagnosticUnderlineHint', s:bright_cyan, s:none, s:undercurl)
+  call s:HL('DiagnosticUnderlineInfo', s:bright_green, s:none, s:undercurl)
+  call s:HL('DiagnosticUnderlineWarn', s:bright_yellow, s:none, s:undercurl)
+  call s:HL('DiagnosticWarn', s:bright_yellow)
 
   " Neovim Support
   call s:HL('healthError', s:red)
@@ -484,44 +483,44 @@ endif
 " Base groups: {{{
 " -----------------------------------------------------------------------------
 
+call s:HL('Boolean', s:bright_magenta)
+call s:HL('Character', s:green)
 call s:HL('Comment', s:bright_black, s:none, s:italic)
 call s:HL('Conceal', s:none, s:none)
-call s:HL('Todo', s:bright_orange, s:none, s:bold . s:italic)
+call s:HL('Conditional', s:red)
+call s:HL('Constant', s:bright_magenta)
+call s:HL('Decorator', s:bright_orange)
+call s:HL('Define', s:orange)
+call s:HL('Delimiter', s:bright_black)
 call s:HL('Error', s:bright_white, s:red, s:bold)
-call s:HL('String', s:bright_green)
-call s:HL('Tag', s:blue)
+call s:HL('Exception', s:red)
+call s:HL('Float', s:bright_magenta)
+call s:HL('Function', s:yellow)
+call s:HL('Identifier', s:bright_white)
+call s:HL('Include', s:cyan)
+call s:HL('Keyword', s:red)
+call s:HL('Label', s:bright_red)
+call s:HL('Member', s:bright_blue)
+call s:HL('Number', s:bright_magenta)
+call s:HL('Operator', s:white)
+call s:HL('PreCondit', s:cyan)
+call s:HL('PreProc', s:cyan)
+call s:HL('Repeat', s:yellow)
 call s:HL('Special', s:blue)
 call s:HL('SpecialChar', s:yellow, s:none)
 call s:HL('SpecialComment', s:bright_cyan, s:none, s:italic)
-call s:HL('StorageClass', s:bright_blue)
 call s:HL('Statement', s:red)
-call s:HL('Conditional', s:red)
-call s:HL('Repeat', s:yellow)
-call s:HL('Label', s:bright_red)
-call s:HL('Exception', s:red)
-call s:HL('Operator', s:white)
-call s:HL('Keyword', s:red)
-call s:HL('Identifier', s:bright_white)
-call s:HL('Function', s:yellow)
-call s:HL('PreProc', s:cyan)
-call s:HL('Include', s:cyan)
-call s:HL('Define', s:orange)
-call s:HL('PreCondit', s:cyan)
-call s:HL('Constant', s:bright_magenta)
-call s:HL('Character', s:green)
-call s:HL('Boolean', s:bright_magenta)
-call s:HL('Number', s:bright_magenta)
-call s:HL('Float', s:bright_magenta)
-call s:HL('Type', s:bright_blue, s:none, s:italic)
+call s:HL('StorageClass', s:bright_blue)
+call s:HL('String', s:bright_green)
 call s:HL('Structure', s:cyan)
+call s:HL('Tag', s:blue)
+call s:HL('Todo', s:bright_orange, s:none, s:bold . s:italic)
+call s:HL('Type', s:bright_blue, s:none, s:italic)
 call s:HL('Typedef', s:magenta)
-call s:HL('Delimiter', s:bright_black)
-call s:HL('Decorator', s:bright_orange)
 hi! link Annotation Decorator
 hi! link Macro Define
 hi! link PreCondit PreProc
 hi! link Variable Identifier
-call s:HL('Member', s:bright_blue)
 
 " heading groups
 call s:HL('SrceryH1', s:bright_blue, s:xgray1, s:bold)
@@ -537,50 +536,50 @@ call s:HL('SrceryH6', s:bright_magenta, s:xgray1, s:bold)
 
 " nvim-treesitter
 if has('nvim')
-  hi! link TSAnnotation Annotation
-  hi! link TSConstBuiltin Constant
-  hi! link TSConstructor Function
-  hi! link TSEmphasis Italic
-  hi! link TSFuncBuiltin Function
-  hi! link TSAttribute Function
-  hi! link TSFuncMacro Function
-  hi! link TSStringRegex SpecialChar
-  hi! link TSStrong Bold
-  hi! link TSStructure Structure
-  hi! link TSTagDelimiter TSTag
-  hi! link TSUnderline Underline
-  hi! link TSVariable Variable
-  hi! link TSVariableBuiltin Keyword
-  hi! link TSTagAttribute Function
-  hi! link @tag.attribute TSTagAttribute
-  hi! link @markup.link Link
-  hi! link @markup.link.url String
+  hi! link @delimiter Delimiter
   hi! link @markup.heading.1.markdown SrceryH1
   hi! link @markup.heading.2.markdown SrceryH2
   hi! link @markup.heading.3.markdown SrceryH3
   hi! link @markup.heading.4.markdown SrceryH4
   hi! link @markup.heading.5.markdown SrceryH5
   hi! link @markup.heading.6.markdown SrceryH6
-
-  hi! link @variable.member Member
-  hi! link @type Type
-  hi! link @delimiter Delimiter
+  hi! link @markup.link Link
+  hi! link @markup.link.url String
+  hi! link @tag.attribute TSTagAttribute
   hi! link @text.uri String
+  hi! link @type Type
   hi! link @variable Variable
+  hi! link @variable.member Member
+  hi! link TSAnnotation Annotation
+  hi! link TSAttribute Function
+  hi! link TSConstBuiltin Constant
+  hi! link TSConstructor Function
+  hi! link TSEmphasis Italic
+  hi! link TSFuncBuiltin Function
+  hi! link TSFuncMacro Function
+  hi! link TSStringRegex SpecialChar
+  hi! link TSStrong Bold
+  hi! link TSStructure Structure
+  hi! link TSTagAttribute Function
+  hi! link TSTagDelimiter TSTag
+  hi! link TSUnderline Underline
+  hi! link TSVariable Variable
+  hi! link TSVariableBuiltin Keyword
 endif
 
 " Diffs:
-call s:HL('DiffDelete', s:red)
 call s:HL('DiffAdd',    s:green)
 call s:HL('DiffChange', s:cyan)
+call s:HL('DiffDelete', s:red)
 call s:HL('DiffText',   s:yellow)
+
 " legacy groups
-hi! link diffAdded DiffAdd
-hi! link diffRemoved DiffDelete
-hi! link diffChanged DiffChange
 call s:HL('diffFile', s:orange)
-call s:HL('diffNewFile', s:yellow)
 call s:HL('diffLine', s:blue)
+call s:HL('diffNewFile', s:yellow)
+hi! link diffAdded DiffAdd
+hi! link diffChanged DiffChange
+hi! link diffRemoved DiffDelete
 
 " Vim:
 call s:HL('vimAugroup', s:green)
@@ -592,13 +591,13 @@ hi! link vimUserFunc Function
 
 " CSS:
 call s:HL('cssAttributeSelector', s:green)
-hi! link cssDefinition Type
 call s:HL('cssStringQ', s:green)
 hi! link cssAttr Keyword
 hi! link cssBraces Delimiter
-hi! link cssFunctionComma Delimiter
 hi! link cssClassName cssDefinition
 hi! link cssColor Number
+hi! link cssDefinition Type
+hi! link cssFunctionComma Delimiter
 hi! link cssIdentifier Identifier
 hi! link cssProp cssDefinition
 hi! link cssPseudoClass cssDefinition
@@ -606,9 +605,9 @@ hi! link cssPseudoClassId cssPseudoClass
 hi! link cssVendor Keyword
 
 " Elixir
-hi! link elixirDocString Comment
-call s:HL('elixirStringDelimiter', s:green)
 call s:HL('elixirInterpolationDelimiter', s:cyan)
+call s:HL('elixirStringDelimiter', s:green)
+hi! link elixirDocString Comment
 
 " Go
 call s:HL('goBuiltins', s:yellow)
@@ -638,9 +637,9 @@ hi! link htmlTagName htmlTag
 
 " Java:
 call s:HL('javaDocTags', s:green)
+hi! link javaCommentTitle Comment
 hi! link javaCommentTitle vimCommentTitle
 hi! link javaParen Delimiter
-hi! link javaCommentTitle Comment
 
 " JavaScript:
 hi! link javaScriptBraces Delimiter
@@ -693,10 +692,10 @@ hi! link mkdLineBreak Delimiter
 hi! link mkdRule Special
 
 " MoonScript:
-hi! link moonSpecialOp Operator
 hi! link moonExtendedOp Operator
 hi! link moonFunction Function
 hi! link moonObject Structure
+hi! link moonSpecialOp Operator
 
 " Python
 hi! link pythonBuiltin Type
@@ -753,10 +752,10 @@ hi! link xmlCdata Comment
 hi! link xmlCdataCdata xmlCdataStart
 hi! link xmlCdataEnd xmlCdataStart
 hi! link xmlEndTag xmlTagName
-hi! link xmlProcessingDelim Keyword
-hi! link xmlTagName Keyword
 hi! link xmlEqual   Operator
+hi! link xmlProcessingDelim Keyword
 hi! link xmlTag     Delimiter
+hi! link xmlTagName Keyword
 hi! link xmlTagName Statement
 
 " }}}
@@ -768,9 +767,9 @@ if has('nvim')
   " for backward compatibility with neovim v0.5.x
   if has('nvim-0.5')
     hi! link LspDiagnosticsDefaultError DiagnosticError
-    hi! link LspDiagnosticsDefaultWarning DiagnosticWarn
-    hi! link LspDiagnosticsDefaultInformation DiagnosticInfo
     hi! link LspDiagnosticsDefaultHint DiagnosticHint
+    hi! link LspDiagnosticsDefaultInformation DiagnosticInfo
+    hi! link LspDiagnosticsDefaultWarning DiagnosticWarn
     hi! link LspDiagnosticsUnderlineError DiagnosticUnderlineError
     hi! link LspDiagnosticsUnderlineHint DiagnosticUnderlineHint
     hi! link LspDiagnosticsUnderlineInformation DiagnosticUnderlineInfo
@@ -846,31 +845,31 @@ let g:niji_light_colours = g:rbpt_colorpairs
 " GitGutter:
 call s:HL('GitGutterAdd', s:green)
 call s:HL('GitGutterChange', s:yellow)
-call s:HL('GitGutterDelete', s:red)
 call s:HL('GitGutterChangeDelete', s:yellow)
+call s:HL('GitGutterDelete', s:red)
 
 " Ale:
 call s:HL('ALEError', s:none, s:none, s:undercurl, s:red)
-call s:HL('ALEWarning', s:none, s:none, s:undercurl, s:yellow)
-call s:HL('ALEInfo', s:none, s:none, s:undercurl, s:blue)
 call s:HL('ALEErrorSign', s:red)
-call s:HL('ALEWarningSign', s:yellow)
+call s:HL('ALEInfo', s:none, s:none, s:undercurl, s:blue)
 call s:HL('ALEInfoSign', s:blue)
+call s:HL('ALEWarning', s:none, s:none, s:undercurl, s:yellow)
+call s:HL('ALEWarningSign', s:yellow)
 
 " vim-indent-guides:
 call s:HL('IndentGuidesEven', s:none, s:xgray3)
 call s:HL('IndentGuidesOdd',  s:none, s:xgray4)
 
 " vim-startify:
-hi! link StartifyNumber Statement
-hi! link StartifyFile Normal
-hi! link StartifyPath String
-hi! link StartifySlash Normal
 hi! link StartifyBracket Comment
-hi! link StartifyHeader Type
+hi! link StartifyFile Normal
 hi! link StartifyFooter Normal
-hi! link StartifySpecial Comment
+hi! link StartifyHeader Type
+hi! link StartifyNumber Statement
+hi! link StartifyPath String
 hi! link StartifySection Identifier
+hi! link StartifySlash Normal
+hi! link StartifySpecial Comment
 
 " fzf:
 call s:HL('fzf1', s:magenta, s:xgray2)
@@ -878,18 +877,18 @@ call s:HL('fzf2', s:bright_green, s:xgray2)
 call s:HL('fzf3', s:bright_white, s:xgray2)
 
 " coc.nvim:
-call s:HL('CocErrorSign', s:red)
-call s:HL('CocWarningSign', s:bright_orange)
-call s:HL('CocInfoSign', s:yellow)
-call s:HL('CocHintSign', s:blue)
 call s:HL('CocErrorHighlight', s:none, s:none, s:undercurl, s:red)
-call s:HL('CocWarningHighlight', s:none, s:none, s:undercurl, s:bright_orange)
-call s:HL('CocInfoHighlight', s:none, s:none, s:undercurl, s:yellow)
+call s:HL('CocErrorSign', s:red)
 call s:HL('CocHintHighlight', s:none, s:none, s:undercurl, s:blue)
+call s:HL('CocHintSign', s:blue)
+call s:HL('CocInfoHighlight', s:none, s:none, s:undercurl, s:yellow)
+call s:HL('CocInfoSign', s:yellow)
+call s:HL('CocWarningHighlight', s:none, s:none, s:undercurl, s:bright_orange)
+call s:HL('CocWarningSign', s:bright_orange)
 
 " CtrlP:
-hi! link CtrlPMatch Keyword
 hi! link CtrlPBufferHid Normal
+hi! link CtrlPMatch Keyword
 
 " NERDTree:
 hi! link NERDTreeDirSlash Keyword
@@ -900,8 +899,8 @@ hi! link NERDTreeHelp Comment
 call s:HL('TelescopeNormal', s:white)
 
 " GitCommit:
-call s:HL('gitcommitSelectedFile', s:green)
 call s:HL('gitcommitDiscardedFile', s:red)
+call s:HL('gitcommitSelectedFile', s:green)
 
 " Better whitespace:
 call s:HL('ExtraWhitespace', s:none, s:red)
