@@ -777,15 +777,15 @@ if has('nvim')
   endif
 
   " snacks.nvim:
-  hi! link SnacksNormal Normal
-  hi! link SnacksNormalNC Normal
-  hi! link SnacksPicker Normal
-  hi! link SnacksPickerDir Comment
-  hi! link SnacksPickerGitStatusIgnored Comment
-  hi! link SnacksPickerGitStatusUntracked Comment
-  hi! link SnacksPickerPathHidden Comment
-  hi! link SnacksPickerPathIgnored Comment
-  hi! link SnacksPickerTotals Comment
+  " hi! link SnacksNormal Normal
+  " hi! link SnacksNormalNC Normal
+  " hi! link SnacksPicker Normal
+  " hi! link SnacksPickerDir Comment
+  " hi! link SnacksPickerGitStatusIgnored Comment
+  " hi! link SnacksPickerGitStatusUntracked Comment
+  " hi! link SnacksPickerPathHidden Comment
+  " hi! link SnacksPickerPathIgnored Comment
+  " hi! link SnacksPickerTotals Comment
 
   " trouble.nvim:
   hi! link TroubleNormal Normal
@@ -896,7 +896,7 @@ hi! link NERDTreeExecFile Macro
 hi! link NERDTreeHelp Comment
 
 " Telescope:
-call s:HL('TelescopeNormal', s:white)
+" call s:HL('TelescopeNormal', s:white)
 
 " GitCommit:
 call s:HL('gitcommitDiscardedFile', s:red)
