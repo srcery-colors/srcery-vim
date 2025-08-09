@@ -17,25 +17,24 @@ local colors = {
   brightmagenta  =   vim.g.srcery_bright_magenta,
   brightcyan     =   vim.g.srcery_bright_cyan,
   brightwhite    =   vim.g.srcery_bright_white,
-  -- Srcery's xterm 256 colors
   orange         =   vim.g.srcery_orange or vim.g.srcery_red,
   brightorange   =   vim.g.srcery_bright_orange or vim.g.srcery_red,
   hardblack      =   vim.g.srcery_hard_black or vim.g.srcery_black,
-  xgray1         =   vim.g.srcery_xgray1,
-  xgray2         =   vim.g.srcery_xgray2,
-  xgray3         =   vim.g.srcery_xgray3,
-  xgray4         =   vim.g.srcery_xgray4,
-  xgray5         =   vim.g.srcery_xgray5,
-  xgray6         =   vim.g.srcery_xgray6,
+  gray1         =   vim.g.srcery_gray1,
+  gray2         =   vim.g.srcery_gray2,
+  gray3         =   vim.g.srcery_gray3,
+  gray4         =   vim.g.srcery_gray4,
+  gray5         =   vim.g.srcery_gray5,
+  gray6         =   vim.g.srcery_gray6,
 }
 
 -- Optimization: Common section C style
-local section_c = {bg = colors.xgray1, fg = colors.brightwhite}
+local section_c = {bg = colors.gray1, fg = colors.brightwhite}
 
 return {
   normal = {
-    a = {bg = colors.xgray4, fg = colors.brightwhite, gui = 'bold'},
-    b = {bg = colors.xgray3, fg = colors.brightwhite},
+    a = {bg = colors.gray4, fg = colors.brightwhite, gui = 'bold'},
+    b = {bg = colors.gray3, fg = colors.brightwhite},
     c = section_c
   },
   insert = {
@@ -45,7 +44,7 @@ return {
   },
   visual = {
     a = {bg = colors.cyan, fg = colors.black, gui = 'bold'},
-    b = {bg = colors.xgray5, fg = colors.brightwhite},
+    b = {bg = colors.gray5, fg = colors.brightwhite},
     c = section_c
   },
   replace = {
@@ -55,17 +54,17 @@ return {
   },
   command = {
     a = {bg = colors.yellow, fg = colors.black, gui = 'bold'},
-    b = {bg = colors.xgray3, fg = colors.brightwhite},
+    b = {bg = colors.gray3, fg = colors.brightwhite},
     c = section_c
   },
   terminal = {
     a = {bg = colors.green, fg = colors.black, gui = 'bold'},
-    b = {bg = colors.xgray3, fg = colors.brightwhite},
+    b = {bg = colors.gray3, fg = colors.brightwhite},
     c = section_c
   },
   inactive = {
-    a = {bg = colors.xgray4, fg = colors.xgray6, gui = 'bold'},
-    b = {bg = colors.xgray3, fg = colors.xgray6},
-    c = {bg = colors.xgray2, fg = colors.xgray6}
+    a = {bg = colors.gray4, fg = colors.gray6, gui = 'bold'},
+    b = {bg = colors.gray3, fg = colors.gray6},
+    c = {bg = colors.gray2, fg = colors.gray6}
   }
 }

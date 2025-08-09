@@ -109,52 +109,52 @@ if !exists('g:srcery_hard_black_cterm')
   let g:srcery_hard_black_cterm=233
 endif
 
-if !exists('g:srcery_xgray1')
-  let g:srcery_xgray1='#1c1b19'
+if !exists('g:srcery_gray1')
+  let g:srcery_gray1='#1c1b19'
 endif
 
-if !exists('g:srcery_xgray1_cterm')
-  let g:srcery_xgray1_cterm=235
+if !exists('g:srcery_gray1_cterm')
+  let g:srcery_gray1_cterm=235
 endif
 
-if !exists('g:srcery_xgray2')
-  let g:srcery_xgray2='#262522'
+if !exists('g:srcery_gray2')
+  let g:srcery_gray2='#262522'
 endif
 
-if !exists('g:srcery_xgray2_cterm')
-  let g:srcery_xgray2_cterm=236
+if !exists('g:srcery_gray2_cterm')
+  let g:srcery_gray2_cterm=236
 endif
 
-if !exists('g:srcery_xgray3')
-  let g:srcery_xgray3='#312f2c'
+if !exists('g:srcery_gray3')
+  let g:srcery_gray3='#312f2c'
 endif
 
-if !exists('g:srcery_xgray3_cterm')
-  let g:srcery_xgray3_cterm=237
+if !exists('g:srcery_gray3_cterm')
+  let g:srcery_gray3_cterm=237
 endif
 
-if !exists('g:srcery_xgray4')
-  let g:srcery_xgray4='#3b3935'
+if !exists('g:srcery_gray4')
+  let g:srcery_gray4='#3b3935'
 endif
 
-if !exists('g:srcery_xgray4_cterm')
-  let g:srcery_xgray4_cterm=238
+if !exists('g:srcery_gray4_cterm')
+  let g:srcery_gray4_cterm=238
 endif
 
-if !exists('g:srcery_xgray5')
-  let g:srcery_xgray5='#45433e'
+if !exists('g:srcery_gray5')
+  let g:srcery_gray5='#45433e'
 endif
 
-if !exists('g:srcery_xgray5_cterm')
-  let g:srcery_xgray5_cterm=239
+if !exists('g:srcery_gray5_cterm')
+  let g:srcery_gray5_cterm=239
 endif
 
-if !exists('g:srcery_xgray6')
-  let g:srcery_xgray6='#504d47'
+if !exists('g:srcery_gray6')
+  let g:srcery_gray6='#504d47'
 endif
 
-if !exists('g:srcery_xgray6_cterm')
-  let g:srcery_xgray6_cterm=240
+if !exists('g:srcery_gray6_cterm')
+  let g:srcery_gray6_cterm=240
 endif
 
 if !exists('g:srcery_background')
@@ -267,12 +267,12 @@ let s:bright_white   = [g:srcery_bright_white,   15]
 let s:orange         = [g:srcery_orange,        g:srcery_orange_cterm]
 let s:bright_orange  = [g:srcery_bright_orange, g:srcery_bright_orange_cterm]
 let s:hard_black     = [g:srcery_hard_black,    g:srcery_hard_black_cterm]
-let s:xgray1         = [g:srcery_xgray1,        g:srcery_xgray1_cterm]
-let s:xgray2         = [g:srcery_xgray2,        g:srcery_xgray2_cterm]
-let s:xgray3         = [g:srcery_xgray3,        g:srcery_xgray3_cterm]
-let s:xgray4         = [g:srcery_xgray4,        g:srcery_xgray4_cterm]
-let s:xgray5         = [g:srcery_xgray5,        g:srcery_xgray5_cterm]
-let s:xgray6         = [g:srcery_xgray6,        g:srcery_xgray6_cterm]
+let s:gray1          = [g:srcery_gray1,        g:srcery_gray1_cterm]
+let s:gray2          = [g:srcery_gray2,        g:srcery_gray2_cterm]
+let s:gray3          = [g:srcery_gray3,        g:srcery_gray3_cterm]
+let s:gray4          = [g:srcery_gray4,        g:srcery_gray4_cterm]
+let s:gray5          = [g:srcery_gray5,        g:srcery_gray5_cterm]
+let s:gray6          = [g:srcery_gray6,        g:srcery_gray6_cterm]
 
 "}}}
 " HL function: {{{
@@ -329,10 +329,10 @@ endfunction
 " UI groups: {{{
 " -----------------------------------------------------------------------------
 
-call s:HL('ColorColumn',  s:none, s:xgray2)
+call s:HL('ColorColumn',  s:none, s:gray2)
 call s:HL('Conceal', s:blue, s:none)
 call s:HL('Cursor', s:black, s:yellow)
-call s:HL('CursorLine',   s:none, s:xgray2)
+call s:HL('CursorLine',   s:none, s:gray2)
 call s:HL('CursorLineNr', s:yellow, s:background)
 call s:HL('Directory', s:green, s:none, s:bold)
 call s:HL('ErrorMsg', s:bright_white, s:red)
@@ -342,9 +342,9 @@ call s:HL('LineNr', s:bright_black)
 call s:HL('Link', s:white, s:none, s:underline)
 call s:HL('ModeMsg', s:yellow, s:none, s:bold)
 call s:HL('MoreMsg', s:yellow, s:none, s:bold)
-call s:HL('NonText', s:xgray4)
+call s:HL('NonText', s:gray4)
 call s:HL('Normal', s:bright_white, s:background)
-call s:HL('Pmenu', s:bright_white, s:xgray2)
+call s:HL('Pmenu', s:bright_white, s:gray2)
 call s:HL('PmenuSbar', s:none, s:background)
 call s:HL('PmenuSel', s:bright_white, s:blue, s:bold)
 call s:HL('PmenuThumb', s:none, s:orange)
@@ -355,18 +355,17 @@ call s:HL('SpellBad',   s:none, s:none, s:undercurl, s:blue)
 call s:HL('SpellCap',   s:green, s:none, s:bold . s:italic)
 call s:HL('SpellLocal', s:none, s:none, s:undercurl, s:cyan)
 call s:HL('SpellRare',  s:none, s:none, s:undercurl, s:magenta)
-call s:HL('StatusLine',   s:bright_white, s:xgray2)
+call s:HL('StatusLine',   s:bright_white, s:gray2)
 call s:HL('StatusLineNC', s:bright_black, s:background, s:underline)
-call s:HL('TabLineFill', s:bright_black, s:xgray2)
-call s:HL('TabLineSel', s:bright_white, s:xgray5)
+call s:HL('TabLineFill', s:bright_black, s:gray2)
+call s:HL('TabLineSel', s:bright_white, s:gray5)
 call s:HL('Title', s:green, s:none, s:bold)
 call s:HL('Underlined', s:none, s:none, s:underline)
 call s:HL('VertSplit', s:bright_white, s:background)
 call s:HL('WarningMsg', s:red, s:none, s:bold)
 call s:HL('WildMenu', s:blue, s:background, s:bold)
-call s:HL('WinSeparator', s:none, s:xgray1)
+call s:HL('WinSeparator', s:none, s:gray1)
 call s:HL('MatchParen', s:bright_magenta, s:none, s:bold)
-call s:HL('Search', s:none, s:xgray5)
 hi! link CursorColumn CursorLine
 hi! link iCursor Cursor
 hi! link lCursor Cursor
@@ -377,17 +376,19 @@ hi! link VisualNOS Visual
 
 " Conditionals
 if g:srcery_normal_float == 1
-  call s:HL('NormalFloat',  s:none, s:xgray1)
+  call s:HL('NormalFloat',  s:none, s:gray1)
 endif
 
 if g:srcery_inverse == 1
   call s:HL('Visual', s:none, s:none, s:inverse)
-  call s:HL('IncSearch', s:none, s:none, s:inverse)
-  call s:HL('CurSearch', s:none, s:none, s:inverse)
+  call s:HL('IncSearch', s:none, s:none, s:inverse . s:bold)
+  call s:HL('CurSearch', s:none, s:none, s:inverse . s:bold)
+  call s:HL('Search', s:none, s:gray4)
 else
-  call s:HL('Visual', s:none, s:xgray2, s:bold)
-  call s:HL('IncSearch', s:black, s:cyan)
-  call s:HL('CurSearch', s:black, s:cyan)
+  call s:HL('Visual', s:none, s:gray3)
+  call s:HL('IncSearch', s:bright_white, s:gray5, s:bold)
+  call s:HL('CurSearch', s:bright_white, s:gray5, s:bold)
+  call s:HL('Search', s:white, s:gray2)
 endif
 
 " Vim 8 terminal
@@ -445,7 +446,7 @@ if has('nvim')
   call s:HL('healthError', s:red)
   call s:HL('healthSuccess', s:green)
   call s:HL('healthWarning', s:orange)
-  call s:HL('TermCursorNC', s:xgray1, s:none)
+  call s:HL('TermCursorNC', s:gray1, s:none)
 endif
 
 " }}}
@@ -492,12 +493,12 @@ hi! link PreCondit PreProc
 hi! link Variable Identifier
 
 " heading groups
-call s:HL('SrceryH1', s:bright_blue, s:xgray1, s:bold)
-call s:HL('SrceryH2', s:yellow, s:xgray1, s:bold)
-call s:HL('SrceryH3', s:bright_yellow, s:xgray1, s:bold)
-call s:HL('SrceryH4', s:green, s:xgray1, s:bold)
-call s:HL('SrceryH5', s:magenta, s:xgray1, s:bold)
-call s:HL('SrceryH6', s:bright_magenta, s:xgray1, s:bold)
+call s:HL('SrceryH1', s:bright_blue, s:gray1, s:bold)
+call s:HL('SrceryH2', s:yellow, s:gray1, s:bold)
+call s:HL('SrceryH3', s:bright_yellow, s:gray1, s:bold)
+call s:HL('SrceryH4', s:green, s:gray1, s:bold)
+call s:HL('SrceryH5', s:magenta, s:gray1, s:bold)
+call s:HL('SrceryH6', s:bright_magenta, s:gray1, s:bold)
 
 " }}}
 " Languages: {{{
@@ -826,8 +827,8 @@ call s:HL('ALEWarning', s:none, s:none, s:undercurl, s:yellow)
 call s:HL('ALEWarningSign', s:yellow)
 
 " vim-indent-guides:
-call s:HL('IndentGuidesEven', s:none, s:xgray3)
-call s:HL('IndentGuidesOdd',  s:none, s:xgray4)
+call s:HL('IndentGuidesEven', s:none, s:gray3)
+call s:HL('IndentGuidesOdd',  s:none, s:gray4)
 
 " vim-startify:
 hi! link StartifyBracket Comment
@@ -841,9 +842,9 @@ hi! link StartifySlash Normal
 hi! link StartifySpecial Comment
 
 " fzf:
-call s:HL('fzf1', s:magenta, s:xgray2)
-call s:HL('fzf2', s:bright_green, s:xgray2)
-call s:HL('fzf3', s:bright_white, s:xgray2)
+call s:HL('fzf1', s:magenta, s:gray2)
+call s:HL('fzf2', s:bright_green, s:gray2)
+call s:HL('fzf3', s:bright_white, s:gray2)
 
 " coc.nvim:
 call s:HL('CocErrorHighlight', s:none, s:none, s:undercurl, s:red)
@@ -875,13 +876,13 @@ call s:HL('gitcommitSelectedFile', s:green)
 call s:HL('ExtraWhitespace', s:none, s:red)
 
 " render-markdown.nvim:
-call s:HL('RenderMarkdownCode', s:none, s:xgray1)
-call s:HL('RenderMarkdownH1Bg', s:none, s:xgray1)
-call s:HL('RenderMarkdownH2Bg', s:none, s:xgray1)
-call s:HL('RenderMarkdownH3Bg', s:none, s:xgray1)
-call s:HL('RenderMarkdownH4Bg', s:none, s:xgray1)
-call s:HL('RenderMarkdownH5Bg', s:none, s:xgray1)
-call s:HL('RenderMarkdownH6Bg', s:none, s:xgray1)
+call s:HL('RenderMarkdownCode', s:none, s:gray1)
+call s:HL('RenderMarkdownH1Bg', s:none, s:gray1)
+call s:HL('RenderMarkdownH2Bg', s:none, s:gray1)
+call s:HL('RenderMarkdownH3Bg', s:none, s:gray1)
+call s:HL('RenderMarkdownH4Bg', s:none, s:gray1)
+call s:HL('RenderMarkdownH5Bg', s:none, s:gray1)
+call s:HL('RenderMarkdownH6Bg', s:none, s:gray1)
 
 " }}}
 
