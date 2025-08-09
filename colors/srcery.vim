@@ -201,6 +201,8 @@ if !exists('g:srcery_guisp_fallback')
   let g:srcery_guisp_fallback='NONE'
 endif
 
+if !exists('g:srcery_normal_float')
+  let g:srcery_normal_float=0
 endif
 
 " Emphasis:
@@ -372,7 +374,12 @@ hi! link TabLine TabLineFill
 hi! link vCursor Cursor
 hi! link VisualNOS Visual
 
+
 " Conditionals
+if g:srcery_normal_float == 1
+  call s:HL('NormalFloat',  s:none, s:xgray1)
+endif
+
 if g:srcery_inverse == 1
   call s:HL('Visual', s:none, s:none, s:inverse)
   call s:HL('IncSearch', s:none, s:none, s:inverse)
