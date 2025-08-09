@@ -157,6 +157,13 @@ if !exists('g:srcery_xgray6_cterm')
   let g:srcery_xgray6_cterm=240
 endif
 
+if !exists('g:srcery_background')
+  let g:srcery_background='#1C1B19'
+endif
+
+if !exists('g:srcery_background_cterm')
+  let g:srcery_background_cterm=0
+endif
 
 " Options
 " ---------
@@ -188,26 +195,12 @@ if !exists('g:srcery_inverse')
   let g:srcery_inverse=1
 endif
 
+" If colored text decoration isn't available, this will use inverted text
 if !exists('g:srcery_guisp_fallback')
       \ || index(['fg', 'bg'], g:srcery_guisp_fallback) == -1
   let g:srcery_guisp_fallback='NONE'
 endif
 
-if !exists('g:srcery_bg')
-  "Sets the default color for both guisp and cterm backgrounds.
-  let g:srcery_bg=[g:srcery_black, 0]
-elseif (index(g:srcery_bg, 'DEFAULT') >= 0)
-      \ || (index(g:srcery_bg, 'NONE') >= 0
-      \ && has('gui_running'))
-  "Defaults should be set if the user specifies it, or if the background is set
-  "as 'NONE' whilst the gui is running.
-  for i in [0, 1]
-    if g:srcery_bg[i] ==# 'DEFAULT'
-          \ || (g:srcery_bg[i] ==# 'NONE'
-          \ && has('gui_running'))
-      let g:srcery_bg[i] = (i==1 ? 0 : g:srcery_black)
-    endif
-  endfor
 endif
 
 " Emphasis:
@@ -246,7 +239,9 @@ endif
 " Palette: {{{
 " -----------------------------------------------------------------------------
 
+" Special
 let s:none           = ['NONE', 'NONE']
+let s:background     = [g:srcery_background,    g:srcery_background_cterm]
 
 " 16 base colors
 let s:black          = [g:srcery_black, 0]
@@ -336,39 +331,40 @@ call s:HL('ColorColumn',  s:none, s:xgray2)
 call s:HL('Conceal', s:blue, s:none)
 call s:HL('Cursor', s:black, s:yellow)
 call s:HL('CursorLine',   s:none, s:xgray2)
-call s:HL('CursorLineNr', s:yellow, g:srcery_bg)
+call s:HL('CursorLineNr', s:yellow, s:background)
 call s:HL('Directory', s:green, s:none, s:bold)
 call s:HL('ErrorMsg', s:bright_white, s:red)
-call s:HL('FoldColumn', s:bright_black, g:srcery_bg)
-call s:HL('Folded', s:bright_black, g:srcery_bg, s:italic)
+call s:HL('FoldColumn', s:bright_black, s:background)
+call s:HL('Folded', s:bright_black, s:background, s:italic)
 call s:HL('LineNr', s:bright_black)
 call s:HL('Link', s:white, s:none, s:underline)
 call s:HL('ModeMsg', s:yellow, s:none, s:bold)
 call s:HL('MoreMsg', s:yellow, s:none, s:bold)
 call s:HL('NonText', s:xgray4)
-call s:HL('Normal', s:bright_white, g:srcery_bg)
-call s:HL('NormalFloat',  s:none, s:xgray1)
+call s:HL('Normal', s:bright_white, s:background)
 call s:HL('Pmenu', s:bright_white, s:xgray2)
-call s:HL('PmenuSbar', s:none, g:srcery_bg)
+call s:HL('PmenuSbar', s:none, s:background)
 call s:HL('PmenuSel', s:bright_white, s:blue, s:bold)
 call s:HL('PmenuThumb', s:none, s:orange)
 call s:HL('Question', s:orange, s:none, s:bold)
-call s:HL('SignColumn', s:none, g:srcery_bg)
+call s:HL('SignColumn', s:none, s:background)
 call s:HL('SpecialKey', s:yellow)
 call s:HL('SpellBad',   s:none, s:none, s:undercurl, s:blue)
 call s:HL('SpellCap',   s:green, s:none, s:bold . s:italic)
 call s:HL('SpellLocal', s:none, s:none, s:undercurl, s:cyan)
 call s:HL('SpellRare',  s:none, s:none, s:undercurl, s:magenta)
 call s:HL('StatusLine',   s:bright_white, s:xgray2)
-call s:HL('StatusLineNC', s:bright_black, g:srcery_bg, s:underline)
+call s:HL('StatusLineNC', s:bright_black, s:background, s:underline)
 call s:HL('TabLineFill', s:bright_black, s:xgray2)
 call s:HL('TabLineSel', s:bright_white, s:xgray5)
 call s:HL('Title', s:green, s:none, s:bold)
 call s:HL('Underlined', s:none, s:none, s:underline)
-call s:HL('VertSplit', s:bright_white, g:srcery_bg)
+call s:HL('VertSplit', s:bright_white, s:background)
 call s:HL('WarningMsg', s:red, s:none, s:bold)
-call s:HL('WildMenu', s:blue, g:srcery_bg, s:bold)
+call s:HL('WildMenu', s:blue, s:background, s:bold)
 call s:HL('WinSeparator', s:none, s:xgray1)
+call s:HL('MatchParen', s:bright_magenta, s:none, s:bold)
+call s:HL('Search', s:none, s:xgray5)
 hi! link CursorColumn CursorLine
 hi! link iCursor Cursor
 hi! link lCursor Cursor
