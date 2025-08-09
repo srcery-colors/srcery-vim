@@ -188,14 +188,6 @@ if !exists('g:srcery_inverse')
   let g:srcery_inverse=1
 endif
 
-if !exists('g:srcery_inverse_matches')
-  let g:srcery_inverse_matches=0
-endif
-
-if !exists('g:srcery_inverse_match_paren')
-  let g:srcery_inverse_match_paren=0
-endif
-
 if !exists('g:srcery_dim_lisp_paren')
   let g:srcery_dim_lisp_paren=0
 endif
@@ -395,23 +387,12 @@ hi! link VisualNOS Visual
 " Conditionals
 if g:srcery_inverse == 1
   call s:HL('Visual', s:none, s:none, s:inverse)
+  call s:HL('IncSearch', s:none, s:none, s:inverse)
+  call s:HL('CurSearch', s:none, s:none, s:inverse)
 else
   call s:HL('Visual', s:none, s:xgray2, s:bold)
-endif
-
-if g:srcery_inverse_match_paren == 1
-  call s:HL('MatchParen', s:bright_magenta, s:none, s:inverse . s:bold)
-else
-  call s:HL('MatchParen', s:bright_magenta, s:none, s:bold)
-endif
-if g:srcery_inverse == 1 && g:srcery_inverse_matches == 1
-  call s:HL('Search', s:none, s:none, s:inverse)
-  call s:HL('IncSearch', s:none, s:none, s:underline . s:inverse . s:bold)
-  call s:HL('CurSearch', s:none, s:none, s:underline . s:inverse . s:bold)
-else
-  call s:HL('Search', s:none, s:xgray5)
-  call s:HL('IncSearch', s:none, s:xgray5, s:underline . s:bold)
-  call s:HL('CurSearch', s:none, s:xgray5, s:underline . s:bold)
+  call s:HL('IncSearch', s:black, s:cyan)
+  call s:HL('CurSearch', s:black, s:cyan)
 endif
 
 " Vim 8 terminal
