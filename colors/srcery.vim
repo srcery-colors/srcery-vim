@@ -22,7 +22,7 @@ let g:colors_name='srcery'
 " Colors
 " ---------
 if !exists('g:srcery_black')
-  let g:srcery_black='#1C1B19'
+  let g:srcery_black='#121110'
 endif
 
 if !exists('g:srcery_red')
@@ -50,11 +50,11 @@ if !exists('g:srcery_cyan')
 endif
 
 if !exists('g:srcery_white')
-  let g:srcery_white='#BAA67F'
+  let g:srcery_white='#C5B088'
 endif
 
 if !exists('g:srcery_bright_black')
-  let g:srcery_bright_black='#918175'
+  let g:srcery_bright_black='#917E6B'
 endif
 
 if !exists('g:srcery_bright_red')
@@ -110,7 +110,7 @@ if !exists('g:srcery_hard_black_cterm')
 endif
 
 if !exists('g:srcery_xgray1')
-  let g:srcery_xgray1='#262626'
+  let g:srcery_xgray1='#1c1b19'
 endif
 
 if !exists('g:srcery_xgray1_cterm')
@@ -118,7 +118,7 @@ if !exists('g:srcery_xgray1_cterm')
 endif
 
 if !exists('g:srcery_xgray2')
-  let g:srcery_xgray2='#303030'
+  let g:srcery_xgray2='#262522'
 endif
 
 if !exists('g:srcery_xgray2_cterm')
@@ -126,7 +126,7 @@ if !exists('g:srcery_xgray2_cterm')
 endif
 
 if !exists('g:srcery_xgray3')
-  let g:srcery_xgray3='#3A3A3A'
+  let g:srcery_xgray3='#312f2c'
 endif
 
 if !exists('g:srcery_xgray3_cterm')
@@ -134,7 +134,7 @@ if !exists('g:srcery_xgray3_cterm')
 endif
 
 if !exists('g:srcery_xgray4')
-  let g:srcery_xgray4='#444444'
+  let g:srcery_xgray4='#3b3935'
 endif
 
 if !exists('g:srcery_xgray4_cterm')
@@ -142,7 +142,7 @@ if !exists('g:srcery_xgray4_cterm')
 endif
 
 if !exists('g:srcery_xgray5')
-  let g:srcery_xgray5='#4E4E4E'
+  let g:srcery_xgray5='#45433e'
 endif
 
 if !exists('g:srcery_xgray5_cterm')
@@ -150,7 +150,7 @@ if !exists('g:srcery_xgray5_cterm')
 endif
 
 if !exists('g:srcery_xgray6')
-  let g:srcery_xgray6='#585858'
+  let g:srcery_xgray6='#504d47'
 endif
 
 if !exists('g:srcery_xgray6_cterm')
