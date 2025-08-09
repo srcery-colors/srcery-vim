@@ -214,10 +214,6 @@ elseif (index(g:srcery_bg, 'DEFAULT') >= 0)
   endfor
 endif
 
-if !exists('g:srcery_hard_black_terminal_bg')
-  let g:srcery_hard_black_terminal_bg=1
-endif
-
 " Emphasis:
 " ---------
 let s:bold = 'bold,'
@@ -414,13 +410,6 @@ if has('terminal')
   let g:terminal_ansi_colors[13] = s:bright_magenta[0]
   let g:terminal_ansi_colors[14] = s:bright_cyan[0]
   let g:terminal_ansi_colors[15] = s:bright_white[0]
-
-  " Must set an explicit background as NONE won't work
-  " Therefore not useful with transparent background option
-  if g:srcery_hard_black_terminal_bg == 1
-    call s:HL('Terminal', s:bright_white, s:hard_black)
-  endif
-
 endif
 
 if has('nvim')
