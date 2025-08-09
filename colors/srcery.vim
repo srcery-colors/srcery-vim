@@ -188,10 +188,6 @@ if !exists('g:srcery_inverse')
   let g:srcery_inverse=1
 endif
 
-if !exists('g:srcery_dim_lisp_paren')
-  let g:srcery_dim_lisp_paren=0
-endif
-
 if !exists('g:srcery_guisp_fallback')
       \ || index(['fg', 'bg'], g:srcery_guisp_fallback) == -1
   let g:srcery_guisp_fallback='NONE'
