@@ -158,7 +158,7 @@ if !exists('g:srcery_xgray6_cterm')
 endif
 
 if !exists('g:srcery_background')
-  let g:srcery_background='#1C1B19'
+  let g:srcery_background=g:srcery_black
 endif
 
 if !exists('g:srcery_background_cterm')
