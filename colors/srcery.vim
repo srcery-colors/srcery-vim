@@ -366,6 +366,10 @@ call s:HL('WarningMsg', s:red, s:none, s:bold)
 call s:HL('WildMenu', s:blue, s:background, s:bold)
 call s:HL('WinSeparator', s:none, s:gray1)
 call s:HL('MatchParen', s:bright_magenta, s:none, s:bold)
+call s:HL('IncSearch', s:bright_magenta, s:none, s:underline . s:bold)
+call s:HL('CurSearch', s:bright_magenta, s:none, s:underline . s:bold)
+call s:HL('Search', s:magenta, s:none, s:underline)
+call s:HL('Visual', s:none, s:gray3, s:inverse)
 hi! link CursorColumn CursorLine
 hi! link iCursor Cursor
 hi! link lCursor Cursor
@@ -379,17 +383,6 @@ if g:srcery_normal_float == 1
   call s:HL('NormalFloat',  s:none, s:gray1)
 endif
 
-if g:srcery_inverse == 1
-  call s:HL('Visual', s:none, s:none, s:inverse)
-  call s:HL('IncSearch', s:none, s:none, s:inverse . s:bold)
-  call s:HL('CurSearch', s:none, s:none, s:inverse . s:bold)
-  call s:HL('Search', s:none, s:gray4)
-else
-  call s:HL('Visual', s:none, s:gray3)
-  call s:HL('IncSearch', s:bright_white, s:gray5, s:bold)
-  call s:HL('CurSearch', s:bright_white, s:gray5, s:bold)
-  call s:HL('Search', s:white, s:gray2)
-endif
 
 " Vim 8 terminal
 if has('terminal')
