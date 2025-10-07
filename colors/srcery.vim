@@ -332,7 +332,7 @@ endfunction
 call s:HL('ColorColumn',  s:none, s:gray2)
 call s:HL('Conceal', s:blue, s:none)
 call s:HL('Cursor', s:black, s:yellow)
-call s:HL('CursorLine',   s:none, s:gray2)
+call s:HL('CursorLine',   s:none, s:gray1)
 call s:HL('CursorLineNr', s:yellow, s:background)
 call s:HL('Directory', s:green, s:none, s:bold)
 call s:HL('ErrorMsg', s:bright_white, s:red)
