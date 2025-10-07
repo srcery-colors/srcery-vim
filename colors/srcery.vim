@@ -366,9 +366,9 @@ call s:HL('WarningMsg', s:red, s:none, s:bold)
 call s:HL('WildMenu', s:blue, s:background, s:bold)
 call s:HL('WinSeparator', s:none, s:gray1)
 call s:HL('MatchParen', s:bright_magenta, s:none, s:bold)
-call s:HL('IncSearch', s:bright_magenta, s:none, s:underline . s:bold)
-call s:HL('CurSearch', s:bright_magenta, s:none, s:underline . s:bold)
-call s:HL('Search', s:magenta, s:none, s:underline)
+call s:HL('IncSearch', s:none, s:gray4, s:underline . s:bold)
+call s:HL('CurSearch', s:none, s:gray4, s:underline . s:bold)
+call s:HL('Search', s:none, s:none, s:underline)
 call s:HL('Visual', s:none, s:gray3, s:inverse)
 hi! link CursorColumn CursorLine
 hi! link iCursor Cursor
