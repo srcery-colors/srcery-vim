@@ -267,12 +267,12 @@ let s:bright_white   = [g:srcery_bright_white,   15]
 let s:orange         = [g:srcery_orange,        g:srcery_orange_cterm]
 let s:bright_orange  = [g:srcery_bright_orange, g:srcery_bright_orange_cterm]
 let s:hard_black     = [g:srcery_hard_black,    g:srcery_hard_black_cterm]
-let s:gray1          = [g:srcery_gray1,        g:srcery_gray1_cterm]
-let s:gray2          = [g:srcery_gray2,        g:srcery_gray2_cterm]
-let s:gray3          = [g:srcery_gray3,        g:srcery_gray3_cterm]
-let s:gray4          = [g:srcery_gray4,        g:srcery_gray4_cterm]
-let s:gray5          = [g:srcery_gray5,        g:srcery_gray5_cterm]
-let s:gray6          = [g:srcery_gray6,        g:srcery_gray6_cterm]
+let s:gray1          = [g:srcery_gray1,         g:srcery_gray1_cterm]
+let s:gray2          = [g:srcery_gray2,         g:srcery_gray2_cterm]
+let s:gray3          = [g:srcery_gray3,         g:srcery_gray3_cterm]
+let s:gray4          = [g:srcery_gray4,         g:srcery_gray4_cterm]
+let s:gray5          = [g:srcery_gray5,         g:srcery_gray5_cterm]
+let s:gray6          = [g:srcery_gray6,         g:srcery_gray6_cterm]
 
 "}}}
 " HL function: {{{
