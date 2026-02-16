@@ -877,6 +877,26 @@ call s:HL('RenderMarkdownH4Bg', s:none, s:gray1)
 call s:HL('RenderMarkdownH5Bg', s:none, s:gray1)
 call s:HL('RenderMarkdownH6Bg', s:none, s:gray1)
 
+
+" nvim-cmp
+
+call s:HL('CmpItemAbbr', s:white)
+call s:HL('CmpItemAbbrMatch', s:bright_white, s:none, s:underline)
+call s:HL('CmpItemAbbrMatchFuzzy', s:white, s:none, s:underline)
+call s:HL('CmpItemKind', s:bright_white)
+call s:HL('CmpItemMenu', s:none, s:gray1)
+
+" Kind
+call s:HL('CmpItemKindFile', s:bright_blue)
+call s:HL('CmpItemKindFolder', s:blue)
+call s:HL('CmpItemKindSnippet', s:green)
+call s:HL('CmpItemKindText', s:white)
+hi! link CmpItemKindConstant Constant
+hi! link CmpItemKindFunction Function
+hi! link CmpItemKindKeyword Keyword
+hi! link CmpItemKindOperator Operator
+hi! link CmpItemKindVariable Variable
+
 " }}}
 
 " vim: set sw=2 ts=2 sts=2 et tw=80 ft=vim fdm=marker :
