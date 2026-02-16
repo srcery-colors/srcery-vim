@@ -382,6 +382,7 @@ hi! link VisualNOS Visual
 " Conditionals
 if g:srcery_normal_float == 1
   call s:HL('NormalFloat',  s:none, s:gray1)
+  call s:HL('FloatBorder',  s:gray3, s:none)
 endif
 
 
