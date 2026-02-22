@@ -17,9 +17,9 @@
   </a>
 </p>
 <p align="center">
-    A ritualistic colorscheme for (n)vim. Perform your dark magick using
-    clearly defined contrasting colors with a pinch of earthly tint to for that
-    homely feel.
+    A ritualistic color scheme for (n)vim. Perform your dark magick using
+    clearly defined contrasting colors with a pinch of earthly tint for that
+    lived-in feel.
 </p>
 
 
@@ -29,10 +29,9 @@ Most modern terminal supports 24bit color, and srcery works best with that, but
 8bit color is also supported as a fallback.
 
 We maintain a [repository of terminal configurations](https://github.com/srcery-colors/srcery-terminal) if you also want to set
-your terminalm colorscheme to match vim.
+your terminal color scheme to match vim.
 
 ## Installation
-
 ### Manually
 
 Use [colors/srcery.vim](./colors/srcery.vim) however you want, or use your
@@ -89,20 +88,22 @@ Plug 'srcery-colors/srcery-vim'
     "srcery-colors/srcery-vim",
     lazy = false,
     priority = 1000,
-    config = function()
-        vim.g.srcery_normal_float = 1
-        vim.cmd([[colorscheme srcery]])
-    end,
 }
 ```
 ## Usage
 
 ```
-:color srcery
+:colorscheme srcery
 ```
 
-If you like what you see and decide to make srcery your default colorscheme, add the relevant line to your `.vimrc`:
+Add this to your config to make it permanent:
 
+Lua:
+```lua
+vim.cmd([[colorscheme srcery]])
+```
+
+vimrc:
 ```vim
 colorscheme srcery
 ```
@@ -115,8 +116,14 @@ Make sure that you set these variables before assigning `colorscheme`.
 
 You can customize each of Srcery's colors, to customize say the red color:
 
+vimrc:
 ```vim
 let g:srcery_red = '#FF0000'
+```
+
+lua:
+```lua
+vim.g.srcery_red = '#FF0000'
 ```
 
 You can also separately set a different background color `g:srcery_background`,
@@ -133,6 +140,7 @@ instead of the default `g:srcery_black`
 | `g:srcery_strikethrough` | Enables strikethrough text | `1` (enabled) |
 | `g:srcery_inverse` | Enables inverse highlighting for visual selection, search, etc | `1` (enabled) |
 | `g:srcery_guisp_fallback` | Use alternate highlighting for for colored underline/undercurl. Set to either `fd` or `bg`, or `NONE` | `NONE` |
+| `g:srcery_normal_float` | Use srcery colors for floating window background and border | `0` (disabled) |
 
 
 ## Screenshots
@@ -144,14 +152,21 @@ TBD
 
 ![lightline](https://raw.githubusercontent.com/srcery-colors/srcery-assets/master/vim/lightline.png)
 
-[Lightline](https://github.com/itchyny/lightline.vim) colorscheme.
+[Lightline](https://github.com/itchyny/lightline.vim) color scheme.
 To use it, include 'srcery' value in lightline configuration, like so:
 
+vimrc:
 ```vim
 let g:lightline = {
       \ 'colorscheme': 'srcery',
       \ }
 ```
+
+lua:
+```lua
+vim.g.lightline = { colorscheme = 'srcery' }
+```
+
 ### Lualine
 
 [Lualine](https://github.com/nvim-lualine/lualine.nvim) colorscheme.
@@ -169,27 +184,29 @@ require('lualine').setup {
 
 ![airline](https://raw.githubusercontent.com/srcery-colors/srcery-assets/master/vim/airline.png)
 
-Thanks to [MindTooth](https://github.com/MindTooth), Srcery now includes an [Airline](https://github.com/vim-airline/vim-airline) theme.
-
+Thanks to [MindTooth](https://github.com/MindTooth), Srcery includes an [Airline](https://github.com/vim-airline/vim-airline) theme.
 
 ## Attribution
 
 This project started as essentially a palette swap of
-[Gruvbox](https://github.com/morhetz/gruvbox) and all credit goes to the
-maintainers of that fantastic color scheme.
+[Gruvbox](https://github.com/morhetz/gruvbox). Srcery has since taken a life of
+its own, but the DNA of Gruvbox is still present. Big thank you to morhetz and
+other contributors.
 
-These themes have also been an inspiration
+Aside from Gruvbox, these themes have also been an inspiration, and often been
+an example on how to write (n)vim color schemes.
 
-- [Nord](https://www.nordtheme.com/)
-- [moonfly](https://github.com/bluz71/vim-moonfly-colors)
-- [Base16](http://chriskempson.com/projects/base16/)
-- [Badwolf](https://github.com/sjl/badwolf)
-- [Jellybeans](https://github.com/nanotech/jellybeans.vim)
-- [Molokai](https://github.com/tomasr/molokai)
+- [nordtheme/vim: An arctic, north-bluish clean and elegant Vim theme.](https://github.com/nordtheme/vim)
+- [bluz71/vim-moonfly-colors: A dark charcoal theme for modern Neovim & classic Vim](https://github.com/bluz71/vim-moonfly-colors)
+- [sjl/badwolf: A Vim color scheme.](https://github.com/sjl/badwolf)
+- [nanotech/jellybeans.vim: A colorful, dark color scheme for Vim.](https://github.com/nanotech/jellybeans.vim)
+- [tomasr/molokai: Molokai color scheme for Vim](https://github.com/tomasr/molokai)
+- [romainl/flattened: Solarized, without the bullshit.](https://github.com/romainl/flattened)
+- [romainl/Apprentice: A dark, low-contrast, Vim colorscheme.](https://github.com/romainl/Apprentice)
 
 ## License
 
-Copyright (c) 2018 for portions of Srcery are held by morhetz <morhetz@gmail.com> as part of Gruvbox.
-All other Copyright (c) 2021 for Srcery are held by Daniel Berg <mail@roosta.sh> and contributers of Srcery.
+Copyright (c) 2018 for portions of Srcery are held by morhetz as part of Gruvbox.
+All other Copyright (c) 2021 for Srcery are held by Daniel Berg and contributors of Srcery.
 
 - [MIT License](./LICENSE)
