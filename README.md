@@ -28,8 +28,9 @@
 Most modern terminal supports 24bit color, and srcery works best with that, but
 8bit color is also supported as a fallback.
 
-We maintain a [repository of terminal configurations](https://github.com/srcery-colors/srcery-terminal) if you also want to set
-your terminal color scheme to match vim.
+>[!TIP]
+> We maintain a [repository of terminal configurations](https://github.com/srcery-colors/srcery-terminal) if you also want to set
+> your terminal color scheme to match vim.
 
 ## Installation
 ### Manually
