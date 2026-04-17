@@ -85,6 +85,30 @@ if !exists('g:srcery_bright_white')
   let g:srcery_bright_white='#FCE8C3'
 endif
 
+if !exists('g:srcery_dark_red')
+  let g:srcery_dark_red='#4F2321'
+endif
+
+if !exists('g:srcery_dark_red_cterm')
+  let g:srcery_dark_red_cterm=88
+endif
+
+if !exists('g:srcery_dark_green')
+  let g:srcery_dark_green='#294229'
+endif
+
+if !exists('g:srcery_dark_green_cterm')
+  let g:srcery_dark_green_cterm=22
+endif
+
+if !exists('g:srcery_dark_blue')
+  let g:srcery_dark_blue='#1E5181'
+endif
+
+if !exists('g:srcery_dark_blue_cterm')
+  let g:srcery_dark_blue_cterm=24
+endif
+
 if !exists('g:srcery_orange')
   let g:srcery_orange='#FF5F00'
 endif
@@ -262,6 +286,9 @@ let s:bright_blue    = [g:srcery_bright_blue,    12]
 let s:bright_magenta = [g:srcery_bright_magenta, 13]
 let s:bright_cyan    = [g:srcery_bright_cyan,    14]
 let s:bright_white   = [g:srcery_bright_white,   15]
+let s:dark_blue      = [g:srcery_dark_blue,      g:srcery_dark_blue_cterm]
+let s:dark_red       = [g:srcery_dark_blue,      g:srcery_dark_red_cterm]
+let s:dark_green     = [g:srcery_dark_green,     g:srcery_dark_green_cterm]
 
 " xterm colors
 let s:orange         = [g:srcery_orange,        g:srcery_orange_cterm]
