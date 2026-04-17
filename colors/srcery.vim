@@ -526,7 +526,7 @@ call s:HL('SrceryH6', s:bright_magenta, s:gray1, s:bold)
 " Languages: {{{
 " -----------------------------------------------------------------------------
 
-" nvim-treesitter
+" tree-sitter
 if has('nvim')
   hi! link @delimiter Delimiter
   hi! link @markup.heading.1.markdown SrceryH1
@@ -557,6 +557,7 @@ if has('nvim')
   hi! link TSUnderline Underline
   hi! link TSVariable Variable
   hi! link TSVariableBuiltin Keyword
+  call s:HL('@function.macro', s:bright_yellow)
 endif
 
 " Diffs:
