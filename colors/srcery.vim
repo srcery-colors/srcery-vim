@@ -287,7 +287,7 @@ let s:bright_magenta = [g:srcery_bright_magenta, 13]
 let s:bright_cyan    = [g:srcery_bright_cyan,    14]
 let s:bright_white   = [g:srcery_bright_white,   15]
 let s:dark_blue      = [g:srcery_dark_blue,      g:srcery_dark_blue_cterm]
-let s:dark_red       = [g:srcery_dark_blue,      g:srcery_dark_red_cterm]
+let s:dark_red       = [g:srcery_dark_red,       g:srcery_dark_red_cterm]
 let s:dark_green     = [g:srcery_dark_green,     g:srcery_dark_green_cterm]
 
 " xterm colors
