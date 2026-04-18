@@ -371,9 +371,9 @@ call s:HL('ModeMsg', s:yellow, s:none, s:bold)
 call s:HL('MoreMsg', s:yellow, s:none, s:bold)
 call s:HL('NonText', s:gray6)
 call s:HL('Normal', s:bright_white, s:background)
-call s:HL('Pmenu', s:none, s:gray1)
-call s:HL('PmenuSbar', s:none, s:gray3)
-call s:HL('PmenuSel', s:none, s:gray3, s:inverse)
+call s:HL('Pmenu', s:none, s:gray2)
+call s:HL('PmenuSbar', s:none, s:gray4)
+call s:HL('PmenuSel', s:none, s:gray4, s:inverse)
 call s:HL('PmenuThumb', s:none, s:white)
 call s:HL('PmenuBorder', s:gray3, s:none)
 call s:HL('Question', s:orange, s:none, s:bold)
@@ -408,8 +408,8 @@ hi! link VisualNOS Visual
 
 " Conditionals
 if g:srcery_normal_float == 1
-  call s:HL('NormalFloat',  s:none, s:gray1)
-  call s:HL('FloatBorder',  s:gray3, s:none)
+  call s:HL('NormalFloat',  s:none, s:gray2)
+  call s:HL('FloatBorder',  s:gray4, s:none)
 endif
 
 
