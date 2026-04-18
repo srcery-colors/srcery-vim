@@ -18,7 +18,7 @@ jobs:
           python-version: "3.x"
       - name: Install Vint
         run: |
-          python -m pip install --upgrade pip setuptools setuptools<82 wheel
+          python -m pip install --upgrade pip setuptools "setuptools<82" wheel
           pip install --upgrade vim-vint
       - name: Vinting code
         run: vint --verbose --stat $(find . -type f -name '*.vim')
