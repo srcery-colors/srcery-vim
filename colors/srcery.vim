@@ -97,6 +97,14 @@ if !exists('g:srcery_dark_green')
   let g:srcery_dark_green='#294229'
 endif
 
+if !exists('g:srcery_dim_green')
+  let g:srcery_dim_green='#2E5C2E'
+endif
+
+if !exists('g:srcery_dim_green_cterm')
+  let g:srcery_dim_green_cterm=28
+endif
+
 if !exists('g:srcery_dark_green_cterm')
   let g:srcery_dark_green_cterm=22
 endif
@@ -289,6 +297,7 @@ let s:bright_white   = [g:srcery_bright_white,   15]
 let s:dark_blue      = [g:srcery_dark_blue,      g:srcery_dark_blue_cterm]
 let s:dark_red       = [g:srcery_dark_red,       g:srcery_dark_red_cterm]
 let s:dark_green     = [g:srcery_dark_green,     g:srcery_dark_green_cterm]
+let s:dim_green      = [g:srcery_dim_green,      g:srcery_dim_green_cterm]
 
 " xterm colors
 let s:orange         = [g:srcery_orange,        g:srcery_orange_cterm]
@@ -561,10 +570,10 @@ if has('nvim')
 endif
 
 " Diffs:
-call s:HL('DiffAdd',    s:green)
-call s:HL('DiffChange', s:cyan)
-call s:HL('DiffDelete', s:red)
-call s:HL('DiffText',   s:yellow)
+call s:HL('DiffAdd',    s:none, s:dark_green)
+call s:HL('DiffChange', s:none, s:dark_green)
+call s:HL('DiffDelete', s:none, s:dark_red)
+call s:HL('DiffText',   s:none, s:dim_green)
 
 " legacy groups
 call s:HL('diffFile', s:orange)
