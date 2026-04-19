@@ -22,7 +22,12 @@
     lived-in feel.
 </p>
 
+## Screenshots
 
+|  |  |  |
+|:--:|:--:|:--:|
+| <img alt="C Rust" src="https://raw.githubusercontent.com/srcery-colors/srcery-assets/refs/heads/next/vim/1_c_rs.png"> | <img alt="Python Typescript" src="https://raw.githubusercontent.com/srcery-colors/srcery-assets/refs/heads/next/vim/2_py_ts.png"> | <img alt="Popup" src="https://raw.githubusercontent.com/srcery-colors/srcery-assets/refs/heads/next/vim/3_popup.png"> |
+| <img alt="Dignostic" src="https://raw.githubusercontent.com/srcery-colors/srcery-assets/refs/heads/next/vim/4_diag.png"> | <img alt="Diff View" src="https://raw.githubusercontent.com/srcery-colors/srcery-assets/refs/heads/next/vim/5_diff.png"> | <img alt="Markdown Terminal" src="https://raw.githubusercontent.com/srcery-colors/srcery-assets/refs/heads/next/vim/6_md_term.png"> |
 ## Requirements
 
 Most modern terminal supports 24bit color, and srcery works best with that, but
@@ -126,11 +131,6 @@ use {'srcery-colors/srcery-vim', as = 'srcery'}
 ```
 </details>
 
-## Screenshots
-|  |  |  |
-|:--:|:--:|:--:|
-| <img alt="C Rust" src="https://raw.githubusercontent.com/srcery-colors/srcery-assets/refs/heads/next/vim/1_c_rs.png"> | <img alt="Python Typescript" src="https://raw.githubusercontent.com/srcery-colors/srcery-assets/refs/heads/next/vim/2_py_ts.png"> | <img alt="Popup" src="https://raw.githubusercontent.com/srcery-colors/srcery-assets/refs/heads/next/vim/3_popup.png"> |
-| <img alt="Dignostic" src="https://raw.githubusercontent.com/srcery-colors/srcery-assets/refs/heads/next/vim/4_diag.png"> | <img alt="Diff View" src="https://raw.githubusercontent.com/srcery-colors/srcery-assets/refs/heads/next/vim/5_diff.png"> | <img alt="Markdown Terminal" src="https://raw.githubusercontent.com/srcery-colors/srcery-assets/refs/heads/next/vim/6_md_term.png"> |
 ## Usage
 
 ```
@@ -185,6 +185,19 @@ instead of the default `g:srcery_black`
 
 
 ## Plugin support
+### Lualine
+
+[Lualine](https://github.com/nvim-lualine/lualine.nvim) colorscheme.
+It's the same as Lightline's. Enable it in your configuration:
+
+```lua
+require('lualine').setup {
+  options = {
+    theme = 'srcery',
+  },
+}
+```
+
 ### Lightline
 
 ![lightline](https://raw.githubusercontent.com/srcery-colors/srcery-assets/master/vim/lightline.png)
@@ -202,19 +215,6 @@ let g:lightline = {
 lua:
 ```lua
 vim.g.lightline = { colorscheme = 'srcery' }
-```
-
-### Lualine
-
-[Lualine](https://github.com/nvim-lualine/lualine.nvim) colorscheme.
-It's the same as Lightline's. Enable it in your configuration:
-
-```
-require('lualine').setup {
-  options = {
-    theme = 'srcery',
-  },
-}
 ```
 
 ### Airline
