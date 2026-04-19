@@ -22,7 +22,12 @@
     lived-in feel.
 </p>
 
+## Screenshots
 
+|  |  |  |
+|:--:|:--:|:--:|
+| <img alt="C Rust" src="https://raw.githubusercontent.com/srcery-colors/srcery-assets/refs/heads/next/vim/1_c_rs.png"> | <img alt="Python Typescript" src="https://raw.githubusercontent.com/srcery-colors/srcery-assets/refs/heads/next/vim/2_py_ts.png"> | <img alt="Popup" src="https://raw.githubusercontent.com/srcery-colors/srcery-assets/refs/heads/next/vim/3_popup.png"> |
+| <img alt="Dignostic" src="https://raw.githubusercontent.com/srcery-colors/srcery-assets/refs/heads/next/vim/4_diag.png"> | <img alt="Diff View" src="https://raw.githubusercontent.com/srcery-colors/srcery-assets/refs/heads/next/vim/5_diff.png"> | <img alt="Markdown Terminal" src="https://raw.githubusercontent.com/srcery-colors/srcery-assets/refs/heads/next/vim/6_md_term.png"> |
 ## Requirements
 
 Most modern terminal supports 24bit color, and srcery works best with that, but
@@ -33,13 +38,18 @@ Most modern terminal supports 24bit color, and srcery works best with that, but
 > your terminal color scheme to match vim.
 
 ## Installation
-### Manually
+
+<details>
+<summary>Manually</summary>
 
 Use [colors/srcery.vim](./colors/srcery.vim) however you want, or use your
 favorite plugin manager to install. For some plugin themes to work you need to
 clone the entire project, and put it on your `runtimepath`.
 
-### Vim 8
+</details>
+
+<details>
+<summary>Vim 8</summary>
 
 Vim 8 has native support for loading plugins by using `packages`. All you need
 to do to, is to clone this repository into `~/.vim/pack/themes/opt`.
@@ -47,6 +57,7 @@ to do to, is to clone this repository into `~/.vim/pack/themes/opt`.
     git clone https://github.com/srcery-colors/srcery-vim ~/.vim/pack/themes/opt/srcery-vim
 
 And then set your `.vimrc` accordingly.
+
 
 ```vim
 packadd! srcery-vim
@@ -56,33 +67,60 @@ colorscheme srcery
 The same works for Neovim, but you have to clone it into a path where Neovim can
 find it.
 
-    git clone https://github.com/srcery-colors/srcery-vim $XDG_CONFIG_HOME/nvim/pack/themes/opt
+```bash
+git clone https://github.com/srcery-colors/srcery-vim $XDG_CONFIG_HOME/nvim/pack/themes/opt
+```
 
-### [dein.vim](https://github.com/Shougo/dein.vim)
+</details>
 
+<details>
+<summary>dein.vim</summary>
+
+[github.com/Shougo/dein.vim](https://github.com/Shougo/dein.vim)
 ```vim
 call dein#add('srcery-colors/srcery-vim')
 ```
 
-### [vim-pathogen](https://github.com/tpope/vim-pathogen)
+</details>
 
-```shell
+<details>
+<summary>vim-pathogen</summary>
+
+[github.com/tpope/vim-pathogen](https://github.com/tpope/vim-pathogen)
+
+```bash
 cd ~/.vim/bundle
 git clone https://github.com/srcery-colors/srcery-vim
 ```
 
-### [vim-plug](https://github.com/junegunn/vim-plug)
+</details>
+
+<details>
+<summary>vim-plug</summary>
+
+[github.com/junegunn/vim-plug](https://github.com/junegunn/vim-plug)
 
 ```vim
 Plug 'srcery-colors/srcery-vim'
 ```
 
-### [packer](https://github.com/wbthomason/packer.nvim)
+</details>
+
+<details>
+<summary>packer</summary>
+
+[github.com/wbthomason/packer.nvim](https://github.com/wbthomason/packer.nvim)
+
 ```lua
-  use {'srcery-colors/srcery-vim', as = 'srcery'}
+use {'srcery-colors/srcery-vim', as = 'srcery'}
 ```
 
-### [lazy.nvim](https://github.com/folke/lazy.nvim)
+</details>
+
+<details>
+<summary>lazy.nvim</summary>
+
+[github.com/folke/lazy.nvim](https://github.com/folke/lazy.nvim)
 
 ```lua
 {
@@ -91,6 +129,8 @@ Plug 'srcery-colors/srcery-vim'
     priority = 1000,
 }
 ```
+</details>
+
 ## Usage
 
 ```
@@ -130,6 +170,9 @@ vim.g.srcery_red = '#FF0000'
 You can also separately set a different background color `g:srcery_background`,
 instead of the default `g:srcery_black`
 
+>[!TIP]
+> Setting this variable to `NONE` will make the background inside vim transparent
+
 ### Options
 
 |var|description|default|
@@ -144,11 +187,20 @@ instead of the default `g:srcery_black`
 | `g:srcery_normal_float` | Use srcery colors for floating window background and border | `0` (disabled) |
 
 
-## Screenshots
-
-TBD
-<!-- Typeface used in screenshots is [Iosevka](https://github.com/be5invis/Iosevka) -->
 ## Plugin support
+### Lualine
+
+[Lualine](https://github.com/nvim-lualine/lualine.nvim) colorscheme.
+It's the same as Lightline's. Enable it in your configuration:
+
+```lua
+require('lualine').setup {
+  options = {
+    theme = 'srcery',
+  },
+}
+```
+
 ### Lightline
 
 ![lightline](https://raw.githubusercontent.com/srcery-colors/srcery-assets/master/vim/lightline.png)
@@ -166,19 +218,6 @@ let g:lightline = {
 lua:
 ```lua
 vim.g.lightline = { colorscheme = 'srcery' }
-```
-
-### Lualine
-
-[Lualine](https://github.com/nvim-lualine/lualine.nvim) colorscheme.
-It's the same as Lightline's. Enable it in your configuration:
-
-```
-require('lualine').setup {
-  options = {
-    theme = 'srcery',
-  },
-}
 ```
 
 ### Airline
