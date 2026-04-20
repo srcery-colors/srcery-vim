@@ -204,11 +204,7 @@ if !exists('g:srcery_bold')
 endif
 
 if !exists('g:srcery_italic')
-  if has('gui_running') || $TERM_ITALICS ==? 'true'
-    let g:srcery_italic=1
-  else
-    let g:srcery_italic=0
-  endif
+  let g:srcery_italic=1
 endif
 
 if !exists('g:srcery_undercurl')
