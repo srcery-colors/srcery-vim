@@ -178,7 +178,7 @@ instead of the default `g:srcery_black`
 |var|description|default|
 |---|-----------|-------|
 | `g:srcery_bold`| Enables bold text | `1` (enabled) |
-| `g:srcery_italic`| Enables italic text | Enabled if available |
+| `g:srcery_italic`| Enables italic text | `1` (enabled) |
 | `g:srcery_underline`| Enables underlined text | `1` (enabled) |
 | `g:srcery_undercurl` | Enables undercurled text | `1` (enabled) |
 | `g:srcery_strikethrough` | Enables strikethrough text | `1` (enabled) |
