@@ -131,6 +131,18 @@ use {'srcery-colors/srcery-vim', as = 'srcery'}
 ```
 </details>
 
+<details>
+<summary>vim.pack</summary>
+
+[Neovim Manual page](https://neovim.io/doc/user/pack/)
+
+```lua
+vim.pack.add({
+  { src = 'https://github.com/srcery-colors/srcery-vim' },
+})
+```
+</details>
+
 ## Usage
 
 ```
@@ -141,7 +153,7 @@ Add this to your config to make it permanent:
 
 Lua:
 ```lua
-vim.cmd([[colorscheme srcery]])
+vim.cmd.colorscheme('srcery')
 ```
 
 vimrc:
@@ -171,60 +183,40 @@ You can also separately set a different background color `g:srcery_background`,
 instead of the default `g:srcery_black`
 
 >[!TIP]
-> Setting this variable to `NONE` will make the background inside vim transparent
+> Setting this variable to `'NONE'` will make the background inside vim transparent
 
 ### Options
 
 |var|description|default|
 |---|-----------|-------|
-| `g:srcery_bold`| Enables bold text | `1` (enabled) |
-| `g:srcery_italic`| Enables italic text | `1` (enabled) |
-| `g:srcery_underline`| Enables underlined text | `1` (enabled) |
+| `g:srcery_bold`| Enables **bold** text | `1` (enabled) |
+| `g:srcery_italic`| Enables *italic* text | `1` (enabled) |
+| `g:srcery_underline`| Enables <ins>underlined</ins> text | `1` (enabled) |
 | `g:srcery_undercurl` | Enables undercurled text | `1` (enabled) |
-| `g:srcery_strikethrough` | Enables strikethrough text | `1` (enabled) |
+| `g:srcery_strikethrough` | Enables ~~strikethrough~~ text | `1` (enabled) |
 | `g:srcery_inverse` | Enables inverse highlighting for visual selection, search, etc | `1` (enabled) |
-| `g:srcery_guisp_fallback` | Use alternate highlighting for for colored underline/undercurl. Set to either `fd` or `bg`, or `NONE` | `NONE` |
+| `g:srcery_guisp_fallback` | Use alternate highlighting where colored underline/undercurl is unsupported. Set to either `'fg'` or `'bg'`, or `'NONE'` | `NONE` |
 | `g:srcery_normal_float` | Use srcery colors for floating window background and border | `0` (disabled) |
 
 
-## Plugin support
-### Lualine
+## Statusline
 
-[Lualine](https://github.com/nvim-lualine/lualine.nvim) colorscheme.
-It's the same as Lightline's. Enable it in your configuration:
+Srcery supports several statuslines, they all follow the same coloring scheme
+with some minor differences.
 
-```lua
-require('lualine').setup {
-  options = {
-    theme = 'srcery',
-  },
-}
-```
+![statusline preview](https://raw.githubusercontent.com/srcery-colors/srcery-assets/refs/heads/next/vim/statusline.png) 
 
-### Lightline
+- [Lualine](https://github.com/nvim-lualine/lualine.nvim) loads automatically.
+- [Airline](https://github.com/vim-airline/vim-airline) loads automatically.
+- [Lightline](https://github.com/itchyny/lightline.vim). To use it, include
+  `srcery` value in your `lightline` configuration:
+  ```vim
+  let g:lightline = { 'colorscheme': 'srcery' }
+  ```
+  ```lua
+  vim.g.lightline = { colorscheme = 'srcery' }
+  ```
 
-![lightline](https://raw.githubusercontent.com/srcery-colors/srcery-assets/master/vim/lightline.png)
-
-[Lightline](https://github.com/itchyny/lightline.vim) color scheme.
-To use it, include 'srcery' value in lightline configuration, like so:
-
-vimrc:
-```vim
-let g:lightline = {
-      \ 'colorscheme': 'srcery',
-      \ }
-```
-
-lua:
-```lua
-vim.g.lightline = { colorscheme = 'srcery' }
-```
-
-### Airline
-
-![airline](https://raw.githubusercontent.com/srcery-colors/srcery-assets/master/vim/airline.png)
-
-Thanks to [MindTooth](https://github.com/MindTooth), Srcery includes an [Airline](https://github.com/vim-airline/vim-airline) theme.
 
 ## Attribution
 
@@ -247,6 +239,7 @@ an example on how to write (n)vim color schemes.
 ## License
 
 Copyright (c) 2018 for portions of Srcery are held by morhetz as part of Gruvbox.
+
 All other Copyright (c) 2021 for Srcery are held by Daniel Berg and contributors of Srcery.
 
-- [MIT License](./LICENSE)
+[MIT License](./LICENSE)
