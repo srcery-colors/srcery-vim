@@ -170,6 +170,9 @@ vim.g.srcery_red = '#FF0000'
 You can also separately set a different background color `g:srcery_background`,
 instead of the default `g:srcery_black`
 
+>[!TIP]
+> Setting this variable to `NONE` will make the background inside vim transparent
+
 ### Options
 
 |var|description|default|
