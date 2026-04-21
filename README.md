@@ -131,6 +131,18 @@ use {'srcery-colors/srcery-vim', as = 'srcery'}
 ```
 </details>
 
+<details>
+<summary>vim.pack</summary>
+
+[Neovim Manual page](https://neovim.io/doc/user/pack/)
+
+```lua
+vim.pack.add({
+  { src = 'https://github.com/srcery-colors/srcery-vim' },
+})
+```
+</details>
+
 ## Usage
 
 ```
