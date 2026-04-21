@@ -189,47 +189,23 @@ instead of the default `g:srcery_black`
 
 ## Statusline
 
-<details>
-<summary>Lualine</summary>
+Srcery supports several statuslines, they all follow the same coloring scheme
+with some minor differences.
 
-[Lualine](https://github.com/nvim-lualine/lualine.nvim) should load automatically but you can also set it in options like this:
+![statusline preview](https://raw.githubusercontent.com/srcery-colors/srcery-assets/refs/heads/next/vim/statusline.png) 
 
-```lua
-require('lualine').setup {
-  options = {
-    theme = 'srcery',
-  },
-}
-```
+- [Lualine](https://github.com/nvim-lualine/lualine.nvim) loads automatically.
+- [Airline](https://github.com/vim-airline/vim-airline) loads automatically.
+- [Lightline](https://github.com/itchyny/lightline.vim). To use it, include
+  `srcery` value in your `lightline` configuration:
+  ```vim
+  let g:lightline = { 'colorscheme': 'srcery' }
+  ```
 
-Author: @micangl
+  ```lua
+  vim.g.lightline = { colorscheme = 'srcery' }
+  ```
 
-</details>
-
-<details>
-<summary>Lightline</summary>
-
-[Lightline](https://github.com/itchyny/lightline.vim) color scheme.
-To use it, include `srcery` value in your `lightline` configuration:
-
-`vimscript`
-```vim
-let g:lightline = {
-      \ 'colorscheme': 'srcery',
-      \ }
-```
-
-`lua`:
-```lua
-vim.g.lightline = { colorscheme = 'srcery' }
-```
-</details>
-
-<details>
-<summary>Airline</summary>
-
-[Airline](https://github.com/vim-airline/vim-airline) theme should load automatically. Author @MindTooth.
-</details>
 
 ## Attribution
 
