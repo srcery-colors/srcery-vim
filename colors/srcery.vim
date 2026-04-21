@@ -133,6 +133,14 @@ if !exists('g:srcery_bright_orange_cterm')
   let g:srcery_bright_orange_cterm=208
 endif
 
+if !exists('g:srcery_teal')
+  let g:srcery_teal='#008080'
+endif
+
+if !exists('g:srcery_teal_cterm')
+  let g:srcery_teal_cterm=30
+endif
+
 if !exists('g:srcery_hard_black')
   let g:srcery_hard_black='#121212'
 endif
@@ -295,9 +303,10 @@ let s:dark_red       = [g:srcery_dark_red,       g:srcery_dark_red_cterm]
 let s:dark_green     = [g:srcery_dark_green,     g:srcery_dark_green_cterm]
 let s:dim_green      = [g:srcery_dim_green,      g:srcery_dim_green_cterm]
 
-" xterm colors
+" Additional colors
 let s:orange         = [g:srcery_orange,        g:srcery_orange_cterm]
 let s:bright_orange  = [g:srcery_bright_orange, g:srcery_bright_orange_cterm]
+let s:teal           = [g:srcery_teal,          g:srcery_teal_cterm]
 let s:hard_black     = [g:srcery_hard_black,    g:srcery_hard_black_cterm]
 let s:gray1          = [g:srcery_gray1,         g:srcery_gray1_cterm]
 let s:gray2          = [g:srcery_gray2,         g:srcery_gray2_cterm]
