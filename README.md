@@ -185,6 +185,44 @@ instead of the default `g:srcery_black`
 >[!TIP]
 > Setting this variable to `'NONE'` will make the background inside vim transparent
 
+<details>
+<summary>Expand for a list of all color variables</summary> 
+
+
+| Variable | Default | Swatch |
+| ------- | -------- | ------- |
+| `g:srcery_black` | `#121110` | ![black](https://raw.githubusercontent.com/srcery-colors/srcery-assets/next/swatch/black_24.jpg) |
+| `g:srcery_red` | `#EF2F27` | ![red](https://raw.githubusercontent.com/srcery-colors/srcery-assets/next/swatch/red_24.jpg) |
+| `g:srcery_green` | `#519F50` | ![green](https://raw.githubusercontent.com/srcery-colors/srcery-assets/next/swatch/green_24.jpg) |
+| `g:srcery_yellow` | `#FBB829` | ![yellow](https://raw.githubusercontent.com/srcery-colors/srcery-assets/next/swatch/yellow_24.jpg) |
+| `g:srcery_blue` | `#2C78BF` | ![blue](https://raw.githubusercontent.com/srcery-colors/srcery-assets/next/swatch/blue_24.jpg) |
+| `g:srcery_magenta` | `#E02C6D` | ![magenta](https://raw.githubusercontent.com/srcery-colors/srcery-assets/next/swatch/magenta_24.jpg) |
+| `g:srcery_cyan` | `#0AAEB3` | ![cyan](https://raw.githubusercontent.com/srcery-colors/srcery-assets/next/swatch/cyan_24.jpg) |
+| `g:srcery_white` | `#C5B088` | ![white](https://raw.githubusercontent.com/srcery-colors/srcery-assets/next/swatch/white_24.jpg) |
+| `g:srcery_bright_black` | `#917E6B` | ![bright_black](https://raw.githubusercontent.com/srcery-colors/srcery-assets/next/swatch/bright_black_24.jpg) |
+| `g:srcery_bright_red` | `#F75341` | ![bright_red](https://raw.githubusercontent.com/srcery-colors/srcery-assets/next/swatch/bright_red_24.jpg) |
+| `g:srcery_bright_green` | `#98BC37` | ![bright_green](https://raw.githubusercontent.com/srcery-colors/srcery-assets/next/swatch/bright_green_24.jpg) |
+| `g:srcery_bright_yellow` | `#FED06E` | ![bright_yellow](https://raw.githubusercontent.com/srcery-colors/srcery-assets/next/swatch/bright_yellow_24.jpg) |
+| `g:srcery_bright_blue` | `#68A8E4` | ![bright_blue](https://raw.githubusercontent.com/srcery-colors/srcery-assets/next/swatch/bright_blue_24.jpg) |
+| `g:srcery_bright_magenta` | `#FF5C8F` | ![bright_magenta](https://raw.githubusercontent.com/srcery-colors/srcery-assets/next/swatch/bright_magenta_24.jpg) |
+| `g:srcery_bright_cyan` | `#2BE4D0` | ![bright_cyan](https://raw.githubusercontent.com/srcery-colors/srcery-assets/next/swatch/bright_cyan_24.jpg) |
+| `g:srcery_bright_white` | `#FCE8C3` | ![bright_white](https://raw.githubusercontent.com/srcery-colors/srcery-assets/next/swatch/bright_white_24.jpg) |
+| `g:srcery_dark_green` | `#294229` | ![dark_green](https://raw.githubusercontent.com/srcery-colors/srcery-assets/next/swatch/dark_green_24.jpg) |
+| `g:srcery_dark_red` | `#4F2321` | ![dark_red](https://raw.githubusercontent.com/srcery-colors/srcery-assets/next/swatch/dark_red_24.jpg) |
+| `g:srcery_dark_blue` | `#1E5181` | ![dark_blue](https://raw.githubusercontent.com/srcery-colors/srcery-assets/next/swatch/dark_blue_24.jpg) |
+| `g:srcery_dim_green` | `#2E5C2E` | ![dim_green](https://raw.githubusercontent.com/srcery-colors/srcery-assets/next/swatch/dim_green_24.jpg) |
+| `g:srcery_orange` | `#FF5F00` | ![orange](https://raw.githubusercontent.com/srcery-colors/srcery-assets/next/swatch/orange_24.jpg) |
+| `g:srcery_bright_orange` | `#FF8700` | ![bright_orange](https://raw.githubusercontent.com/srcery-colors/srcery-assets/next/swatch/bright_orange_24.jpg) |
+| `g:srcery_teal` | `#008080` | ![teal](https://raw.githubusercontent.com/srcery-colors/srcery-assets/next/swatch/teal_24.jpg) |
+| `g:srcery_gray1` | `#1C1B19` | ![gray1](https://raw.githubusercontent.com/srcery-colors/srcery-assets/next/swatch/gray1_24.jpg) |
+| `g:srcery_gray2` | `#262522` | ![gray2](https://raw.githubusercontent.com/srcery-colors/srcery-assets/next/swatch/gray2_24.jpg) |
+| `g:srcery_gray3` | `#312F2C` | ![gray3](https://raw.githubusercontent.com/srcery-colors/srcery-assets/next/swatch/gray3_24.jpg) |
+| `g:srcery_gray4` | `#3B3935` | ![gray4](https://raw.githubusercontent.com/srcery-colors/srcery-assets/next/swatch/gray4_24.jpg) |
+| `g:srcery_gray5` | `#45433E` | ![gray5](https://raw.githubusercontent.com/srcery-colors/srcery-assets/next/swatch/gray5_24.jpg) |
+| `g:srcery_gray6` | `#504D47` | ![gray6](https://raw.githubusercontent.com/srcery-colors/srcery-assets/next/swatch/gray6_24.jpg) |
+
+</details>
+
 ### Options
 
 |var|description|default|
