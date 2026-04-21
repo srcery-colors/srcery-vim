@@ -153,7 +153,7 @@ Add this to your config to make it permanent:
 
 Lua:
 ```lua
-vim.cmd([[colorscheme srcery]])
+vim.cmd.colorscheme('srcery')
 ```
 
 vimrc:
@@ -189,13 +189,13 @@ instead of the default `g:srcery_black`
 
 |var|description|default|
 |---|-----------|-------|
-| `g:srcery_bold`| Enables bold text | `1` (enabled) |
-| `g:srcery_italic`| Enables italic text | `1` (enabled) |
-| `g:srcery_underline`| Enables underlined text | `1` (enabled) |
+| `g:srcery_bold`| Enables **bold** text | `1` (enabled) |
+| `g:srcery_italic`| Enables *italic* text | `1` (enabled) |
+| `g:srcery_underline`| Enables <ins>underlined</ins> text | `1` (enabled) |
 | `g:srcery_undercurl` | Enables undercurled text | `1` (enabled) |
-| `g:srcery_strikethrough` | Enables strikethrough text | `1` (enabled) |
+| `g:srcery_strikethrough` | Enables ~~strikethrough~~ text | `1` (enabled) |
 | `g:srcery_inverse` | Enables inverse highlighting for visual selection, search, etc | `1` (enabled) |
-| `g:srcery_guisp_fallback` | Use alternate highlighting for for colored underline/undercurl. Set to either `'fg'` or `'bg'`, or `'NONE'` | `NONE` |
+| `g:srcery_guisp_fallback` | Use alternate highlighting where colored underline/undercurl is unsupported. Set to either `'fg'` or `'bg'`, or `'NONE'` | `NONE` |
 | `g:srcery_normal_float` | Use srcery colors for floating window background and border | `0` (disabled) |
 
 
@@ -213,7 +213,6 @@ with some minor differences.
   ```vim
   let g:lightline = { 'colorscheme': 'srcery' }
   ```
-
   ```lua
   vim.g.lightline = { colorscheme = 'srcery' }
   ```
