@@ -576,7 +576,7 @@ endif
 
 " Diffs:
 call s:HL('DiffAdd',    s:none, s:dark_green)
-call s:HL('DiffChange', s:none, s:dark_green)
+call s:HL('DiffChange', s:none, s:gray3)
 call s:HL('DiffDelete', s:none, s:dark_red)
 call s:HL('DiffText',   s:none, s:dim_green)
 
