@@ -753,17 +753,16 @@ hi! link shDerefVar Identifier
 
 " XML:
 call s:HL('xmlCdataStart', s:bright_black)
-call s:HL('xmlAttrib', s:cyan)
-hi! link xmlAttribPunct Delimiter
+call s:HL('xmlAttrib', s:yellow)
+hi! link xmlAttribPunct Normal
 hi! link xmlCdata Comment
 hi! link xmlCdataCdata xmlCdataStart
 hi! link xmlCdataEnd xmlCdataStart
-hi! link xmlEndTag xmlTagName
+hi! link xmlEndTag Tag
 hi! link xmlEqual   Operator
-hi! link xmlProcessingDelim Keyword
-hi! link xmlTag     Delimiter
-hi! link xmlTagName Keyword
-hi! link xmlTagName Statement
+hi! link xmlProcessingDelim Delimiter
+hi! link xmlTag     Tag
+hi! link xmlTagName Tag
 
 " }}}
 " Plugins: {{{
