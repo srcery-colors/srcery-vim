@@ -186,7 +186,7 @@ instead of the default `g:srcery_black`
 > Setting this variable to `'NONE'` will make the background inside vim transparent
 
 <details>
-<summary>Expand for a list of all color variables</summary> 
+<summary>Expand for a list of all color variables</summary>
 
 
 | Variable | Default | Swatch |
@@ -242,7 +242,7 @@ instead of the default `g:srcery_black`
 Srcery supports several statuslines, they all follow the same coloring scheme
 with some minor differences.
 
-![statusline preview](https://raw.githubusercontent.com/srcery-colors/srcery-assets/refs/heads/next/vim/statusline.png) 
+![statusline preview](https://raw.githubusercontent.com/srcery-colors/srcery-assets/refs/heads/next/vim/statusline.png)
 
 - [Lualine](https://github.com/nvim-lualine/lualine.nvim) loads automatically.
 - [Airline](https://github.com/vim-airline/vim-airline) loads automatically.
