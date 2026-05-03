@@ -5,43 +5,39 @@
 " building upon this code for your own colorscheme, make sure that you
 " are aware of the additional tweaks for Srcery.
 
-
 let s:save_cpo = &cpoptions
 set cpoptions&vim
-
 
 " Srcery Palette {{{
 
 " Normal Colors
-let s:black          = srcery#helper#GetColor('SrceryBlack')
-let s:red            = srcery#helper#GetColor('SrceryRed')
-let s:green          = srcery#helper#GetColor('SrceryGreen')
-let s:yellow         = srcery#helper#GetColor('SrceryYellow')
-let s:blue           = srcery#helper#GetColor('SrceryBlue')
-let s:magenta        = srcery#helper#GetColor('SrceryMagenta')
-let s:cyan           = srcery#helper#GetColor('SrceryCyan')
-let s:white          = srcery#helper#GetColor('SrceryWhite')
+let s:black          = [g:srcery_black, 0]
+let s:red            = [g:srcery_red, 1]
+let s:green          = [g:srcery_green, 2]
+let s:yellow         = [g:srcery_yellow, 3]
+let s:blue           = [g:srcery_blue, 4]
+let s:magenta        = [g:srcery_magenta, 5]
+let s:cyan           = [g:srcery_cyan, 6]
+let s:white          = [g:srcery_white, 7]
+let s:bright_black   = [g:srcery_bright_black, 8]
+let s:bright_red     = [g:srcery_bright_red, 9]
+let s:bright_green   = [g:srcery_bright_green, 10]
+let s:bright_yellow  = [g:srcery_bright_yellow, 11]
+let s:bright_blue    = [g:srcery_bright_blue, 12]
+let s:bright_magenta = [g:srcery_bright_magenta, 13]
+let s:bright_cyan    = [g:srcery_bright_cyan, 14]
+let s:bright_white   = [g:srcery_bright_white, 15]
 
-" Bright Colors
-let s:bright_black   = srcery#helper#GetColor('SrceryBrightBlack')
-let s:bright_red     = srcery#helper#GetColor('SrceryBrightRed')
-let s:bright_green   = srcery#helper#GetColor('SrceryBrightGreen')
-let s:bright_yellow  = srcery#helper#GetColor('SrceryBrightYellow')
-let s:bright_blue    = srcery#helper#GetColor('SrceryBrightBlue')
-let s:bright_magenta = srcery#helper#GetColor('SrceryBrightMagenta')
-let s:bright_cyan    = srcery#helper#GetColor('SrceryBrightCyan')
-let s:bright_white   = srcery#helper#GetColor('SrceryBrightWhite')
-
-" Extra Colors
-let s:orange         = srcery#helper#GetColor('SrceryOrange')
-let s:bright_orange  = srcery#helper#GetColor('SrceryBrightOrange')
-let s:hard_black     = srcery#helper#GetColor('SrceryHardBlack')
-let s:xgray1         = srcery#helper#GetColor('SrceryXgray1')
-let s:xgray2         = srcery#helper#GetColor('SrceryXgray2')
-let s:xgray3         = srcery#helper#GetColor('SrceryXgray3')
-let s:xgray4         = srcery#helper#GetColor('SrceryXgray4')
-let s:xgray5         = srcery#helper#GetColor('SrceryXgray5')
-let s:xgray6         = srcery#helper#GetColor('SrceryXgray6')
+" xterm colors
+let s:orange         = [g:srcery_orange, g:srcery_orange_cterm]
+let s:bright_orange  = [g:srcery_bright_orange, g:srcery_bright_orange_cterm]
+let s:hard_black     = [g:srcery_hard_black, g:srcery_hard_black_cterm]
+let s:gray1          = [g:srcery_gray1, g:srcery_gray1_cterm]
+let s:gray2          = [g:srcery_gray2, g:srcery_gray2_cterm]
+let s:gray3          = [g:srcery_gray3, g:srcery_gray3_cterm]
+let s:gray4          = [g:srcery_gray4, g:srcery_gray4_cterm]
+let s:gray5          = [g:srcery_gray5, g:srcery_gray5_cterm]
+let s:gray6          = [g:srcery_gray6, g:srcery_gray6_cterm]
 
 "}}}
 " Srcery Tweaks {{{
@@ -106,26 +102,27 @@ augroup END
 
 let s:palette = {}
 
-let s:palette.display = { 'ctermbg': s:xgray2[1], 'guibg': s:xgray2[0], 'ctermfg': 'NONE', }
+let s:palette.display = { 'ctermbg': s:gray2[1], 'guibg': s:gray2[0], 'ctermfg': 'NONE', }
 
 " Let ClapInput, ClapSpinner and ClapSearchText use the same backgound.
-let s:bg0 = { 'ctermbg': s:xgray5[1], 'guibg': s:xgray5[0] }
+let s:bg0 = { 'ctermbg': s:gray5[1], 'guibg': s:gray5[0] }
 let s:palette.input = s:bg0
 let s:palette.spinner = extend({ 'ctermfg': s:bright_orange[1], 'guifg': s:bright_orange[0], 'cterm': 'bold', 'gui': 'bold'}, s:bg0)
 let s:palette.search_text = extend({ 'ctermfg': s:bright_white[1], 'guifg': s:bright_white[0], 'cterm': 'bold', 'gui': 'bold' }, s:bg0)
 
-let s:palette.preview = { 'ctermbg': s:xgray4[1], 'guibg': s:xgray4[0] }
+let s:palette.preview = { 'ctermbg': s:gray4[1], 'guibg': s:gray4[0] }
 
-let s:palette.current_selection = { 'ctermbg': s:xgray3[1], 'guibg': s:xgray3[0], 'cterm': 'bold', 'gui': 'bold' }
-let s:palette.current_selection_sign = { 'ctermfg': s:red[1], 'guifg': s:red[0], 'ctermbg': s:xgray3[1], 'guibg': s:xgray3[0]}
+let s:palette.current_selection = { 'ctermbg': s:gray3[1], 'guibg': s:gray3[0], 'cterm': 'bold', 'gui': 'bold' }
+let s:palette.current_selection_sign = { 'ctermfg': s:red[1], 'guifg': s:red[0], 'ctermbg': s:gray3[1], 'guibg': s:gray3[0]}
 
-let s:palette.selected = { 'ctermfg': 'NONE', 'guifg': s:bright_blue[0], 'ctermbg': s:xgray3[1], 'guibg': s:xgray3[0] }
-let s:palette.selected_sign = { 'ctermfg': s:green[1], 'guifg': s:green[0], 'ctermbg': s:xgray3[1], 'guibg': s:xgray3[0] }
+let s:palette.selected = { 'ctermfg': 'NONE', 'guifg': s:bright_blue[0], 'ctermbg': s:gray3[1], 'guibg': s:gray3[0] }
+let s:palette.selected_sign = { 'ctermfg': s:green[1], 'guifg': s:green[0], 'ctermbg': s:gray3[1], 'guibg': s:gray3[0] }
 
 let g:clap#themes#srcery#palette = s:palette
 
 " }}}
 
-
 let &cpoptions = s:save_cpo
 unlet s:save_cpo
+
+" vim: set ts=2 sw=2 tw=78 fdm=marker et :
