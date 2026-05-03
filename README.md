@@ -17,10 +17,17 @@
   </a>
 </p>
 <p align="center">
-    A ritualistic color scheme for (n)vim. Perform your dark magick using
+    An occult color scheme for (n)vim. Perform your dark magick using
     clearly defined contrasting colors with a pinch of earthly tint for that
     lived-in feel.
 </p>
+
+## Introduction
+
+Created using colors that logically adheres to the 16 color base palette of a
+given terminal, while trying to retain its own identity. The colors are
+designed to be easy on the eyes yet contrast well with the background for long
+sessions using an editor or terminal emulator.
 
 ## Screenshots
 
@@ -163,7 +170,35 @@ colorscheme srcery
 
 ## Configuration
 
+Srcery includes a few configuration options to customize your experience. To
+change any of these you’d put something like this in your `.vimrc` or
+`init.lua`:
+
+```vim
+" vimrc:
+let g:srcery_normal_float = 1
+```
+
+```lua
+-- init.lua:
+vim.g.srcery_normal_float = 1
+```
+
 Make sure that you set these variables before assigning `colorscheme`.
+
+### Options
+
+|var|description|default|
+|---|-----------|-------|
+| `g:srcery_bold`| Enables **bold** text | `1` (enabled) |
+| `g:srcery_italic`| Enables *italic* text | `1` (enabled) |
+| `g:srcery_underline`| Enables <ins>underlined</ins> text | `1` (enabled) |
+| `g:srcery_undercurl` | Enables undercurled text | `1` (enabled) |
+| `g:srcery_strikethrough` | Enables ~~strikethrough~~ text | `1` (enabled) |
+| `g:srcery_inverse` | Enables inverse highlighting for visual selection, search, etc | `1` (enabled) |
+| `g:srcery_guisp_fallback` | Use alternate highlighting where colored underline/undercurl is unsupported. Set to either `'fg'` or `'bg'` | `'NONE'` (Disabled) |
+| `g:srcery_normal_float` | Use srcery colors for floating window background and border | `0` (disabled) |
+
 
 ### Colors
 
@@ -222,20 +257,6 @@ instead of the default `g:srcery_black`
 | `g:srcery_gray6` | `#504D47` | ![gray6](https://raw.githubusercontent.com/srcery-colors/srcery-assets/next/swatch/gray6_24.jpg) |
 
 </details>
-
-### Options
-
-|var|description|default|
-|---|-----------|-------|
-| `g:srcery_bold`| Enables **bold** text | `1` (enabled) |
-| `g:srcery_italic`| Enables *italic* text | `1` (enabled) |
-| `g:srcery_underline`| Enables <ins>underlined</ins> text | `1` (enabled) |
-| `g:srcery_undercurl` | Enables undercurled text | `1` (enabled) |
-| `g:srcery_strikethrough` | Enables ~~strikethrough~~ text | `1` (enabled) |
-| `g:srcery_inverse` | Enables inverse highlighting for visual selection, search, etc | `1` (enabled) |
-| `g:srcery_guisp_fallback` | Use alternate highlighting where colored underline/undercurl is unsupported. Set to either `'fg'` or `'bg'`, or `'NONE'` | `NONE` |
-| `g:srcery_normal_float` | Use srcery colors for floating window background and border | `0` (disabled) |
-
 
 ## Statusline
 
