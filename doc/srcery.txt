@@ -1,38 +1,18 @@
-*srcery.txt* Color scheme with clearly defined contrasting colors	*srcery*
-	   and a slightly earthy tone.
+*srcery-vim*
 
-Version:   1.0.0
+An occult colorscheme for (n)vim. Perform your dark magick using clearly
+defined contrasting colors with a pinch of earthly tint for that lived-in
+feel.
+
+Version:   3.0.0
 Author:    Daniel Berg <mail@roosta.sh>
 	w/ contributers
 License:   MIT license
 
-CONTENTS						*srcery-contents*
 
-Introduction				|srcery-introduction|
-Installation				|srcery-installation|
-	Vim 8				|srcery-install-vim8|
-	Dein				|srcery-install-dein|
-	Pathogen			|srcery-install-pathogen|
-	Plug				|srcery-install-plug|
-Color Table				|srcery-color-table|
-Options					|srcery-options|
-	g:srcery_[color]		|srcery-option-color|
-	g:srcery_bold			|srcery-option-bold|
-	g:srcery_italic			|srcery-option-italic|
-	g:srcery_underline		|srcery-option-underline|
-	g:srcery_undercurl		|srcery-option-undercurl|
-	g:srcery_strikethrough		|srcery-option-strikethrough|
-	g:srcery_inverse		|srcery-option-inverse|
-	g:srcery_inverse_matche		|srcery-option-inverse-matches|
-	g:srcery_inverse_match_paren	|srcery-option-inverse-match-paren|
-	g:srcery_dim_lisp_paren		|srcery-option-dim-lisp-paren|
-	g:srcery_guisp_fallback		|srcery-option-guisp-fallback|
-	g:srcery_italic_types		|srcery-option-italic-types|
-	g:srcery_bg			|srcery-option-bg|
-	g:srcery_hard_black_terminal_bg	|srcery-option-hard-black-terminal-bg|
-
+                                         Type |gO| to see the table of contents.
 ==============================================================================
-INTRODUCTION						   *srcery-introduction*
+INTRODUCTION						*srcery-introduction*
 
 Created using colors that logically adheres to the 16 color base palette of a
 given terminal, while trying to retain its own identity. The colors are
@@ -40,232 +20,131 @@ designed to be easy on the eyes yet contrast well with the background for long
 sessions using an editor or terminal emulator.
 
 ==============================================================================
-INSTALLATION						   *srcery-installation*
+OPTIONS                                                       *srcery-options*
 
-Download or clone srcery's repository to a location of your choosing and set
-your 'runtimepath' correctly, otherwise srcery will not work as it relies on
-'autoload' functionality.
+Srcery includes a few configuration options to customize your experience. To
+change any of these you’d put something like this in your `.vimrc` or
+`init.lua`:
+>vim
+  " vimrc:
+  let g:srcery_normal_float = 1
 
-You can also install with your favourite plugin manager.
+>lua
+  -- init.lua:
+  vim.g.srcery_normal_float = 1
 
-							   *srcery-install-vim8*
+Make sure that you set these variables before assigning `colorscheme`.
 
-Vim 8 has native support for loading plugins by using |packages|. All you need
-to do to, is to clone this repository into `~/.vim/pack/themes/opt`.
->
-	git clone https://github.com/srcery-colors/srcery-vim \
-		~/.vim/pack/themes/opt
-<
-And then set your `.vimrc` accordingly.
->
-	packadd! srcery-vim
-	colorscheme srcery
-<
+BOLD                                                         *srcery-option-bold*
 
-The same works for Neovim, but you have to clone it into a path where Neovim
-can find it.
->
-	git clone https://github.com/srcery-colors/srcery-vim \
-		$XDG_CONFIG_HOME/nvim/pack/themes/opt
-<
+Enables bold text.
+>vim
+  " Default
+  let g:srcery_bold = 1
 
-							   *srcery-install-dein*
-https://github.com/Shougo/dein.vim
->
-	call dein#add('srcery-colors/srcery-vim')
-<
-						       *srcery-install-pathogen*
-https://github.com/tpope/vim-pathogen
->
-	cd ~/.vim/bundle
-	git clone https://github.com/srcery-colors/srcery-vim
-<
-							   *srcery-install-plug*
-https://github.com/junegunn/vim-plug
->
-	Plug 'srcery-colors/srcery-vim'
-<
+ITALIC                                                  *srcery-option-italic*
+
+Enables italic text.
+>vim
+  " Default 
+  let g:srcery_italic = 1
+
+
+UNDERLINE                                            *srcery-option-underline*
+
+Enables underlined text.
+>vim
+  " Default
+  let g:srcery_underline = 1
+
+
+UNDERCURL                                            *srcery-option-undercurl*
+
+Enables undercurled text.
+
+>vim
+  "Default
+  let g:srcery_undercurl = 1
+
+STRIKETHROUGH                                    *srcery-option-strikethrough*
+
+Enables strikethrough text.
+>vim
+  " Default
+  let g:srcery_strikethrough = 1
+
+
+INVERSE                                                *srcery-option-inverse*
+
+Enables inverse highlighting (foreground becomes background, vice
+versa) for visual selection, pmenu selection.
+
+Will use shades of gray if its disabled (0)
+>vim
+  " Default
+  let g:srcery_inverse = 1
+
+
+GUISP_FALLBACK                                  *srcery-option-guisp-fallback*
+
+Use alternate highlighting where colored underline/undercurl is
+unsupported. Set to either `'fg'` or `'bg'
+>vim
+  " Default
+  let g:srcery_guisp_fallback = 'NONE'
+
 
 ==============================================================================
-COLOR TABLE						    *srcery-color-table*
-
-| TERMCOL       | NR | VAR                     | HEX     | RGB           |
-| ------------- | -- | ----------------------- | ------- | ------------- |
-| black         | 0  | g:srcery_black          | #1C1B19 | 28,  27,  25  |
-| red           | 1  | g:srcery_red            | #EF2F27 | 239, 47, 39   |
-| green         | 2  | g:srcery_green          | #519F50 | 81,  159, 80  |
-| yellow        | 3  | g:srcery_yellow         | #FBB829 | 251, 184, 41  |
-| blue          | 4  | g:srcery_blue           | #2C78BF | 44, 120, 191  |
-| magenta       | 5  | g:srcery_magenta        | #E02C6D | 224, 44,  109 |
-| cyan          | 6  | g:srcery_cyan           | #0AAEB3 | 10, 174, 179  |
-| white         | 7  | g:srcery_white          | #BAA67F | 186, 166, 127 |
-| brightblack   | 8  | g:srcery_bright_black   | #918175 | 145, 129, 117 |
-| brightred     | 9  | g:srcery_bright_red     | #F75341 | 247, 83, 65   |
-| brightgreen   | 10 | g:srcery_bright_green   | #98BC37 | 152, 188, 55  |
-| brightyellow  | 11 | g:srcery_bright_yellow  | #FED06E | 254, 208, 110 |
-| brightblue    | 12 | g:srcery_bright_blue    | #68A8E4 | 104, 168, 228 |
-| brightmagenta | 13 | g:srcery_bright_magenta | #FF5C8F | 255, 92, 143  |
-| brightcyan    | 14 | g:srcery_bright_cyan    | #2BE4D0 | 43, 228, 208  |
-| brightwhite   | 15 | g:srcery_bright_white   | #FCE8C3 | 252, 232, 195 |
-
-Additionally Srcery uses some xterm 256 colors to pad out the color selection,
-no extra configuration needed.
-
-| NAME          | NR  | VAR                    | HEX     | RGB         |
-| ------------- | --- | ---------------------- | ------- | ----------- |
-| orange        | 202 | g:srcery_orange        | #FF5F00 | 255, 95, 0  |
-| bright_orange | 208 | g:srcery_bright_orange | #FF8700 | 255, 135, 0 |
-| hard_black    | 233 | g:srcery_hard_black    | #121212 | 18, 18, 18  |
-| xgray1        | 235 | g:srcery_xgray1        | #262626 | 38, 38, 38  |
-| xgray2        | 236 | g:srcery_xgray2        | #303030 | 48, 48, 48  |
-| xgray3        | 237 | g:srcery_xgray3        | #3A3A3A | 58, 58, 58  |
-| xgray4        | 238 | g:srcery_xgray4        | #444444 | 68, 68, 68  |
-| xgray5        | 239 | g:srcery_xgray5        | #4E4E4E | 78, 78, 78  |
-| xgray6        | 240 | g:srcery_xgray6        | #585858 | 88, 88, 88  |
-
-==============================================================================
-OPTIONS								*srcery-options*
-
-Srcery includes a few toggles due to discrepancies in the various setups
-possible. To change any of these you’d put something like this in your .vimrc:
->
-	let g:srcery_italic = 1
-<
-Make sure that you set these variables before assigning colorscheme.
-
-g:srcery_[color] 					   *srcery-option-color*
-
-You can customize each of Srcery’s colors, to customize say the red color:
->
-	let g:srcery_red = '#FF0000'
-<
-Inside a 256-color terminal emulator, additional colors are configurable
-via setting the corresponding variable with the _cterm suffix, e.g.
->
-	let g:srcery_hard_black_cterm = 232
-<
-Refer to the |srcery-color-table| for a full list of color variables, hexes
-and more.
-
-							    *srcery-option-bold*
-g:srcery_bold
-
-	Enables bold text.
-
-	Default: 1
-
-							  *srcery-option-italic*
-g:srcery_italic
-
-	Enables italic text.
-
-	Default: gui 1, term 0
-
-						       *srcery-option-underline*
-g:srcery_underline
-
-	Enables underlined text.
-
-	Default: 1
-
-						       *srcery-option-undercurl*
-g:srcery_undercurl
-
-	Enables undercurled text.
-
-	Default: 1
-
-						   *srcery-option-strikethrough*
-g:srcery_strikethrough
-
-	Enables strikethrough text.
-
-	Default: 1
-
-							 *srcery-option-inverse*
-g:srcery_inverse
-
-	Enable or disable inverse highlighting (foreground becomes background,
-	vice versa). This is used for visual selection, search highlights and
-	some other things.
-
-	Srcery will fall back to other methods of highlighting if this is
-	disabled.
-
-	Default: 1
-
-						 *srcery-option-inverse-matches*
-g:srcery_inverse_matches
-
-	Highlight search matches using inverse colors.
-
-	Default: 0
-
-					     *srcery-option-inverse-match-paren*
-g:srcery_inverse_match_paren
-
-	When enabled will highlight matching delimiters using inverse colors.
-	(`:DoMatchParen`)
-
-	Works best with Rainbow parenthesis.
-
-	Default: 0
-
-						  *srcery-option-dim-lisp-paren*
-g:srcery_dim_lisp_paren
-
-	Dims lisp dialects delimiters to a fairly dark gray (xgray5
-	specifically).
-
-	Default: 0
-
- 						  *srcery-option-guisp-fallback*
-g:srcery_guisp_fallback
-
-	Sets up alternate highlighting for colored underline/undercurl. Some
-	environments are unable to color underline, so this setting will set
-	either the background or foreground to whatever color the underline is
-	supposed to be.
-
-	This comes in handy if colored underline doesn’t work, or underline is
-	disabled entirely.
-
-	Default: `NONE`
-
-	Possible Values: `fg`, `bg`
-
-						    *srcery-option-italic-types*
-g:srcery_italic_types
-
-	Italicize types if italic is enabled.
-
-	Default: 0
-
-							      *srcery-option-bg*
-g:srcery_bg
-
-	Let's you customize the background color. This var takes a list with
-	two values, with a quoted HEX in the first position, and a terminal
-	color index for the second position. This lets you set both a 24-bit
-	color, and a 8bit terminal color index.
-
-	You can specify `'NONE'` as one of the values to make it transparent,
-	as such `['NONE', 'NONE']` would be the same as the previous option
-	`g:srcery_bg_passthrough = 1`.
+COLOR                                                           *srcery-color*
 
 
-	You can specify `'DEFAULT'` as one of the values in order to use that
-	position's default value.
+You can customize each of Srcery's colors, to customize say the red color:
 
-	Default: `[g:srcery_black, 0]`
+>vim
+  let g:srcery_red = '#FF0000'
 
-					  *srcery-option-hard-black-terminal-bg*
-g:srcery_hard_black_terminal_bg
+>lua
+  vim.g.srcery_red = '#FF0000'
 
-	If enabled, will set the terminal background in vim to hard black.
-	Note that this currently only works in Vim, not Neovim.
+You can also separately set a different background color `g:srcery_background`,
+instead of the default `g:srcery_black`
 
-	Default: 1
+Note: Setting this variable to `'NONE'` will make the background inside vim
+transparent
 
-==============================================================================
+COLOR REFERENCE                                       *srcery-color-reference*
+
+Here's a complete list of colors you can customize with its default value
+assigned.
+>vim
+  let g:srcery_black = '#121110'
+  let g:srcery_red = '#EF2F27'
+  let g:srcery_green = '#519F50'
+  let g:srcery_yellow = '#FBB829'
+  let g:srcery_blue = '#2C78BF'
+  let g:srcery_magenta = '#E02C6D'
+  let g:srcery_cyan = '#0AAEB3'
+  let g:srcery_white = '#C5B088'
+  let g:srcery_bright_black = '#917E6B'
+  let g:srcery_bright_red = '#F75341'
+  let g:srcery_bright_green ='#98BC37'
+  let g:srcery_bright_yellow ='#FED06E'
+  let g:srcery_bright_blue ='#68A8E4'
+  let g:srcery_bright_magenta ='#FF5C8F'
+  let g:srcery_bright_cyan = '#2BE4D0'
+  let g:srcery_bright_white = '#FCE8C3'
+  let g:srcery_dark_green = '#294229'
+  let g:srcery_dark_red = '#4F2321'
+  let g:srcery_dark_blue = '#1E5181'
+  let g:srcery_dim_green = '#2E5C2E'
+  let g:srcery_orange = '#FF5F00'
+  let g:srcery_bright_orange = '#FF8700'
+  let g:srcery_teal = '#008080'
+  let g:srcery_gray1 = '#1C1B19'
+  let g:srcery_gray2 = '#262522'
+  let g:srcery_gray3 = '#312F2C'
+  let g:srcery_gray4 = '#3B3935'
+  let g:srcery_gray5 = '#45433E'
+  let g:srcery_gray6 = '#504D47'
+
 vim: tw=78:ts=8:ft=help:norl:noet:fen:noet :
