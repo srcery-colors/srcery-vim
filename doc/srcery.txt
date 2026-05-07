@@ -6,7 +6,7 @@ feel.
 
 Version:   3.0.0
 Author:    Daniel Berg <mail@roosta.sh>
-	w/ contributers
+	w/ contributors
 License:   MIT license
 
                                          Type |gO| to see the table of contents.
