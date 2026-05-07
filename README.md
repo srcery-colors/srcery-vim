@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/srcery-colors/srcery-assets/master/src/logo_border.svg">
+  <img src="https://raw.githubusercontent.com/srcery-colors/srcery-assets/master/logo/logo.svg">
 </p>
 
 <p align="center">
