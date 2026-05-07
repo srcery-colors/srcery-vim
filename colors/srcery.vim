@@ -346,7 +346,7 @@ function! s:HL(group, fg, ...)
       let fg = a:3
     endif
 
-    " bg fallback mode should invert higlighting
+    " bg fallback mode should invert highlighting
     if g:srcery_guisp_fallback ==# 'bg'
       let emstr .= 'inverse,'
     endif
