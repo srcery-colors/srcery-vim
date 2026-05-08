@@ -502,7 +502,7 @@ call s:HL('Error', s:bright_white, s:red, s:bold)
 call s:HL('Exception', s:red)
 call s:HL('Float', s:bright_magenta)
 call s:HL('Function', s:yellow)
-call s:HL('Identifier', s:bright_white)
+call s:HL('Identifier', s:bright_blue)
 call s:HL('Include', s:cyan)
 call s:HL('Keyword', s:red)
 call s:HL('Label', s:bright_red)
@@ -763,6 +763,9 @@ hi! link xmlEqual   Operator
 hi! link xmlProcessingDelim Delimiter
 hi! link xmlTag     Tag
 hi! link xmlTagName Tag
+
+" YML
+hi! link yamlPlainScalar String
 
 " }}}
 " Plugins: {{{
