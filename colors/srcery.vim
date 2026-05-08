@@ -669,7 +669,7 @@ hi! link jsThis Special
 hi! link jsUndefined Constant
 
 " JSON:
-call s:HL('jsonKeyword', s:green)
+call s:HL('jsonKeyword', s:bright_blue)
 
 " Lua
 hi! link luaFunc Function
