@@ -526,7 +526,7 @@ call s:HL('Typedef', s:magenta)
 hi! link Annotation Decorator
 hi! link Macro Define
 hi! link PreCondit PreProc
-hi! link Variable Identifier
+call s:HL('Variable', s:bright_white, s:none, s:italic)
 
 " heading groups
 call s:HL('SrceryH1', s:bright_blue, s:gray1, s:bold)
