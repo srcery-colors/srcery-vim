@@ -525,7 +525,6 @@ call s:HL('Type', s:bright_blue, s:none, s:italic)
 call s:HL('Typedef', s:magenta)
 hi! link Annotation Decorator
 hi! link Macro Define
-hi! link PreCondit PreProc
 call s:HL('Variable', s:bright_white, s:none, s:italic)
 
 " heading groups
@@ -622,7 +621,7 @@ hi! link goConstants Keyword
 
 " Haskell
 hi! link haskellPragma haskellPreProc
-hi! link haskellPreProc PrePrec
+hi! link haskellPreProc PreProc
 hi! link haskellType Type
 
 " HTML
@@ -810,8 +809,8 @@ if has('nvim')
   call s:HL('NvimPagerFG_yellow_BG_', s:yellow)
   call s:HL('NvimPagerFG_blue_BG_', s:blue)
   call s:HL('NvimPagerFG_magenta_BG_', s:magenta)
-  call s:HL('NvimPagerFG_cyan_BG_', s:magenta)
-  call s:HL('NvimPagerFG_white_BG_', s:magenta)
+  call s:HL('NvimPagerFG_cyan_BG_', s:cyan)
+  call s:HL('NvimPagerFG_white_BG_', s:white)
 
   " Are these suppose to be bright variant, or does it mean literally bold?
   call s:HL('NvimPagerFG_black_BG__bold', s:black, s:none, s:bold)
