@@ -551,6 +551,15 @@ call s:HL('SrceryDiagUnderlineHint',  s:bright_cyan,   s:none, s:undercurl)
 " tree-sitter
 if has('nvim')
   hi! link @delimiter Delimiter
+  hi! link @keyword.conditional Conditional
+  hi! link @keyword.directive PreProc
+  hi! link @keyword.directive.define Define
+  hi! link @keyword.exception Exception
+  hi! link @keyword.import Include
+  hi! link @keyword.modifier StorageClass
+  hi! link @keyword.operator Operator
+  hi! link @keyword.repeat Repeat
+  hi! link @keyword.return Statement
   hi! link @markup.heading.1.markdown SrceryH1
   hi! link @markup.heading.2.markdown SrceryH2
   hi! link @markup.heading.3.markdown SrceryH3
