@@ -468,14 +468,14 @@ if has('nvim')
   let g:terminal_color_15 = s:bright_white[0]
 
   " Neovim Diagnostic
-  call s:HL('DiagnosticError', s:bright_red)
-  call s:HL('DiagnosticHint', s:bright_cyan)
-  call s:HL('DiagnosticInfo', s:bright_green)
-  call s:HL('DiagnosticUnderlineError', s:bright_red, s:none, s:undercurl)
-  call s:HL('DiagnosticUnderlineHint', s:bright_cyan, s:none, s:undercurl)
-  call s:HL('DiagnosticUnderlineInfo', s:bright_green, s:none, s:undercurl)
-  call s:HL('DiagnosticUnderlineWarn', s:bright_yellow, s:none, s:undercurl)
-  call s:HL('DiagnosticWarn', s:bright_yellow)
+  hi! link DiagnosticError SrceryDiagError
+  hi! link DiagnosticHint SrceryDiagHint
+  hi! link DiagnosticInfo SrceryDiagInfo
+  hi! link DiagnosticWarn SrceryDiagWarn
+  hi! link DiagnosticUnderlineError SrceryDiagUnderlineError
+  hi! link DiagnosticUnderlineHint SrceryDiagUnderlineHint
+  hi! link DiagnosticUnderlineInfo SrceryDiagUnderlineInfo
+  hi! link DiagnosticUnderlineWarn SrceryDiagUnderlineWarn
 
   " Neovim Support
   call s:HL('healthError', s:red)
@@ -533,6 +533,16 @@ call s:HL('SrceryH3', s:bright_yellow, s:gray1, s:bold)
 call s:HL('SrceryH4', s:green, s:gray1, s:bold)
 call s:HL('SrceryH5', s:magenta, s:gray1, s:bold)
 call s:HL('SrceryH6', s:bright_magenta, s:gray1, s:bold)
+
+" diagnostic groups
+call s:HL('SrceryDiagError', s:bright_red)
+call s:HL('SrceryDiagWarn',  s:bright_yellow)
+call s:HL('SrceryDiagInfo',  s:bright_green)
+call s:HL('SrceryDiagHint',  s:bright_cyan)
+call s:HL('SrceryDiagUnderlineError', s:bright_red,    s:none, s:undercurl)
+call s:HL('SrceryDiagUnderlineWarn',  s:bright_yellow, s:none, s:undercurl)
+call s:HL('SrceryDiagUnderlineInfo',  s:bright_green,  s:none, s:undercurl)
+call s:HL('SrceryDiagUnderlineHint',  s:bright_cyan,   s:none, s:undercurl)
 
 " }}}
 " Languages: {{{
@@ -856,12 +866,12 @@ call s:HL('GitGutterChangeDelete', s:yellow)
 call s:HL('GitGutterDelete', s:red)
 
 " Ale:
-call s:HL('ALEError', s:none, s:none, s:undercurl, s:red)
-call s:HL('ALEErrorSign', s:red)
-call s:HL('ALEInfo', s:none, s:none, s:undercurl, s:blue)
-call s:HL('ALEInfoSign', s:blue)
-call s:HL('ALEWarning', s:none, s:none, s:undercurl, s:yellow)
-call s:HL('ALEWarningSign', s:yellow)
+hi! link ALEError SrceryDiagUnderlineError
+hi! link ALEErrorSign SrceryDiagError
+hi! link ALEInfo SrceryDiagUnderlineInfo
+hi! link ALEInfoSign SrceryDiagInfo
+hi! link ALEWarning SrceryDiagUnderlineWarn
+hi! link ALEWarningSign SrceryDiagWarn
 
 " vim-indent-guides:
 call s:HL('IndentGuidesEven', s:none, s:gray3)
@@ -884,14 +894,14 @@ call s:HL('fzf2', s:bright_green, s:gray2)
 call s:HL('fzf3', s:bright_white, s:gray2)
 
 " coc.nvim:
-call s:HL('CocErrorHighlight', s:none, s:none, s:undercurl, s:red)
-call s:HL('CocErrorSign', s:red)
-call s:HL('CocHintHighlight', s:none, s:none, s:undercurl, s:blue)
-call s:HL('CocHintSign', s:blue)
-call s:HL('CocInfoHighlight', s:none, s:none, s:undercurl, s:yellow)
-call s:HL('CocInfoSign', s:yellow)
-call s:HL('CocWarningHighlight', s:none, s:none, s:undercurl, s:bright_orange)
-call s:HL('CocWarningSign', s:bright_orange)
+hi! link CocErrorHighlight SrceryDiagUnderlineError
+hi! link CocErrorSign SrceryDiagError
+hi! link CocHintHighlight SrceryDiagUnderlineHint
+hi! link CocHintSign SrceryDiagHint
+hi! link CocInfoHighlight SrceryDiagUnderlineInfo
+hi! link CocInfoSign SrceryDiagInfo
+hi! link CocWarningHighlight SrceryDiagUnderlineWarn
+hi! link CocWarningSign SrceryDiagWarn
 
 " CtrlP:
 hi! link CtrlPBufferHid Normal
