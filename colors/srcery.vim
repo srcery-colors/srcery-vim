@@ -559,7 +559,7 @@ if has('nvim')
   hi! link @keyword.directive PreProc
   hi! link @keyword.directive.define Define
   hi! link @keyword.exception Exception
-  hi! link @keyword.import Include
+  hi! link @keyword.import Keyword
   hi! link @keyword.modifier StorageClass
   hi! link @keyword.operator Operator
   hi! link @keyword.repeat Repeat
