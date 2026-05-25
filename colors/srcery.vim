@@ -550,7 +550,11 @@ call s:HL('SrceryDiagUnderlineHint',  s:bright_cyan,   s:none, s:undercurl)
 
 " tree-sitter
 if has('nvim')
+  hi! link @attribute Annotation
+  hi! link @constant.builtin Constant
+  hi! link @constructor Function
   hi! link @delimiter Delimiter
+  hi! link @function.builtin Function
   hi! link @keyword.conditional Conditional
   hi! link @keyword.directive PreProc
   hi! link @keyword.directive.define Define
@@ -568,27 +572,21 @@ if has('nvim')
   hi! link @markup.heading.6.markdown SrceryH6
   hi! link @markup.link Link
   hi! link @markup.link.url String
-  hi! link @tag.attribute TSTagAttribute
+  hi! link @property Member
+  hi! link @string.escape SpecialChar
+  hi! link @string.regex SpecialChar
+  hi! link @tag.attribute Function
+  hi! link @tag.delimiter Delimiter
   hi! link @text.uri String
   hi! link @type Type
+  hi! link @type.builtin Type
   hi! link @variable Variable
+  hi! link @variable.builtin Keyword
   hi! link @variable.member Member
-  hi! link TSAnnotation Annotation
-  hi! link TSAttribute Function
-  hi! link TSConstBuiltin Constant
-  hi! link TSConstructor Function
-  hi! link TSEmphasis Italic
-  hi! link TSFuncBuiltin Function
-  hi! link TSFuncMacro Function
-  hi! link TSStringRegex SpecialChar
-  hi! link TSStrong Bold
-  hi! link TSStructure Structure
-  hi! link TSTagAttribute Function
-  hi! link TSTagDelimiter TSTag
-  hi! link TSUnderline Underline
-  hi! link TSVariable Variable
-  hi! link TSVariableBuiltin Keyword
   call s:HL('@function.macro', s:bright_yellow)
+  call s:HL('@markup.italic', s:none, s:none, s:italic)
+  call s:HL('@markup.strong', s:none, s:none, s:bold)
+  call s:HL('@markup.underline', s:none, s:none, s:underline)
 endif
 
 " Diffs:
