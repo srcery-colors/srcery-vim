@@ -522,9 +522,9 @@ call s:HL('Tag', s:blue)
 call s:HL('Todo', s:bright_orange, s:none, s:bold . s:italic)
 call s:HL('Type', s:bright_blue, s:none, s:italic)
 call s:HL('Typedef', s:magenta)
+call s:HL('Variable', s:bright_white, s:none, s:italic)
 hi! link Annotation Decorator
 hi! link Macro Define
-call s:HL('Variable', s:bright_white, s:none, s:italic)
 
 " heading groups
 call s:HL('SrceryH1', s:bright_blue, s:gray1, s:bold)
