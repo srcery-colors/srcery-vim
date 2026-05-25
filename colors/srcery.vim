@@ -522,7 +522,7 @@ call s:HL('Tag', s:blue)
 call s:HL('Todo', s:bright_orange, s:none, s:bold . s:italic)
 call s:HL('Type', s:bright_blue, s:none, s:italic)
 call s:HL('Typedef', s:magenta)
-call s:HL('Variable', s:bright_white, s:none, s:italic)
+call s:HL('Variable', s:bright_white, s:none)
 hi! link Annotation Decorator
 hi! link Macro Define
 
