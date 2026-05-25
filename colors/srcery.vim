@@ -615,7 +615,7 @@ call s:HL('elixirStringDelimiter', s:green)
 hi! link elixirDocString Comment
 
 " Go
-call s:HL('goBuiltins', s:yellow)
+hi! link goBuiltins Function
 hi! link goConstants Keyword
 
 " Haskell
@@ -667,7 +667,7 @@ hi! link jsThis Special
 hi! link jsUndefined Constant
 
 " JSON:
-call s:HL('jsonKeyword', s:bright_blue)
+hi! link jsonKeyword Identifier
 
 " Lua
 hi! link luaFunc Function
@@ -750,8 +750,8 @@ hi! link shDerefSimple Identifier
 hi! link shDerefVar Identifier
 
 " XML:
-call s:HL('xmlCdataStart', s:bright_black)
-call s:HL('xmlAttrib', s:yellow)
+hi! link xmlCdataStart Delimiter
+hi! link xmlAttrib Function
 hi! link xmlAttribPunct Normal
 hi! link xmlCdata Comment
 hi! link xmlCdataCdata xmlCdataStart
