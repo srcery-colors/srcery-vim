@@ -2,7 +2,7 @@
 name: Check Them Vim Files
 
 on: # yamllint disable-line
-  push:
+  # push:
   pull_request:
     branches:
       - master
