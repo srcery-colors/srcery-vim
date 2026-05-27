@@ -502,7 +502,7 @@ call s:HL('Exception', s:red)
 call s:HL('Float', s:bright_magenta)
 call s:HL('Function', s:yellow)
 call s:HL('Identifier', s:bright_blue)
-call s:HL('Include', s:cyan)
+call s:HL('Include', s:bright_red)
 call s:HL('Keyword', s:red)
 call s:HL('Label', s:white)
 call s:HL('Member', s:bright_blue)
@@ -559,7 +559,7 @@ if has('nvim')
   hi! link @keyword.directive PreProc
   hi! link @keyword.directive.define Define
   hi! link @keyword.exception Exception
-  hi! link @keyword.import Keyword
+  hi! link @keyword.import Include
   hi! link @keyword.modifier StorageClass
   hi! link @keyword.operator Operator
   hi! link @keyword.repeat Repeat
