@@ -505,7 +505,7 @@ call s:HL('Identifier', s:bright_blue)
 call s:HL('Include', s:bright_red)
 call s:HL('Keyword', s:red)
 call s:HL('Label', s:white)
-call s:HL('Member', s:bright_blue)
+call s:HL('Member', s:bright_white)
 call s:HL('Number', s:bright_magenta)
 call s:HL('Operator', s:white)
 call s:HL('PreCondit', s:cyan)
@@ -797,6 +797,7 @@ hi! link xmlTagName Tag
 
 " YML
 hi! link yamlPlainScalar String
+hi! link @property.yaml Identifier
 
 " }}}
 " Plugins: {{{
