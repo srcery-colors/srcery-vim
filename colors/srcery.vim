@@ -719,6 +719,22 @@ hi! link moonFunction Function
 hi! link moonObject Structure
 hi! link moonSpecialOp Operator
 
+" Pandoc
+" vim-pandoc-syntax reapplies its own `hi def link` defaults on every
+" ColorScheme event, but `def` yields to a group already linked here, so
+" these overrides stick.
+call s:HL('pandocFootnoteID', s:cyan)
+call s:HL('pandocFootnoteDef', s:cyan)
+call s:HL('pandocFootnoteBlock', s:cyan)
+hi! link pandocAtxHeader SrceryH1
+hi! link pandocSetexHeader SrceryH1
+hi! link pandocAtxHeaderMark Keyword
+hi! link pandocAtxStart Keyword
+hi! link pandocHRule Keyword
+hi! link pandocListItemBullet Keyword
+hi! link pandocUListItemBullet Keyword
+hi! link pandocNoFormatted Special
+
 " Python
 hi! link pythonBuiltin Type
 hi! link pythonBuiltinObj Type
