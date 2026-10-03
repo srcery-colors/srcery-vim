@@ -1,0 +1,580 @@
+{
+  "black": {
+    "css": "--srcery-light-black",
+    "hex": "#FCE8C3",
+    "hsl": [
+      38.95,
+      "90.48%",
+      "87.65%"
+    ],
+    "index": 223,
+    "rgb": [
+      252,
+      232,
+      195
+    ],
+    "termcol": "black",
+    "var": "g:srcery_light_black",
+    "canonical_index": 0
+  },
+  "red": {
+    "css": "--srcery-light-red",
+    "hex": "#B7140E",
+    "hsl": [
+      2.13,
+      "85.79%",
+      "38.63%"
+    ],
+    "index": 124,
+    "rgb": [
+      183,
+      20,
+      14
+    ],
+    "termcol": "red",
+    "var": "g:srcery_light_red",
+    "canonical_index": 1
+  },
+  "green": {
+    "css": "--srcery-light-green",
+    "hex": "#346533",
+    "hsl": [
+      118.8,
+      "32.89%",
+      "29.80%"
+    ],
+    "index": 238,
+    "rgb": [
+      52,
+      101,
+      51
+    ],
+    "termcol": "green",
+    "var": "g:srcery_light_green",
+    "canonical_index": 2
+  },
+  "yellow": {
+    "css": "--srcery-light-yellow",
+    "hex": "#724F02",
+    "hsl": [
+      41.25,
+      "96.55%",
+      "22.75%"
+    ],
+    "index": 58,
+    "rgb": [
+      114,
+      79,
+      2
+    ],
+    "termcol": "yellow",
+    "var": "g:srcery_light_yellow",
+    "canonical_index": 3
+  },
+  "blue": {
+    "css": "--srcery-light-blue",
+    "hex": "#235F98",
+    "hsl": [
+      209.23,
+      "62.57%",
+      "36.67%"
+    ],
+    "index": 24,
+    "rgb": [
+      35,
+      95,
+      152
+    ],
+    "termcol": "blue",
+    "var": "g:srcery_light_blue",
+    "canonical_index": 4
+  },
+  "magenta": {
+    "css": "--srcery-light-magenta",
+    "hex": "#B21A51",
+    "hsl": [
+      338.29,
+      "74.51%",
+      "40.00%"
+    ],
+    "index": 125,
+    "rgb": [
+      178,
+      26,
+      81
+    ],
+    "termcol": "magenta",
+    "var": "g:srcery_light_magenta",
+    "canonical_index": 5
+  },
+  "cyan": {
+    "css": "--srcery-light-cyan",
+    "hex": "#066366",
+    "hsl": [
+      181.88,
+      "88.89%",
+      "21.18%"
+    ],
+    "index": 23,
+    "rgb": [
+      6,
+      99,
+      102
+    ],
+    "termcol": "cyan",
+    "var": "g:srcery_light_cyan",
+    "canonical_index": 6
+  },
+  "white": {
+    "css": "--srcery-light-white",
+    "hex": "#675532",
+    "hsl": [
+      39.62,
+      "34.64%",
+      "30.00%"
+    ],
+    "index": 239,
+    "rgb": [
+      103,
+      85,
+      50
+    ],
+    "termcol": "white",
+    "var": "g:srcery_light_white",
+    "canonical_index": 7
+  },
+  "bright_black": {
+    "css": "--srcery-light-bright-black",
+    "hex": "#67594C",
+    "hsl": [
+      28.89,
+      "15.08%",
+      "35.10%"
+    ],
+    "index": 240,
+    "rgb": [
+      103,
+      89,
+      76
+    ],
+    "termcol": "brightblack",
+    "var": "g:srcery_light_bright_black",
+    "canonical_index": 8
+  },
+  "bright_red": {
+    "css": "--srcery-light-bright-red",
+    "hex": "#961406",
+    "hsl": [
+      5.83,
+      "92.31%",
+      "30.59%"
+    ],
+    "index": 88,
+    "rgb": [
+      150,
+      20,
+      6
+    ],
+    "termcol": "brightred",
+    "var": "g:srcery_light_bright_red",
+    "canonical_index": 9
+  },
+  "bright_green": {
+    "css": "--srcery-light-bright-green",
+    "hex": "#3F4E17",
+    "hsl": [
+      76.36,
+      "54.46%",
+      "19.80%"
+    ],
+    "index": 237,
+    "rgb": [
+      63,
+      78,
+      23
+    ],
+    "termcol": "brightgreen",
+    "var": "g:srcery_light_bright_green",
+    "canonical_index": 10
+  },
+  "bright_yellow": {
+    "css": "--srcery-light-bright-yellow",
+    "hex": "#5D3F01",
+    "hsl": [
+      40.43,
+      "97.87%",
+      "18.43%"
+    ],
+    "index": 58,
+    "rgb": [
+      93,
+      63,
+      1
+    ],
+    "termcol": "brightyellow",
+    "var": "g:srcery_light_bright_yellow",
+    "canonical_index": 11
+  },
+  "bright_blue": {
+    "css": "--srcery-light-bright-blue",
+    "hex": "#164B7D",
+    "hsl": [
+      209.13,
+      "70.07%",
+      "28.82%"
+    ],
+    "index": 24,
+    "rgb": [
+      22,
+      75,
+      125
+    ],
+    "termcol": "brightblue",
+    "var": "g:srcery_light_bright_blue",
+    "canonical_index": 12
+  },
+  "bright_magenta": {
+    "css": "--srcery-light-bright-magenta",
+    "hex": "#980030",
+    "hsl": [
+      341.05,
+      "100.00%",
+      "29.80%"
+    ],
+    "index": 89,
+    "rgb": [
+      152,
+      0,
+      48
+    ],
+    "termcol": "brightmagenta",
+    "var": "g:srcery_light_bright_magenta",
+    "canonical_index": 13
+  },
+  "bright_cyan": {
+    "css": "--srcery-light-bright-cyan",
+    "hex": "#0A4F48",
+    "hsl": [
+      173.91,
+      "77.53%",
+      "17.45%"
+    ],
+    "index": 23,
+    "rgb": [
+      10,
+      79,
+      72
+    ],
+    "termcol": "brightcyan",
+    "var": "g:srcery_light_bright_cyan",
+    "canonical_index": 14
+  },
+  "bright_white": {
+    "css": "--srcery-light-bright-white",
+    "hex": "#121110",
+    "hsl": [
+      30.0,
+      "5.88%",
+      "6.67%"
+    ],
+    "index": 233,
+    "rgb": [
+      18,
+      17,
+      16
+    ],
+    "termcol": "brightwhite",
+    "var": "g:srcery_light_bright_white",
+    "canonical_index": 15
+  },
+  "dark_green": {
+    "css": "--srcery-light-dark-green",
+    "hex": "#E6EFE6",
+    "hsl": [
+      120.0,
+      "21.95%",
+      "91.96%"
+    ],
+    "index": 254,
+    "rgb": [
+      230,
+      239,
+      230
+    ],
+    "termcol": null,
+    "var": "g:srcery_light_dark_green",
+    "canonical_index": 22
+  },
+  "dark_red": {
+    "css": "--srcery-light-dark-red",
+    "hex": "#F3E3E2",
+    "hsl": [
+      3.53,
+      "41.46%",
+      "91.96%"
+    ],
+    "index": 254,
+    "rgb": [
+      243,
+      227,
+      226
+    ],
+    "termcol": null,
+    "var": "g:srcery_light_dark_red",
+    "canonical_index": 88
+  },
+  "dark_blue": {
+    "css": "--srcery-light-dark-blue",
+    "hex": "#DEEBF7",
+    "hsl": [
+      208.8,
+      "60.98%",
+      "91.96%"
+    ],
+    "index": 255,
+    "rgb": [
+      222,
+      235,
+      247
+    ],
+    "termcol": null,
+    "var": "g:srcery_light_dark_blue",
+    "canonical_index": 24
+  },
+  "dim_green": {
+    "css": "--srcery-light-dim-green",
+    "hex": "#E4F1E4",
+    "hsl": [
+      120.0,
+      "31.71%",
+      "91.96%"
+    ],
+    "index": 254,
+    "rgb": [
+      228,
+      241,
+      228
+    ],
+    "termcol": null,
+    "var": "g:srcery_light_dim_green",
+    "canonical_index": 22
+  },
+  "orange": {
+    "css": "--srcery-light-orange",
+    "hex": "#9D3A00",
+    "hsl": [
+      22.17,
+      "100.00%",
+      "30.78%"
+    ],
+    "index": 124,
+    "rgb": [
+      157,
+      58,
+      0
+    ],
+    "termcol": null,
+    "var": "g:srcery_light_orange",
+    "canonical_index": 202
+  },
+  "bright_orange": {
+    "css": "--srcery-light-bright-orange",
+    "hex": "#703C00",
+    "hsl": [
+      32.14,
+      "100.00%",
+      "21.96%"
+    ],
+    "index": 58,
+    "rgb": [
+      112,
+      60,
+      0
+    ],
+    "termcol": null,
+    "var": "g:srcery_light_bright_orange",
+    "canonical_index": 208
+  },
+  "teal": {
+    "css": "--srcery-light-teal",
+    "hex": "#005555",
+    "hsl": [
+      180.0,
+      "100.00%",
+      "16.67%"
+    ],
+    "index": 23,
+    "rgb": [
+      0,
+      85,
+      85
+    ],
+    "termcol": null,
+    "var": "g:srcery_light_teal",
+    "canonical_index": 30
+  },
+  "gray1": {
+    "css": "--srcery-light-gray1",
+    "hex": "#E9E1D2",
+    "hsl": [
+      39.13,
+      "34.33%",
+      "86.86%"
+    ],
+    "index": 253,
+    "rgb": [
+      233,
+      225,
+      210
+    ],
+    "termcol": null,
+    "var": "g:srcery_light_gray1",
+    "canonical_index": 235
+  },
+  "gray2": {
+    "css": "--srcery-light-gray2",
+    "hex": "#E7E1CE",
+    "hsl": [
+      45.6,
+      "34.25%",
+      "85.69%"
+    ],
+    "index": 253,
+    "rgb": [
+      231,
+      225,
+      206
+    ],
+    "termcol": null,
+    "var": "g:srcery_light_gray2",
+    "canonical_index": 236
+  },
+  "gray3": {
+    "css": "--srcery-light-gray3",
+    "hex": "#E6DBCB",
+    "hsl": [
+      35.56,
+      "35.06%",
+      "84.90%"
+    ],
+    "index": 253,
+    "rgb": [
+      230,
+      219,
+      203
+    ],
+    "termcol": null,
+    "var": "g:srcery_light_gray3",
+    "canonical_index": 237
+  },
+  "gray4": {
+    "css": "--srcery-light-gray4",
+    "hex": "#E4DBC8",
+    "hsl": [
+      40.71,
+      "34.15%",
+      "83.92%"
+    ],
+    "index": 188,
+    "rgb": [
+      228,
+      219,
+      200
+    ],
+    "termcol": null,
+    "var": "g:srcery_light_gray4",
+    "canonical_index": 238
+  },
+  "gray5": {
+    "css": "--srcery-light-gray5",
+    "hex": "#E3DAC5",
+    "hsl": [
+      42.0,
+      "34.88%",
+      "83.14%"
+    ],
+    "index": 188,
+    "rgb": [
+      227,
+      218,
+      197
+    ],
+    "termcol": null,
+    "var": "g:srcery_light_gray5",
+    "canonical_index": 239
+  },
+  "gray6": {
+    "css": "--srcery-light-gray6",
+    "hex": "#807B72",
+    "hsl": [
+      38.57,
+      "5.79%",
+      "47.45%"
+    ],
+    "index": 243,
+    "rgb": [
+      128,
+      123,
+      114
+    ],
+    "termcol": null,
+    "var": "g:srcery_light_gray6",
+    "canonical_index": 240
+  },
+  "hard_black": {
+    "css": "--srcery-light-hard-black",
+    "hex": "#FDEDCF",
+    "hsl": [
+      39.13,
+      "92.00%",
+      "90.20%"
+    ],
+    "index": 230,
+    "rgb": [
+      253,
+      237,
+      207
+    ],
+    "termcol": null,
+    "var": "g:srcery_light_hard_black",
+    "canonical_index": 232
+  },
+  "error_red": {
+    "css": "--srcery-light-error-red",
+    "hex": "#EF2F27",
+    "hsl": [
+      2.4,
+      "86.21%",
+      "54.51%"
+    ],
+    "index": 196,
+    "rgb": [
+      239,
+      47,
+      39
+    ],
+    "termcol": "red",
+    "var": "g:srcery_light_error_red",
+    "canonical_index": 1,
+    "source_entry": "red"
+  },
+  "selection_green": {
+    "css": "--srcery-light-selection-green",
+    "hex": "#98BC37",
+    "hsl": [
+      76.24,
+      "54.73%",
+      "47.65%"
+    ],
+    "index": 107,
+    "rgb": [
+      152,
+      188,
+      55
+    ],
+    "termcol": "brightgreen",
+    "var": "g:srcery_light_selection_green",
+    "canonical_index": 10,
+    "source_entry": "bright_green"
+  }
+}
