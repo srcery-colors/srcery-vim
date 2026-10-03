@@ -20,6 +20,10 @@ UI_FIXES = {'Error': 'black', 'ErrorMsg': 'black', 'PmenuBorder': 'bright_black'
 def validate(output):
     output.mkdir(parents=True, exist_ok=True)
     source = (ROOT / 'colors/srcery-light.vim').read_text()
+    palette = json.loads((ROOT / 'tests/light-palette.json').read_text())
+    exceptions = dict(UI_FIXES)
+    if 'error_red' in palette:
+        exceptions.update(Error='bright_white', ErrorMsg='bright_white', PmenuSel='bright_white')
     names = set(re.findall(r"call s:HL\('([^']+)'", source))
     for pair in re.findall(r'^\s*hi! link (\S+) (\S+)', source, re.M):
         names.update(pair)
@@ -32,7 +36,8 @@ def validate(output):
         env = {**os.environ, 'SRCERY_LIGHT_ROOT': str(ROOT),
                'SRCERY_LIGHT_GROUPS': str(groups),
                'SRCERY_LIGHT_DUMP': str(output / f'{editor}-highlights.json'),
-               'SRCERY_LIGHT_UI_FIXES': json.dumps(UI_FIXES)}
+               'SRCERY_LIGHT_SELECTION_UNDERLINE': '1' if "call s:HL('PmenuSel', s:bright_white, s:selection_green, s:underline)" in source else '0',
+               'SRCERY_LIGHT_UI_FIXES': json.dumps(exceptions)}
         if editor == 'nvim':
             env.pop('VIMRUNTIME', None)
         args = [executable, '-Nu', 'NONE', '-i', 'NONE', '-n']

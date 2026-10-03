@@ -73,6 +73,13 @@ colorscheme srcery-light
 call s:CheckTheme()
 call assert_equal('1', synIDattr(hlID('Visual'), 'reverse', 'gui'))
 call assert_equal(s:palette.gray1.hex, toupper(synIDattr(hlID('NormalFloat'), 'bg', 'gui')))
+if has_key(s:palette, 'error_red')
+  call assert_equal('#EF2F27', toupper(synIDattr(hlID('Error'), 'bg', 'gui')))
+  call assert_equal('#98BC37', toupper(synIDattr(hlID('PmenuSel'), 'bg', 'gui')))
+  call assert_equal('', synIDattr(hlID('PmenuSel'), 'reverse', 'gui'))
+  call assert_equal($SRCERY_LIGHT_SELECTION_UNDERLINE ==# '1' ? '1' : '',
+        \ synIDattr(hlID('PmenuSel'), 'underline', 'gui'))
+endif
 
 let s:ansi = []
 for s:name in ['black', 'red', 'green', 'yellow', 'blue', 'magenta', 'cyan', 'white',

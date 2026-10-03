@@ -27,59 +27,59 @@ if !exists('g:srcery_light_black')
 endif
 
 if !exists('g:srcery_light_red')
-  let g:srcery_light_red='#B0140D'
+  let g:srcery_light_red='#B7140E'
 endif
 
 if !exists('g:srcery_light_green')
-  let g:srcery_light_green='#326332'
+  let g:srcery_light_green='#346533'
 endif
 
 if !exists('g:srcery_light_yellow')
-  let g:srcery_light_yellow='#775102'
+  let g:srcery_light_yellow='#724F02'
 endif
 
 if !exists('g:srcery_light_blue')
-  let g:srcery_light_blue='#215B90'
+  let g:srcery_light_blue='#235F98'
 endif
 
 if !exists('g:srcery_light_magenta')
-  let g:srcery_light_magenta='#AA194E'
+  let g:srcery_light_magenta='#B21A51'
 endif
 
 if !exists('g:srcery_light_cyan')
-  let g:srcery_light_cyan='#066265'
+  let g:srcery_light_cyan='#066366'
 endif
 
 if !exists('g:srcery_light_white')
-  let g:srcery_light_white='#685633'
+  let g:srcery_light_white='#675532'
 endif
 
 if !exists('g:srcery_light_bright_black')
-  let g:srcery_light_bright_black='#635649'
+  let g:srcery_light_bright_black='#67594C'
 endif
 
 if !exists('g:srcery_light_bright_red')
-  let g:srcery_light_bright_red='#A11607'
+  let g:srcery_light_bright_red='#961406'
 endif
 
 if !exists('g:srcery_light_bright_green')
-  let g:srcery_light_bright_green='#47571A'
+  let g:srcery_light_bright_green='#3F4E17'
 endif
 
 if !exists('g:srcery_light_bright_yellow')
-  let g:srcery_light_bright_yellow='#6D4A01'
+  let g:srcery_light_bright_yellow='#5D3F01'
 endif
 
 if !exists('g:srcery_light_bright_blue')
-  let g:srcery_light_bright_blue='#19538A'
+  let g:srcery_light_bright_blue='#164B7D'
 endif
 
 if !exists('g:srcery_light_bright_magenta')
-  let g:srcery_light_bright_magenta='#A50033'
+  let g:srcery_light_bright_magenta='#980030'
 endif
 
 if !exists('g:srcery_light_bright_cyan')
-  let g:srcery_light_bright_cyan='#0C5B53'
+  let g:srcery_light_bright_cyan='#0A4F48'
 endif
 
 if !exists('g:srcery_light_bright_white')
@@ -87,47 +87,47 @@ if !exists('g:srcery_light_bright_white')
 endif
 
 if !exists('g:srcery_light_dark_red')
-  let g:srcery_light_dark_red='#EDD5D4'
+  let g:srcery_light_dark_red='#F3E3E2'
 endif
 
 if !exists('g:srcery_light_dark_red_cterm')
-  let g:srcery_light_dark_red_cterm=224
+  let g:srcery_light_dark_red_cterm=254
 endif
 
 if !exists('g:srcery_light_dark_green')
-  let g:srcery_light_dark_green='#D9E8D9'
+  let g:srcery_light_dark_green='#E6EFE6'
 endif
 
 if !exists('g:srcery_light_dim_green')
-  let g:srcery_light_dim_green='#CCE5CC'
+  let g:srcery_light_dim_green='#E4F1E4'
 endif
 
 if !exists('g:srcery_light_dim_green_cterm')
-  let g:srcery_light_dim_green_cterm=188
+  let g:srcery_light_dim_green_cterm=254
 endif
 
 if !exists('g:srcery_light_dark_green_cterm')
-  let g:srcery_light_dark_green_cterm=253
+  let g:srcery_light_dark_green_cterm=254
 endif
 
 if !exists('g:srcery_light_dark_blue')
-  let g:srcery_light_dark_blue='#CDE1F3'
+  let g:srcery_light_dark_blue='#DEEBF7'
 endif
 
 if !exists('g:srcery_light_dark_blue_cterm')
-  let g:srcery_light_dark_blue_cterm=189
+  let g:srcery_light_dark_blue_cterm=255
 endif
 
 if !exists('g:srcery_light_orange')
-  let g:srcery_light_orange='#9A3900'
+  let g:srcery_light_orange='#9D3A00'
 endif
 
 if !exists('g:srcery_light_orange_cterm')
-  let g:srcery_light_orange_cterm=88
+  let g:srcery_light_orange_cterm=124
 endif
 
 if !exists('g:srcery_light_bright_orange')
-  let g:srcery_light_bright_orange='#7C4200'
+  let g:srcery_light_bright_orange='#703C00'
 endif
 
 if !exists('g:srcery_light_bright_orange_cterm')
@@ -135,7 +135,7 @@ if !exists('g:srcery_light_bright_orange_cterm')
 endif
 
 if !exists('g:srcery_light_teal')
-  let g:srcery_light_teal='#006363'
+  let g:srcery_light_teal='#005555'
 endif
 
 if !exists('g:srcery_light_teal_cterm')
@@ -151,7 +151,7 @@ if !exists('g:srcery_light_hard_black_cterm')
 endif
 
 if !exists('g:srcery_light_gray1')
-  let g:srcery_light_gray1='#E7DECD'
+  let g:srcery_light_gray1='#E9E1D2'
 endif
 
 if !exists('g:srcery_light_gray1_cterm')
@@ -159,39 +159,39 @@ if !exists('g:srcery_light_gray1_cterm')
 endif
 
 if !exists('g:srcery_light_gray2')
-  let g:srcery_light_gray2='#E3DBC5'
+  let g:srcery_light_gray2='#E7E1CE'
 endif
 
 if !exists('g:srcery_light_gray2_cterm')
-  let g:srcery_light_gray2_cterm=188
+  let g:srcery_light_gray2_cterm=253
 endif
 
 if !exists('g:srcery_light_gray3')
-  let g:srcery_light_gray3='#DFD1BD'
+  let g:srcery_light_gray3='#E6DBCB'
 endif
 
 if !exists('g:srcery_light_gray3_cterm')
-  let g:srcery_light_gray3_cterm=187
+  let g:srcery_light_gray3_cterm=253
 endif
 
 if !exists('g:srcery_light_gray4')
-  let g:srcery_light_gray4='#DBCEB5'
+  let g:srcery_light_gray4='#E4DBC8'
 endif
 
 if !exists('g:srcery_light_gray4_cterm')
-  let g:srcery_light_gray4_cterm=187
+  let g:srcery_light_gray4_cterm=188
 endif
 
 if !exists('g:srcery_light_gray5')
-  let g:srcery_light_gray5='#D7CBAD'
+  let g:srcery_light_gray5='#E3DAC5'
 endif
 
 if !exists('g:srcery_light_gray5_cterm')
-  let g:srcery_light_gray5_cterm=187
+  let g:srcery_light_gray5_cterm=188
 endif
 
 if !exists('g:srcery_light_gray6')
-  let g:srcery_light_gray6='#77726A'
+  let g:srcery_light_gray6='#807B72'
 endif
 
 if !exists('g:srcery_light_gray6_cterm')
@@ -292,11 +292,11 @@ let s:magenta        = [g:srcery_light_magenta,        125]
 let s:cyan           = [g:srcery_light_cyan,           23]
 let s:white          = [g:srcery_light_white,          239]
 let s:bright_black   = [g:srcery_light_bright_black,   240]
-let s:bright_red     = [g:srcery_light_bright_red,     124]
-let s:bright_green   = [g:srcery_light_bright_green,   58]
+let s:bright_red     = [g:srcery_light_bright_red,     88]
+let s:bright_green   = [g:srcery_light_bright_green,   237]
 let s:bright_yellow  = [g:srcery_light_bright_yellow,  58]
 let s:bright_blue    = [g:srcery_light_bright_blue,    24]
-let s:bright_magenta = [g:srcery_light_bright_magenta, 125]
+let s:bright_magenta = [g:srcery_light_bright_magenta, 89]
 let s:bright_cyan    = [g:srcery_light_bright_cyan,    23]
 let s:bright_white   = [g:srcery_light_bright_white,   233]
 let s:dark_blue      = [g:srcery_light_dark_blue,      g:srcery_light_dark_blue_cterm]
@@ -368,6 +368,22 @@ function! s:HL(group, fg, ...)
 endfunction
 
 "}}}
+" Canonical colors for UI surfaces; syntax foregrounds stay separate.
+if !exists('g:srcery_light_error_red')
+  let g:srcery_light_error_red='#EF2F27'
+endif
+if !exists('g:srcery_light_error_red_cterm')
+  let g:srcery_light_error_red_cterm=196
+endif
+let s:error_red = [g:srcery_light_error_red, g:srcery_light_error_red_cterm]
+if !exists('g:srcery_light_selection_green')
+  let g:srcery_light_selection_green='#98BC37'
+endif
+if !exists('g:srcery_light_selection_green_cterm')
+  let g:srcery_light_selection_green_cterm=107
+endif
+let s:selection_green = [g:srcery_light_selection_green, g:srcery_light_selection_green_cterm]
+
 " UI groups: {{{
 " -----------------------------------------------------------------------------
 
@@ -376,7 +392,7 @@ call s:HL('Cursor', s:black, s:yellow)
 call s:HL('CursorLine',   s:none, s:gray1)
 call s:HL('CursorLineNr', s:yellow, s:background)
 call s:HL('Directory', s:green, s:none, s:bold)
-call s:HL('ErrorMsg', s:black, s:red)
+call s:HL('ErrorMsg', s:bright_white, s:error_red)
 call s:HL('FoldColumn', s:bright_black, s:background)
 call s:HL('Folded', s:bright_black, s:background, s:italic)
 call s:HL('LineNr', s:bright_black)
@@ -387,7 +403,7 @@ call s:HL('NonText', s:gray6)
 call s:HL('Normal', s:bright_white, s:background)
 call s:HL('Pmenu', s:none, s:gray2)
 call s:HL('PmenuSbar', s:none, s:gray4)
-call s:HL('PmenuSel', s:none, s:gray4, s:inverse)
+call s:HL('PmenuSel', s:bright_white, s:selection_green, s:underline)
 call s:HL('PmenuThumb', s:none, s:white)
 call s:HL('PmenuBorder', s:bright_black, s:none)
 call s:HL('Question', s:orange, s:none, s:bold)
@@ -498,7 +514,7 @@ call s:HL('Constant', s:bright_magenta)
 call s:HL('Decorator', s:bright_orange)
 call s:HL('Define', s:orange)
 call s:HL('Delimiter', s:bright_black)
-call s:HL('Error', s:black, s:red, s:bold)
+call s:HL('Error', s:bright_white, s:error_red, s:bold)
 call s:HL('Exception', s:red)
 call s:HL('Float', s:bright_magenta)
 call s:HL('Function', s:yellow)
