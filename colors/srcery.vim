@@ -419,10 +419,13 @@ hi! link vCursor Cursor
 hi! link VisualNOS Visual
 
 
+" Float borders should follow the colorscheme even when the optional
+" NormalFloat background is disabled.
+call s:HL('FloatBorder', s:gray3, s:none)
+
 " Conditionals
 if g:srcery_normal_float == 1
-  call s:HL('NormalFloat',  s:none, s:gray1)
-  call s:HL('FloatBorder',  s:gray3, s:none)
+  call s:HL('NormalFloat', s:none, s:gray1)
 endif
 
 
