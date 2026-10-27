@@ -197,7 +197,7 @@ Make sure that you set these variables before assigning `colorscheme`.
 | `g:srcery_strikethrough` | Enables ~~strikethrough~~ text | `1` (enabled) |
 | `g:srcery_inverse` | Enables inverse highlighting for visual selection, search, etc | `1` (enabled) |
 | `g:srcery_guisp_fallback` | Use alternate highlighting where colored underline/undercurl is unsupported. Set to either `'fg'` or `'bg'` | `'NONE'` (Disabled) |
-| `g:srcery_normal_float` | Use srcery colors for floating window background and border | `0` (disabled) |
+| `g:srcery_normal_float` | Use srcery colors for floating window background | `0` (disabled) |
 
 
 ### Colors
