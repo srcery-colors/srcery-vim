@@ -22,3 +22,9 @@ jobs:
           pip install --upgrade vim-vint
       - name: Vinting code
         run: vint --verbose --stat $(find . -type f -name '*.vim')
+      - name: Install headless editors
+        run: |
+          sudo apt-get update
+          sudo apt-get install --yes vim-nox neovim
+      - name: Validate Srcery Light in Vim and Neovim
+        run: python tests/run-light.py
