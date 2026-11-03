@@ -142,11 +142,11 @@ if !exists('g:srcery_teal_cterm')
 endif
 
 if !exists('g:srcery_hard_black')
-  let g:srcery_hard_black='#121212'
+  let g:srcery_hard_black='#0E0D0C'
 endif
 
 if !exists('g:srcery_hard_black_cterm')
-  let g:srcery_hard_black_cterm=233
+  let g:srcery_hard_black_cterm=232
 endif
 
 if !exists('g:srcery_gray1')
