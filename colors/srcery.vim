@@ -117,6 +117,14 @@ if !exists('g:srcery_dark_blue_cterm')
   let g:srcery_dark_blue_cterm=24
 endif
 
+if !exists('g:srcery_dark_yellow')
+  let g:srcery_dark_yellow='#433519'
+endif
+
+if !exists('g:srcery_dark_yellow_cterm')
+  let g:srcery_dark_yellow_cterm=94
+endif
+
 if !exists('g:srcery_orange')
   let g:srcery_orange='#FF5F00'
 endif

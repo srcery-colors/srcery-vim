@@ -245,6 +245,7 @@ instead of the default `g:srcery_black`
 | `g:srcery_dark_green` | `#294229` | ![dark_green](https://raw.githubusercontent.com/srcery-colors/srcery-assets/master/swatch/dark_green_24.jpg) |
 | `g:srcery_dark_red` | `#4F2321` | ![dark_red](https://raw.githubusercontent.com/srcery-colors/srcery-assets/master/swatch/dark_red_24.jpg) |
 | `g:srcery_dark_blue` | `#1E5181` | ![dark_blue](https://raw.githubusercontent.com/srcery-colors/srcery-assets/master/swatch/dark_blue_24.jpg) |
+| `g:srcery_dark_yellow` | `#433519` | ![dark_yellow](https://raw.githubusercontent.com/srcery-colors/srcery-assets/master/swatch/dark_yellow_24.jpg) |
 | `g:srcery_dim_green` | `#2E5C2E` | ![dim_green](https://raw.githubusercontent.com/srcery-colors/srcery-assets/master/swatch/dim_green_24.jpg) |
 | `g:srcery_orange` | `#FF5F00` | ![orange](https://raw.githubusercontent.com/srcery-colors/srcery-assets/master/swatch/orange_24.jpg) |
 | `g:srcery_bright_orange` | `#FF8700` | ![bright_orange](https://raw.githubusercontent.com/srcery-colors/srcery-assets/master/swatch/bright_orange_24.jpg) |
