@@ -135,6 +135,7 @@ assigned.
   let g:srcery_dark_green = '#294229'
   let g:srcery_dark_red = '#4F2321'
   let g:srcery_dark_blue = '#1E5181'
+  let g:srcery_dark_yellow = '#433519'
   let g:srcery_dim_green = '#2E5C2E'
   let g:srcery_orange = '#FF5F00'
   let g:srcery_bright_orange = '#FF8700'
