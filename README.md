@@ -29,6 +29,18 @@ given terminal, while trying to retain its own identity. The colors are
 designed to be easy on the eyes yet contrast well with the background for long
 sessions using an editor or terminal emulator.
 
+## Srcery Light candidate
+
+For a warm light background derived from the canonical palette:
+
+```vim
+set termguicolors
+colorscheme srcery-light
+```
+
+See [the light theme notes](doc/srcery-light.md) for its palette relationships,
+contrast targets, options and current integration limits.
+
 ## Screenshots
 
 |  |  |  |
